@@ -516,7 +516,7 @@
 	}
 	@media screen and (min-width: 1780px)and(max-width: 2100px){
 		.partner-introduce-box-recruitment{
-			height: 2025px;
+			height: 4900px;
 		}
 	}
 	//移动端
