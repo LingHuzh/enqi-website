@@ -1,0 +1,707 @@
+<template>
+	<div id="app">
+		<NavAndFooter v-if="windowWidth<800" @show-type="childByValue"></NavAndFooter>
+		<Menu v-if="windowWidth<800"></Menu>
+		<div class="light_hint">
+			杭州西湖中心正在建设中，敬请期待...
+		</div>
+		<div class="appointment" :class="showBox==true?'m-show-box':''">
+			<div class="appointment-view">
+				<!-- <form id="appointment" rules="rules" :model="ruleForm"> -->
+				<div class="close" @click="closeBox">
+<!--					<img src="../public/images/enqibaidu.jpg" alt="">-->
+					<img src="../public/images/guanbi.png" alt="" v-if="windowWidth > 800">
+					<img src="../public/mImages/appguan.png" alt="" v-if="windowWidth < 800">
+				</div>
+				<div class="physical">立即预约</div>
+				<div class="message">郑重承诺：您的信息我们严格保密，请您放心填写</div>
+				<el-form :model="ruleForm" id="appointment" :rules="rules" ref="ruleForm" class="demo-ruleForm">
+					<!-- 姓名、性别 -->
+					<div class="ipts">
+						<el-form-item prop="name">
+							<el-input v-model="ruleForm.name" placeholder="孩子姓名*" name="chName"></el-input>
+						</el-form-item>
+						<el-form-item prop="value"  v-if="windowWidth>800">
+							<el-select v-model="ruleForm.value" placeholder="孩子性别*" name="chGender">
+								<el-option label="男" value="男"></el-option>
+								<el-option label="女" value="女"></el-option>
+							</el-select>
+						</el-form-item>
+						<!-- 移动端s -->
+						<input type="text" class="m-input" v-if="windowWidth<800" data-type="1"  v-model="ruleForm.value" readonly="readonly" @click="showPopup($event)" placeholder="孩子性别*" name="chGender">
+						<div v-if="popup1">
+							<van-popup v-model="maskType"  position="bottom"  v-if="windowWidth<800">
+								<van-picker
+								  title=""
+								  show-toolbar
+								  :columns="age"
+								  @confirm="onConfirm"
+								  @cancel="onCancel"
+								/>
+							</van-popup>
+						</div>
+						<!-- 移动端e -->
+					</div>
+					<!-- 出生日期 -->
+					<div class="ipt" v-if="windowWidth>800">
+						<el-form-item prop="value1">
+							<el-date-picker class="applyDate" v-model="ruleForm.value1" type="date" placeholder="孩子出生日期*" name="chBirthday">
+							</el-date-picker>
+						</el-form-item>
+					</div>
+					<!-- 移动端s -->
+					<div class="ipt" v-if="windowWidth<800">
+						<input type="text" class="m-input" data-type="2"  v-model="ruleForm.value1" readonly="readonly"  @click="showPopup($event)" placeholder="孩子出生日期*" name="chBirthday">
+						<div v-if="popup2">
+							<van-popup v-model="maskType"  position="bottom">
+								<van-datetime-picker
+								  v-model="currentDate"
+								  type="date"
+								  title=""
+								  :min-date="minDate"
+								  :max-date="maxDate"
+								  @confirm="onConfirmTime"
+								  @cancel="onCancel"
+								/>
+							</van-popup>
+						</div>
+					</div>
+					<!-- 移动端e -->
+					<!-- 省市 -->
+					<div class="ipt" v-if="windowWidth>800">
+						<el-form-item prop="provinceAndCity">
+							<el-cascader v-model="ruleForm.provinceAndCity" :options="options" :props="{ label: 'label', value:'label' }"
+							 placeholder="您的地区*"></el-cascader>
+							<input type="hidden" v-model="ruleForm.provinceAndCity" name="address" :label="options">
+						</el-form-item>
+					</div>
+					<!-- 移动端s -->
+					<div class="ipt" v-if="windowWidth<800">
+						<input type="text" class="m-input"  v-model="ruleForm.provinceAndCity" readonly="readonly" data-type="3"  @click="showPopup($event)" placeholder="您的地区*" name="address">
+						<div v-if="popup3">
+							<van-popup v-model="maskType"  position="bottom">
+								<van-area title="" :area-list="areaList" @confirm="onConfirmAdd"  @cancel="onCancel"/>
+							</van-popup>
+						</div>
+					</div>
+					<!-- 移动端e -->
+					<!-- 选择中心 -->
+					<div class="ipt"  v-if="windowWidth>800">
+						<el-form-item prop="ideaValue">
+							<el-select v-model="ruleForm.ideaValue" placeholder="请选择预约中心*" name="targetOrg" class="applyHome">
+								<el-option v-for="item in idea" :key="item.value" :label="item.label" :value="item.value">
+								</el-option>
+							</el-select>
+						</el-form-item>
+					</div>
+					<!-- 移动端s -->
+					<div class="ipt"  v-if="windowWidth<800">
+						<input type="text" class="m-input" data-type="4"  v-model="ruleForm.ideaValue" readonly="readonly"  @click="showPopup($event)" placeholder="请选择预约中心*" name="targetOrg">
+						<div v-if="popup4">
+							<van-popup v-model="maskType"  position="bottom">
+								<van-picker
+								  title=""
+								  show-toolbar
+								  :columns="orgArr"
+								  @confirm="onConfirmOrg"
+								  @cancel="onCancel"
+								/>
+							</van-popup>
+						</div>
+					</div>
+					<!-- 移动端e -->
+					<!-- 联系方式 -->
+					<div class="ipt">
+						<el-form-item prop="iphone">
+							<el-input v-model="ruleForm.iphone" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="您的联系电话*" name="mmPhone" type="age"></el-input>
+						</el-form-item>
+					</div>
+					<div class="hint"></div>
+
+					<el-form-item>
+						<div class="present" @click="submitForm('ruleForm')">
+							<el-button type="primary">提交</el-button>
+						</div>
+					</el-form-item>
+				</el-form>
+			</div>
+			<div class="submit-true">
+<!--				<img src="../public/images/enqibaidu.jpg" alt="">-->
+				<div class="true-close"><img src="../public/images/guanbi.png" alt=""></div>
+				<div class="true-right"><img src="../public/images/chenggong.png" alt=""></div>
+				<div class="true-txt1">恭喜您，预约成功！</div>
+				<div class="true-txt2">请保持电话畅通，我们会及时联系您。</div>
+				<div class="true-code"></div>
+				<div class="true-txt3">微信扫码关注[恩启特教平台]获取更多科学干预指南</div>
+			</div>
+		</div>
+		<router-view />
+	</div>
+</template>
+<script>
+	import "./js/jquery-1.7.2.min.js";
+	import './js/jquery.mousewheel.js';
+	import './js/hScrollPane.js';
+	import './js/jquery.sudySlider.m.js';
+	import './js/imagesloaded.pkgd.min.js';
+	import AddArr from "./assets/citys.json";
+	import MAddArr from "./js/m_add.js";
+	import NavAndFooter from "./components/mIndex/NavAndFooter.vue";
+	import Menu from "./components/mIndex/menu.vue"
+
+	export default {
+		name: "",
+		components: {
+			NavAndFooter,
+			Menu
+		},
+		data() {
+			return {
+				formView: true,
+				succeed: false,
+				maskType:false,
+				popup1:false,
+				popup2:false,
+				popup3:false,
+				popup4:false,
+				showBox:false,
+				windowWidth:window.innerWidth,
+				ruleForm: {
+					name: '',
+					provinceAndCity: '',
+					value1: '',
+					ideaValue: '',
+					iphone: '',
+					sheng: '',
+					city: '',
+				},
+				errorVal: '',
+				options: [],
+				idea: [{
+						value: '恩启IDEA·教研中心',
+						label: '恩启IDEA·教研中心'
+					},
+					{
+						value: '恩启IDEA·北京朝阳中心',
+						label: '恩启IDEA·北京朝阳中心'
+					},
+					{
+						value: '恩启IDEA·北京海淀中心',
+						label: '恩启IDEA·北京海淀中心'
+					},
+					{
+						value: '恩启IDEA·上海静安中心',
+						label: '恩启IDEA·上海静安中心'
+					},
+					{
+						value: '恩启IDEA·深圳华侨城中心',
+						label: '恩启IDEA·深圳华侨城中心'
+					},
+				],
+				rules: {
+					name: [{
+							required: true,
+							message: '请输入孩子名称',
+							trigger: 'blur'
+						},
+						{
+							min: 2,
+							max: 10,
+							message: '长度在 2 到 10 个字符',
+							trigger: 'blur'
+						}
+					],
+					value: [{
+						required: true,
+						message: '请选择性别',
+						trigger: 'change'
+					}],
+					provinceAndCity: [{
+						required: true,
+						message: '请选择地址',
+						trigger: 'change'
+					}],
+					value1: [{
+						type: 'date',
+						required: true,
+						message: '请选择出生日期',
+						trigger: 'blur'
+					}],
+
+					iphone: [{
+							required: true,
+							message: '请输入联系电话',
+							trigger: 'blur'
+						},
+						{
+							min: 11,
+							max: 11,
+							message: '请输入11位正确联系电话',
+							trigger: 'blur'
+						}
+					],
+					ideaValue: [{
+						required: true,
+						message: '请选择中心',
+						trigger: 'change'
+					}]
+				},
+				pickerOptions1: {
+					disabledDate(time) {
+						return time.getTime() > Date.now();
+					}
+				},
+				age: ['男', '女'],
+				areaList:'',
+				orgArr:['恩启IDEA·教研中心','恩启IDEA·北京朝阳中心','恩启IDEA·北京海淀中心','恩启IDEA·上海静安中心','恩启IDEA·深圳华侨城中心'],
+				minDate: new Date(1970, 0, 1),
+			    maxDate: new Date(),
+			    currentDate: new Date(),
+			}
+		},
+		mounted() {
+			console.log('%c恩 %c启 %c官 %c网 %cwww.ingcare.com','color:green','color:red','color:#ff33cc','color:purple','color:red');
+			if(window.innerWidth > 800){
+				this.options = AddArr;
+
+			}else{
+				this.areaList=MAddArr;
+			}
+			$(".true-close img").click(function() {
+				$(".appointment").fadeOut();
+				$('.submit-true').hide();
+				$('.appointment-view').show();
+			});
+
+			//站长统计
+			const script = document.createElement('script')
+			script.src = 'https://s9.cnzz.com/z_stat.php?id=1279072658&web_id=1279072658'
+			script.language = 'JavaScript'
+			document.body.appendChild(script)
+		},
+		watch:{
+			'$route'(to ,from){
+				if(to.meta.index<from.meta.index){
+					this.moveName='move-right';
+				}else{
+					this.moveName='move-left';
+				}
+
+				if (window._czc) {
+				  let location = window.location
+				  let contentUrl = location.pathname + location.hash
+				  let refererUrl = '/'
+				  window._czc.push(['_trackPageview', contentUrl, refererUrl])
+				}
+			}
+		},
+		methods: {
+			submitForm(formName) {
+				this.$refs[formName].validate((valid) => {
+					if (valid) {
+						$.ajax({
+							type: "post",
+							dataType: 'json',
+							url: "https://app.ingcare.com/wap/common/research/children/submitFweb.do",
+							data: $("#appointment").serialize(),
+							success: function(data) {
+								if (data.extension == 1 || data.extension == '1') {
+									$('.appointment-view').hide();
+									$('.submit-true').show();
+								} else if (data.extension == 2 || data.extension == '2') {
+									$(".hint").html(data.message == '' ? '' : data.message);
+								}
+							},
+							error: function(e) {
+								console.log(e);
+							}
+						})
+					} else {
+						console.log('error submit!!');
+						return false;
+					}
+				});
+				_czc.push(﻿["_trackEvent","首页","立即预约（提交）","","",]);
+			},
+			resetForm(formName) {
+				this.$refs[formName].resetFields();
+			},
+			showPopup(e){
+				document.activeElement.blur();
+				let eType=e.target.getAttribute('data-type');
+				if(eType == 1){
+					this.popup2=false;
+					this.popup3=false;
+					this.popup4=false;
+					this.popup1=true;
+				}else if(eType == 2){
+					this.popup1=false;
+					this.popup3=false;
+					this.popup4=false;
+					this.popup2=true;
+				}else if(eType == 3){
+					this.popup1=false;
+					this.popup2=false;
+					this.popup4=false;
+					this.popup3=true;
+				}else if(eType == 4){
+					this.popup1=false;
+					this.popup2=false;
+					this.popup3=false;
+					this.popup4=true;
+				}
+				this.maskType=!this.maskType;
+			},
+			onConfirm(picker, value, index){
+				this.ruleForm.value = picker;
+				this.maskType=!this.maskType;
+			},
+			onConfirmAdd(picker, value, index){
+				let address=picker[0].name+','+picker[1].name+','+picker[2].name;
+				this.ruleForm.provinceAndCity = address;
+				this.maskType=!this.maskType;
+			},
+			onConfirmOrg(picker, value, index){
+				this.ruleForm.ideaValue = picker;
+				this.maskType=!this.maskType;
+			},
+			onConfirmTime(picker, value, index){
+				let date =new Date(picker);
+				let Y = date.getFullYear() +'-';
+				let M = (date.getMonth() +1 <10 ?'0' + (date.getMonth() +1) : date.getMonth() +1) +'-';
+			    let D = date.getDate();
+				this.ruleForm.value1 = Y+M+D;
+				this.maskType=!this.maskType;
+			},
+			onCancel(){
+				this.maskType=!this.maskType;
+				setTimeout(function(){
+					this.popup1=false;
+					this.popup2=false;
+					this.popup3=false;
+					this.popup4=false;
+				},1000)
+			},
+			childByValue(data){
+				this.showBox=data;
+			},
+			closeBox(){
+				this.showBox=false;
+				$('.appointment').fadeOut();
+			}
+		}
+	}
+</script>
+<style lang="scss">
+	@import './style/base.css';
+	.light_hint{
+		position: fixed;
+		width:458px;
+		height:54px;
+		font-size:16px;
+		background:rgba(0,0,0,0.78);
+		line-height: 54px;
+		z-index: 15;
+		border-radius:10px;
+		color: #fff;
+		text-align: center;
+		left: 50%;
+		margin-left: -234.5px;
+		top: 100px;
+		display: none;
+	}
+	.el-form-item__error{
+		color: #cc4454 !important;
+	}
+	.el-form-item__content {
+		margin-left: 0 !important
+	}
+		.submit-true {
+			width: 376px;
+			height: 431px;
+			background: rgba(240, 247, 247, 1);
+			border-radius: 5px;
+			position: absolute;
+			display: none;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	.true-code {
+		width: 160px;
+		height: 160px;
+		margin: 15px auto 0;
+		background: url(../public/images/true.png)no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.true-right {
+		width: 100%;
+		height: 78px;
+
+		img {
+			display: block;
+			width: 78px;
+			height: 100%;
+			margin: 34px auto 0;
+			padding-top: 25px;
+		}
+	}
+
+	.true-txt1,
+	.true-txt2 {
+		width: 100%;
+		text-align: center;
+		color: #1DBFB3;
+	}
+
+	.true-txt1 {
+		margin: 35px auto 13px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.true-txt2 {
+		font-size: 15px;
+		font-weight: 400;
+	}
+
+	.true-txt3 {
+		width: 100%;
+		text-align: center;
+		font-size: 12px;
+		font-weight: 400;
+		color: rgba(51, 51, 51, 1);
+		margin-top: 20px;
+	}
+
+	.hint {
+		width: 100%;
+		font-size: 12px;
+		font-weight: 400;
+		color: rgba(255, 255, 255, 1);
+		text-align: center;
+		margin-top: 14px;
+		color: #cc4454;
+	}
+
+	.appointment {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		background: rgba(18, 25, 25, 0.7);
+		display: none;
+	}
+	.m-show-box{
+		display: block!important;
+	}
+	.appointment-view {
+		width: 425px;
+		height: 564px;
+		background: rgba(59, 178, 177, 1);
+		border-radius: 5px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+
+	.close {
+		width: 84px;
+		height: 56px;
+		position: absolute;
+		cursor: pointer;
+		right: -42px;
+		top: -28px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.true-close {
+		width: 84px;
+		height: 56px;
+		position: absolute;
+		cursor: pointer;
+		right: -42px;
+		top: -28px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.physical {
+		width: 100%;
+		text-align: center;
+		font-size: 21px;
+		font-weight: bold;
+		color: rgba(255, 255, 255, 1);
+		padding: 42px 0 22px 0;
+	}
+
+	.message {
+		width: 100%;
+		text-align: center;
+		font-size: 14px;
+		font-weight: bold;
+		color: rgba(255, 212, 119, 1);
+	}
+
+	.el-cascader {
+		width: 100%;
+	}
+
+	.ipts {
+		width: 84%;
+		height: 40px;
+		display: flex;
+		margin: 29px auto 0;
+		justify-content: space-between;
+
+		input {
+			width: 160px;
+			background: rgba(226, 243, 243, 1);
+			border-radius: 18px;
+			font-size: 14px;
+			font-weight: 400;
+			color: #158584;
+			border: none;
+		}
+	}
+
+	.ipt {
+		width: 84%;
+		height: 40px;
+		display: flex;
+		margin: 27px auto 0;
+
+		input {
+			width: 354px;
+			background: rgba(226, 243, 243, 1);
+			border-radius: 18px;
+			font-size: 14px;
+			font-weight: 400;
+			color: #158584;
+			border: none;
+		}
+	}
+
+	.present {
+		width: 84%;
+		height: 40px;
+		margin: 20px auto 0;
+	}
+
+	.el-button--primary {
+		width: 100% !important;
+		border-radius: 20px !important;
+		background: #F8B33A !important;
+		border: none !important;
+		letter-spacing: 3px;
+	}
+	@media screen and (max-width:1366px){
+		.site-shop-chaoyang-left-image{
+			width: 560px !important;
+		    height: 267px !important;
+		}
+		.leftBtn, .rightBtn{
+			top: 13% !important;
+		}
+		.rightBtn{
+			right: 27px !important;
+		}
+		.site-shop-chaoyang-left-scroll{
+			width: 560px !important;
+		}
+		.cut-title{
+		    width: 560px !important;
+		}
+		.cut-title ul li{
+		   font-size: 14px !important;
+		}
+	}
+
+	@media screen and (max-width: 800px){
+		.submit-true{
+			width: 307px;
+		}
+		.true-right img{
+			width: 60px;
+			height: 60px;
+			margin: 42px auto 0;
+			padding-top: 0	;
+		}
+		.true-right{
+			height: 54px;
+		}
+		.true-txt1{
+			margin: 12px auto 8px;
+			font-size: 16px;
+		}
+		.true-txt2{
+			font-size: 14px;
+		}
+		.true-code{
+			width: 157px;
+			height: 157px;
+		}
+		.true-txt3{
+			font-size: 12px;
+			color: #444444;
+		}
+		.appointment-view{
+			width: 339px;
+			height: 490px;
+		}
+		.close{
+			width: 37px;
+			height: 37px;
+			right: -9px;
+		    top: -14px;
+		}
+		.physical{
+			font-weight: initial;
+			padding: 24px 0 16px 0;
+		}
+		.ipts{
+			margin: 20px auto 0;
+		}
+		.ipt{
+			margin: 20px auto 0;
+		}
+		.message{
+			font-weight: initial;
+		}
+		.ipts input{
+			width: 144px;
+			height: 36px;
+			padding-left: 16px;
+			box-sizing: border-box;
+		}
+		.ipt input{
+			width: 307px;
+			height: 36px;
+			padding-left: 16px;
+			box-sizing: border-box;
+		}
+		.ipts,.ipt,.present{
+			width: 90%;
+		}
+		input::-webkit-input-placeholder{
+			color:#AEB5B5 ;
+		}
+	}
+</style>

@@ -1,0 +1,1296 @@
+<template>
+	<main>
+		<div class="home-nav-top">
+			<img src="../../public/images/logo3.png" alt="恩启">
+			<div>
+				<input type="button" value="在线预约" class="home-banner-btn2 button_hover" />
+				<a href="/" class="show_up">首页</a>
+				<a href="/Site" class="show_cont">
+					直营连锁
+					<ul>
+						<li><a href="/Site?status=1">北京</a></li>
+						<li><a href="/Site?status=2">上海</a></li>
+						<li><a href="/Site?status=3">深圳</a></li>
+					</ul>
+				</a>
+				<a href="/Ingclass" class="show_cont">
+					恩启学院
+					<ul>
+						<li><a href="/IdeaTheory">教师成长</a></li>
+						<li><a href="/Patriarch">家长成长</a></li>
+						<li><a href="/Idea">专项培训</a></li>
+					</ul>
+				</a>
+				<a href="/Teacher" class="show_up">科研教研</a>
+				<a href="/Product" class="show_up">互联网产品</a>
+				<a href="/Partner" class="show_cont">
+					加入我们
+					<ul>
+						<li><a href="/Partner?status=1">薪资福利</a></li>
+						<li><a href="/Partner?status=2">学习成长</a></li>
+						<li><a href="/Partner?status=3">招聘职位</a></li>
+					</ul>
+				</a>
+				<a href="/AboutUs" class="show_cont">
+					关于我们
+					<ul>
+						<li><a href="">关于恩启</a></li>
+						<li><a href="">IDEA理念</a></li>
+						<li><a href="">企业荣誉</a></li>
+						<li><a href="">发展历程</a></li>
+						<li><a href="">公司事件</a></li>
+						<li><a href="">责任和公益</a></li>
+					</ul>
+				</a>
+				<a href="/Contact" class="show_phone" style="font-weight: Bold;font-size: 20px;margin-right: 30px;">
+					400-606-2105
+					<ul style="width: 120px !important;height: 52px !important;">
+						<li style="width:100% !important;font-weight: 300 !important;color: #666 !important;"><a href="/Contact">联系我们</a></li>
+					</ul>
+				</a>	
+			</div>
+		</div>
+		<div class="home" data-scroll>
+
+			<div class="home_banner">
+				<el-carousel trigger="click" :style="height">
+					<el-carousel-item :style="height">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590387118505&di=17b36e874f0eb4e8162c1eafe21bad1a&imgtype=0&src=http%3A%2F%2F3732784.s21i-3.faidns.com%2F2%2FABUIABACGAAgxaP3qQUogPOy4QIwywg44AU.jpg"
+						 alt />
+					</el-carousel-item>
+					<el-carousel-item :style="height">
+						<img src="http://bpic.588ku.com/back_pic/00/04/20/33/f9864e86d94bf4260564fec9e287c658.jpg" alt />
+
+					</el-carousel-item>
+					<div class="home-banner-nav">
+						<input type="button" value="在线预约" class="home-banner-btn2 button_hover" />
+						<a href="/" class="show_up">首页</a>
+						<a href="/Site" class="show_cont">
+							直营连锁
+							<ul>
+								<li><a href="/Site?status=1">北京</a></li>
+								<li><a href="/Site?status=2">上海</a></li>
+								<li><a href="/Site?status=3">深圳</a></li>
+							</ul>
+						</a>
+						<a href="/Ingclass" class="show_cont">
+							恩启学院
+							<ul>
+								<li><a href="/IdeaTheory">教师成长</a></li>
+								<li><a href="/Patriarch">家长成长</a></li>
+								<li><a href="/Idea">专项培训</a></li>
+							</ul>
+						</a>
+						<a href="/Teacher" class="show_up">科研教研</a>
+						<a href="/Product" class="show_up">互联网产品</a>
+						<a href="/Partner" class="show_cont">
+							加入我们
+							<ul>
+								<li><a href="/Partner?status=1">薪资福利</a></li>
+								<li><a href="/Partner?status=2">学习成长</a></li>
+								<li><a href="/Partner?status=3">招聘职位</a></li>
+							</ul>
+						</a>
+						<a href="/AboutUs" class="show_cont">
+							关于我们
+							<ul>
+								<li><a href="">关于恩启</a></li>
+								<li><a href="">IDEA理念</a></li>
+								<li><a href="">企业荣誉</a></li>
+								<li><a href="">发展历程</a></li>
+								<li><a href="">公司事件</a></li>
+								<li><a href="">责任和公益</a></li>
+							</ul>
+						</a>
+						<a href="/Contact" class="show_phone" style="font-weight: Bold;font-size: 20px;">
+							400-606-2105
+							<ul style="width: 120px !important;">
+								<li style="width:100% !important;font-weight: 300 !important;color: #666 !important;"><a href="/Contact">联系我们</a></li>
+							</ul>
+						</a>
+					</div>
+				</el-carousel>
+				<div class="home-theme">
+					<ul class="home-theme-up">
+						<li style="background: rgb(19, 163, 155,0.9);" @click="recovery()">
+							<div>
+								<span>儿童康复</span>
+								<p>Rehabilitation of Children</p>
+								<img src="../../public/images/jiantou.png" alt="">
+							</div>
+							<div>
+								<img src="../../public/images/theme_1.jpg" alt="恩启/恩启课堂">
+								<span style="background: rgb(49, 164, 156,0.86);">让每一个孩子，都能享受到更好的康复教 育服务。</span>
+							</div>
+						</li>
+						<li style="background: rgb(236, 115, 59,0.9);" @click="train()">
+							<div>
+								<span>教师培训</span>
+								<p>Teacher Training</p>
+								<img src="../../public/images/jiantou.png" alt="">
+							</div>
+							<div>
+								<img src="../../public/images/theme_2.jpg" alt="恩启/恩启课堂">
+								<span style="background: rgb(236, 115, 59,0.86);">用科学的技术和方法，促进孤独症行业 康复教育水平提升。</span>
+							</div>
+						</li>
+						<li style="background: rgb(44, 126, 199,0.9);" @click="product">
+							<div>
+								<span>线上服务</span>
+								<p>Online Service</p>
+								<img src="../../public/images/jiantou.png" alt="">
+							</div>
+							<div>
+								<img src="../../public/images/theme_3.jpg" alt="恩启/恩启课堂">
+								<span style="background: rgb(44, 126, 199,0.86);">让互联网为特殊群体创造幸福。</span>
+							</div>
+						</li>
+						<li style="background: rgb(231, 184, 49,0.9);" @click="teacher()">
+							<div>
+								<span>科研教研</span>
+								<p>Teaching and Research</p>
+								<img src="../../public/images/jiantou.png" alt="">
+							</div>
+							<div>
+								<img src="../../public/images/theme_4.jpg" alt="恩启/恩启课堂">
+								<span style="background: rgb(231, 188, 61,0.86);">恩启与国内外科学家合作，开展关于自 闭症的科学研究。</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="home-site-title home-site-title1">
+				<span class="home-site-left" :class="leftClass"></span>
+				<!-- <img src="../../public/images/qiqisamll.png" style="margin-left: 23px;" alt=""> -->
+				<div class="home-site-title-centre">
+					<p><span :class="topClass">A Better You， A Bigger World</span></p>
+					<p><span :class="topClass">给你的，正如你想给孩子的</span></p>
+				</div>
+				<!-- <img src="../../public/images/miaomiaosmall.png" style="margin-right: 23px;" alt=""> -->
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="home-site">
+				<div class="swiper-wrapper swiper-container" id="case4">
+					<ul class="home-site-scroll swiper-wrapper">
+						<li class="os1 swiper-slide" @click="sunhe()" data-index="0">
+							<div>
+								<span>恩启IDEA·教研中心 13021253543</span>
+								<b></b>
+								<p>北京市 朝阳区 孙河地铁站对面弘园 五号创意生活园A5</p>
+							</div>
+							<div>
+								<img src="../../public/images/enqidian1.jpg" alt="">
+							</div>
+						</li>
+						<li class="os2 swiper-slide" data-index="1" @click="goChangYang()">
+							<div>
+								<img src="../../public/images/enqidian2.jpg" alt="">
+								<span style="background: rgb(236, 128, 77,0.4);"></span>
+							</div>
+							<div class="as2">
+								<span style="color: #EC804D;">恩启IDEA·北京朝阳中心 13621231783</span>
+								<b style="background: #EC804D;"></b>
+								<p>北京市 朝阳区 常营非中心11号楼4层 恩启IDEA朝阳中心</p>
+							</div>
+						</li>
+						<li class="os3 swiper-slide" data-index="2" @click="haidian()">
+							<div>
+								<span style="color: #2979CD;">恩启IDEA·北京海淀中心 18513342186</span>
+								<b style="background: #2979CD;"></b>
+								<p>北京市 海淀区 西四环北路69号（四季 青桥附近）</p>
+							</div>
+							<div>
+								<img src="../../public/images/enqidian3.jpg" alt=""><span style="background: rgb(29, 75, 191,0.4);"></span>
+							</div>
+						</li>
+						<li class="os4 swiper-slide" data-index="3" @click="jingan()">
+							<div>
+								<img src="../../public/images/enqidian4.jpg" alt="">
+								<span style="background: rgb(212, 181, 74,0.4);"></span>
+							</div>
+							<div>
+								<span style="color: #F0C019;">恩启IDEA·上海静安中心 16628575989</span>
+								<b style="background: #F0C019;"></b>
+								<p>上海市 静安区 大宁中心广场二期B9</p>
+							</div>
+						</li>
+						<li class="os5 swiper-slide" data-index="4" @click="huaqiaocheng()">
+							<div>
+								<span style="color: #32BAB6;">恩启IDEA·深圳华侨城中心 13682420696</span>
+								<b style="background: #32BAB6;"></b>
+								<p>深圳市 南山区 侨城坊3栋3A恩启IDEA华 侨城中心</p>
+							</div>
+							<div>
+								<img src="../../public/images/enqidian5.jpg" alt=""><span style="background: rgb(50, 186, 182,0.4);"></span>
+							</div>
+						</li>
+						<li class="os6 swiper-slide" data-index="5" style="background: #A1E5E3;">
+							<div>
+								<img src="../../public/images/jianshe.png" alt="恩启/建设中" style="width:221px;height: 175px;display: block;margin: 33px auto 0;">
+							</div>
+							<div class="flex">
+								建设中，敬请期待...
+							</div>
+						</li>
+					</ul>
+					<!-- 滚动条 -->
+					<div class="swiper-scrollbar"></div>
+				</div>
+			</div>
+
+			<!-- 加入我们 -->
+			<div class="home-joinus">
+				<img src="../../public/images/logo_left.png" alt="恩启/特教平台">
+				<span>打造领衔时代的教师团队，培训创新一流的特教精英！</span>
+				<a href="/Partner" class="button_hover">加入我们</a>
+			</div>
+			<!-- 支持伙伴 -->
+			<div style="width: 100%;height: auto;background: #fff;">
+				<div class="home-partner">
+					<div class="home-site-title home-site-title2" style="margin-top: 0;">
+						<span class="home-site-left" :class="leftClassOne" style="width: 43%;"></span>
+						<!-- <img src="../../public/images/qiqisamll.png" style="margin-left: 23px;"> -->
+						<div class="home-site-title-centre">
+							<p><span style="margin-top: 9px;font-weight: bold;" :class="topClassOne">支持伙伴</span></p>
+						</div>
+						<!-- 	<img src="../../public/images/miaomiaosmall.png" style="margin-right: 23px;">-->
+						<span class="home-site-right" :class="rightClassOne" style="width: 43%;"></span>
+					</div>
+					<div class="home-partner-image"><img src="../../public/images/zhichihuoban.png" alt="支持伙伴"></div>
+				</div>
+				<div class="Height"></div>
+			</div>
+			<div id="slider"></div>
+			<!-- 底部 -->
+			<Footer></Footer>
+		</div>
+		<Top></Top>
+	</main>
+</template>
+<script>
+	import Footer from "../components/index/Footer.vue";
+	import Top from "../components/index/Top.vue";
+	import {
+		shows
+	} from "../js/scrollHtml.js"
+	import Swiper from 'swiper';
+	import 'swiper/css/swiper.min.css';
+	export default {
+		name: 'Home',
+		components: {
+			Footer,
+			Top
+		},
+		data() {
+			return {
+				height: {
+					height: window.innerHeight + 'px',
+				},
+				topClass: '',
+				topClassOne: '',
+				leftClass: '',
+				leftClassOne: '',
+				rightClass: '',
+				rightClassOne: ''
+			}
+		},
+		mounted() {
+			var swiper = new Swiper('#case4', {
+				loop: true, //允许从第一张到最后一张，或者从最后一张到第一张  循环属性
+				slidesPerView: 4, // 设置显示三张
+				//centeredSlides : true,     //使当前图片居中显示
+				freeMode: true, // 使幻灯片滑动时不止滑动一格，且不会自动贴合 
+				slidesPerGroup: 1, //定义1张图片为一组
+				autoplay: false, //可选选项，自动滑动
+				speed: 6000, //设置过度时间
+				grabCursor: true, //鼠标样式根据浏览器不同而定 
+				autoplay: {
+					delay: 1,
+					disableOnInteraction: false,
+				},
+				scrollbar: {
+					el: '.swiper-scrollbar',
+					dragSize: 150
+				},
+			});
+			let w = $(window).width();
+			shows();
+			$(".home-banner-nav a:last,.home-nav-top>div a:last").addClass("nav_active");
+			window.addEventListener('scroll', this.NavScrollFunction, true);
+			$(".home-banner-btn").click(function() {
+				$(".appointment").fadeIn();
+			});
+			$(".home-banner-btn2").click(function() {
+				$(".appointment").fadeIn();
+			});
+			//儿童服务、教师培训、线上服务、科研教研
+			$(".home-theme-up li").mouseenter(function(event) {
+				$(this).find("div:first img").stop().animate({
+					"opacity": 1,
+					"right": "-6px"
+				}).show();
+				$(this).find("div:first p").stop().animate({
+					"left": "0"
+				});
+				$(this).find("div:first span").stop().animate({
+					"left": "0"
+				});
+				$(this).find("div:last span").stop().animate({
+					"left": "0"
+				}).show();
+				event.stopPropagation();
+			}).mouseleave(function(event) {
+				$(this).find("div:first img").stop().animate({
+					"opacity": 0,
+					"right": "0"
+				}, function() {
+					$(this).hide();
+				});
+				$(this).find("div:last span").stop().animate({
+					"left": "-100%"
+				}).show();
+				$(this).find("div:first p").stop().animate({
+					"left": "10px"
+				});
+				$(this).find("div:first span").stop().animate({
+					"left": "10px"
+				});
+				event.stopPropagation();
+			})
+			$(".home-site ul li").mouseenter(function(event) {
+				$(this).stop().removeClass("stop_top").addClass("up_top");
+				event.stopPropagation();
+			}).mouseleave(function(event) {
+				$(this).stop().removeClass("up_top").addClass("stop_top");
+				event.stopPropagation();
+			})
+		},
+		methods: {
+			NavScrollFunction() {
+				if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+					$(".home-banner-nav").hide();
+					$(".home-nav-top").fadeIn(200);
+				} else {
+					$(".home-nav-top").hide();
+					$(".home-banner-nav").fadeIn(200);
+				}
+				this.scrollnumber($('.home-site-title1'), 'font_active_up', 50, 1);
+				this.scrollnumber($('.home-site-title2'), 'font_active_up', 50, 2);
+			},
+			scrollnumber(element, cssname, offset, type) {
+				let a, b, c, d;
+				d = $(element).offset().top;
+				a = eval(d + offset);
+				b = $(window).scrollTop();
+				c = $(window).height();
+				if (b + c > a) {
+					if (type == 1 && this.topClass == "") {
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					} else if (type == 2 && this.topClassOne == "") {
+						this.topClassOne = 'font_active_up';
+						this.leftClassOne = 'font_active_left';
+						this.rightClassOne = 'font_active_right';
+					}
+				}
+			},
+			train() {
+				let train = this.$router.resolve({
+					path: '/train'
+				});
+				window.location.href = train.href;
+			},
+			product() {
+				let product = this.$router.resolve({
+					path: '/product'
+				});
+				window.location.href = product.href;
+			},
+			teacher() {
+				let teacher = this.$router.resolve({
+					path: '/teacher'
+				});
+				window.location.href = teacher.href;
+			},
+			sunhe() {
+				this.$router.push({
+					path: '/sunhe'
+				});
+				let train = this.$router.resolve({
+					path: '/train'
+				});
+				window.location.href = train.href;
+			},
+			haidian() {
+				let haidian = this.$router.resolve({
+					path: '/haidian'
+				});
+				window.location.href = haidian.href;
+			},
+			recovery() {
+				let childrenRecovery = this.$router.resolve({
+					path: '/childrenrecovery'
+				});
+				window.location.href = childrenRecovery.href;
+			},
+			jingan() {
+				let jingan = this.$router.resolve({
+					path: '/jingan'
+				});
+				window.location.href = jingan.href;
+			},
+			huaqiaocheng() {
+				let shenzhen = this.$router.resolve({
+					path: '/shenzhen'
+				});
+				window.location.href = shenzhen.href;
+			},
+			goChangYang() {
+				let chaoyang = this.$router.resolve({
+					path: '/chaoyang'
+				});
+				window.location.href = chaoyang.href;
+			}
+		}
+	}
+</script>
+<style lang="scss">
+@import '../style/base.css';
+.hemo {background: #EDF5F5 !important;}
+html {overflow-x: hidden;}
+body {background: #EDF5F5;}
+.swiper-wrapper {transition-timing-function: linear !important;}
+.swiper-scrollbar {
+	background: #2BB7B3;
+	width: 70% !important;
+	left: 15% !important;
+	display: block !important;
+	opacity: 1 !important;
+	height: 13px !important;
+	padding: 4px 0;
+	bottom: -40px !important;
+	overflow: hidden;
+}
+.swiper-container {overflow: inherit !important;}
+.swiper-scrollbar-drag {
+	background: #fff;
+	height: 5px;
+}
+.el-carousel__container {height: 100% !important;}
+.home_banner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+.home-banner-nav {
+	width: 81%;
+	height: 87px;
+	font-size: 14px;
+	cursor: pointer;
+	line-height: 87px;
+	background: rgba(255, 255, 255, .9);
+	position: absolute;
+	right: 0;
+	top: 23px;
+	z-index: 2;
+	>a {
+		float: left;
+		color: #20A9A0;
+		font-family: MicrosoftYaHei;
+		margin-left: 4%;
+		display: inline-block;
+		height: 87px;
+		float: left;
+	}
+	span {
+		color: #20A9A0;
+		font-size: 20px;
+		font-weight: bold;
+		margin-left: 3%;
+		float: right;
+		margin-right: 3%;
+	}
+	input {
+		float: right;
+		margin-right: 60px;
+		margin-top: 22px;
+	}
+}
+.home-banner-nav span>a {color: #20A89E;}
+.show_cont {position: relative;}
+.show_cont ul {
+	position: absolute;
+	width: 100px !important;
+	display: inline-block;
+	border-radius: 3px;
+	background: #fff;
+	top: 65px;
+	left: -20px;
+	display: none;
+	margin: 0 !important;
+}
+.show_cont ul li {
+	height: 45px !important;
+	line-height: 45px !important;
+	text-align: center;
+	a {
+		color: #333;
+	}
+}
+.show_cont::after {
+	content: "";
+	display: inline-block;
+	width: 7px;
+	height: 12px;
+	background: url(../../public/images/jiantou_bottom.png) no-repeat;
+	background-size: 100%;
+	visibility: hidden;
+	margin-left: 4px;
+}
+.show_up:hover {
+	border-bottom: none !important;
+	transform: translateY(-8px);
+	transition-duration: .5s;
+	-moz-transition-duration: .5s;
+	/* Firefox 4 */
+	-webkit-transition-duration: .5s;
+	/* Safari 和 Chrome */
+	-o-transition-duration: .5s;
+	/* Opera */
+}
+.show_cont:hover {
+	border-bottom: none !important;
+	transform: translateY(-8px);
+	transition-duration: .5s;
+	-moz-transition-duration: .5s;
+	/* Firefox 4 */
+	-webkit-transition-duration: .5s;
+	/* Safari 和 Chrome */
+	-o-transition-duration: .5s;
+	/* Opera */
+	>ul {
+		display: block;
+	}
+}
+
+.show_cont:hover::after {visibility: visible;}
+.home-nav-top {
+	width: 100%;
+	height: 87px;
+	font-size: 14px;
+	cursor: pointer;
+	line-height: 87px;
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: none;
+	box-shadow: 0px 4px 32px 0px rgba(36, 40, 40, 0.09);
+	>div {
+		width: 83%;
+		float: right;
+	}
+	img {
+		display: block;
+		width: 160px;
+		height: 40px;
+		float: left;
+		margin: 22px 0 0 62px;
+	}
+	div>a {
+		float: left;
+		color: #20A9A0;
+		font-family: MicrosoftYaHei;
+		display: inline-block;
+		height: 87px;
+		text-align: center;
+		margin-left: 4%;
+		ul {
+			background: #fff;
+			border-radius: 3px;
+			margin: -10px auto 0;
+			width: 90px;
+			display: none;
+			li {
+				height: 60px;
+				line-height: 60px;
+				color: #20A9A0;
+			}
+		}
+	}
+	div input {
+		float: right;
+		margin-top: 22px;
+		margin-right: 66px;
+	}
+	div span {
+		color: #20A9A0;
+		font-size: 20px;
+		font-weight: bold;
+		margin-left: 46px;
+		margin-right: 35px;
+		float: right;
+		a {
+			color: #20A9A0;
+		}
+	}
+}
+.home-banner-btn,.home-banner-btn2 {
+	width: 118px;
+	height: 42px;
+	background: rgba(236, 128, 77, 1);
+	border-radius: 4px;
+	border: none;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 400;
+	cursor: pointer;
+	outline: none;
+}
+.home-theme {
+	width: 100%;
+	position: absolute;
+	z-index: 5;
+	top: 85.4%;
+	left: 0;
+}
+.home-theme-up li p,.home-theme-up li span {
+	position: relative;
+	left: 10px;
+}
+.home-theme-up li div:first-child {
+	height: 125px;
+}
+.home-theme-up {
+	width: 93%;
+	margin: 0 auto;
+	display: flex;
+	color: #FFFFFF;
+	li:first-child span {
+		font-family: MicrosoftYaHei;
+	}
+	li {
+		width: 25%;
+		span {
+			padding: 40px 0 0 27px;
+			font-size: 20px;
+			display: inline-block;
+		}
+		p {
+			padding: 10px 0 0 27px;
+		}
+	}
+}
+.home-theme-up li div:first-child img {
+	display: block;
+	width: 46px;
+	height: 26px;
+	float: right;
+	margin: -24px 35px 0 0;
+	display: none;
+	position: relative;
+	right: 0;
+}
+	.home-theme-up {
+		cursor: pointer;
+	}
+
+	.home-theme-up {
+		width: 93%;
+		display: flex;
+		margin: 0 auto;
+
+		li div:last-child {
+			width: 100%;
+			height: 210px;
+			position: relative;
+			overflow: hidden;
+
+			span {
+				position: absolute;
+				top: 0;
+				left: -100%;
+				display: inline-block;
+				width: 100%;
+				height: 210px;
+				color: #FFFFFF;
+				font-size: 14px;
+				padding: 59px 26px 0;
+				font-weight: 300px;
+			}
+		}
+
+		li:hover>div:last-child img {
+			transform: scale(1.05);
+			transition-duration: 1s;
+			transition-timing-function: linear;
+		}
+
+		li div:last-child img {
+			transition-duration: .8s;
+		}
+	}
+
+	.home-site-title {
+		display: flex;
+		height: 200px;
+		margin: 356px auto 0;
+		align-items: center;
+		overflow: hidden;
+
+		img {
+			display: inline-block;
+			width: 31px;
+			height: 47px;
+		}
+	}
+
+	.os1>div:first-child,
+	.os3>div:first-child,
+	.os5>div:first-child {
+		padding: 64px 0 0 45px;
+		box-sizing: border-box;
+		position: relative;
+		z-index: 7;
+	}
+
+	.os4 b {
+		width: 124px;
+		height: 3px;
+		display: block;
+		background: rgb(240, 192, 25);
+		margin-top: 40px;
+	}
+
+	.os2>div:nth-child(2),
+	.os4>div:nth-child(2) {
+		padding: 64px 0 0 45px;
+		box-sizing: border-box;
+		position: relative;
+		z-index: 7;
+	}
+    .os4>div:nth-child(2) span{
+		font-weight: bold;
+	}
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 33%;
+		height: 2px;
+		// opacity: 50%;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		p:first-child {
+			height: 65px !important;
+			overflow: hidden;
+		}
+
+		p:last-child {
+			height: 30px;
+			overflow: hidden;
+		}
+
+		p:first-child span {
+			font-size: 25px !important;
+			color: #1DBFBA;
+			font-family: MicrosoftYaHei-Bold;
+			font-weight: bold;
+			display: inline-block;
+			margin-top: 23px;
+			opacity: 0;
+			letter-spacing: 2px;
+		}
+
+		p:last-child span {
+			color: #1BB8B3;
+			font-size: 18px;
+			font-weight: 300;
+			padding-top: 6px;
+			display: inline-block;
+			opacity: 0;
+		}
+	}
+
+	.home-site {
+		width: 96.5%;
+		// border: 1px solid;
+		margin-left: 3.5%;
+		position: relative;
+		height: 524px;
+		margin: 22px 0 0 3.5%;
+
+		ul {
+			width: 2700px;
+			display: flex;
+			position: absolute;
+
+			li {
+				// border: 1px solid;
+				background: #FFFFFF;
+				margin: 0 20px;
+				overflow: hidden;
+				cursor: pointer;
+				position: relative;
+				border-radius: 10px;
+				width: 393px !important;
+
+				div {
+					width: 393px;
+					height: 262px;
+					overflow: hidden;
+				}
+
+				img {
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			li::after {
+				content: "";
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				// background: #FFFFFF;
+				transform: rotate(44deg);
+				-o-transform: rotate(44deg);
+				-webkit-transform: rotate(44deg);
+				-moz-transform: rotate(44deg);
+				position: absolute;
+				left: 45px;
+				top: 252px;
+				z-index: 6;
+			}
+		}
+	}
+
+	.home-site::-webkit-scrollbar {
+		display: none;
+	}
+
+.os1 span,.as2 span,.os3 span,.as4 span,.os5 span {
+	display: inline-block;
+	font-size: 17px;
+	font-weight: bold;
+	color: #1DBFBA;
+}
+.os1 b,.as2 b,.os3 b,.as4 b,.os5 b {
+	width: 124px;
+	height: 3px;
+	display: block;
+	background: #1DBFBA;
+	margin-top: 40px;
+}
+.os1 p,.as2 p,.os3 p,.as4 p,.os5 p,.os4 p {
+	display: inline-block;
+	width: 244px;
+	font-size: 15px;
+	color: #222D3D;
+	margin-top: 40px;
+}
+.os1 a,.as2 a,.os3 a,.as4 a,.os5 a {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: #FFFFFF;
+	transform: rotate(44deg);
+	-o-transform: rotate(44deg);
+	-webkit-transform: rotate(44deg);
+	-moz-transform: rotate(44deg);
+	position: absolute;
+	left: 45px;
+	bottom: -10px;
+	z-index: 6;
+}
+.os1,.os2,.os3,.as1,.as2,.as3,.as4,.os4,.os5,.as5 {position: relative;}
+	.home-joinus {
+		width: 90%;
+		height: 139px;
+		margin: 87px auto 0;
+		background-image: url(../../public/images/bggg.png);
+		background-size: cover;
+		color: #FFFFFF;
+		padding: 0 100px;
+		box-sizing: border-box;
+		line-height: 139px;
+
+		img {
+			width: 190px;
+			height: 47px;
+			display: block;
+			float: left;
+			margin-top: 43px;
+			margin-right: 40px;
+		}
+
+		span {
+			font-size: 22px;
+			float: left;
+		}
+
+		a {
+			display: inline-block;
+			font-size: 18px;
+			background: #EC804D;
+			border: 1px solid #EC804D;
+			color: #FFFFFF;
+			border-radius: 4px;
+			width: 185px;
+			height: 53px;
+			text-align: center;
+			line-height: 53px;
+			float: right;
+			margin-top: 43px;
+		}
+	}
+
+	.home-partner {
+		width: 100%;
+		height: 611px;
+		background: #FFFFFF;
+		margin-top: 105px;
+	}
+
+	.home-partner-image {
+		width: 82%;
+		margin: 0 auto;
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.up_top {
+		-webkit-animation-duration: .5s;
+		animation-duration: .5s;
+		-webkit-animation-name: up_top_fun;
+		animation-name: up_top_fun;
+		animation-fill-mode: forwards;
+	}
+
+	.os1:hover::after {
+		background: #1DBFBA !important;
+	}
+
+	.os1:hover>div:first-child {
+		background: #1DBFBA;
+
+		span,
+		p {
+			color: #fff !important;
+		}
+
+		b {
+			background: #fff !important;
+		}
+	}
+
+	.os2:hover::after {
+		background: rgb(236, 128, 77) !important;
+	}
+
+	.os2:hover>div:last-child {
+		background: rgb(236, 128, 77);
+
+		span,
+		p {
+			color: #fff !important;
+		}
+
+		b {
+			background: #fff !important;
+		}
+	}
+
+	.os3:hover::after {
+		background: rgb(41, 121, 205) !important;
+	}
+
+	.os3:hover>div:first-child {
+		background: rgb(41, 121, 205);
+
+		span,
+		p {
+			color: #fff !important;
+		}
+
+		b {
+			background: #fff !important;
+		}
+	}
+
+	.os4:hover::after {
+		background: rgb(240, 192, 25) !important;
+	}
+
+	.os4:hover>div:last-child {
+		background: rgb(240, 192, 25);
+
+		span,
+		p {
+			color: #fff !important;
+		}
+
+		b {
+			background: #fff !important;
+		}
+	}
+
+	.os5:hover::after {
+		background: #1DBFBA !important;
+	}
+
+	.os5:hover>div:first-child {
+		background: #1DBFBA;
+
+		span,
+		p {
+			color: #fff !important;
+		}
+
+		b {
+			background: #fff !important;
+		}
+	}
+
+	.home-site ul li:last-child div:last-child {
+		background: #fff;
+		color: #1DBFBA;
+		font-size: 22px;
+	}
+
+	@keyframes up_top_fun {
+		0% {
+			transform: translateY(0);
+		}
+
+		100% {
+			transform: translateY(-15px);
+		}
+	}
+
+	@-moz-keyframes up_top_fun
+
+	/* Firefox */
+		{
+		0% {
+			transform: translateY(0);
+		}
+
+		100% {
+			transform: translateY(-15px);
+		}
+	}
+
+	@-webkit-keyframes up_top_fun
+
+	/* Safari 和 Chrome */
+		{
+		0% {
+			transform: translateY(0);
+		}
+
+		100% {
+			transform: translateY(-15px);
+		}
+	}
+
+	@-o-keyframes up_top_fun
+
+	/* Opera */
+		{
+		0% {
+			transform: translateY(0);
+		}
+
+		100% {
+			transform: translateY(-15px);
+		}
+	}
+
+	.stop_top {
+		-webkit-animation-duration: .5s;
+		animation-duration: .5s;
+		-webkit-animation-name: up_top_fun1;
+		animation-name: up_top_fun1;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes up_top_fun1 {
+		0% {
+			transform: translateY(-15px);
+		}
+
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	@-moz-keyframes up_top_fun1
+
+	/* Firefox */
+		{
+		0% {
+			transform: translateY(-15px);
+		}
+
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	@-webkit-keyframes up_top_fun1
+
+	/* Safari 和 Chrome */
+		{
+		0% {
+			transform: translateY(-15px);
+		}
+
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	@-o-keyframes up_top_fun1
+
+	/* Opera */
+		{
+		0% {
+			transform: translateY(-15px);
+		}
+
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	@media screen and (min-width: 1500px)and(max-width: 2500px) {
+		.home-theme-up li div:last-child {
+			width: 100%;
+			height: 270px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.home-theme-up li div:last-child span {
+			height: 270px;
+		}
+
+		.home-nav-top span {
+			font-size: 18px;
+		}
+	}
+
+	.os6>div:last-child {
+		background: #fff;
+		color: #1DBFBA;
+		font-size:18px;
+		font-weight: bold;
+	}
+
+	//笔记本电脑s
+	@media screen and (min-width: 700px)and(max-width: 1400px) {
+		.home-theme {
+			top: 66.4%;
+		}
+
+		.home-site-left,
+		.home-site-right {
+			width: 30%;
+		}
+
+		.home-banner-btn,
+		.home-banner-nav>a,
+		.home-nav-top div>a {
+			margin-left: 3%;
+		}
+
+		.home-site-title {
+			margin-top: 300px;
+		}
+
+		.home-nav-top div input,
+		.home-banner-nav input {
+			margin-right: 55px;
+
+		}
+
+		.home-site ul li {
+			width: 343px !important;
+		}
+
+		.home-site ul li div {
+			width: 343px;
+			height: 212px;
+		}
+
+		.home-site {
+			height: 424px;
+		}
+.os1 span,.as2 span,.os3 span,.as4 span,.os5 span {font-size: 16px;}
+.os1 b,.as2 b,.os3 b,.as4 b,.os5 b,.os1 p,.as2 p,.os3 p,.as4 p,.os5 p,.os4 p {margin-top: 30px;}
+	.os1>div:first-child,
+	.os3>div:first-child,
+	.os5>div:first-child,
+	.os2>div:nth-child(2),
+	.os4>div:nth-child(2) {
+		padding: 50px 0 0 30px
+	}
+}
+	@media screen and (min-width: 1680px)and(max-width: 2100px){
+		.home-theme{
+		    top: 86.7%;
+		}
+	}
+	@media screen and (min-width: 1300px)and(max-width: 1450px){
+		.home-theme{
+			top: 85%;
+		}
+	}
+	@media screen and (min-width: 1500px)and(max-width: 1600px){
+		.home-theme{
+			top: 85%;
+		}
+	}
+	@media screen and (min-width: 1430px)and(max-width: 1450px){
+		.home-theme{
+			top: 84%;
+		}
+	}
+	@media screen and (min-width: 1780px)and(max-width: 2100px){
+		.home-nav-top div > a{margin-left: 5%;}
+		.home-banner-nav > a {margin-left: 6%;}
+	}
+	@media screen and (min-width:1900px){
+		.home-partner-image{
+			height: 432px;
+			background: #fff;
+		}
+		.Height{
+			width: 100%;
+			height: 100px;
+		}
+	}
+</style>

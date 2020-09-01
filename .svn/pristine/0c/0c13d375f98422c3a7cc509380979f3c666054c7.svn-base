@@ -1,0 +1,130 @@
+<template>
+	<div class="footer">
+		<div class="commonality-footer">
+			<div class="commonality-footer-left flex"><img src="../../../public/images/logo_left.png" alt="恩启/特教平台"></div>
+			<div class="commonality-footer-right">
+				<div class="commonality-footer-right-skip">
+					<a href="/AboutUs?status=1">关于恩启</a>
+					<a href="/AboutUs?status=2">IDEA理念</a>
+					<a href="/AboutUs?status=4">发展历程</a>
+					<a href="/AboutUs?status=5">公司事件</a>
+					<a href="/AboutUs?status=6">责任与公益</a>
+					<a href="/AboutUs?status=0">合作伙伴</a>
+					<a href="/AboutUs?status=3">企业荣誉</a>
+					<a href="/Contact">联系我们</a>
+				</div>
+				<div class="commonality-footer-right-skip">
+					<a href="/Contact">联系我们</a>
+					<a href="/Site">直营连锁</a>
+					<a href="/Contact?status=1">中心地址</a>
+					<a href="/Partner">招聘信息</a>
+				</div>
+				<div class="commonality-footer-right-skip" style="width: 105px;">
+					<a href="/Product">相关产品</a>
+					<a href="http://www.ingclass.org/" target="_blank">恩启云课堂</a>
+					<a href="/Product?status=4">恩启特教平台</a>
+					<a href="http://home.vbmapp.cn/webstage/common/login/index.do?redirectUrl=http://www.vbmapp.cn/" target="_blank">VB-MAPP评估助手</a>
+					<a href="http://www.ingbbs.com/" target="_blank">恩启社区 </a>
+					<a href="/Product?status=5" style="width: 120px;">IDEA在家</a>
+					<a href="/Product?status=6">Openk</a>
+				</div>
+				<div class="commonality-footer-right-service">
+					<img src="../../../public/images/kefu.png" alt="恩启/恩启客服/特教平台">
+					<span>客服热线</span>
+					<p>400-606-2105</p>
+				</div>
+				<div class="commonality-footer-right-service">
+					<img class="erweima" src="../../../public/images/erweima.png" alt="恩启/恩启客服/特教平台">
+					<span>恩启特教平台公众号</span>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<a target="_blank" href="http://www.beian.miit.gov.cn">版权所有：北京正在关怀科技有限公司 京ICP备14040965号-1</a>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		name:"",
+		components: {},
+		methods:{
+		
+		}
+	}
+</script>
+
+<style lang="scss">
+
+	.commonality-footer{
+		width: 100%;
+		height: 232px;
+		display: flex;
+	}
+	.commonality-footer-left{
+		width: 25%;
+		height: 232px;
+		background:#2BBFBB ;
+		img{
+			display: block;
+			width: 190px;
+			height: 47px;
+		}
+	}
+	.commonality-footer-right{
+		width: 75%;
+		height: 232px;
+		background: #2BB7B3;
+		display: flex;
+	}
+	.commonality-footer-right-skip{
+		width: 90px;
+		height: 220px;
+		margin: 22px 0 0 88px;
+		a{
+			float: left;
+			color: #FFFFFF;
+			font-size: 12px;
+			padding-top: 8px;
+		}
+	}
+	.commonality-footer-right-service{
+		width: 170px;
+		text-align: center;
+		color: #FFFFFF;
+		margin-left: 5%;
+		img{
+			display: block;
+			width: 83px;
+			height: 85px;
+			margin:45px auto 13px;
+		}
+		span{
+			font-size: 12px;
+		}
+		p{
+			font-weight: 700;
+			font-size: 18px;
+			padding-top: 10px;
+		}
+	}
+	.erweima{
+		display: block;
+		width: 119px !important;
+		height: 119px !important;
+		// margin: 0 auto !important;
+	}
+	.footer-copyright{
+		width: 100%;
+		height:52px ;
+		line-height: 52px;
+		background:#28AFAB ;
+		color: #FFFFFF;
+		font-size: 11px;
+		text-align: center;
+		a{
+			color: #FFFFFF;
+		}
+	}
+</style>

@@ -1,0 +1,108 @@
+<template>
+	<div class="m-nav-and-footer">
+		<div class="m-nav">
+			<ul>
+				<li></li>
+				<li  class="flex" @click="showMenu">菜单</li>
+			</ul>
+		</div>
+		
+		<div class="m-fixed-footer">
+			<ul>
+				<li><a :href="'tel:' + 4006062105" class="flex">客服热线</a></li>
+				<li><a href="javascript:;" class="flex" @click="emitToParent">立即预约</a></li>
+			</ul>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default{
+		methods:{
+			showMenu(){
+				  this.$root.eventVue.$emit('showMenu',true);
+			},
+			emitToParent(){
+				this.$emit("show-type",true);
+			}
+		}
+	}
+</script>
+
+<style  lang="scss">
+	.m-nav{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 20px 18px;
+		box-sizing: border-box;
+		z-index: 2;
+		background: #fff;
+		overflow: hidden;
+		box-shadow: 0 0 4px rgba(0,0,0,.12);
+		ul li{
+			float: left;
+		}
+		ul li:last-child{
+			float: right;
+			font-size: 14px;
+		}
+		ul li:first-child{
+			width: 75px;
+			height: 19px;
+			background: url(../../../public/images/logo3.png) no-repeat;
+			background-size: 100%;
+		}
+		ul li:last-child::before{
+			content: "";
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			background: url(../../../public/mImages/menu.png) no-repeat;
+			background-size: 100%;
+			margin-right: 2px;
+		}
+	}
+	.m-fixed-footer{
+		position: fixed;
+		width: 100%;
+		padding: 10px 30px;
+		box-sizing: border-box;
+		overflow: hidden;
+		background: #fff;
+		bottom: 0;
+		left: 0;
+		z-index: 4;
+		box-shadow: 0 0 4px rgba(0,0,0,.12);
+		ul>li{
+			float: left;
+			a{
+				width: 140px;
+				height: 45px;
+				line-height: 45px;
+				text-align: center;
+				background: #EC804D;
+				color: #fff;
+				font-size: 16px;
+				border-radius: 4px;
+			}
+		}
+		ul>li a::before{
+			content: "";
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			background: url(../../../public/mImages/phone.png) no-repeat;
+			background-size: 100%;
+			margin-right: 2px;
+		}
+		ul>li:last-child{
+			float: right;
+		}
+		ul>li:last-child a::before{
+			background: url(../../../public/mImages/yuyue.png) no-repeat;
+			background-size: 100%;
+		}
+	}
+</style>

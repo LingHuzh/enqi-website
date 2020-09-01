@@ -1,0 +1,205 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+
+Vue.use(VueRouter)
+
+const routes = [{
+		path: '/',
+		name: 'Home',
+		component: Home,
+		meta: {
+			title: '恩启自闭症-让康复更有效',
+			content: {
+				keywords: '恩启、自闭症、孤独症、康复、儿童康复、IDEA、EIS、清华X-lab、康复训练、康复辅导、特殊儿童康复、自闭症儿童康复、孤独症儿童康复、康复机构、康复中心、自闭症儿童康复中心、自闭症儿童康复机构、孤独症儿童康复中心、孤独症儿童康复机构、评估工具、融合、个别化、个别化教育、IEP、个别化家庭支持、黄金干预期、ABA、融合预备、早期密集、学前融合、恩启公益',
+				description: '恩启诞生于2014年，清华x-lab孵化出的社会创新项目，致力于为自闭症儿童及其家长提供康复训练与家庭康复辅导。业务主要包括儿童康复教育线上平台、特殊教育培训、自闭症儿童评测软件及SaaS管理软件授权、自闭症儿童康复中心连锁经营。'
+			}
+		}
+	},
+	{
+		path: '/footer',
+		name: 'Footer',
+		component: () => import('../components/index/Footer.vue')
+	},
+	{
+		path: 'top',
+		name: 'Top',
+		component: () => import('../components/index/Top.vue')
+	},
+	{
+		path: 'nav',
+		name: 'Nav',
+		component: () => import('../components/index/Nav.vue')
+	},
+	{
+		path: '/partner',
+		name: 'Partner',
+		component: () => import('../components/page/Partner.vue'),
+		meta: {
+			title: '加入我们-恩启官网',
+			content: {
+				keywords: '招聘、教务、人才招聘、加入我们、特教',
+				description: '恩启诞生于2014年，专注于为2-6岁自闭症儿童提供全面的康复训练服务。目前已经在国内成立多家线下康复中心，如你关注自闭症行业，欢迎关注恩启。'
+			}
+		}
+	},
+	{
+		path: '/teacher',
+		name: 'Teacher',
+		component: () => import('../components/page/Teacher.vue'),
+		meta: {
+			title: '科研教研-恩启官网',
+			content: {
+				keywords: '恩启教研团队通过为自闭症诊断的幼儿建立一个数据库，促进对自闭症原因的进一步跨学科研究。',
+				description: '恩启、自闭症、孤独症、康复、儿童康复、IDEA、EIS'
+			}
+		}
+	},
+	{
+		path: '/contact',
+		name: 'Contact',
+		component: () => import('../components/page/Contact.vue'),
+		meta: {
+			title: '联系我们-恩启官网',
+			content: {
+				keywords: '恩启咨询，联系电话，恩启官网联系方式，中心地址',
+				description: '恩启诞生于2014年，专注于为2-6岁自闭症儿童提供全面的康复训练服务。目前已经在国内成立多家线下康复中心，如你关注自闭症行业，欢迎关注恩启。'
+			}
+		}
+	},
+	{
+		path: '/map',
+		name: 'Map',
+		component: () => import('../components/index/Map.vue')
+	},
+	{
+		path: '/site',
+		name: 'Site',
+		component: () => import('../components/page/Site.vue'),
+		meta: {
+			title: '直营连锁-恩启官网',
+			content: {
+				keywords: '康复训练、康复辅导、特殊教育、特殊培训、特殊儿童康复、自闭症儿童康复、孤独症儿童康复、康复机构、康复中心、自闭症儿童康复中心、自闭症儿童康复机构、孤独症儿童康复中心、孤独症儿童康复机构、儿童康复、融合、个别化、个别化教育、IEP、个别化家庭支持、黄金干预期、ABA、融合预备、早期密集、学前融合、言语、言语评估、言语训练、言语康复',
+				description: '恩启诞生于2014年，专注于为2-6岁自闭症儿童提供全面的康复训练服务。目前已经在国内成立多家线下康复中心，如你关注自闭症行业，欢迎关注恩启。本栏目为您提供康复中心地址、联系方式等相关信息介绍。'
+			}
+		}
+	},
+	{
+		path: '/product',
+		name: 'Product',
+		component: () => import('../components/page/Product.vue'),
+		meta: {
+			title: '互联网产品-恩启官网',
+			content: {
+				keywords: '恩启微信公众号、恩启社区、IDEA在家、Openk、线上服务、互联网产品',
+				description: '恩启是一家教育科技公司，以科技和内容创新为核心竞争力，围绕国内自闭症儿童家庭的康复训练需求，自2014年起，已先后创建了特殊教育培训平台、自闭症儿童康复效果评估工具、自闭症儿童康复教育在线社区等线上产品。'
+			}
+		}
+
+	},
+	{
+		path: '/aboutus',
+		name: 'AboutUs',
+		component: () => import('../components/page/AboutUs.vue'),
+		meta: {
+			title: '关于我们-恩启官网',
+			content: {
+				keywords: '恩启、自闭症、孤独症、康复、儿童康复、IDEA、EIS、清华X-lab、恩启公益、发展历史',
+				description: '恩启诞生于2014年，专注于为2-6岁自闭症儿童提供全面的康复训练服务。目前已经在国内成立多家线下康复中心，如你关注自闭症行业，欢迎关注恩启。'
+			}
+		}
+	},
+	{
+		path: '/ingclass',
+		name: 'Ingclass',
+		component: () => import('../components/page/Ingclass.vue'),
+		meta: {
+			title: '恩启学院-恩启官网',
+			content: {
+				keywords: '恩启诞生于2014年，专注于为2-6岁自闭症儿童提供全面的康复训练服务。用科学的技术和方法，促进孤独症行业康复教育水平提升，让每一个孩子都能享受到更好的康复教育服务。为自闭症康复家长、教师提供科学、系统的在线课程、咨询服务。',
+				description: 'IDEA、培训、VB-MAPP培训、家长培训、教师培训、恩启云课堂'
+			}
+		}
+	},
+	{
+		path: '/ideaTheory',
+		name: 'IdeaTheory',
+		component: () => import('../components/page/IdeaTheory.vue'),
+		meta: {
+			title: 'IEDA基础理论课-恩启学院-恩启官网',
+			content: {
+				keywords: '恩启、自闭症、孤独症、正在关怀、自闭症儿童、高功能自闭症、孤独症儿童、特教、特殊教育、特教老师、自闭症孩子的特征、自闭症的表现、孤独症的表现、孤独症症状、孤独症考证、孤独症学习、孤独症教师培训、孤独症成因、自闭症成因、自闭症干预、特教老师培训、自闭症课程、自闭症免费课程、孤独症上岗证、自闭症上岗证、孤独症从业资格证、自闭症从业资格证',
+				description: '中国权威的自闭症康复在线教育平台，为自闭症儿童的家长和孤独症康复教师提供科学、系统的在线课程、咨询服务。恩启IDEA教研中心为2-6岁自闭症儿童提供全面的康复训练服务。'
+			}
+		}
+	},
+	{
+		path: '/idea',
+		name: 'Idea',
+		component: () => import('../components/page/Idea.vue'),
+		meta: {
+			title: 'VB-MAPP软件评估师课程-恩启学院-恩启官网',
+			content: {
+				keywords: '恩启、自闭症、孤独症、正在关怀、自闭症儿童、高功能自闭症、孤独症儿童、特教、特殊教育、特教老师、自闭症孩子的特征、自闭症的表现、孤独症的表现、孤独症症状、孤独症考证、孤独症学习、孤独症教师培训、孤独症成因、自闭症成因、自闭症干预、特教老师培训、自闭症课程、自闭症免费课程、孤独症上岗证、自闭症上岗证、孤独症从业资格证、自闭症从业资格证',
+				description: '中国权威的自闭症康复在线教育平台，为自闭症儿童的家长和孤独症康复教师提供科学、系统的在线课程、咨询服务。恩启IDEA教研中心为2-6岁自闭症儿童提供全面的康复训练服务。'
+			}
+		}
+	},
+	{
+		path: '/train',
+		name: 'Train',
+		component: () => import('../components/page/Train.vue'),
+		meta: {
+			title: '教师培训-恩启官网',
+			content: {
+				keywords: '教师培训、恩启培训、恩启云课堂、特教老师、线上服务、徐紫薇、王学钢',
+				description: '恩启教师培训专注于自闭症行业教师专业技能提升培训，评估师培训。为自闭症康复教师提供科学、系统的在线课程、咨询服务。'
+			}
+		}
+	},
+	{
+		path: '/cityDetail',
+		name: 'CityDetail',
+		component: () => import('../components/page/CityDetail.vue'),
+		meta: {
+			title: '',
+			content: {
+				keywords: '',
+				description: ''
+			}
+		}
+	},
+	{
+		path: '/childrenrecovery',
+		name: 'ChildrenRecovery',
+		component: () => import('../components/page/ChildrenRecovery.vue'),
+		meta: {
+			title: '儿童康复-恩启官网',
+			content: {
+				keywords: '康复、儿童康复、IDEA、EIS、清华X-lab、康复训练、康复辅导、特殊儿童康复、自闭症儿童康复、孤独症儿童康复、康复机构、康复中心、自闭症儿童康复中心、自闭症儿童康复机构、孤独症儿童康复中心、孤独症儿童康复机构、评估工具、融合、个别化、个别化教育、IEP、个别化家庭支持、黄金干预期、ABA、融合预备、早期密集、学前融合',
+				description: '恩启专注于为2-6岁自闭症儿童提供全面的康复训练服务。提供服务有VB-MAPP评估、言语评估、早期密集课程、融合预备课程、学前融合课程、言语课程、体能课程等。'
+			}
+		}
+	},
+	{
+		path: '/patriarch',
+		name: 'Patriarch',
+		component: () => import('../components/page/Patriarch.vue'),
+		meta: {
+			title: '家长通识课-恩启学院-恩启官网',
+			content: {
+				keywords: '恩启、自闭症、孤独症、正在关怀、自闭症儿童、高功能自闭症、孤独症儿童、特教、特殊教育、特教老师、自闭症孩子的特征、自闭症的表现、孤独症的表现、孤独症症状、孤独症考证、孤独症学习、孤独症教师培训、孤独症成因、自闭症成因、自闭症干预、特教老师培训、自闭症课程、自闭症免费课程、孤独症上岗证、自闭症上岗证、孤独症从业资格证、自闭症从业资格证',
+				description: '中国权威的自闭症康复在线教育平台，为自闭症儿童的家长和孤独症康复教师提供科学、系统的在线课程、咨询服务。恩启IDEA教研中心为2-6岁自闭症儿童提供全面的康复训练服务。'
+			}
+		}
+	}
+
+]
+
+const router = new VueRouter({
+	mode: 'history',
+	base: process.env.BASE_URL,
+	routes
+})
+
+export default router

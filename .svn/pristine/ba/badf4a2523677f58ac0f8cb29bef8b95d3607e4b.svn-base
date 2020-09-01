@@ -1,0 +1,405 @@
+<template>
+	<main>
+	<Nav></Nav>
+	<div class="partner-introduce-top-box" v-show="showTop">
+		<div>
+			<div class="partner-introduce-box-left partner-introduce-box-fixed">
+				<span class="active" @click="Welfare()">Primary Research Focus</span>
+				<span style="margin-top: 45px;" @click="Study()">Lab Projects and News</span>
+				<span style="margin-top: 45px;" @click="Recruitment()">Meet the IDEA Team</span>
+			</div>
+		</div>
+	</div>
+	<div class="partner"  data-scroll>
+		<div class="public_banner">
+			<img src="../../../public/images/keyanjiaoyan.jpg" alt="">
+		</div>
+		<div class="partner-introduce-box-welfare">
+			<div class="home-site-title home-site-title1" style="margin-top: 80px;">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 23px;font-weight: normal;" :class="topClass">IDEA  LAB</span></p>
+					<p class="active-p" style="width: 403px;"><span style="color: #1BB8B3 !important;" :class="topClass">Close the Gap between Research and Practice</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="partner-introduce-box">
+				<div class="partner-introduce-box-left" v-show="showBottom">
+					<span class="active" @click="Welfare()">Primary Research Focus</span>
+					<span style="margin-top: 45px;" @click="Study()">Lab Projects and News</span>
+					<span style="margin-top: 45px;" @click="Recruitment()">Meet the IDEA Team</span>
+				</div>
+				<div class="partner-introduce-box-right">
+					<span>Primary Research Focus</span>
+					<div class="study-txt">The IDEA lab has been helping to advance understanding of autism by pursuing and funding
+						research on its cause, diagnosis, assessment, and treatment. The lab’s main goal is to promote the equity of
+						medical and educational resources through the use of data-based technology. Specifically, it aims at providing
+						and equalizing high-quality resources for the diagnosis, assessment, and intervention of ASD with the help of
+						data-driven AI and 5G technology. </div>
+					<div class="study-txt">Currently, its research is on the AI-assisted early screening and diagnosis, the web-based
+						curriculum-based assessment and databases, and technology-assisted delivery of effective treatment and
+						teleconsultation services.</div>
+					<div class="study-txt">The research of the lab may propose large-scale solution to the diagnosis, assessment, and
+						treatment of ASD in China. It might also facilitate further inter-disciplinary research on the causes of ASD
+						through the creation of a database for young children with autism diagnosis.</div>
+				</div>
+			</div>
+		</div>
+		<div class="partner-introduce-box-study">
+			<div class="partner-introduce-box">
+				<div class="partner-introduce-box-left study-left">
+
+				</div>
+				<div class="partner-introduce-box-right study-right">
+					<span>Lab Projects and News</span>
+					<p class="activeTop">1. The Web-based VB-MAPP Assessment and Database </p>
+					<p class="activeTop">Project Title: Promoting the Use of Web-based VB-MAPP in China: Some Preliminary Findings </p>
+					<div class="study-txt">Currently, this objective of this project is to picture the use of web-based VB-MAPP in
+						China, the images of Chinese assessors and caregivers, and the changing distribution of assessment resources.
+						With further data collection and analysis, it will explore the correlations between </div>
+					<p>(1) fertile age and ASD diagnosis in China and </p>
+					<p>(2) children’s performances in different skill milestones. </p>
+					<p class="activeTop">2. The Use of Teleconsultation for Professional Training </p>
+					<p class="activeTop">Project Title: The Use of Teleconsultation for Professional Training in China: The Need of
+						Caregivers and Teachers </p>
+					<div class="study-txt">This is an investigation of the emotional and professional needs of caregivers and special
+						education teachers. Through the use of survey and psychology scales, the project aims at depicting the current
+						level of social support for caregivers, the level of stress of caregivers, and the quality of existing
+						professional trainings for teachers. </div>
+					<p class="activeTop">3. The Pace of Instruction in Treatment </p>
+					<p class="activeTop">Project Title: The Effects of Two Teacher Presentation Rates on Responding During Easy and
+						Hard Tasks for Children at Risk for or with ASD. </p>
+					<p class="activeTop">The purpose of this project is to investigate the correlation between the pace of instruction
+						and </p>
+					<p>(1) the accuracy of responding, </p>
+					<p>(2) the occurrence of disruptive behaviors. With the use of an alternating treatment embedded in ABAB without
+						baseline design, this study is a partial replication and an extension of Roxburgh’s and Carbone’s research in
+						2012.</p>
+				</div>
+			</div>
+		</div>
+		<div class="partner-introduce-box-recruitment">
+			<div class="partner-introduce-box">
+				<div class="partner-introduce-box-left study-left"></div>
+				<div class="partner-introduce-box-right study-right">
+					<span style="padding-top: 63px;">Meet the IDEA Team</span>
+					<!-- Ziwei Xu, -->
+					<div class="Self-introduction">
+						<img src="../../../public/images/ziwei.png" alt="">
+						<span style="padding-left: 0;">Ziwei Xu</span>
+						<p>Ph.D., BCBA-D</p>
+						<p style="padding-top: 6px;" class="ab">Primary Investigator</p>
+					</div>
+					<div class="study-txt">Dr. Xu is the academic director of the Autism Initiative Program at the Institute for
+						Accessibility Development, Tsinghua University. She has been dedicating to solving the training deficits in the
+						areas of applied behavior analysis and evidence-based practices for individuals with autism.</div>
+					<div class="study-txt">Dr. Xu holds a Ph.D. in special education from the Ohio State University and specializes in
+						effective assessment and instruction based upon Skinner’s analysis of verbal behavior, development of training
+						curricula that utilize the application of applied behavior analysis, and teleconsultation for professionals and
+						parents. Dr. Xu cherishes interdisciplinary scientific cooperation. </div>
+					<div class="study-txt">Email address: xuziwei@mail.tsinghua.edu.cn</div>
+					<!-- Youruo Ma -->
+					<div class="Self-introduction">
+						<img src="../../../public/images/ma.png" alt="">
+						<span style="padding-left: 0;">Youruo Ma</span>
+						<p>ME</p>
+						<p style="padding-top: 6px;" class="ab">Research Associate</p>
+					</div>
+					<div class="study-txt">Youruo Ma joined the lab in 2019 to assist the team in its research on the use of web-based
+						VB-MAPP. She studies the correlation between various types of data, including the children’s performances across
+						different milestones. </div>
+					<div class="study-txt">Ma holds a Master’s degree in early childhood education from the Teachers College, Columbia
+						University.</div>
+					<!-- Kaiwen Zhu -->
+					<div class="Self-introduction">
+						<img src="../../../public/images/zhu.png" alt="">
+						<span style="padding-left: 0;">Kaiwen Zhu</span>
+						<p>MS</p>
+						<p style="padding-top: 6px;" class="ab">Research Assistant</p>
+					</div>
+					<div class="study-txt">Kaiwen Zhu joined the lab in 2019 to assist the team in its research on teleconsultation
+						for teachers and caregivers. He studies the effectiveness of teleconsultation in the professional training for
+						teachers.</div>
+					<div class="study-txt">Zhu holds a Master’s degree in development, disorders and clinical practice from the
+						University of York.</div>
+					<!-- Zijun Ren -->
+					<div class="Self-introduction">
+						<img src="../../../public/images/ren.png" alt="">
+						<span style="padding-left: 0;">Zijun Ren</span>
+						<p>MS</p>
+						<p style="padding-top: 6px;" class="ab">Research Assistant</p>
+					</div>
+					<div class="study-txt">Zijun Ren joined the lab in 2020 to assist the team in its research on teleconsultation for
+						teachers and caregivers. She studies the emotional and professional impact of teleconsultation on caregivers.
+					</div>
+					<div class="study-txt">Ren holds a Master’s degree in psychological research from the University of Edinburgh.</div>
+				</div>
+			</div>
+		</div>
+		<Footer></Footer>
+	</div>
+	<Top></Top>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+	import Top from "../index/Top.vue"
+    import {shows} from "../../js/scrollHtml.js"
+	export default {
+		name: 'Partner',
+		components: {
+			Nav,
+			Footer,
+			Top
+		},
+		data() {
+			return {
+				widthnum: '100%',
+				topClass: '',
+				topClassOne: '',
+				leftClass: '',
+				rightClass: '',
+				showTop:false,
+				showBottom:true
+			}
+		},
+		mounted() {
+			shows();
+			$(".index-nav>div a:eq(4)").addClass("nav_active");
+			if(window.outerHeight>800){
+				this.scrollnumber($('.home-site-title'),'font_active_up',50,1);
+			}
+			window.addEventListener('scroll', this.NavScrollFunction, true);
+		},
+		methods: {
+			Welfare() {
+				let scroll = setInterval(() => {
+					document.documentElement.scrollTop=543;
+					clearInterval(scroll);
+				}, 0)
+				
+			},
+			Study() {
+				let scroll = setInterval(() => {
+					document.documentElement.scrollTop=1017;
+					clearInterval(scroll);
+				}, 0)
+			},
+			Recruitment() {
+				let scroll = setInterval(() => {
+					document.documentElement.scrollTop=2023;
+					clearInterval(scroll);
+				}, 0)
+			
+			},
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title'),'font_active_up',50,1);
+				if(document.documentElement.scrollTop >= 582){
+					this.showTop=true;
+					this.showBottom=false;
+				}else{
+					this.showTop=false;
+					this.showBottom=true;
+				}
+				
+				$(".partner-introduce-top-box .partner-introduce-box-left span").removeClass("active");
+				if(document.documentElement.scrollTop >= 1017 && document.documentElement.scrollTop <= 2022){
+					$(".partner-introduce-box-left span:eq(1)").addClass("active");
+				}else if(document.documentElement.scrollTop >= 2022){
+					$(".partner-introduce-box-left span:eq(2)").addClass("active");
+				}else if(document.documentElement.scrollTop <= 1017){
+					$(".partner-introduce-box-left span:eq(0)").addClass("active");
+				}
+			},
+			scrollnumber(element, cssname, offset,type) {
+			    let a, b, c, d;
+			    d = $(element).offset().top;
+			    a = eval(d + offset);
+			    b = $(window).scrollTop();
+			    c = $(window).height();
+			    if (b + c > a) {
+			        if(type == 1 && this.topClass == ""){
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}
+			    }
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.ab{
+		padding-top: 6px;
+		position: absolute;
+		top: 53%;
+		left: 137px;
+	}
+	.partner{
+		width: 100%;
+		height: auto;
+		position: absolute;
+		background: url(../../../public/images/bg_body_large.png);
+	}
+	.home-site-title {
+		width: 75%;
+		display: flex;
+		align-items: center;
+	}
+
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 40%;
+		height: 2px;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237,245,245,0.5), rgba(66,170,165,0.5));
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237,245,245,0.5), rgba(66,170,165,0.5));
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		span {
+			font-size: 25px;
+			color: #333333;
+			display: inline-block;
+			margin-top: 23px;
+		}
+	}
+
+	.partner-introduce-box-welfare {
+		width: 100%;
+		height: 686px;
+	}
+
+	.partner-introduce-box {
+		width: 80%;
+		margin: 0 auto 0;
+		::after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		>div:first-child{
+			float: left;
+		}
+		>div:last-child{
+			float: right;
+		}
+	}
+
+	.partner-introduce-box-left {
+		width: 20%;
+		height: 234px;
+		border-right: 1px solid #D8D8D8;
+
+		span {
+			display: inline-block;
+			width: 100%;
+			height: 42px;
+			line-height: 32px;
+			color: #333333;
+			font-weight: 400;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	}
+
+	.partner-introduce-box-right {
+		width: 80%;
+		height: 234px;
+
+		span {
+			font-size: 16px;
+			line-height: 32px;
+			color: #333333;
+			padding-left: 5%;
+			font-weight: 700;
+		}
+
+		p {
+			padding-left: 5%;
+			font-size: 14px;
+			color: #000000;
+			line-height: 30px;
+		}
+	}
+
+	.partner-introduce-box-study {
+		width: 100%;
+		height: 1100px;
+	    background: rgba(222,240,236,0.4);
+	}
+
+	.study-left {
+		border: none;
+	}
+
+	.study-right span {
+		padding-top: 17px;
+		display: inline-block;
+	}
+
+	.study-txt {
+		margin: 3% 0 3% 5%;
+		line-height: 28px;
+	}
+
+	.partner-introduce-box-recruitment {
+		width: 100%;
+		background: #fff;
+		height: 1795px;
+	}
+
+	.Self-introduction {
+		margin: 5% 0 3% 5%;
+		width: 96%;
+		height: 165px;
+		position: relative;
+		img {
+			display: block;
+			width: 137px;
+			height: 165px;
+			float: left;
+			margin-right: 5%;
+		}
+
+		span {}
+
+		p {
+			padding-left: 5%;
+		}
+	}
+	.home-site-title-centre p span{
+		color: #333!important;
+	}
+	.home-site-title-centre p:last-child span {
+	    color: #333!important; 
+	    font-weight: normal;
+		font-size: 14px!important;
+		margin-top: 0!important;
+	}
+	.home-site-title-centre{
+		display: inline-block;
+	}
+	.partner-introduce-top-box{
+		position: fixed;
+		z-index: 6;
+		width: 100%;
+		top: 95px;
+		>div{
+			width: 80%;
+			margin: 0 auto;
+		}
+	}
+</style>

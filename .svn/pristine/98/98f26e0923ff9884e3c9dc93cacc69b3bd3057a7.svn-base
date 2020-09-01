@@ -1,0 +1,354 @@
+<template>
+	<main>
+		<Nav></Nav>
+		<div class="site"  data-scroll>
+			<div class="partner-banner">
+				<img src="../../../public/images/joinus.png" alt="">
+			</div>
+			<div class="home-site-title" style="margin-top: 0;">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<span style="margin-top: 0;">直营连锁门店</span>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<div class="site-shop-box">
+				<div class="site-shop-BeiJing site-shop-btn">
+					<span>北京</span>
+					<p>BeiJing</p>
+					<img src="../../../public/images/beijing1.png" alt="恩启/北京" class="BeiJing-true">
+					<img src="../../../public/images/beijing2.png" alt="恩启/北京" class="BeiJing-false">
+				</div>
+				<div class="site-shop-ShangHai site-shop-btn">
+					<span>上海</span>
+					<p>ShangHai</p>
+					<img src="../../../public/images/shanghai1.png" alt="恩启/上海" class="ShangHai-true">
+					<img src="../../../public/images/shanghai2.png" alt="恩启/上海" class="ShangHai-false">
+				</div>
+				<div class="site-shop-ShenZhen site-shop-btn">
+					<span>深圳</span>
+					<p>ShenZhen</p>
+					<img src="../../../public/images/shenzhen1.png" alt="恩启/深圳" class="ShenZhen-true">
+					<img src="../../../public/images/shenzhen2.png" alt="恩启/深圳" class="ShenZhen-false">
+				</div>
+			</div>
+			<div class="site-shop-box-scroll">
+				<ul>
+					<li class="press">
+						<div class="site-shop-box-scroll-title" style="background: #1FB8B6;">
+							<span>恩启IDEA·教研中心</span>
+							<img src="../../../public/images/paint-palette-and-brush.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"></div>
+						<table style="color: #333333;width: 90%;margin: 43px auto 0;">
+							<tr>
+								<td style="width:20% ;">电话：</td>
+								<td>13021253543</td>
+							</tr>
+							<tr>
+								<td>地址：</td>
+								<td style="padding-top: 20px;">北京市 朝阳区 孙河地铁站对面 弘园五号创意生活园A5</td>
+							</tr>
+						</table>
+					</li>
+
+					<li class="press">
+						<div class="site-shop-box-scroll-title" style="background: #EA7D43;">
+							<span>恩启IDEA·北京朝阳中心</span>
+							<img src="../../../public/images/ruler.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"></div>
+						<table style="color: #333333;width: 90%;margin: 43px auto 0;">
+							<tr>
+								<td style="width:20% ;">电话：</td>
+								<td>13621231783</td>
+							</tr>
+							<tr>
+								<td>地址：</td>
+								<td style="padding-top: 20px;">北京市 朝阳区 常营非中心11号 楼4层 恩启IDEA朝阳中心</td>
+							</tr>
+						</table>
+					</li>
+
+					<li class="press">
+						<div class="site-shop-box-scroll-title" style="background: #307FD1;">
+							<span>恩启IDEA·北京海淀中心</span>
+							<img src="../../../public/images/atom.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"></div>
+						<table style="color: #333333;width: 90%;margin: 43px auto 0;">
+							<tr>
+								<td style="width:20% ;">电话：</td>
+								<td>18513342186</td>
+							</tr>
+							<tr>
+								<td>地址：</td>
+								<td style="padding-top: 20px;">北京市 海淀区 西四环北路69号 (四季青桥附近）</td>
+							</tr>
+						</table>
+					</li>
+
+					<li class="press">
+						<div class="site-shop-box-scroll-title" style="background: #FFC852;">
+							<span>恩启IDEA·上海静安中心</span>
+							<img src="../../../public/images/paint-palette-and-brush.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"></div>
+						<table style="color: #333333;width: 90%;margin: 43px auto 0;">
+							<tr>
+								<td style="width:20% ;">电话：</td>
+								<td>16628575989</td>
+							</tr>
+							<tr>
+								<td>地址：</td>
+								<td style="padding-top: 20px;">上海市 静安区 大宁中心广场二 期B9</td>
+							</tr>
+						</table>
+					</li>
+
+					<li class="press">
+						<div class="site-shop-box-scroll-title" style="background: #EA7D43;">
+							<span>恩启IDEA·深圳华侨中心</span>
+							<img src="../../../public/images/ruler.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"></div>
+						<table style="color: #333333;width: 90%;margin: 43px auto 0;">
+							<tr>
+								<td style="width:20% ;">电话：</td>
+								<td>13682420696</td>
+							</tr>
+							<tr>
+								<td>地址：</td>
+								<td style="padding-top: 20px;">深圳市 南山区 侨城坊3栋3A 恩启IDEA华侨城中心</td>
+							</tr>
+						</table>
+					</li>
+				</ul>
+			</div>
+			<Footer></Footer>
+		</div>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+    import {shows} from "../../js/scrollHtml.js"
+	export default {
+		name: "site",
+		components: {
+			Nav,
+			Footer
+		},
+		data() {
+			return {
+				widthnum: '100%'
+			}
+		},
+		mounted() {
+			shows()
+			$(".site-shop-box-scroll").hScrollPane({
+				mover: "ul", //指定container对象下的哪个元素需要滚动位置 | 必传项;
+				moverW: function() {
+					return $("press").width();
+				}(), //传入水平滚动对象的长度值,不传入的话默认直接获取mover的宽度值 | 可选项;
+				showArrow: true, //指定是否显示左右箭头，默认不显示 | 可选项;
+				dragable: false, //指定是否要支持拖动效果，默认可以拖动 | 可选项;
+				handleCssAlter: "draghandlealter", //指定拖动鼠标时滚动条的样式，不传入该参数则没有变化效果 | 可选项;
+				easing: true, //滚动是否需要滑动效果,默认有滑动效果 | 可选项;
+				mousewheel: {
+					bind: true,
+					moveLength: 500
+				} //mousewheel: bind->'true',绑定mousewheel事件; ->'false',不绑定mousewheel事件；
+			});
+		}
+	}
+</script>
+
+<style lang="scss">
+	.site-shop-box-scroll::-webkit-scrollbar {
+		display: none;
+	}
+
+.home-site-left,
+.home-site-right {
+	display: inline-block;
+	width: 38%;
+	height: 2px;
+}
+	.site {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		background: #fff;
+	}
+
+	.home-site-title {
+		width: 1028px;
+		display: flex;
+		align-items: center;
+	}
+
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 40%;
+		height: 2px;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+		// opacity: 50%;
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+		// opacity: 50%;
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		span {
+			font-size: 27px;
+			color: #333333;
+			font-family: MicrosoftYaHei-Bold;
+			font-weight: bold;
+			display: inline-block;
+			margin-top: 23px;
+		}
+	}
+
+	.site-shop-box {
+		width: 1028px;
+		height: 57px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.site-shop-btn {
+		width: 280px;
+		height: 57px;
+		border-radius: 28px;
+		border: 1px solid;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		span {
+			padding-left: 35px;
+		}
+
+		p {
+			margin-left: 12px;
+		}
+
+		img {
+			// display: block;
+			margin-left: 29px;
+			width: 62px;
+			height: 50px;
+		}
+	}
+
+	.site-shop-BeiJing {
+		background: #1FB8B6;
+		border: 1px solid #1FB8B6;
+		color: #fff;
+	}
+
+	.site-shop-ShangHai {
+		border: 1px solid 241, 142, 61;
+		color: #F18E3D;
+		background: rgba(255, 255, 255, 0.5);
+	}
+
+	.site-shop-ShenZhen {
+		border: 1px solid #307FD1;
+		color: #307FD1;
+	}
+
+	.site-shop-box-scroll {
+		width: 90%;
+		height: 480px;
+		margin: 59px 0 57px 15%;
+		position: relative;
+		overflow: hidden;
+
+		ul {
+			display: flex;
+			position: absolute;
+			top: 0;
+			width: 2500px;
+
+			li {
+				width: 322px;
+				height: 423px;
+				border-radius: 18px;
+				background: #fff;
+				// box-shadow:0px 0px 10px -1px #ABC;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+				margin: 20px 0 0 35px;
+			}
+		}
+	}
+
+	.BeiJing-false,
+	.ShangHai-true,
+	.ShenZhen-true {
+		display: none;
+	}
+
+	.site-shop-box-scroll-title {
+		width: 100%;
+		height: 43px;
+		color: #fff;
+		font-size: 14px;
+		font-weight: 700;
+		text-align: center !important;
+		display: flex;
+		align-items: center;
+		border-top-left-radius: 18px;
+		border-top-right-radius: 18px;
+		position: relative;
+
+		span {
+			padding-left: 91px;
+		}
+
+		img {
+			width: 38px;
+			height: 34px;
+			position: absolute;
+			top: 5px;
+			right: 15px;
+		}
+	}
+
+	.site-shop-box-scroll-center {
+		width: 322px;
+		height: 208px;
+		background: url('https://iph.href.lu/320x208?fg=666666&bg=cccccc&text=占位图') no-repeat;
+		background-size: 100% 100%;
+		background-position: center;
+	}
+
+	//笔记本电脑s
+	@media screen and (min-width: 700px)and(max-width: 1400px) {
+
+		.home-banner-btn,
+		.home-banner-nav a {
+			margin-left: 3%;
+		}
+
+		.home-banner-btn2 {
+			margin-left: 0%;
+		}
+
+		.home-nav-top a {
+			width: 80px;
+		}
+	}
+</style>

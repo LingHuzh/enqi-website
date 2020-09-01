@@ -1,0 +1,867 @@
+<template>
+	<main>
+		<div class="home-nav-top">
+			<img src="../../public/images/logo3.png" alt="恩启">
+			<div>
+				<input type="button" value="在线预约" class="home-banner-btn2" />
+				<span><a href="/Contact">400-606-2105</a></span>
+				<a href="/AboutUs">关于我们</a>
+				<a href="/Partner">加入我们</a>
+				<a href="/Product">互联网产品</a>
+				<a href="/Teacher">科研教研</a>
+				<a href="/Ingclass" class="show_cont">
+					恩启学院
+					<ul>
+						<li><a href="/IdeaTheory">理论课程</a></li>
+						<li><a href="/Patriarch">家长课程</a></li>
+						<li><a href="/Idea">评估师课程</a></li>
+					</ul>
+				</a>
+				<a href="/Site">直营连锁</a>
+				<a href="/">首页</a>
+			</div>
+		</div>
+	<div class="home"  data-scroll>
+		
+		<div class="home_banner">
+			<el-carousel trigger="click" :style="height">
+				<el-carousel-item :style="height">
+					<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590387118505&di=17b36e874f0eb4e8162c1eafe21bad1a&imgtype=0&src=http%3A%2F%2F3732784.s21i-3.faidns.com%2F2%2FABUIABACGAAgxaP3qQUogPOy4QIwywg44AU.jpg"
+					 alt />
+				</el-carousel-item>
+				<el-carousel-item :style="height">
+					<img src="http://bpic.588ku.com/back_pic/00/04/20/33/f9864e86d94bf4260564fec9e287c658.jpg" alt />
+
+				</el-carousel-item>
+				<div class="home-banner-nav">
+					<input type="button" value="在线预约" class="home-banner-btn2" />
+					<span><a href="/Contact">400-606-2105</a></span>
+					<a href="/AboutUs">关于我们</a>
+					<a href="/Partner">加入我们</a>
+					<a href="/Product">互联网产品</a>
+					<a href="/Teacher">科研教研</a>
+					<a href="/Ingclass" class="show_cont">
+						恩启学院
+						<ul>
+							<li><a href="/IdeaTheory">理论课程</a></li>
+							<li><a href="/Patriarch">家长课程</a></li>
+							<li><a href="/Idea">评估师课程</a></li>
+						</ul>
+					</a>
+					<a href="/Site">直营连锁</a>
+					<a href="/">首页</a>
+				</div>
+			</el-carousel>
+			<div class="home-theme">
+				<ul class="home-theme-up">
+					<li style="background: rgb(19, 163, 155,0.9);" @click="recovery()">
+						<div>
+							<span>儿童康复</span>
+							<p>Rehabilitation of Children</p>
+							<img src="../../public/images/jiantou.png" alt="">
+						</div>
+						<div>
+							<img src="../../public/images/theme_1.png" alt="恩启/恩启课堂">
+							<span style="background: rgb(49, 164, 156,0.86);">让每一个孩子，都能享受到更好的康复教 育服务。</span>
+						</div>
+					</li>
+					<li style="background: rgb(236, 115, 59,0.9);" @click="train()">
+						<div>
+							<span>教师培训</span>
+							<p>Teacher Training</p>
+							<img src="../../public/images/jiantou.png" alt="">
+						</div>
+						<div>
+							<img src="../../public/images/theme_2.png" alt="恩启/恩启课堂">
+							<span style="background: rgb(236, 115, 59,0.86);">用科学的技术和方法，促进孤独症行业 康复教育水平提升。</span>
+						</div>
+					</li>
+					<li style="background: rgb(44, 126, 199,0.9);" @click="product">
+						<div>
+							<span>线上服务</span>
+							<p>Online Service</p>
+							<img src="../../public/images/jiantou.png" alt="">
+						</div>
+						<div>
+							<img src="../../public/images/theme_3.png" alt="恩启/恩启课堂">
+							<span style="background: rgb(44, 126, 199,0.86);">让互联网为特殊群体创造幸福。</span>
+						</div>
+					</li>
+					<li style="background: rgb(231, 184, 49,0.9);" @click="teacher()">
+						<div>
+							<span>科研教研</span>
+							<p>Teaching and Research</p>
+							<img src="../../public/images/jiantou.png" alt="">
+						</div>
+						<div>
+							<img src="../../public/images/theme_3.png" alt="恩启/恩启课堂">
+							<span style="background: rgb(231, 188, 61,0.86);">恩启与国内外科学家合作，开展关于自 闭症的科学研究。</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="home-site-title home-site-title1">
+			<span class="home-site-left"></span>
+			<img src="../../public/images/qiqisamll.png" style="margin-left: 23px;" alt="">
+			<div class="home-site-title-centre">
+				<p><span :class="topClass">A Better You， A Bigger World</span></p>
+				<p><span :class="topClass">给你的，正如你想给孩子的</span></p>
+			</div>
+			<img src="../../public/images/miaomiaosmall.png" style="margin-right: 23px;" alt="">
+			<span class="home-site-right"></span>
+		</div>
+		<div class="home-site">
+			<ul class="home-site-scroll">
+				<li class="os1" @click="sunhe()">
+					<span>恩启教研中心 13021253543</span>
+					<b></b>
+					<p>北京市 朝阳区 孙河地铁站对面弘园 五号创意生活园A5</p>
+					<a href="javascript:;"></a>
+				</li>
+				<li class="os2" @click="goChangYang()"><img src="../../public/images/theme_3.png" alt=""><span style="background: rgb(236, 128, 77,0.4);"></span></li>
+				<li class="os3" @click="haidian()">
+					<span style="color: #2979CD;">北京海淀中心 18513342186</span>
+					<b style="background: #2979CD;"></b>
+					<p>北京市 海淀区 西四环北路69号（四季 青桥附近）</p>
+					<a href="javascript:;"></a>
+				</li>
+				<li class="os4" @click="jingan()"><img src="../../public/images/theme_2.png" alt=""><span style="background: rgb(212, 181, 74,0.4);"></span></li>
+				<li class="os5" @click="huaqiaocheng()">
+					<span style="color: #32BAB6;">深圳华侨城中心 13682420696</span>
+					<b style="background: #32BAB6;"></b>
+					<p>深圳市 南山区 侨城坊3栋3A恩启IDEA华 侨城中心</p>
+					<a href="javascript:;"></a>
+				</li>
+				<li class="os6" style="background: #A1E5E3;"><img src="../../public/images/jianshe.png" alt="恩启/建设中" style="width:221px;height: 175px;display: block;margin: 33px auto 0;"></li>
+			</ul>
+			<ul class="home-site-scroll">
+				<li class="as1" @click="sunhe()"><img src="../../public/images/theme_2.png" alt=""><span style="background: rgb(29, 191, 186,0.4);"></span></li>
+				<li class="as2" @click="goChangYang()">
+					<span style="color: #EC804D;">北京朝阳中心 13621231783</span>
+					<b style="background: #EC804D;"></b>
+					<p>北京市 朝阳区 常营非中心11号楼4层 恩启IDEA朝阳中心</p>
+					<a href="javascript:;" style="top: -10px;"></a>
+				</li>
+				<li class="as3" @click="haidian()"><img src="../../public/images/theme_2.png" alt=""><span style="background: rgb(29, 75, 191,0.4);"></span></li>
+				<li class="as4" @click="jingan()">
+					<span style="color: #F0C019;">上海静安中心 16628575989</span>
+					<b style="background: #F0C019;"></b>
+					<p>上海市 静安区 大宁中心广场二期B9</p>
+					<a href="javascript:;" style="top: -10px;"></a>
+				</li>
+				<li class="as5" @click="huaqiaocheng()"><img src="../../public/images/theme_2.png" alt=""><span style="background: rgb(50, 186, 182,0.4);"></span></li>
+				<li class="as6" style="text-align: center;color: #1DBFBA;font-size: 20px;line-height: 262px;font-weight: bold;">建设中，敬请期待...</li>
+			</ul>
+		</div>
+		<!-- 加入我们 -->
+		<div class="home-joinus">
+			<img src="../../public/images/logo_left.png" alt="恩启/特教平台">
+			<span>打造领衔时代的教师团队，培训创新一流的特教精英！</span>
+			<a href="/Partner">加入我们</a>
+		</div>
+		<!-- 支持伙伴 -->
+		<div class="home-partner">
+			<div class="home-site-title home-site-title2" style="margin-top: 0;">
+				<span class="home-site-left" style="width: 40%;"></span>
+				<img src="../../public/images/qiqisamll.png" style="margin-left: 23px;">
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 0;" :class="topClassOne">伙伴支持</span></p>
+				</div>
+				<img src="../../public/images/miaomiaosmall.png" style="margin-right: 23px;">
+				<span class="home-site-right" style="width: 40%;"></span>
+			</div>
+			<div class="home-partner-image"></div>
+		</div>
+		<!-- 底部 -->
+		<Footer></Footer>
+		<Top></Top>
+	</div>
+	</main>
+</template>
+<script>
+	import Footer from "../components/index/Footer.vue";
+	import Top from "../components/index/Top.vue";
+    import {shows} from "../js/scrollHtml.js"
+	export default {
+		name: 'Home',
+		components: {
+			Footer,
+			Top
+		},
+		data() {
+			return {
+				height: {
+					height: window.innerHeight + 'px',
+				},
+				topClass: '',
+				topClassOne: ''
+			}
+		},
+		mounted() {
+			shows();
+			window.addEventListener('scroll', this.NavScrollFunction, true);
+			$(".home-site").hScrollPane({
+				mover: "ul", //指定container对象下的哪个元素需要滚动位置 | 必传项;
+				moverW: function() {
+					return $("home-site ul li").width();
+				}(), //传入水平滚动对象的长度值,不传入的话默认直接获取mover的宽度值 | 可选项;
+				showArrow: true, //指定是否显示左右箭头，默认不显示 | 可选项;
+				dragable: false, //指定是否要支持拖动效果，默认可以拖动 | 可选项;
+				handleCssAlter: "draghandlealter", //指定拖动鼠标时滚动条的样式，不传入该参数则没有变化效果 | 可选项;
+				easing: true, //滚动是否需要滑动效果,默认有滑动效果 | 可选项;
+				mousewheel:{bind:true,moveLength:500} //mousewheel: bind->'true',绑定mousewheel事件; ->'false',不绑定mousewheel事件；
+			});
+			$(".home-banner-btn").click(function(){
+				$(".appointment").fadeIn();
+			});
+			$(".home-banner-btn2").click(function(){
+				$(".appointment").fadeIn();
+			})
+		},
+		methods: {
+			NavScrollFunction() {
+				if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+					$(".home-banner-nav").hide();
+					$(".home-nav-top").fadeIn(200);
+				} else {
+					$(".home-nav-top").hide();
+					$(".home-banner-nav").fadeIn(200);
+				}
+				this.scrollnumber($('.home-site-title1'),'font_active_up',50,1);
+				this.scrollnumber($('.home-site-title2'),'font_active_up',50,2);
+			},
+			scrollnumber(element, cssname, offset,type) {
+			    let a, b, c, d;
+			    d = $(element).offset().top;
+			    a = eval(d + offset);
+			    b = $(window).scrollTop();
+			    c = $(window).height();
+			    if (b + c > a) {
+			        if(type == 1 && this.topClass == ""){
+						this.topClass = 'font_active_up';
+					}else if(type == 2 && this.topClassOne == ""){
+						this.topClassOne = 'font_active_up';
+					}
+			    }
+			},
+			train(){
+				this.$router.push({path:'/train'});
+			},
+			product(){
+				this.$router.push({path:'/product'});
+			},
+			teacher(){
+				this.$router.push({path:'/teacher'});
+			},
+			sunhe(){
+				this.$router.push({path:'/sunhe'});
+			},
+			haidian(){
+				this.$router.push({path:'/haidian'});
+			},
+			recovery(){
+				this.$router.push({path:'/childrenrecovery'});
+			},
+			jingan(){
+				this.$router.push({path:'/jingan'});
+			},
+			huaqiaocheng(){
+				this.$router.push({path:'/shenzhen'});
+			},
+			goChangYang(){
+					this.$router.push({path:'/chaoyang'});
+			}
+		}
+	}
+</script>
+<style lang="scss">
+	@import '../style/base.css';
+
+	.hemo {
+		background: #EDF5F5 !important;
+	}
+
+	html {
+		overflow-x: hidden;
+	}
+
+	body {
+		background: #EDF5F5;
+	}
+
+	.el-carousel__container {
+		height: 100% !important;
+	}
+
+	.home_banner {
+		width: 100%;
+		height: 751px;
+		position: relative;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.home-banner-nav {
+		width: 76%;
+		height: 87px;
+		font-size: 14px;
+		cursor: pointer;
+		line-height: 87px;
+		background: rgba(255,255,255,.9);
+		position: absolute;
+		right: 0;
+		top: 23px;
+		z-index: 2;
+
+		>a {
+			float: left;
+			color: #20A9A0;
+			font-family: MicrosoftYaHei;
+			margin-left: 6%;
+			display: inline-block;
+			height: 87px;
+			float: right;
+		}
+
+		span {
+			color: #20A9A0;
+			font-size: 20px;
+			font-weight: bold;
+			margin-left: 46px;
+			float: right;
+			margin-right: 35px;
+		}
+		input{
+			float: right;
+			margin-right: 60px;
+			margin-top: 22px;
+		}
+	}
+	.home-banner-nav span>a{
+		color: #20A89E;
+	}
+	.home-banner-nav>a:hover,.home-nav-top>a:hover{
+		border-bottom: 5px solid #20A9A0;
+	}
+	.show_cont{
+		position: relative;
+	}
+	.show_cont ul{
+		position: absolute;
+		width: 100px!important;
+		display: inline-block;
+		border-radius: 3px;
+		background: #fff;
+		top: 65px;
+		left: -20px;
+		display: none;
+		margin: 0!important;
+	}
+	.show_cont ul li{
+		height: 45px!important;
+		line-height: 45px!important;
+		text-align: center;
+		a{
+			color: #333;
+		}
+	}
+	.show_cont::after{
+		content: "";
+		display: inline-block;
+		width: 7px;
+		height: 12px;
+		background: url(../../public/images/jiantou_bottom.png) no-repeat;
+		background-size: 100%;
+		visibility: hidden;
+		margin-left: 4px;
+	}
+	.show_cont:hover{
+		border-bottom: none!important;
+		transform: translateY(-8px);
+		transition-duration: .5s;
+		-moz-transition-duration: .5s; /* Firefox 4 */
+		-webkit-transition-duration: .5s; /* Safari 和 Chrome */
+		-o-transition-duration: .5s; /* Opera */
+		>ul{
+			display: block;
+		}
+	}
+	.show_cont:hover::after{
+			visibility: visible;
+	}
+	.home-nav-top {
+		width: 100%;
+		height: 87px;
+		font-size: 14px;
+		cursor: pointer;
+		line-height: 87px;
+		background: rgba(255, 255, 255, 0.9);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		display: none;
+		>div{
+			width: 76%;
+			float: right;
+		}
+		img {
+			display: block;
+			width: 160px;
+			height: 40px;
+			float: left;
+			margin: 22px 0 0 62px;
+		}
+
+		div>a {
+			float: left;
+			color: #20A9A0;
+			font-family: MicrosoftYaHei;
+			display: inline-block;
+			height: 87px;
+			text-align: center;
+			margin-left: 6%;
+			float: right;
+			ul {
+				background: #fff;
+				border-radius: 3px;
+				margin: -10px auto 0;
+				width: 90px;
+				display: none;
+				li {
+					height: 60px;
+					line-height: 60px;
+					color: #20A9A0;
+				}
+			}
+		}
+		div input{
+			float: right;
+			margin-top: 22px;
+			margin-right: 66px;
+		}
+		div span {
+			color: #20A9A0;
+			font-size: 20px;
+			font-weight: bold;
+			margin-left: 46px;
+			margin-right: 35px;
+			float: right;
+			a{
+				color: #20A9A0;
+			}
+		}
+	}
+
+	.home-banner-nav a:nth-child(2) {
+		margin-left: 50px;
+	}
+
+	.home-banner-btn,
+	.home-banner-btn2 {
+		width: 118px;
+		height: 42px;
+		background: rgba(236, 128, 77, 1);
+		border-radius: 4px;
+		border: none;
+		font-size: 16px;
+		color: #fff;
+		font-weight: 400;
+		cursor: pointer;
+		outline: none;
+	}
+
+	.home-theme {
+		width: 100%;
+		position: absolute;
+		z-index: 5;
+		top: 83.4%;
+		left: 0;
+	}
+
+	.home-theme-up li p,
+	.home-theme-up li span {
+		position: relative;
+		left: 10px;
+	}
+
+	.home-theme-up li div:first-child {
+		height: 125px;
+	}
+
+	.home-theme-up {
+		width: 93%;
+		margin: 0 auto;
+		display: flex;
+		color: #FFFFFF;
+
+		li {
+			width: 25%;
+
+			span {
+				padding: 40px 0 0 27px;
+				font-size: 23px;
+				display: inline-block;
+				font-family: MicrosoftYaHei;
+				font-weight: bold;
+			}
+
+			p {
+				padding: 10px 0 0 27px;
+			}
+		}
+	}
+
+	.home-theme-up li div:first-child img {
+		display: block;
+		width: 46px;
+		height: 26px;
+		float: right;
+		margin: -24px 35px 0 0;
+		display: none;
+		position: relative;
+		right: 0;
+	}
+
+	.home-theme-up {
+		cursor: pointer;
+	}
+
+	.home-theme-up {
+		width: 93%;
+		display: flex;
+		margin: 0 auto;
+
+		li div:last-child {
+			width: 100%;
+			height: 210px;
+			position: relative;
+			overflow: hidden;
+			span {
+				position: absolute;
+				top: 0;
+				left: -100%;
+				display: inline-block;
+				width: 100%;
+				height: 210px;
+				color: #FFFFFF;
+				font-size: 14px;
+				padding: 59px 26px 0;
+				font-weight: 300px;
+			}
+		}
+
+		li:hover>div:last-child img {
+			transform: scale(1.05);
+			transition-duration: 1s;
+			transition-timing-function: linear;
+		}
+
+		li div:last-child img {
+			transition-duration: .8s;
+		}
+	}
+
+	.home-site-title {
+		width: 93%;
+		display: flex;
+		height: 200px;
+		margin: 356px auto 0;
+		align-items: center;
+
+		img {
+			display: inline-block;
+			width: 31px;
+			height: 47px;
+		}
+	}
+
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 29%;
+		height: 2px;
+		// opacity: 50%;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, #EDF5F5, #42AAA5)
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, #EDF5F5, #42AAA5)
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		p:first-child {
+			height: 65px!important;
+			overflow: hidden;
+		}
+
+		p:last-child {
+			height: 30px;
+			overflow: hidden;
+		}
+
+		p:first-child span {
+			font-size: 30px!important;
+			color: #1DBFBA;
+			font-family: MicrosoftYaHei-Bold;
+			font-weight: bold;
+			display: inline-block;
+			margin-top: 23px;
+			opacity: 0;
+		}
+
+		p:last-child span {
+			color: #1BB8B3;
+			font-size: 18px;
+			font-weight: 300;
+			padding-top: 6px;
+			display: inline-block;
+			opacity: 0;
+		}
+	}
+
+	.home-site {
+		width: 96.5%;
+		// border: 1px solid;
+		margin-left: 3.5%;
+		position: relative;
+		height: 524px;
+		margin: 22px 0 0 3.5%;
+
+		ul {
+			width: 2360px;
+			display: flex;
+			position: absolute;
+
+			li {
+				width: 393px;
+				height: 262px;
+				// border: 1px solid;
+				background: #FFFFFF;
+
+				img {
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		ul:first-child {
+			top: 0;
+		}
+
+		ul:nth-child(2) {
+			bottom: 0;
+		}
+	}
+
+	.home-site::-webkit-scrollbar {
+		display: none;
+	}
+
+	.os1 span,
+	.as2 span,
+	.os3 span,
+	.as4 span,
+	.os5 span {
+		width: 265px;
+		display: inline-block;
+		font-size: 18px;
+		font-weight: bold;
+		color: #1DBFBA;
+		margin: 56px 0 0 48px;
+	}
+
+	.os1 b,
+	.as2 b,
+	.os3 b,
+	.as4 b,
+	.os5 b {
+		width: 124px;
+		height: 3px;
+		display: inline-block;
+		background: #1DBFBA;
+		margin: 37px 0 0 48px;
+	}
+
+	.os1 p,
+	.as2 p,
+	.os3 p,
+	.as4 p,
+	.os5 p {
+		display: inline-block;
+		width: 244px;
+		margin: 37px 0 0 48px;
+		font-size: 15px;
+		color: #222D3D;
+	}
+
+	.os1 a,
+	.as2 a,
+	.os3 a,
+	.as4 a,
+	.os5 a {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: #FFFFFF;
+		transform: rotate(44deg);
+		-o-transform: rotate(44deg);
+		-webkit-transform: rotate(44deg);
+		-moz-transform: rotate(44deg);
+		position: absolute;
+		left: 45px;
+		bottom: -10px;
+		z-index: 6;
+	}
+
+	.os1,
+	.os2,
+	.os3,
+	.as1,
+	.as2,
+	.as3,
+	.as4,
+	.os4,
+	.os5,
+	.as5 {
+		position: relative;
+	}
+
+	.os2 span,
+	.as1 span,
+	.as3 span,
+	.os4 span,
+	.as5 span {
+		position: relative;
+		display: inline-block;
+		width: 393px;
+		height: 262px;
+		position: absolute;
+		left: 0;
+		opacity: 40%;
+	}
+
+	.home-joinus {
+		width: 90%;
+		height: 139px;
+		margin: 87px auto 0;
+		background-image: url(../../public/images/bggg.png);
+		background-size: cover;
+		color: #FFFFFF;
+		padding: 0 100px;
+		box-sizing: border-box;
+		line-height: 139px;
+		img {
+			width: 190px;
+			height: 47px;
+			display: block;
+			float: left;
+			margin-top: 43px;
+			margin-right: 40px;
+		}
+
+		span {
+			font-size: 22px;
+			float: left;
+		}
+
+		a {
+			display: inline-block;
+			font-size: 18px;
+			background: #EC804D;
+			border: 1px solid #EC804D;
+			color: #FFFFFF;
+			border-radius: 4px;
+			width: 185px;
+			height: 53px;
+			text-align: center;
+			line-height: 53px;
+			float: right;
+			margin-top: 43px;;
+		}
+	}
+
+	.home-partner {
+		width: 100%;
+		height: 611px;
+		background: #FFFFFF;
+		margin-top: 105px;
+	}
+
+	.home-partner-image {
+		width: 82%;
+		height: 302px;
+		margin: 0 auto;
+		background: url(../../public/images/zhichihuoban.png) no-repeat;
+		background-size: 100% 100%;
+		background-position: center;
+	}
+
+	@media screen and (min-width: 1500px)and(max-width: 2500px) {
+		.home-theme-up li div:last-child {
+			width: 100%;
+			height: 270px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.home-theme-up li div:last-child span {
+			height: 270px;
+		}
+
+		.home-nav-top span {
+			font-size: 18px;
+		}
+	}
+
+	//笔记本电脑s
+	@media screen and (min-width: 700px)and(max-width: 1400px) {
+		.home-theme {
+			top: 66.4%;
+		}
+
+		.home-site-left,
+		.home-site-right {
+			width: 24%;
+		}
+
+		.home-banner-btn,
+		.home-banner-nav>a,
+		.home-nav-top div > a{
+			margin-left: 3%;
+		}
+
+		.home-site-title {
+			margin-top: 300px;
+		}
+		.home-nav-top div input,.home-banner-nav input{
+			margin-right: 55px;
+		}
+	}
+	@media screen and (min-width: 1400px)and(max-width: 1550px) {
+		.home-banner-nav>a,
+		.home-nav-top div > a{
+			margin-left: 4%;
+		}
+	}
+	@media screen and (min-width: 1550px)and(max-width: 1700px) {
+		.home-banner-nav>a,
+		.home-nav-top div > a{
+			margin-left: 4.5%;
+		}
+	}
+</style>

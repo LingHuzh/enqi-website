@@ -1,0 +1,800 @@
+<template>
+	<main>
+		<Nav v-if="windowWidth > 800"></Nav>
+		<div class="site"  data-scroll>
+			<div class="public_banner" v-if="windowWidth > 800">
+				<img src="../../../public/images/zhiyingliansuo.jpg" alt="">
+			</div>
+			<div class="m-public_banner" v-if="windowWidth < 800">
+				<img src="../../../public/images/zhiyingliansuo.jpg" alt="">
+			</div>
+			<div class="home-site-title site-title" v-if="windowWidth > 800">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 10px;" :class="topClass">直营连锁门店</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="m-page-title" v-if="windowWidth < 800">
+				<p style="width: 105px"></p>
+				<span>直营连锁门店</span>
+				<p style="width: 105px"></p>
+			</div>
+			<div class="site-shop-box" v-if="windowWidth > 800">
+				<div class="site-shop-BeiJing site-shop-btn" :class="B_cityClass" @click="titleBeiJing()">
+					<span>北京</span>
+					<p>BeiJing</p>
+					<img src="../../../public/images/beijing1.png" alt="恩启/北京" v-show="bimage_1">
+					<img src="../../../public/images/beijing2.png" alt="恩启/北京" v-show="bimage_2">
+				</div>
+				<div class="site-shop-ShangHai site-shop-btn" :class="S_cityClass" @click="titleShangHai()">
+					<span style="padding-left: 22px;">上海</span>
+					<p>ShangHai</p>
+					<img src="../../../public/images/shanghai1.png" alt="恩启/上海" v-show="simage_1">
+					<img src="../../../public/images/shanghai2.png" alt="恩启/上海" v-show="simage_2">
+				</div>
+				<div class="site-shop-ShenZhen site-shop-btn" :class="Z_cityClass"  @click="titleShenZhen()">
+					<span style="padding-left: 22px;">深圳</span>
+					<p>ShenZhen</p>
+					<img src="../../../public/images/shenzhen1.png" alt="恩启/深圳" v-show="zimage_1">
+					<img src="../../../public/images/shenzhen2.png" alt="恩启/深圳" v-show="zimage_2">
+				</div>
+				<div class="site-shop-HangZhou site-shop-btn"  @click="titleHangZhou()">
+					<span style="padding-left: 22px;">杭州</span>
+					<p>HangZhou</p>
+					<img src="../../../public/images/hangzhou1@2x.png" alt="恩启/深圳" v-show="himage_1">
+					<img src="../../../public/images/hangzhou2@2x.png" alt="恩启/深圳" v-show="himage_2">
+				</div>
+			</div>
+			<div class="site-shop-box-scroll" v-if="windowWidth > 800">
+				<ul class="swiper-wrapper">
+					<li class="press beijing" @click="sunhe()">
+						<div class="site-shop-box-scroll-title" style="background: #1FB8B6;">
+							恩启IDEA·教研中心
+							<img src="../../../public/images/paint-palette-and-brush.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"><img src="../../../public/images/1beijingsunhe.png" alt=""></div>
+						<div class="add_and_iphone">
+							<p>电话：130-2125-3543</p>
+							<p>地址：北京市朝阳区京密路弘园五号A5</p>
+						</div>
+					</li>
+
+					<li class="press beijing" @click="chaoyang()">
+						<div class="site-shop-box-scroll-title" style="background: #EA7D43;">
+							恩启IDEA·北京朝阳中心
+							<img src="../../../public/images/ruler.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"><img src="../../../public/images/2beijingchaoyang.jpg" alt=""></div>
+						<div class="add_and_iphone">
+							<p>电话：136-2123-1783</p>
+							<p>地址：北京市朝阳区常营非中心11号楼</p>
+						</div>
+					</li>
+
+					<li class="press beijing" @click="haidian()">
+						<div class="site-shop-box-scroll-title" style="background: #307FD1;">
+							恩启IDEA·北京海淀中心
+							<img src="../../../public/images/atom.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"><img src="../../../public/images/3beijinghaidian.jpg" alt=""></div>
+						<div class="add_and_iphone">
+							<p>电话：185-1334-2186</p>
+							<p>地址：北京市海淀区西四环北路69号</p>
+						</div>
+					</li>
+
+					<li class="press shanghai" @click="jingan()">
+						<div class="site-shop-box-scroll-title" style="background: #FFC852;">
+							恩启IDEA·上海静安中心
+							<img src="../../../public/images/paint-palette-and-brush.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"><img src="../../../public/images/4shanghaijingan.jpg" alt=""></div>
+						<div class="add_and_iphone">
+							<p>电话：166-2857-5989</p>
+							<p>地址：上海市静安区大宁中心广场二期B9</p>
+						</div>
+					</li>
+
+					<li class="press shenzhen" @click="shenzhen()">
+						<div class="site-shop-box-scroll-title" style="background: #1FB8B6;">
+							恩启IDEA·深圳华侨城中心
+							<img src="../../../public/images/ruler.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"><img src="../../../public/images/5shenzhenhuaqiao.jpg" alt=""></div>
+						<div class="add_and_iphone">
+							<p>电话：136-8242-0696</p>
+							<p>地址：深圳市南山区侨城坊3栋3层</p>
+						</div>
+					</li>
+					<li class="press hangzhou" @click="hangzhou"><!--  @click="hangzhou()" -->
+						<div class="site-shop-box-scroll-title" style="background: #F18E3D;">
+							恩启IDEA·杭州西湖中心
+							<img src="../../../public/images/atom.png" alt="">
+						</div>
+						<div class="site-shop-box-scroll-center"><img src="../../../public/images/6hangzhouxihu.jpg" alt=""></div>
+						<div class="add_and_iphone">
+							<p>电话：166-2857-5989</p>
+							<p>地址： 杭州市西湖区蒋村地铁站附近 </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+            <!--移动端-->
+			<div class="m-centre-box">
+				<div class="m-centre-title beijing-bg">
+					<span>北京</span>
+					<p>BeiJing</p>
+					<img src="../../../public/images/beijing1.png" alt="">
+				</div>
+				<div class="m-centres">
+					<div class="site-shop-box-scroll-title" style="background: #1FB8B6;">
+						恩启IDEA·教研中心
+						<img src="../../../public/images/paint-palette-and-brush.png" alt="">
+					</div>
+					<div class="site-shop-box-scroll-center"><img src="../../../public/images/1beijingsunhe.png" alt=""></div>
+					<div class="add_and_iphone">
+						<p>电话：130-2125-3543</p>
+						<p>地址：北京市朝阳区京密路弘园五号A5</p>
+					</div>
+				</div>
+				<div class="m-centres">
+					<div class="site-shop-box-scroll-title" style="background: #EA7D43;">
+						恩启IDEA·北京朝阳中心
+						<img src="../../../public/images/ruler.png" alt="">
+					</div>
+					<div class="site-shop-box-scroll-center"><img src="../../../public/images/2beijingchaoyang.jpg" alt=""></div>
+					<div class="add_and_iphone">
+						<p>电话：136-2123-1783</p>
+						<p>地址：北京市朝阳区常营非中心11号楼</p>
+					</div>
+				</div>
+				<div class="m-centres">
+					<div class="site-shop-box-scroll-title" style="background: #307FD1;">
+						恩启IDEA·北京海淀中心
+						<img src="../../../public/images/atom.png" alt="">
+					</div>
+					<div class="site-shop-box-scroll-center"><img src="../../../public/images/3beijinghaidian.jpg" alt=""></div>
+					<div class="add_and_iphone">
+						<p>电话：185-1334-2186</p>
+						<p>地址：北京市海淀区西四环北路69号</p>
+					</div>
+				</div>
+				<div class="m-centre-title shanghai-bg">
+					<span>上海</span>
+					<p>ShangHai</p>
+					<img src="../../../public/images/shanghai1.png" alt="">
+				</div>
+				<div class="m-centres">
+					<div class="site-shop-box-scroll-title" style="background: #FFC852;">
+						恩启IDEA·上海静安中心
+						<img src="../../../public/images/paint-palette-and-brush.png" alt="">
+					</div>
+					<div class="site-shop-box-scroll-center"><img src="../../../public/images/4shanghaijingan.jpg" alt=""></div>
+					<div class="add_and_iphone">
+						<p>电话：166-2857-5989</p>
+						<p>地址：上海市静安区大宁中心广场二期B9</p>
+					</div>
+				</div>
+				<div class="m-centre-title shenzhen-bg">
+					<span>深圳</span>
+					<p>ShenZhen</p>
+					<img src="../../../public/images/shenzhen1.png" alt="">
+				</div>
+				<div class="m-centres">
+					<div class="site-shop-box-scroll-title" style="background: #1FB8B6;">
+						恩启IDEA·深圳华侨城中心
+						<img src="../../../public/images/ruler.png" alt="">
+					</div>
+					<div class="site-shop-box-scroll-center"><img src="../../../public/images/5shenzhenhuaqiao.jpg" alt=""></div>
+					<div class="add_and_iphone">
+						<p>电话：136-8242-0696</p>
+						<p>地址：深圳市南山区侨城坊3栋3层</p>
+					</div>
+				</div>
+				<div class="m-centre-title hangzhou-bg">
+					<span>杭州</span>
+					<p>HangZhou</p>
+					<img src="../../../public/images/hangzhou1@2x.png" alt="">
+				</div>
+				<div class="m-centres">
+					<div class="site-shop-box-scroll-title" style="background: #F18E3D;">
+						恩启IDEA·杭州西湖中心
+						<img src="../../../public/images/atom.png" alt="">
+					</div>
+					<div class="site-shop-box-scroll-center"><img src="../../../public/images/6hangzhouxihu.jpg" alt=""></div>
+					<div class="add_and_iphone">
+						<p>电话：166-2857-5989</p>
+						<p>地址： 杭州市西湖区蒋村地铁站附近 </p>
+					</div>
+				</div>
+			</div>
+			<div class="page-height"></div>
+			<Footer v-if="windowWidth > 800"></Footer>
+		</div>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+    import {shows} from "../../js/scrollHtml.js"
+	export default {
+		name: "site",
+		components: {
+			Nav,
+			Footer
+		},
+		data() {
+			return {
+				widthnum: '100%',
+				topClass: '',
+				topClassOne: '',
+				leftClass: '',
+				rightClass: '',
+				bimage_1:true,
+				bimage_2:false,
+				simage_1:false,
+				simage_2:true,
+				zimage_1:false,
+				zimage_2:true,
+				himage_1:false,
+				himage_2:true,
+				B_cityClass:'',
+				S_cityClass:'',
+				Z_cityClass:'',
+				windowWidth:window.innerWidth
+			}
+		},
+		mounted() {
+			setTimeout(()=>{
+				// $('.index-nav').css();
+			},2000)
+			this.$nextTick(()=>{
+				$('.index-nav>a:eq(1)').addClass('borderBottomActive');
+			})
+			let w = $(window).width();
+			console.log(w)
+			if(w > 1900){
+				this.B_cityClass='bj';
+			};
+			$('.bj').click(function(){
+				$(".site-shop-box-scroll ul").animate({marginLeft:"200px"},1000);	
+			});
+			shows();
+			this.aboutusScroll();
+			$(".index-nav>div a:eq(5)").addClass("nav_active");
+			if(window.outerHeight<800){
+				window.addEventListener('scroll', this.NavScrollFunction, true);
+			}else{
+				this.scrollnumber($('.home-site-title'),'font_active_up',50,1);
+			}
+			$(".site-shop-box-scroll").hScrollPane({
+				mover: "ul", //指定container对象下的哪个元素需要滚动位置 | 必传项;
+				moverW: function() {
+					return $("press").width();
+				}(), //传入水平滚动对象的长度值,不传入的话默认直接获取mover的宽度值 | 可选项;
+				showArrow: true, //指定是否显示左右箭头，默认不显示 | 可选项;
+				dragable: false, //指定是否要支持拖动效果，默认可以拖动 | 可选项;
+				handleCssAlter: "draghandlealter", //指定拖动鼠标时滚动条的样式，不传入该参数则没有变化效果 | 可选项;
+				easing: true, //滚动是否需要滑动效果,默认有滑动效果 | 可选项;
+				mousewheel: {
+					bind: true,
+					moveLength: 1500
+				} //mousewheel: bind->'true',绑定mousewheel事件; ->'false',不绑定mousewheel事件；
+			});
+			
+		},
+		methods:{
+			open(){
+				$('.light_hint').fadeIn(1000);
+				setTimeout(()=>{
+					$('.light_hint').fadeOut(1000);
+				},2000)
+			},
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title'),'font_active_up',50,1);
+			},
+			scrollnumber(element, cssname, offset,type) {
+			    let a, b, c, d;
+			    d = $(element).offset().top;
+			    a = eval(d + offset);
+			    b = $(window).scrollTop();
+			    c = $(window).height();
+			    if (b + c > a) {
+			        if(type == 1 && this.topClass == ""){
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}
+			    }
+			},
+			sunhe(){
+				//
+				var sunhe = this.$router.resolve({
+					path: '/cityDetail?name=sunhe'
+				});
+				window.location.href = sunhe.href;
+			},
+			chaoyang(){
+				let chaoyang = this.$router.resolve({
+					path: '/cityDetail?name=chaoyang'
+				});
+				window.location.href = chaoyang.href;
+			},
+			haidian(){
+				let haidian = this.$router.resolve({
+					path: '/cityDetail?name=haidian'
+				});
+				window.location.href = haidian.href;
+			},
+			jingan(){
+				let jingan = this.$router.resolve({
+					path: '/cityDetail?name=jingan'
+				});
+				window.location.href = jingan.href;
+			},
+			shenzhen(){
+				let shenzhen = this.$router.resolve({
+					path: '/cityDetail?name=shenzhen'
+				});
+				window.location.href = shenzhen.href;
+			},
+			hangzhou(){
+				let hangzhou = this.$router.resolve({
+					path: '/cityDetail?name=hangzhou'
+				});
+				window.location.href = hangzhou.href;
+			},
+			titleBeiJing(){
+				this.simage_1=false;
+				this.simage_2=true;
+				this.bimage_1=true;
+				this.bimage_2=false;
+				this.zimage_1=false;
+				this.zimage_2=true;
+				let w = $(window).width();
+				$(".site-shop-BeiJing").css({"color":"#fff","background":"#1FB8B6"});
+				$(".site-shop-ShangHai").css({"color":"#F18E3D","background":"#fff"});
+				$(".site-shop-ShenZhen").css({"color":"#307FD1","background":"#fff"});
+				$(".site-shop-HangZhou").css({"color":"#FFC852","background":"#fff"});
+				$(".site-shop-box-scroll ul").animate({left:"0"},1000);
+				$(".beijing").css("transform","scale(1.08)");
+				$(".shanghai").css("transform","scale(1)");
+				$(".shenzhen").css("transform","scale(1)");
+				$(".hangzhou").css("transform","scale(1)");
+				// transform: scale(1.08);
+			},
+			titleShangHai(){
+				this.simage_1=true;
+				this.simage_2=false;
+				this.bimage_1=false;
+				this.bimage_2=true;
+				this.zimage_1=false;
+				this.zimage_2=true;
+				let w = $(window).width();
+				$(".site-shop-ShangHai").css({"color":"#fff","background":"#F18E3D"});
+				$(".site-shop-BeiJing").css({"color":"#1FB8B6","background":"#fff"});
+				$(".site-shop-ShenZhen").css({"color":"#307FD1","background":"#fff"});
+				$(".site-shop-HangZhou").css({"color":"#FFC852","background":"#fff"});
+				if(w > 1500 && w < 1600){
+					$(".site-shop-box-scroll ul").animate({left:"-540px"},1000);
+				}else if(w > 1300 && w < 1500){
+					$(".site-shop-box-scroll ul").animate({left:"-490px"},1000);
+				}else if(w > 1800 && w < 2100){
+					$(".site-shop-box-scroll ul").animate({left:"-540px"},1000);
+				}else if (w <= 1024){
+					$(".site-shop-box-scroll ul").animate({left:"-433px"},1000);
+				}
+				$(".shanghai").css("transform","scale(1.08)");
+				$(".beijing").css("transform","scale(1)");
+				$(".shenzhen").css("transform","scale(1)");
+				$(".hangzhou").css("transform","scale(1)");
+			},
+			titleShenZhen(){
+				this.simage_1=false;
+				this.simage_2=true;
+				this.zimage_1=true;
+				this.zimage_2=false;
+				this.bimage_1=false;
+				this.bimage_2=true;
+				let w = $(window).width();
+				$(".site-shop-ShenZhen").css({"color":"#fff","background":"#307FD1"});
+				$(".site-shop-ShangHai").css({"color":"#F18E3D","background":"#fff"});
+				$(".site-shop-BeiJing").css({"color":"#1FB8B6","background":"#fff"});
+				$(".site-shop-HangZhou").css({"color":"#FFC852","background":"#fff"});
+				if(w > 1500 && w < 1600){
+				 	$(".site-shop-box-scroll ul").animate({left:"-779px"},1000);
+				 }else if(w > 1300 && w < 1500){
+				 	$(".site-shop-box-scroll ul").animate({left:"-805px"},1000);
+				 }else if(w > 1800 && w < 2100){
+				    $(".site-shop-box-scroll ul").animate({left:"-782px"},1000);
+				}else if ( w <= 1024 ){
+					$(".site-shop-box-scroll ul").animate({left:"-442px"},1000);
+				}
+				$(".shenzhen").css("transform","scale(1.08)");
+				$(".beijing").css("transform","scale(1)");
+				$(".shanghai").css("transform","scale(1)");
+				$(".hangzhou").css("transform","scale(1)");
+			},
+			titleHangZhou(){
+				this.himage_1=false;
+				this.himage_2=true;
+				this.simage_1=false;
+				this.simage_2=true;
+				this.zimage_1=false;
+				this.zimage_2=true;
+				this.bimage_1=false;
+				this.bimage_2=true;
+				$(".site-shop-HangZhou").css({"color":"#fff","background":"#FFC852"});
+				$(".site-shop-ShenZhen").css({"color":"#307FD1","background":"#fff"});
+				$(".site-shop-ShangHai").css({"color":"#F18E3D","background":"#fff"});
+				$(".site-shop-BeiJing").css({"color":"#1FB8B6","background":"#fff"});
+				let w = $(window).width();
+				if(w > 1500 && w < 1600){
+					$(".site-shop-box-scroll ul").animate({left:"-779px"},1000);
+				}else if(w > 1300 && w < 1500){
+					$(".site-shop-box-scroll ul").animate({left:"-840px"},1000);
+				}else if(w > 1800 && w < 2100){
+					$(".site-shop-box-scroll ul").animate({left:"-782px"},1000);
+				}else if ( w <= 1024 ){
+					$(".site-shop-box-scroll ul").animate({left:"-459px"},1000);
+				}
+				$(".hangzhou").css("transform","scale(1.08)");
+				$(".beijing").css("transform","scale(1)");
+				$(".shanghai").css("transform","scale(1)");
+				$(".shenzhen").css("transform","scale(1)");
+			},
+			aboutusScroll(){
+				let url = location.href;
+				let index = url.lastIndexOf("=");
+				console.log(index)
+				let subBack = url.substring(index + 1, url.length);
+				if (subBack == 1) {
+					setTimeout(()=>{
+						$(".site-shop-BeiJing").click();
+						document.documentElement.scrollTop = 500	
+					},300)
+				}else if(subBack == 2){
+					setTimeout(()=>{
+						$(".site-shop-ShangHai").click();
+						document.documentElement.scrollTop = 500	
+					},300)
+				}else if(subBack == 3){
+					setTimeout(()=>{
+						$(".site-shop-ShenZhen").click();
+						document.documentElement.scrollTop = 500	
+					},300)
+				}else if(subBack == 4){
+					setTimeout(()=>{
+						$(".site-shop-HangZhou").click();
+						document.documentElement.scrollTop = 500
+					},300)
+				}
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.add_and_iphone{
+		text-align: left;
+		width: 260px;
+		margin: 30px auto 0;
+		p{
+			font-size: 14px;
+			color: #555555;
+			margin-top: 3px;
+		}
+	}
+	.site-title{
+		width: 1032px;
+		margin-top: 80px;
+	}
+	.sudyslider .slider-control { margin-top:5px; height:12px; background-color:#e5e5e5; border-radius:6px;}
+	.sudyslider .slider-control .slider-widget {width:65px; height:16px; top:50%; margin-top:-8px; background-color:#0099cc; border-radius:8px; cursor:pointer;}
+	.swiper-container {
+	    width:43.75rem;
+	    height:10.125rem;
+	    margin:0 auto;
+	}
+	.swiper-container .swiper-slide{
+		background: red;
+		border: 1px solid;
+	}
+	.swiper-container .swiper-slide:hover{
+		background: #fff;
+	}
+	.swiper-container-free-mode > .swiper-wrapper {
+	    transition-timing-function:linear;
+	}
+	#slider ul li:hover img{
+		transform: translateY(-10px);
+	   transition-duration: .8s;
+	}
+	#slider ul li img{
+	   transition-duration: .8s;
+	}
+	.site-shop-box-scroll::-webkit-scrollbar {
+		display: none;
+	}
+
+.home-site-left,
+.home-site-right {
+	display: inline-block;
+	width: 38%;
+	height: 2px;
+}
+	.site {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		background: #fff;
+	}
+
+
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 40%;
+		height: 2px;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+		// opacity: 50%;
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+		// opacity: 50%;
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		span {
+			font-size: 25px;
+			color: #333333;
+			font-weight: bold;
+			display: inline-block;
+			margin-top: 23px;
+		}
+	}
+
+	.site-shop-box {
+		width: 1028px;
+		height: 57px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.site-shop-btn {
+		width: 210px;
+		height: 57px;
+		border-radius: 28px;
+		border: 1px solid;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		font-size: 16px;
+		display: flex;
+		justify-content: center;
+
+		p {
+			margin-left: 6px;
+		}
+
+		img {
+			// display: block;
+			/*margin-left: 3px;*/
+			width: 52px;
+			height: 40px;
+		}
+	}
+
+	.site-shop-BeiJing {
+		background: #1FB8B6;
+		border: 1px solid #1FB8B6;
+		color: #fff;
+	}
+
+	.site-shop-ShangHai {
+		border: 1px solid 241, 142, 61;
+		color: #F18E3D;
+		background: rgba(255, 255, 255, 0.5);
+	}
+
+	.site-shop-ShenZhen {
+		border: 1px solid #307FD1;
+		color: #307FD1;
+	}
+	.site-shop-HangZhou{
+		border: 1px solid #FFD429;
+		color: #FFD429;
+	}
+
+	.site-shop-box-scroll {
+		width: 100%;
+		height: 480px;
+		margin: 59px 0 57px 0%;
+		position: relative;
+		overflow: hidden;
+		ul {
+			display: flex;
+			position: absolute;
+			top: 0;
+			width: 2700px;
+			li {
+				width: 295px;
+				height: 350px;
+				border-radius: 18px;
+				background: #fff;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+				margin: 20px 0 0 35px;
+				cursor: pointer;
+				transition: all 0.3s;
+				color: #555555;
+				line-height: 20px;
+			}
+		}
+	}
+	.site-shop-box-scroll-title {
+		   width: 100%;
+		   height: 43px;
+		   color: #fff;
+		   font-size: 14px;
+		   font-weight: 500;
+		   text-align: center !important;
+		   border-top-left-radius: 18px;
+		   border-top-right-radius: 18px;
+		   position: relative;
+		   line-height: 43px;
+		   letter-spacing: 1.2px;
+		span {
+			padding-left: 91px;
+		}
+		img {
+			width: 38px;
+			height: 34px;
+			position: absolute;
+			top: 5px;
+			right: 15px;
+		}
+	}
+
+	.site-shop-box-scroll-center {
+		width: 295px;
+		height: 196px;
+		img{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	//笔记本电脑s
+	@media screen and (min-width: 700px)and(max-width: 1400px) {
+
+		.home-banner-btn,
+		.home-banner-nav a {
+			margin-left: 3%;
+		}
+
+		.home-banner-btn2 {
+			margin-left: 0%;
+		}
+
+		.home-nav-top a {
+			width: 80px;
+		}
+		.site-shop-box-scroll ul{
+			width: 2100px;
+		}
+	}
+	 @media screen and(min-width: 1800px)and(max-width: 2000px){
+		 .site-shop-box-scroll ul li{height: 374px !important;}
+	 }
+	//平板
+	@media screen and (max-width: 1024px){
+		.site-shop-box{
+			width: 97%;
+			justify-content: space-around;
+		}
+		.site-shop-btn{
+			width: 162.5px;
+			height: 40.05px;
+			font-size: 10px;
+		}
+		.site-shop-box-scroll{
+			margin: 4px 0 -168px 0;
+		}
+		.site-shop-box-scroll ul li{
+			width: 191.75px;
+			height: 227.5px;
+		}
+		.site-shop-box-scroll-center{
+			width: 191.75px;
+			height: 127.4px ;
+		}
+		.site-shop-box-scroll-title{
+			height: 28px;
+			line-height: 31px;
+			font-size: 9px;
+		}
+		.site-shop-box-scroll-title img{
+			width: 24px;
+			height: 22px;
+		}
+		.add_and_iphone{
+			margin: 15.5px 0 0 11px;
+		}
+		.add_and_iphone p{
+			font-size: 9px;
+		}
+		.site-shop-btn img{
+			width: 33.8px;
+			height: 26px;
+		}
+	}
+	@media screen and(max-width: 800px){
+		.m-centre-box{
+			width: 100%;
+			margin-top: 32px;
+		}
+		.m-centre-title{
+			width: 205px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			margin: 0 auto 20px;
+			border-radius:20px;
+			color: #FFFFFF;
+			img{
+				display: block;
+				width: 45px;
+				height: 36px;
+			}
+			span{
+				font-size: 16px;
+				padding-left: 33px;
+			}
+			p{
+				font-size: 16px;
+				padding: 0 3px 0 8px;
+			}
+		}
+		.m-centres{
+			width: 280px;
+			margin: 0 auto 30px;
+			box-shadow:0px 2px 4px 0px rgba(0,0,0,0.13);
+			border-radius:10px;
+		}
+		.site-shop-box-scroll-title{
+			height: 34px;
+			line-height: 34px;
+			font-size: 16px;
+			border-radius:10px 10px 0px 0px;
+			img{
+				width: 32px;
+				height: 28px;
+				top: 3px;
+				right: 11px;
+			}
+		}
+		.site-shop-box-scroll-center{
+			width: 100%;
+			height: 164px;
+		}
+		.add_and_iphone p:first-child{
+			margin-top: 24px;
+			font-size: 14px;
+		}
+		.add_and_iphone p:last-child{
+			padding-bottom: 24px;
+			font-size: 14px;
+		}
+	}
+</style>

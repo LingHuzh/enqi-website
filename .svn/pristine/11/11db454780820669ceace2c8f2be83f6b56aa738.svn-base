@@ -1,0 +1,526 @@
+<template>
+	<main>
+		<Nav></Nav>
+		<div class="AboutUs" data-scroll>
+			
+			<div class="partner-banner">
+				<img src="https://iph.href.lu/1366x383?fg=666666&bg=cccccc&text=占位图" alt="">
+			</div>
+			<!-- 关于恩启 -->
+			<div class="home-site-title" style="margin-top: 0;">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<span style="margin-top: 23px;">关于恩启</span>
+					<p class="active-p" style="width: 230px;">About INGcare</p>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<!-- 关于恩启内容 -->
+			<div class="enqi-content">
+				<div class="enqi-content-txt">
+					<span>恩启，让康复更有效！</span>
+					<div class="txt" style="margin-top: 33px;">
+						恩启诞生于2014年，是清华x-lab孵化出的社会创新项目，致力于为自闭症儿童及其家长提供康复训练与家庭康复辅导，业务主要包括儿童康复教育线上平台、特殊教育培训、自闭症儿童评测软件及SaaS管理软件授权、自闭症儿童康复中心连锁经营。
+					</div>
+					<div class="txt">
+						恩启是一家教育科技公司，以科技和内容创新为核心竞争力，围绕国内自闭症儿童家庭的康复训练需求，自2014年起，已先后创建了特殊教育培训平台、自闭症儿童康复效果评估工具、自闭症儿童康复教育在线社区。
+						2017年初，恩启成立IDEA教研中心，开始探索线下连锁服务业务，研发并实施适合国内孤独症儿童的康复体系。
+					</div>
+					<a href="/Contact">联系我们</a>
+				</div>
+				<div class="enqi-content-image">
+					<img src="http://iph.href.lu/455x258?fg=666666&bg=cccccc&text=占位图" alt="">
+				</div>
+			</div>
+			<!-- IDEA理念 -->
+			<div class="home-site-title" style="margin-top: 0;">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<span style="margin-top: 23px;">IDEA理念</span>
+					<p class="active-p" style="width: 230px;">The idea of IDEA</p>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<div class="enqi-content">
+				<div class="enqi-content-txt">
+					<span style="color:#FB9130 ;">IDEA是什么？</span>
+					<div class="txt ideaTop">
+						IDEA由六个英文单词首字母组成， 是特殊群体康复教育的关键词，是制定和落实康复教育计划的指导思想。
+					</div>
+					<p class="txt ideaTop">
+						IDEA的核心理念包括:
+						<p>
+							<p class="ideaP">o Inclusive （融合）& Individualized（个别化）: </p>
+							<p class="ideaP">融合教育需要个别化支持，个别化支持必须以实现融合教育为目标。没有个别化支持的融合无法实现，没有融合为目标的个别化干预没有意义。 </p>
+							<p class="ideaP ideaTop">o Data-based（基于数据）: 康复教育必须要有数据支持。 </p>
+							<p class="ideaP ideaTop">o Evidence-based （可循证的）& Ecological（生态环境）:
+								选择有科学循证的教学理论和方法，同时要充分考虑现实环境的实际情况。结合现实教学环境选择有科学循证的康复教育方法，才是最落地的康复教育。</p>
+							<p class="ideaP ideaTop">o Applied（实用的）: 在康复教育过程中，要注重康复教育目标技能的实用性，重点培养孩子现在或未来用的上的技能。</p>
+				</div>
+				<div class="enqi-content-image 	idea">
+					<img src="../../../public/images/idea.png" alt="">
+				</div>
+			</div>
+			<div class="enqi-content" style="margin-top: 53px;">
+				<div class="enqi-content-txt">
+					<span style="color:#4896DF ;">这是谁的IDEA？</span>
+					<div class="txt ideaTop">
+						作为老师和家长必须知道的康复教育关键词，IDEA理念融会贯通在三大体系中：
+					</div>
+					<div class="txt ideaTop">o 针对于孩子的“个别化教育计划”（IEP）： 我们的IEP团队用行之有效的教育方法来提高孩子学以致用的技能，立足当前，着眼未来，促进全纳融合。 </div>
+					<div class="txt ideaTop">o 针对于家长的“个别化家庭支持计划”（IFSP）： 我们的 IFSP团队为家庭提供个性化定制的康复教育解决方案，包括家庭环境评估、家长课程、心理督导等。 </div>
+					<div class="txt ideaTop">o 针对于老师的“职业培养计划”（PD）： 我们的PD团队联合国内外一线专家，致力于培养爱心和专业兼备，全力践行IDEA理念的教师英才。</div>
+				</div>
+				<div class="enqi-content-image 	idea_2">
+					<img src="../../../public/images/ut.png" alt="">
+				</div>
+			</div>
+			<!-- 课程特色 -->
+			<div class="home-site-title" style="margin-top: 50px;">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<span style="margin-top: 23px;">课程特色</span>
+					<p class="active-p" style="width: 230px;">Course Features</p>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<div class="enqi-content" style="margin-top: 53px;">
+				<div class="enqi-content-txt">
+					<div class="course-title">在IDEA理念指导下，恩启设计出了针对黄金干预期的“EIS三阶段康复课程体系”，对不同年龄段、不同能力水平的孩子提供有针对性的安置计划，循序渐进地促进孩子的能力提升，减少教学环境的限制性，逐步从E到I再到S，让“黄金干预期”的孩子都有回到幼儿园的机会。</div>
+					<div class="course-headline" style="background: #F05C5C;margin-top: 15px;">
+						<img src="../../../public/images/paint-palette-and-brush.png" alt="">
+						<span>早期密集阶段（Early Intervention Program）</span>
+					</div>
+					<div class="course-content">主要提升孩子的基本学习技能（learning-to-learn），包括基础的说者技能和听者技能、模仿能力、视觉分析技能等；</div>
+					<div class="course-headline" style="background: #1DBFB3;margin-top: 15px;">
+						<img src="../../../public/images/atom.png" alt="">
+						<span>融合预备阶段（Inregration Program）</span>
+					</div>
+					<div class="course-content">主要训练孩子进入集体环境应该具有的前备技能（basic to advance skills needed in a
+						classroom），比如集体中安坐、接收集体指令、举手、观察学习、平行游戏、要求帮忙、轮流、活动间转换、表达需求等；</div>
+					<div class="course-headline" style="background: #FAAB1D;margin-top: 15px;">
+						<img src="../../../public/images/ruler.png" alt="">
+						<span>学前融合阶段（School Placement Program）</span>
+					</div>
+					<div class="course-content">主要提升孩子在集体环境中的自我学习能力、自发和自理能力，同伴间的社交技能，（academic independence, spontaneity, and general
+						self-help，and social interactions with peers），主要包括适应环境变化、不同技能间的触类旁通、合作游戏、友谊的建立和维持、生活自理和环境维护等等。</div>
+				</div>
+				<div class="enqi-content-image 	course">
+					<img src="../../../public/images/ty.png" alt="">
+				</div>
+			</div>
+			<!-- 企业荣誉 -->
+			<div class="aboutus-bg">
+				<div class="home-site-title" style="margin-top: 100px;background: #FAFAFA;">
+					<span class="home-site-left"></span>
+					<div class="home-site-title-centre">
+						<span style="margin-top: 23px;">企业荣誉</span>
+						<p class="active-p" style="width: 230px;">Enterprise Honor</p>
+					</div>
+					<span class="home-site-right"></span>
+				</div>
+
+				<el-carousel :interval="4000" type="card" height="200px">
+					<el-carousel-item>
+						<img src="../../../public/images/b1.png" alt="恩启2010年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b2.png" alt="恩启2013年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b3.png" alt="恩启2014年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b4.png" alt="恩启2015年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b5.png" alt="恩启2015年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b6.png" alt="恩启2015年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b7.png" alt="恩启2015年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b8.png" alt="恩启2015年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b9.png" alt="恩启2015年荣誉">
+					</el-carousel-item>
+					<el-carousel-item>
+						<img src="../../../public/images/b10.png" alt="恩启2015年荣誉">
+					</el-carousel-item>
+				</el-carousel>
+			</div>
+			<!-- 公司事件 -->
+			<div class="home-site-title" style="margin-top: 0px;">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<span style="margin-top: 23px;">公司事件</span>
+					<p class="active-p" style="width: 230px;">Company Events</p>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<div class="aboutus-event-content">2017年10月24日，孤独症康复平台恩启获得数千万元Pre-A轮融资，该轮融资由清控银杏领投，晨创力合跟投。恩启具体融资金额和该轮之前的 融资暂不公布。
+				该轮融资将被用于教研、科研、康复模式探索、人才引进和人才培养上。恩启希望能够吸引更多孤独症专业教师加盟，未来或许 将会尝试康复科学研究和针对孤 独症教师的教育培训，培养和输送人才，帮助全国机构不断提升教学质量。</div>
+			<div class="aboutus-event-content aboutusTop">2019年7月23日,专注于孤独症儿童康复领域的领先企业恩启完成了3000万元的A轮融资,本轮融资由禹闳资本领投，博行资本参投。本轮融资资金
+				将被用于两个方面。 </div>
+			<div class="aboutus-event-content">第一，全面发展“互联网、教师培训、直营连锁”三大业务板块,构建科技康复生态服务平台；</div>
+			<div class="aboutus-event-content">第二，以专业授权输出等方式，支持中小机构的专业提升和发展，引进更多国内外优秀人才。</div>
+			<!-- 社会责任和公益 -->
+			<div class="home-site-title" style="margin-top: 10px;">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<span style="margin-top: 23px;">社会责任和公益</span>
+					<p class="active-p" style="width: 306px;">Social Responsibility and Public Welfare</p>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<div class="about-Us-duty">
+				<img src="../../../public/images/le.png" alt="" style="margin-left: 50px;">
+				<i>恩启积极履行企业社会责任，积极推行教育公益，促进优质教育的均衡发展。（以下数据截止到2019年中旬)</i>
+				<img src="../../../public/images/ri.png" alt="" style="margin-right: 50px;">
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 38px;">
+				<div class="AboutUs-rules-left"></div>
+				<div class="AboutUs-rules-right">1.目前培训了18000余名一线孤独症康复教师，超过全行业教师人数的65%，为超过19000名一线康复教师提供各类公益定价的培训课程服务，按照全行业21000多名教师的整体规模，覆盖超过90%的一线教师。如按每个康复教师每年有机会帮助7个孩子计算，总计每年有可能间接帮助约133000个孩子。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #2BB7B3;"></div>
+				<div class="AboutUs-rules-right">2.【恩启云课堂】利用互联网培训教师，节约了大量的培训时间和经费，若按每人节省培训成本1500元，总计为全社会节约培训成本约为900万元。为老师和家长免费提供了价值400万元的线上培训课程，赠送了6256位家长。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #4896DF;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">3.【恩启微信公众号】发布了1400篇国内外孤独症领域的专业知识，浏览量总计1255万次。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #F27B43;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">4.【恩启社区】全年下载量突破100,000+，共计发布帖子14000+。为千位家长提供有价值的资讯，为千位教师、机构传播品牌，为百家机构组织找到合适的老师，总浏览量达1866万次。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #F5AB35;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">5.【VB-MAPP评估培训】目前恩启已经在国内30个城市开展过“VB-MAPP软件评估师”培训，400多家机构和医院使用VB-MAPP评估助手，为行业培养了1400余名评估师，并取得了良好的口碑和行业满意度。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #2BB7B3;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">6.恩启以“让天下每一位孤独症孩子都能得到关怀！”为使命，向全社会传播正确知识，呼吁社会包容。恩启推出的在线公益课程，为超过120000个账户提供服务。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #4896DF;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">7.恩启出版发行了中国第一本孤独症科普绘本《天真者的故事---这就是我》，倡导“包容要从娃娃抓起”的理念，呼吁全社会关爱孤独症儿童，目前，此绘本已是孤独症领域第一畅销书籍。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #F27B43;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">8.恩启筹拍了中国第一部大龄孤独症就业题材微电影《咖啡店的天真者》，6个月全网观看220万次。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #F27B43;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">9.恩启公益众筹的第二部讲述孤独症题材的微电影《第十七次抛弃》，集结陶虹、辛柏青公益出演，全网浏览量1900万次</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #2BB7B3;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">10.恩启定期组织公益活动，与新浪公益、微博·微公益、中国狮子联会、今日头条、北京电视台先后达成合作协议，定期开展公益活动。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #2BB7B3;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">11.恩启直接向孤独症领域捐款人民币145000元，用于教师培养和学术活动支持。恩启向北京市的小学、幼儿园捐赠价值18万元的绘本，用于呼吁社会包容。</div>
+			</div>
+			<div class="AboutUs-rules" style="margin-top: 23px;padding-bottom: 110px;">
+				<div class="AboutUs-rules-left" style="border: 2px solid #F27B43;width: 16px;height: 16px;"></div>
+				<div class="AboutUs-rules-right">12.恩启向山东省残疾人福利基金会捐赠价值57万元VB-MAPP语言行为评估系统。</div>
+			</div>
+			<Footer></Footer>
+		</div>
+
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue";
+	import Footer from "../index/Footer.vue";
+	import {
+		shows
+	} from "../../js/scrollHtml.js"
+	export default {
+		name: 'AboutUs',
+		components: {
+			Nav,
+			Footer
+		},
+		mounted() {
+			shows()
+		}
+	}
+</script>
+
+<style lang="scss">
+	.el-carousel{
+		height: 225px;
+		width: 1026px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.el-carousel__item--card{
+		width: 50%;
+		height: 272px !important;
+		background: none !important;
+			img{
+				display: block;
+				width: 257px;
+				height: 100%;
+				margin: 0 auto;
+				
+			}
+	}
+	i {
+		margin: 0;
+		padding: 0;
+	}
+
+	.AboutUs {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		background: #fff;
+	}
+
+	.home-site-title {
+		width: 64%;
+		display: flex;
+		align-items: center;
+	}
+
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 40%;
+		height: 2px;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		span {
+			font-size: 30px;
+			color: #333333;
+			font-family: MicrosoftYaHei-Bold;
+			font-weight: bold;
+			display: inline-block;
+			margin-top: 23px;
+		}
+
+		p {
+			font-size: 14px;
+			color: #333333;
+		}
+	}
+
+	.enqi-content {
+		width: 64%;
+		margin: 0 auto;
+		display: flex;
+	}
+
+	.enqi-content-txt {
+		width: 504px;
+
+		span {
+			font-size: 20px;
+			font-weight: 550;
+		}
+
+		a {
+			width: 124px;
+			height: 36px;
+			background: rgba(236, 128, 77, 1);
+			border-radius: 4px;
+			display: inline-block;
+			font-size: 14px;
+			color: #fff;
+			text-align: center;
+			line-height: 36px;
+			margin-top: 41px;
+		}
+	}
+
+	.enqi-content-image {
+		width: 455px;
+		height: 258px;
+		border-radius: 5px;
+		margin-left: 47px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+		}
+	}
+
+	.idea {
+		width: 456px;
+		height: 251px;
+		margin-top: 40px;
+	}
+
+	.idea_2 {
+		width: 341px;
+		height: 296px;
+		margin-left: 95px;
+	}
+
+	.course {
+		width: 466px;
+		height: 481px;
+	}
+
+	.txt {
+		width: 100%;
+		font-size: 12px;
+		line-height: 27px;
+	}
+
+	.course-title {
+		width: 506px;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 21px;
+		padding: 10px;
+	}
+
+	.course-headline {
+		width: 506px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+
+		span {
+			font-size: 14px;
+			color: #fff;
+		}
+
+		img {
+			display: block;
+			width: 31px;
+			height: 28px;
+			margin: 0 10px 0px 24px;
+		}
+	}
+
+	.course-content {
+		width: 506px;
+		padding: 13px 26px;
+		background: #F7F7F7;
+		font-size: 12px;
+		color: #444444;
+		line-height: 21px;
+	}
+
+	.aboutus-bg {
+		width: 100%;
+		height: 519px;
+		background: #FAFAFA;
+	}
+
+	.aboutus-honor {
+		width: 66%;
+		margin: 0 auto;
+		padding-bottom: 83px;
+
+		ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+
+			li {
+				width: 187px;
+				// height: 225px;
+				background: #fff;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+
+				img {
+					display: block;
+					width: 100%;
+					// height: 100%;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+				}
+			}
+		}
+	}
+
+	.aboutus-honor ul li:nth-child(3) {
+		width: 255px;
+		height: 242px;
+
+	}
+
+	.aboutus-honor ul li:nth-child(1),
+	.aboutus-honor ul li:nth-child(2),
+	.aboutus-honor ul li:nth-child(4),
+	.aboutus-honor ul li:nth-child(5) {
+		margin-top: 66px;
+	}
+
+	.aboutus-event-content {
+		width: 59%;
+		margin: 0 18% 0;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 26px;
+	}
+
+	.about-Us-duty {
+		width: 65%;
+		height: 103px;
+		margin: 0 auto;
+		background: #2BB7B3;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: space-around;
+
+		i {
+			font-size: 16px;
+			color: #fff;
+		}
+
+		img {
+			display: block;
+			width: 35px;
+			height: 25px;
+		}
+	}
+
+	.AboutUs-rules {
+		display: flex;
+		width: 65%;
+		margin: 0 auto;
+	}
+
+	.AboutUs-rules-left {
+		width: 14px;
+		height: 14px;
+		border: 2px solid #F5AB35;
+		border-radius: 50%;
+		margin-top: 8px;
+	}
+
+	.AboutUs-rules-right {
+		width: 97%;
+		color: #6A6A6A;
+		font-size: 15px;
+		line-height: 29px;
+		margin-left: 15px;
+	}
+</style>

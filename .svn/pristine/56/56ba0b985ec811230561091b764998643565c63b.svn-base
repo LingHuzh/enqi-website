@@ -1,0 +1,968 @@
+<template>
+	<main>
+	<Nav v-if="windowWidth>800"></Nav>
+	<div class="idea-theory" data-scroll>
+		<!-- idea基础理论 -->
+		<div class="public_banner">
+			<img src="../../../public/images/ideajichulilunkecheng.jpg" alt="">
+		</div>
+		<!-- 课程介绍 -->
+		<div class="home-site-title home-site-title1" style="margin-top: 57px;">
+			<span class="home-site-left" :class="leftClass"></span>
+			<div class="home-site-title-centre">
+				<p><span style="margin-top: 23px;font-weight: normal;" :class="topClass">课程介绍</span></p>
+				<p class="active-p imgwidth"><img  :class="topClass" src="../../../public/images/a1.png" alt=""></p>
+			</div>
+			<span class="home-site-right" :class="rightClass"></span>
+		</div>
+		<div class="idea-course-introduce" style="color: #555555;letter-spacing: 0.7px;line-height: 23px;">
+			3年多的系统打磨，近20期的新教师岗前培训，在不断实证的同时，恩启积累了大量的经验与素材，诞生了本套《IDEA特教基础理论课程》。 打破常规培训的重技能、知识独立性强的特点，《IDEA特教基础理论课程》从基础理论出发，注重技能之间的联系，阶梯型课程帮助康复教师获得 系统性、整体性成长。本套课程分为5大篇，15个章节，57个小节，课时长达19小时。理论、案例与实操视频相结合、针对1名老师需要教授多个 不同孩子的特点与需求，为老师提供适应性更强的教学技巧。
+		</div>
+		<!-- 授课团队 -->
+		<div class="home-site-title home-site-title2" style="margin-top:30px;">
+			<span class="home-site-left" :class="leftClassTwo"></span>
+			<div class="home-site-title-centre">
+				<p><span style="margin-top: 23px;font-weight: normal;" :class="topClassTwo">授课团队</span></p>
+				<p class="active-p imgwidth"><img :class="topClassTwo" src="../../../public/images/lll.png" alt=""></p>
+			</div>
+			<span class="home-site-right" :class="rightClassTwo"></span>
+		</div>
+		<div class="idea-teacher" style="margin-top: 60px;" v-if="windowWidth>800">
+			<div class="idea-teacher-left">
+				<div class="idea-teacher-left-image"><img src="../../../public/images/ziwei2.jpg" alt=""></div>
+				<div class="idea-teacher-left-introduce">
+					<span style="color:#1DBFB3 ;">徐紫薇</span>
+					<p s>恩启教研总监</p>
+					<em style="display: inline-block;width: 245px;border-top:1px solid #ddd;"></em>
+					<div style="width: 100%;height: 15px;"></div>
+					<p>国际认证行为分析师-博士级</p>
+					<p>美国俄亥俄州立大学特殊教育专业博士</p>
+					<div>清华大学无障碍发展研究院孤独症康复研究项目学术负责人</div>
+				</div>
+			</div>
+			<div class="idea-teacher-right">
+				<div class="idea-teacher-left-image"><img src="../../../public/images/xugang.jpg" alt=""></div>
+				<div class="idea-teacher-left-introduce">
+					<span style="color: #FAAB1D;">王学钢</span>
+					<p>恩启培训部主任</p>
+					<em style="display: inline-block;width: 245px;border-top:1px solid #ddd;"></em>
+					<div style="width: 100%;height: 15px;"></div>
+					<p>国际认证副行为分析师</p>
+					<p>邯郸学院外聘教师</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="idea-teacher" style="margin-top: 45px;" v-if="windowWidth>800">
+			<div class="idea-teacher-left">
+				<div class="idea-teacher-left-image"><img src="../../../public/images/wanghzen.jpg" alt=""></div>
+				<div class="idea-teacher-left-introduce">
+					<span style="color: #2C7EC7;">王震</span>
+					<p>恩启教学督导</p>
+					<em style="display: inline-block;width: 245px;border-top:1px solid #ddd;"></em>
+					<div style="width: 100%;height: 15px;"></div>
+					<p>国际认证副行为分析师</p>
+				</div>
+			</div>
+			<div class="idea-teacher-right">
+				<div class="idea-teacher-left-image"><img src="../../../public/images/lilifeang.jpg" alt=""></div>
+				<div class="idea-teacher-left-introduce">
+					<span style="color: #EC804D;">李丽芳</span>
+					<p>恩启主管言语治疗师</p>
+					<em style="display: inline-block;width: 245px;border-top:1px solid #ddd;"></em>
+					<div style="width: 100%;height: 15px;"></div>
+					<p>原中南大学湘雅二医院言语治疗师</p>
+					<div>中国国际言语语言治疗协会青年学术委员会委员</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="idea-teacher" style="margin-top: 45px;" v-if="windowWidth>800">
+			<div class="idea-teacher-left">
+				<div class="idea-teacher-left-image"><img src="../../../public/images/fangxiaoyan.jpg" alt=""></div>
+				<div class="idea-teacher-left-introduce">
+					<span style="color: #FAAB1D;">方晓嫣</span>
+					<p>恩启教学督导</p>
+					<em style="display: inline-block;width: 245px;border-top:1px solid #ddd;"></em>
+					<div style="width: 100%;height: 15px;"></div>
+					<p>国际认证行为分析师</p>
+					<p>美国密苏里州大学应用行为分析博士</p>
+				</div>
+			</div>
+			<div class="idea-teacher-right">
+				<div class="idea-teacher-left-image"><img src="../../../public/images/lipeiling.jpg" alt=""></div>
+				<div class="idea-teacher-left-introduce">
+					<span style="color: #2C7EC7;">李沛玲</span>
+					<p>恩启主管言语治疗师</p>
+					<em style="display: inline-block;width: 245px;border-top:1px solid #ddd;"></em>
+					<div style="width: 100%;height: 15px;"></div>
+					<p>美国麻省大学波士顿分校教育硕士</p>
+					<p>西南大学应用心理硕士</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="idea-teacher" style="margin-top: 45px;" v-if="windowWidth>800">
+			<div class="idea-teacher-left">
+				<div class="idea-teacher-left-image"><img src="../../../public/images/yuxi.jpg" alt=""></div>
+				<div class="idea-teacher-left-introduce">
+					<span style="color: #1DBFB3;">余溪</span>
+					<p>恩启融合教育督导</p>
+					<em style="display: inline-block;width: 245px;border-top:1px solid #ddd;"></em>
+					<div style="width: 100%;height: 15px;"></div>
+					<p>美国斯旺西大学儿童教育专业优等硕士</p>
+				</div>
+			</div>
+		</div>
+		<!-- 移动端s -->
+		<div class="m-idea-teacher" v-if="windowWidth < 800">
+			<div class="m-idea-teacher-list">
+				<ul>
+					<li>
+						<img src="../../../public/images/ziwei2.jpg" alt="">
+					</li>
+					<li>
+						<p><em>徐紫薇</em><span>恩启教研总监</span></p>
+						<p>国际认证行为分析师-博士级</p>
+						<p>美国俄亥俄州立大学特殊教育专业博士</p>
+						<p>清华大学无障碍发展研究院孤独症康复研究项目学术负责人</p>
+					</li>
+				</ul>
+			</div>
+			<div class="m-idea-teacher-list">
+				<ul>
+					<li>
+						<img src="../../../public/images/xugang.jpg" alt="">
+					</li>
+					<li>
+						<p><em>王学钢</em><span>恩启培训部主任</span></p>
+						<p>国际认证副行为分析师</p>
+						<p>邯郸学院外聘教师</p>
+					</li>
+				</ul>
+			</div>
+			<div class="m-idea-teacher-list">
+				<ul>
+					<li>
+						<img src="../../../public/images/wanghzen.jpg" alt="">
+					</li>
+					<li>
+						<p><em>王震</em><span>恩启教学督导</span></p>
+						<p>国际认证副行为分析师</p>
+					</li>
+				</ul>
+			</div>
+			<div class="m-idea-teacher-list">
+				<ul>
+					<li>
+						<img src="../../../public/images/lilifeang.jpg" alt="">
+					</li>
+					<li>
+						<p><em>李丽芳</em><span>恩启主管言语治疗师</span></p>
+						<p>原中南大学湘雅二医院言语治疗师</p>
+						<p>中国国际言语语言治疗协会青年学术委员会委员</p>
+					</li>
+				</ul>
+			</div>
+			<div class="m-idea-teacher-list">
+				<ul>
+					<li>
+						<img src="../../../public/images/fangxiaoyan.jpg" alt="">
+					</li>
+					<li>
+						<p><em>方晓嫣</em><span>恩启教学督导</span></p>
+						<p>国际认证行为分析师</p>
+						<p>美国密苏里州大学应用行为分析博士</p>
+					</li>
+				</ul>
+			</div>
+			<div class="m-idea-teacher-list">
+				<ul>
+					<li>
+						<img src="../../../public/images/lipeiling.jpg" alt="">
+					</li>
+					<li>
+						<p><em>李沛玲</em><span>恩启主管言语治疗师</span></p>
+						<p>美国麻省大学波士顿分校教育硕士</p>
+						<p>西南大学应用心理硕士</p>
+					</li>
+				</ul>
+			</div>
+			<div class="m-idea-teacher-list">
+				<ul>
+					<li>
+						<img src="../../../public/images/yuxi.jpg" alt="">
+					</li>
+					<li>
+						<p><em>余溪</em><span>恩启融合教育督导</span></p>
+						<p>美国斯旺西大学儿童教育专业优等硕士</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 移动端e -->
+		<div class="home-site-title home-site-title3" style="margin-top: 80px;">
+			<span class="home-site-left" :class="leftClassThree"></span>
+			<div class="home-site-title-centre">
+				<p><span style="margin-top: 23px;font-weight: normal;" :class="topClassThree">课程表</span></p>
+				<p class="active-p imgwidth"><img :class="topClassThree" src="../../../public/images/3333.png" alt=""></p>
+			</div>
+			<span class="home-site-right" :class="rightClassThree"></span>
+		</div>
+		<div class="idea-schedule press">
+			<img src="../../../public/images/1026.jpg" alt="">
+		</div>
+		<!-- 课程费用-关于考试 -->
+		<div class="idea-two-title" v-if="windowWidth>800">
+			<div class="home-site-title" style="margin-top: 0;width: 49%;">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<span style="margin-top: 0px;font-size: 20px;">课程费用</span>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<div class="home-site-title" style="margin-top: 0;width: 49%;">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<span style="margin-top: 0px;font-size: 20px;">关于考试</span>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+		</div>
+		<!-- 内容 -->
+		<div class="idea-exam-and-course">
+			<div class="home-site-title m-home-site-title" style="margin-top:30px;" v-if="windowWidth<800">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 23px;font-weight: normal;">课程费用</span></p>
+					<p class="active-p imgwidth"><img src="../../../public/images/lll.png" alt=""></p>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<div class="idea-exam-and-course-left">
+				<p>2020年对全行业老师 </p>
+				<p>原价¥998 限时价格¥198（2021年1月1日恢复原价）</p>
+				<p style="margin-top: 47px;">2020年免费学习资格 </p>
+				<div class="idea-status">
+					<img src="../../../public/images/duu3.png" alt="">
+					<p>1.恩启317家培训合作机构</p>
+				</div>
+				<div class="idea-status">
+					<img src="../../../public/images/duu3.png" alt="">
+					<p>2.恩启479家VB-MAPP评估助手使用机构</p>
+				</div>
+				<div class="idea-status">
+					<img src="../../../public/images/duu3.png" alt="">
+					<p>3.将入职恩启的老师</p>
+				</div>
+			</div>
+			<div class="home-site-title m-home-site-title" style="margin-top:30px;" v-if="windowWidth<800">
+				<span class="home-site-left"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 23px;font-weight: normal;">关于考试</span></p>
+					<p class="active-p imgwidth"><img src="../../../public/images/lll.png" alt=""></p>
+				</div>
+				<span class="home-site-right"></span>
+			</div>
+			<div class="idea-exam-and-course-right">
+				<span>考试资格获取</span>
+				<p>1.学习全部“IDEA特教基础理论课程”课程并完成课后练习题目</p>
+				<p>2.自愿参加IDEA特教基础理论课程考试</p>
+				<span style="display: inline-block;padding-top: 5px;">考试报名流程</span>
+				<p>1.打开微信进入“恩启学院”公众号</p>
+				<p>2.从底部导航栏内找到“资料室”按钮</p>
+				<p>3.进入后点击“IDEA考试报名”即可选择场次并填写报名信息 （考试场次不定期发布，具体请关注恩启学院公众号）</p>
+			</div>
+		</div>
+		<!-- 考试注意事项 -->
+		<div class="home-site-title home-site-title4" style="margin-top: 80px;">
+			<span class="home-site-left" :class="leftClassFour"></span>
+			<div class="home-site-title-centre">
+				<p><span style="margin-top: 23px;font-weight: normal;" :class="topClassFour">考试注意事项</span></p>
+				<p class="active-p imgwidth"><img :class="topClassFour" src="../../../public/images/a4.png" alt=""></p>
+			</div>
+			<span class="home-site-right" :class="rightClassFour"></span>
+		</div>
+		<div class="idea-exam-and-course" style="margin-top: -38px;" v-if="windowWidth>800">
+			<div class="idea-exam-and-course-left">
+				<p>1.考试为远程在线考似</p>
+				<p>3.考似时间40分钟，考试结束后立即出成绩</p>
+				<p>5.每题2分，满分100分，70分成绩及格</p>
+				<p>7.考试试卷直接从题库中随机抽取，每位老师各不相同</p>
+				<p>8.考试中系统将随机收集图像和声音，严禁出现翻阅资料，替考行为， 一经发现将取消您的考试成绩及补考资格</p>
+			</div>
+			<div class="idea-exam-and-course-right">
+				<p>2.学员需自备考试中所需要用到的电脑（笔记本、平板均可）</p>
+				<p>4.考试总计50道选择题，其中单选45道和多选5道</p>
+				<p>6.首次考试免费，考试成绩不合格，可以补考，首次补考免费，第二次补考须另行缴纳补考费用</p>
+			</div>
+		</div>
+		<!-- 移动端s -->
+		<div class="m-idea-exam-and-course" v-if="windowWidth<800">
+			<ul>
+				<li>1.考试为远程在线考似</li>
+				<li>2.学员需自备考试中所需要用到的电脑（笔记本、平板均可）</li>
+				<li>3.考似时间40分钟，考试结束后立即出成绩</li>
+				<li>4.考试总计50道选择题，其中单选45道和多选5道</li>
+				<li>5.每题2分，满分100分，70分成绩及格</li>
+				<li>6.首次考试免费，考试成绩不合格，可以补考，首次补考免费，第二次补考须另行缴纳补考费用</li>
+				<li>7.考试试卷直接从题库中随机抽取，每位老师各不相同</li>
+				<li>8.考试中系统将随机收集图像和声音，严禁出现翻阅资料，替考行为， 一经发现将取消您的考试成绩及补考资格</li>
+			</ul>
+		</div>
+		<!-- 移动端e -->
+		<!-- 课程证书 -->
+		<div class="home-site-title home-site-title5" style="margin-top: 80px;">
+			<span class="home-site-left" :class="leftClassFive"></span>
+			<div class="home-site-title-centre">
+				<p><span style="margin-top: 23px;font-weight: normal;" :class="topClassFive">课程证书</span></p>
+				<p class="active-p imgwidth"><img :class="topClassFive" src="../../../public/images/a1.png" alt=""></p>
+			</div>
+			<span class="home-site-right" :class="rightClassFive"></span>
+		</div>
+		<div class="m-text-style" style="width: 1026px;text-align: center;font-size:14px;color:#555555;margin: 10px auto 0;letter-spacing: 0.5px;">每小节课程都有对应的练习题，答对后可学习下一节课程。全部课程学习完毕并且报名参加线上统一考核，成绩通过后即可获得课程证书。</div>
+		<div class="certificate"><img src="../../../public/images/zhengshu.jpg" alt=""></div>
+		<!-- 报名流程 -->
+		<div class="home-site-title home-site-title6" style="margin-top: 80px;">
+			<span class="home-site-left" :class="leftClassSix"></span>
+			<div class="home-site-title-centre">
+				<p><span style="margin-top: 23px;font-weight: normal;" :class="topClassSix">报名流程</span></p>
+				<p class="active-p imgwidth"><img  :class="topClassSix" src="../../../public/images/lll.png" alt=""></p>
+			</div>
+			<span class="home-site-right" :class="rightClassSix"></span>
+		</div>
+		<div class="registration_process">
+			<div>
+				<p class="flex"><em>1</em><span>搜索进入恩启学院微信公众号 </span></p>
+				<p></p>
+			</div>
+			<div>
+				<p class="flex"><em>2</em><span>点击底部“培训咨讯” </span></p>
+				<p></p>
+			</div>
+			<div>
+				<p class="flex"><em>3</em><span>点击“IDEA特教培训” </span></p>
+				<p></p>
+			</div>
+		</div>
+		<div class="home-site-title home-site-title7" style="margin-top: 80px;">
+			<span class="home-site-left" :class="leftClassSeven"></span>
+			<div class="home-site-title-centre">
+				<p><span style="margin-top: 23px;font-weight: normal;" :class="topClassSeven">联系我们</span></p>
+				<p class="active-p imgwidth"><img :class="topClassSeven" src="../../../public/images/a4.png" alt=""></p>
+			</div>
+			<span class="home-site-right" :class="rightClassSeven"></span>
+		</div>
+		<div class="contact_us flex">
+			<div>
+				<p></p>
+				<p>扫码了解更多详情</p>
+			</div>
+		</div>
+		<div class="m-btn" v-if="windowWidth<800">
+			<button>扫码了解更多详情</button>
+		</div>
+		<div class="home-site-title m-home-site-title1" style="margin-top: -119px;">
+			<span class="home-site-left" style="width: 34%;"></span>
+			<div class="home-site-title-centre footer_link">
+				<a href="http://www.ingclass.org/" target="_blank">访问恩启云课堂，学习更多内容</a>
+				<img src="../../../public/images/dianji.png" alt="">
+			</div>
+			<span class="home-site-right" style="width: 34%;"></span>
+		</div>
+		<Footer v-if="windowWidth>800"></Footer>
+		<Appfooter v-if="windowWidth<800"></Appfooter>
+	</div>
+		<Top></Top>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	import Top from "../index/Top.vue"
+	import Footer from "../index/Footer.vue"
+	import Appfooter from "../mIndex/Appfooter.vue"
+    import {shows} from "../../js/scrollHtml.js"
+	export default{
+		name:'idea-theory',
+		components:{
+			Nav,
+			Top,
+			Footer,
+			Appfooter
+		},
+		data(){
+			return {
+				topClass: '',
+				topClassTwo: '',
+				topClassThree: '',
+				topClassFour: '',
+				topClassFive: '',
+				topClassSix: '',
+				topClassSeven: '',
+				leftClass: '',
+				leftClassTwo: '',
+				leftClassThree: '',
+				leftClassFour: '',
+				leftClassFive: '',
+				leftClassSix: '',
+				leftClassSeven: '',
+				rightClass: '',
+				rightClassTwo: '',
+				rightClassThree: '',
+				rightClassFour: '',
+				rightClassFive: '',
+				rightClassSix: '',
+				rightClassSeven: '',
+				windowWidth:window.innerWidth
+			}
+		},
+		mounted(){
+			if(window.innerWidth>500){
+				this.$nextTick(()=>{
+					$('.index-nav>a:eq(2)').addClass('borderBottomActive');
+				})
+				shows();
+				$(".index-nav>div a:eq(5)").addClass("nav_active");
+				if(window.outerHeight>800){
+					this.scrollnumber($('.home-site-title1'),'font_active_up',50,1);
+				}
+				window.addEventListener('scroll', this.NavScrollFunction, true);
+			}
+		},
+		methods:{
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title1'),'font_active_up',50,1);
+				this.scrollnumber($('.home-site-title2'),'font_active_up',50,2);
+				this.scrollnumber($('.home-site-title3'),'font_active_up',50,3);
+				this.scrollnumber($('.home-site-title4'),'font_active_up',50,4);
+				this.scrollnumber($('.home-site-title5'),'font_active_up',50,5);
+				this.scrollnumber($('.home-site-title6'),'font_active_up',50,6);
+				this.scrollnumber($('.home-site-title7'),'font_active_up',50,7);
+			},
+			scrollnumber(element, cssname, offset,type) {
+			    let a, b, c, d;
+			    d = $(element).offset().top;
+			    a = eval(d + offset);
+			    b = $(window).scrollTop();
+			    c = $(window).height();
+			    if (b + c > a) {
+			        if(type == 1 && this.topClass == ""){
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}else if(type == 2 && this.topClassTwo == ""){
+						this.topClassTwo = 'font_active_up';
+						this.leftClassTwo = 'font_active_left';
+						this.rightClassTwo = 'font_active_right';
+					}else if(type == 3 && this.topClassThree == ""){
+						this.topClassThree = 'font_active_up';
+						this.leftClassThree = 'font_active_left';
+						this.rightClassThree = 'font_active_right';
+					}else if(type == 4 && this.topClassFour == ""){
+						this.topClassFour = 'font_active_up';
+						this.leftClassFour = 'font_active_left';
+						this.rightClassFour = 'font_active_right';
+					}else if(type == 5 && this.topClassFive == ""){
+						this.topClassFive = 'font_active_up';
+						this.leftClassFive = 'font_active_left';
+						this.rightClassFive = 'font_active_right';
+					}else if(type == 6 && this.topClassSix == ""){
+						this.topClassSix = 'font_active_up';
+						this.leftClassSix = 'font_active_left';
+						this.rightClassSix = 'font_active_right';
+					}else if(type == 7 && this.topClassSeven == ""){
+						this.topClassSeven = 'font_active_up';
+						this.leftClassSeven = 'font_active_left';
+						this.rightClassSeven = 'font_active_right';
+					}
+			    }
+			}
+		}
+
+	}
+</script>
+
+<style lang="scss">
+.idea-theory{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	background: #fff;
+}
+
+.home-site-title {
+	width: 1026px;
+	display: flex;
+	align-items: center;
+}
+.home-site-left,
+.home-site-right {
+	display: inline-block;
+	width: 40%;
+	height: 2px;
+}
+
+.home-site-left {
+	background: linear-gradient(to right, rgba(237,245,245,0.5), rgba(66,170,165,0.5));
+}
+.home-site-right {
+	background: linear-gradient(to left, rgba(237,245,245,0.5), rgba(66,170,165,0.5));
+}
+.home-site-title-centre {
+	flex: 1;
+	text-align: center;
+	span {
+		font-size: 25px;
+		color: #1dbfba;
+		display: inline-block;
+		margin-top: 23px;
+	}
+	p{
+		height: 16px;
+		margin-top: 10px;
+		img{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}	
+}
+	
+
+
+.idea-schedule{
+	width:1033px ;
+	height: 1048px;
+	border: 1px solid rgba(255,255,255,1);
+	margin: 25px auto 0;
+	box-shadow:0px 1px 32px 0px rgba(0, 0, 0, 0.14);
+	overflow-y: auto;
+	img{
+		display: 100%;
+		height: auto;
+	}
+}
+
+.idea-schedule::-webkit-scrollbar {
+  width: 5px;
+}
+.idea-schedule::-webkit-scrollbar-thumb {
+  background-color: #6CD1CA;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
+}
+.idea-two-title{
+	width:1026px;
+	height: 120px;
+	margin: 80px auto 0;
+	display: flex;
+}
+.idea-exam-and-course{
+	width: 1028px;
+	margin: 0 auto;
+	display: flex;
+}
+.idea-exam-and-course-left,.idea-exam-and-course-right{
+	width: 50%;
+	margin-top: 55px;
+	p{	
+		width: 427px;
+		font-size:14px;
+		font-weight:400;
+		color:#555555;
+		line-height:22px;
+		letter-spacing: 0.5px;
+	}
+	span{
+		font-size:14px;
+		font-weight:bold;
+		color:#444444;
+		line-height:22px;
+		letter-spacing: 0.5px;
+	}
+}
+.idea-exam-and-course-right{
+	margin-left: 30px;
+}
+.idea-status{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	img{
+		display: block;
+		width: 14px;
+		height: 12px;
+	}
+	p{
+		padding-left: 5px;
+	}
+}
+.certificate{
+	width:359px ;
+	height: 504px;
+	margin: 31px auto 0;
+	img{
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+.registration_process{
+		width: 1020px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		display: flex;
+		-webkit-display: flex;
+		-moz-display: flex;
+		-o-display: flex;
+		flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-moz-justify-content: space-between;
+		-o-justify-content: space-between;
+		div {
+		    float: left;
+		    margin-top: .14rem;
+		    width: 25%;
+			p{
+				span{
+					color: #444444;
+					font-size: 15px;
+				}
+			}
+		}
+		div p:first-child em{
+			font-size: 36px;
+			color: #39B9CB;
+			font-style: inherit;
+			font-weight: bold;
+			margin-right: 3px;
+		}
+		div p{
+			text-align: center;
+		}
+		div p:last-child{
+			width: 218px;
+			height: 448px;
+			background: url(../../../public/images/phone1.jpg) no-repeat;
+			background-size: 100%;
+			margin: 0 auto;
+			margin-top: 30px;
+		}
+		div:nth-child(2) p:last-child{
+			background: url(../../../public/images/phone2.jpg) no-repeat;
+			background-size: 100%;
+		}
+		div:nth-child(3) p:last-child{
+			background: url(../../../public/images/phone3.jpg) no-repeat;
+			background-size: 100%;
+		}
+	}
+.contact_us{
+		width:438px;
+		height:333px;
+		background: rgba(238,238,238,0.8);
+		border-radius:5px;
+		margin: 0 auto;
+		margin-bottom: 123px;
+		div p:first-child{
+			width: 219px;
+			height: 219px;
+			background: url(../../../public/images/moluomen.png) no-repeat;
+			background-size: 100%;
+			margin: 0 auto;
+		}
+		div p:last-child{
+			width: 249px;
+			height: 22px;
+			line-height: 22px;
+			color: #fff;
+			background: #2C7EC7;
+			box-shadow:0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+			border-radius:5px;
+			text-align: center;
+			margin-top: 26px;
+			font-size: 12px;
+		}
+	}
+.home-site-title-centre p:last-child span {
+	color: #333!important; 
+	font-weight: normal;
+	font-size: 14px!important;
+	margin-top: 0!important;
+}
+	@media screen and (min-width:1900px){
+		.footer_link a{padding-left: 28px;}
+	}
+	@media screen and (max-width:1300px){
+		.home-site-title,.idea-course-introduce,.idea-teacher,.idea-schedule,.idea-two-title,.registration_process{
+			width: 85%;
+		}
+		.idea-exam-and-course{
+			width: 83%;
+		}
+		.idea-teacher-left-image{
+			width: 160px;
+			height: 170px;
+		}
+		.idea-teacher-left-introduce{
+			width: auto;
+			margin: -10px 0 0 12px;
+		}
+		.idea-teacher-left-introduce span{
+			font-size: 18px;
+		}
+		.idea-teacher-left-introduce p{
+			font-size: 12px;
+		}
+		.idea-teacher-left-introduce div{
+			font-size: 12px;
+		}
+		.idea-teacher-right{
+			margin-left: 3%;
+		}
+		.idea-schedule img{
+			width: 100%;
+		}
+		.footer_link a{
+			font-size: 13px;
+		}
+	}
+	@media screen and (min-width: 1380px)and(max-width: 1500px){
+		.home-site-title{width:72%}
+	}
+	@media screen and (max-width: 1024px){
+		.certificate{
+			width: 233px;
+			height: 327px;
+		}
+		.registration_process div p:last-child{
+			width: 141.7px;
+			height: 291px;
+		}
+		.registration_process div p:first-child em{
+			font-size: 23.4px;
+		}
+		.registration_process div p span{
+			font-size: 9.75px;
+		}
+		.contact_us{
+			width: 284.7px;
+			height: 216.45px;
+		}
+		.contact_us div p:first-child{
+			width: 142.35px;
+			height: 142.35px;
+		}
+		.contact_us div p:last-child{
+			width: 162px;
+			margin-top: 14px;
+		}
+	}
+	// 移动端
+	@media screen and (max-width: 800px){
+		.public_banner {
+			margin-top: 0;
+		}
+		.product{
+			position: relative;
+		}
+		.public_banner{
+			width: 100%;
+			height: 103px;
+			min-width: inherit;
+		}
+		.home-site-title1 .home-site-left, .home-site-title1 .home-site-right,
+		.home-site-title2 .home-site-left, .home-site-title2 .home-site-right{
+			width: 35%!important;
+		}
+		.home-site-title-centre p:first-child span{
+			margin-top: 15px!important;
+		}
+		.imgwidth{
+			width: 34px!important;
+			height: 4px!important;
+		}
+		.home-site-title-centre p:last-child{
+			position: relative;
+			top: -10px;
+		}
+		.home-site-title, .idea-course-introduce, .idea-teacher, .idea-schedule, .idea-two-title, .registration_process{
+			width: 100%;
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+		.idea-course-introduce{
+			font-size: 12px;
+			line-height: 20px!important;
+		}
+		.m-idea-teacher{
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+		.m-idea-teacher-list{
+			overflow: hidden;
+			margin-top: 24px;
+		}
+		.m-idea-teacher-list ul li{
+			float: left;
+			width: 40%;
+			box-sizing: border-box;
+			font-size: 12px;
+			color: #444;
+			img{
+				max-width: 100%;
+			}
+		}
+		.m-idea-teacher-list ul li:last-child{
+			width: 60%;
+			padding-left: 3%;
+		}
+		.m-idea-teacher-list ul li p em{
+			font-style: normal;
+		}
+		.m-idea-teacher-list ul li p span{
+			font-size: 10px;
+			margin-left: 10px;
+		}
+		.m-idea-teacher-list ul li p:nth-child(1){
+			padding: 7px 0;
+			border-bottom: .5px solid #eee;
+		}
+		.m-idea-teacher-list ul li p:first-child~p{
+			margin-top: 8px;
+		}
+		.m-idea-teacher .m-idea-teacher-list:nth-child(1) ul li p em,
+		.m-idea-teacher .m-idea-teacher-list:nth-child(7) ul li p em{
+			color: #1DBFB3;
+		}
+		.m-idea-teacher .m-idea-teacher-list:nth-child(2) ul li p em,
+		.m-idea-teacher .m-idea-teacher-list:nth-child(5) ul li p em{
+			color: #FAAB1D;
+		}
+		.m-idea-teacher .m-idea-teacher-list:nth-child(3) ul li p em,
+		.m-idea-teacher .m-idea-teacher-list:nth-child(6) ul li p em{
+			color: #2C7EC7;
+		}
+		.m-idea-teacher .m-idea-teacher-list:nth-child(4) ul li p em{
+			color: #EC804D;
+		}
+		.idea-schedule{
+			height: auto;
+		}
+		.idea-exam-and-course-left, .idea-exam-and-course-right{
+			width: 100%;
+			margin-left: 0;
+		}
+		.idea-exam-and-course{
+			width: 100%;
+			display: inline-block;
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+		.idea-exam-and-course-left,.idea-exam-and-course-right{
+			margin-top: 30px;
+			font-size: 14px;
+			color: #444;
+		}
+		.idea-exam-and-course-left p:nth-child(3){
+			margin-top: 6px!important;
+		}
+		.m-home-site-title,
+		.home-site-title4,
+		.home-site-title6,
+		.home-site-title7,
+		.home-site-title5{
+			margin-top: 62px!important;
+		}
+		.idea-exam-and-course-left span, .idea-exam-and-course-right span{
+			font-weight: normal;
+		}
+		.idea-exam-and-course-left p, .idea-exam-and-course-right p{
+			width: 100%;
+			color: #444;
+		}
+		.home-site-left, .home-site-right{
+			width: 35%;
+		}
+		.idea-exam-and-course{
+			margin-top: 0!important;
+		}
+		.m-idea-exam-and-course{
+			margin-top: 20px;
+			padding: 0 20px;
+			box-sizing: border-box;
+			font-size: 14px;
+			color: #444;
+			line-height: 22px;
+		}
+		.m-text-style{
+			font-size: 14px!important;
+			width: 100%!important;
+			color: #444!important;
+			padding: 0 20px;
+			box-sizing: border-box;
+			text-align: left!important;
+		}
+		.registration_process div{
+			width: 100%;
+			float: inherit;
+			margin-top: 52px;
+		}
+		.registration_process div p:last-child{
+			margin-top: 12px;
+		}
+		.registration_process div:first-child{
+			margin-top: 10px;
+		}
+		.contact_us{
+			width: 89%;
+			height: 251px;
+			position: relative;
+			margin-top: 20px;
+			margin-bottom: 8px;
+		}
+		.contact_us div p:first-child{
+			width: 207px;
+			height: 207px;
+		}
+		.contact_us div p:last-child{
+			display: none;
+		}
+		.m-btn{
+			padding: 0 20px;
+			box-sizing: border-box;
+			button{
+				width: 100%;
+				height: 33px;
+				color: #fff;
+				font-size: 14px;
+				background:rgba(44,126,199,1);
+				border-radius:6px;
+				border: none;
+				outline: none;
+			}
+		}
+		.m-home-site-title1{
+			margin: 63px 0 79px 0!important;
+		}
+		.m-home-site-title1 .home-site-left,.m-home-site-title1 .home-site-right{
+			width: 10%!important;
+		}
+		.footer_link a{
+			font-size: 14px;
+		}
+		.footer_link img{
+			margin-left: 5px;
+			width: 33px!important;
+			height: 24px!important;
+		}
+		.idea-theory{
+			position: relative;
+		}
+	}
+</style>

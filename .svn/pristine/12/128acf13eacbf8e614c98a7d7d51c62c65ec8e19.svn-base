@@ -1,0 +1,958 @@
+<template>
+	<main>
+		<Nav v-if="windowWidth>800"></Nav>
+		<div class="idea" data-scroll>
+				<div class="public_banner">
+					<img src="../../../public/images/vbmappkecheng.jpg" alt="">
+				</div>
+			<div class="home-site-title home-site-title1" style="margin-top: 80px;" v-if="windowWidth > 800">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 23px;font-weight: normal;" :class="topClass">恩启VB-MAPP评估课程</span></p>
+					<p class="active-p imgwidth"><img :class="topClass" src="../../../public/images/a1.png" alt=""></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="m-page-title" v-if="windowWidth < 800">
+				<p style="width: 60px"></p>
+				<span>恩启VB-MAPP评估课程</span>
+				<p style="width: 60px"></p>
+			</div>
+			<div class="m-title-image" v-if="windowWidth < 800">
+				<img src="../../../public/images/a1.png" alt="">
+			</div>
+			<div class="idea-course-introduce">《语言行为里程碑评估及安置程序》培训班采用线.上理论学习+线下实操培训的模式进行。目的是为行业内培训更多的可以进行专业VB-MAPP评估
+				的教师。使其能够自如运用VB-MAPP评估系统开展评估工作。</div>
+			<div class="home-site-title home-site-title2" style="margin-top: -15px;" v-if="windowWidth > 800">
+				<span class="home-site-left" :class="leftClassTwo" style="width: 42%;"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 23px;font-weight: normal;" :class="topClassTwo">培训亮点</span></p>
+					<p class="active-p imgwidth"><img :class="topClassTwo" src="../../../public/images/a2.png" alt=""></p>
+				</div>
+				<span class="home-site-right" :class="rightClassTwo" style="width: 42%;"></span>
+			</div>
+
+			<div class="m-page-title" v-if="windowWidth < 800">
+				<p></p>
+				<span>培训亮点</span>
+				<p></p>
+			</div>
+			<div class="m-title-image" v-if="windowWidth < 800">
+				<img src="../../../public/images/a1.png" alt="">
+			</div>
+
+			<div class="training_highlights">
+				<div>
+					<p></p>
+					<p>
+						最专业的授课团队全程为大家服务
+					</p>
+				</div>
+				<div>
+					<p></p>
+					<p>
+						培训全程使用行业内
+						最专业、完善的全新
+						VB-MAPP评估工具
+					</p>
+				</div>
+				<div>
+					<p></p>
+					<p>
+						精品小班授课,确保每位老师接受系统的指导
+					</p>
+				</div>
+				<div>
+					<p></p>
+					<p>
+						采用了线上(17小时) +
+						线下(4天)的培训方式，
+						为大家节省50%的差旅费
+					</p>
+				</div>
+				<div>
+					<p></p>
+					<p>
+						所有参训人员考核合
+						格可以获得《VB-MAPP
+						评估助手实操班培训合
+						格证证书
+					</p>
+				</div>
+				<div>
+					<p></p>
+					<p>
+
+						培训班由恩启VB-MAPP语言行为评估研究中心主办
+
+					</p>
+				</div>
+			</div>
+			<div class="home-site-title home-site-title3" style="margin-top: 80px;" v-if="windowWidth > 800">
+				<span class="home-site-left home-site-left1" :class="leftClassThree" style="width: 28%;"></span>
+				<div class="home-site-title-centre">
+					<p><span style="font-weight: normal;" :class="topClassThree">VB-MAPP软件评估师课程价格组合</span></p>
+					<p class="active-p imgwidth"><img  :class="topClassThree" src="../../../public/images/a3.png" alt=""></p>
+				</div>
+				<span class="home-site-right home-site-right1" :class="rightClassThree" style="width: 28%;"></span>
+			</div>
+
+			<div class="m-page-title" v-if="windowWidth < 800">
+				<p style="width: 20px"></p>
+				<span>VB-MAPP软件评估师课程价格组合</span>
+				<p style="width: 20px"></p>
+			</div>
+			<div class="m-title-image" v-if="windowWidth < 800">
+				<img src="../../../public/images/a1.png" alt="">
+			</div>
+
+			<div class="vb_curriculum">
+				<div>
+					<ul>
+						<li>
+							<h2 style="border-radius:8px 8px 0px 0px;">线上浸入式学习课程</h2>
+							<div class="vb_curriculum_cont">
+								<p>价格：2380元</p>
+								<p> 线上理论课程时长：约40课时</p>
+								<p style="margin-top: 50px;color: #555555;line-height: 22px;">采用”浸入式"学习的方法,带领大家边看课程边操作。最大程度还原工作中的实际场景,共同领略VB-MAPP评估给我们带来的教学新启发。</p>
+							</div>
+							<p>￥2380</p>
+						</li>
+						<li>
+							<h2 style="border-radius:8px 8px 0px 0px;">线下实操课程</h2>
+							<div class="vb_curriculum_cont">
+								<p>授课团队：恩启特教团队</p>
+								<p>培训时间：2020年 具体时间待定</p>
+								<p>结束时间：2020年具体时间待定</p>
+								<p>每日上课时间：上午9:00-12:00 下午13:00-17:00</p>
+								<p style="margin-top: 20px;">日程安排</p>
+								<div>
+									<em>第一天</em>
+									<div>
+										<p>上午09:00-12:00 开班仪式及理论回顾</p>
+										<p>下午13:00-17:00 理论回顾</p>
+									</div>
+								</div>
+								<div>
+									<em>第二天</em>
+									<div>
+										<p>上午09:00-12:00 理论考核</p>
+										<p>下午13:00-17:00 实操演练</p>
+									</div>
+								</div>
+								<div>
+									<em>第三天</em>
+									<div>
+										<p>上午09:00-12:00 实操演练</p>
+										<p>下午13:00-17:00 实操演练</p>
+									</div>
+								</div>
+								<div>
+									<em>第四天</em>
+									<div>
+										<p>上午09:00-12:00 实操考核</p>
+										<p>下午13:00-17:00 考核及结业仪式</p>
+									</div>
+								</div>
+							</div>
+							<p>￥3600</p>
+						</li>
+					</ul>
+				</div>
+				<div class="course_price" v-if="windowWidth>800">
+					<ul>
+						<li>线上浸入式学习课程+线下实操课程</li>
+						<li>组合优惠价格：￥5380</li>
+					</ul>
+				</div>
+			</div>
+			<div class="home-site-title home-site-title4" v-if="windowWidth>800" style="margin-top: 80px;">
+				<span class="home-site-left"  :class="leftClassFour" style="width: 42%;"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 23px;font-weight: normal;"  :class="topClassFour">报名流程</span></p>
+					<p class="active-p imgwidth"><img  :class="topClassFour" src="../../../public/images/a2.png" alt=""></p>
+				</div>
+				<span class="home-site-right" :class="rightClassFour" style="width: 42%;"></span>
+			</div>
+
+			<div class="m-page-title" v-if="windowWidth < 800">
+				<p></p>
+				<span>报名流程</span>
+				<p></p>
+			</div>
+			<div class="m-title-image" v-if="windowWidth < 800">
+				<img src="../../../public/images/a1.png" alt="">
+			</div>
+
+			<div class="registration_process" >
+				<div>
+					<p class="flex"><em>1</em><span>搜索进入恩启学院微信公众号 </span></p>
+					<p></p>
+				</div>
+				<div>
+					<p class="flex"><em>2</em><span>点击底部“培训咨讯” </span></p>
+					<p></p>
+				</div>
+				<div>
+					<p class="flex"><em>3</em><span>点击“IDEA特教培训” </span></p>
+					<p></p>
+				</div>
+			</div>
+
+			<div class="home-site-title home-site-title5" style="margin-top: 80px;" v-if="windowWidth>800">
+				<span class="home-site-left" :class="leftClassFive" style="width: 42%;"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 23px;font-weight: normal;" :class="topClassFive">联系我们</span></p>
+					<p class="active-p imgwidth"><img :class="topClassFive" src="../../../public/images/a2.png" alt=""></p>
+				</div>
+				<span class="home-site-right" :class="rightClassFive" style="width: 42%;"></span>
+			</div>
+			<div class="m-page-title" v-if="windowWidth < 800">
+				<p></p>
+				<span>联系我们</span>
+				<p></p>
+			</div>
+			<div class="m-title-image" v-if="windowWidth < 800">
+				<img src="../../../public/images/a1.png" alt="">
+			</div>
+			<div class="m-code" v-if="windowWidth < 800">
+				<img src="../../../public/images/moluomen.png" alt="">
+			</div>
+			<div class="m-buy-title" v-if="windowWidth < 800">
+				扫码了解更多详情
+			</div>
+			<div class="contact_us flex" v-if="windowWidth>800">
+				<div>
+					<p></p>
+					<p>扫码了解更多详情</p>
+				</div>
+			</div>
+			<div class="home-site-title" style="margin-top: -119px;">
+				<span class="home-site-left idea_left" style="width: 32%;"></span>
+				<div class="home-site-title-centre footer_link">
+					<a href="http://www.ingclass.org/" target="_blank">访问恩启云课堂，学习更多内容</a>
+					<img src="../../../public/images/dianji.png" alt="">
+				</div>
+				<span class="home-site-right idea_right" style="width: 32%;"></span>
+			</div>
+			<Footer v-if="windowWidth>800"></Footer>
+			<Appfooter v-if="windowWidth<800"></Appfooter>
+		</div>
+		<Top></Top>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+	import Top from "../index/Top.vue"
+	import Appfooter from "../mIndex/Appfooter.vue"
+    import {shows} from "../../js/scrollHtml.js"
+	export default {
+		name: "idea",
+		components: {
+			Nav,
+			Footer,
+			Top,
+			Appfooter
+		},
+		data() {
+			return {
+				topClass: '',
+				topClassTwo: '',
+				topClassThree: '',
+				topClassFour: '',
+				topClassFive: '',
+				leftClass: '',
+				leftClassTwo: '',
+				leftClassThree: '',
+				leftClassFour: '',
+				leftClassFive: '',
+				rightClass: '',
+				rightClassTwo: '',
+				rightClassThree: '',
+				rightClassFour: '',
+				rightClassFive: '',
+				windowWidth:window.innerWidth
+			}
+		},
+		mounted(){
+			if(window.innerWidth > 800){
+				this.$nextTick(()=>{
+					$('.index-nav>a:eq(2)').addClass('borderBottomActive');
+				})
+				shows();
+				$(".index-nav>div a:eq(5)").addClass("nav_active");
+				if(window.outerHeight>800){
+					this.scrollnumber($('.home-site-title1'),'font_active_up',50,1);
+				}
+				window.addEventListener('scroll', this.NavScrollFunction, true);
+			}
+		},
+		methods:{
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title1'),'font_active_up',50,1);
+				this.scrollnumber($('.home-site-title2'),'font_active_up',50,2);
+				this.scrollnumber($('.home-site-title3'),'font_active_up',50,3);
+				this.scrollnumber($('.home-site-title4'),'font_active_up',50,4);
+				this.scrollnumber($('.home-site-title5'),'font_active_up',50,5);
+			},
+			scrollnumber(element, cssname, offset,type) {
+			    let a, b, c, d;
+			    d = $(element).offset().top;
+			    a = eval(d + offset);
+			    b = $(window).scrollTop();
+			    c = $(window).height();
+			    if (b + c > a) {
+			        if(type == 1 && this.topClass == ""){
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}else if(type == 2 && this.topClassTwo == ""){
+						this.topClassTwo = 'font_active_up';
+						this.leftClassTwo = 'font_active_left';
+						this.rightClassTwo = 'font_active_right';
+					}else if(type == 3 && this.topClassThree == ""){
+						this.topClassThree = 'font_active_up';
+						this.leftClassThree = 'font_active_left';
+						this.rightClassThree = 'font_active_right';
+					}else if(type == 4 && this.topClassFour == ""){
+						this.topClassFour = 'font_active_up';
+						this.leftClassFour = 'font_active_left';
+						this.rightClassFour = 'font_active_right';
+					}else if(type == 5 && this.topClassFive == ""){
+						this.topClassFive = 'font_active_up';
+						this.leftClassFive = 'font_active_left';
+						this.rightClassFive = 'font_active_right';
+					}
+			    }
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.idea {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		background: #fff !important;
+		color: #333;
+	}
+	.home-site-title {
+		width: 1026px;
+		height: 200px;
+		margin: 500px auto 0;
+		display: flex;
+		-webkit-display: flex;
+		-moz-display: flex;
+		-o-display: flex;
+		align-items: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+		-o-align-items: center;
+	}
+	.home-site-title-centre p {
+		height: 16px;
+		margin-top: 10px;
+	}
+
+	.home-site-title img {
+		display: inline-block;
+		width: 31px;
+		height: 47px;
+	}
+
+	.home-site-title-centre p img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.idea-course-introduce {
+		width: 1026px;
+		margin: 0 auto 0;
+		font-size: 14px;
+		font-weight: 400;
+		color: #555555;
+		line-height: 22px;
+		letter-spacing: 0.5px;
+	}
+
+	.training_highlights {
+		width: 1026px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		display: flex;
+		-webkit-display: flex;
+		-moz-display: flex;
+		-o-display: flex;
+		flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-moz-justify-content: space-between;
+		-o-justify-content: space-between;
+
+		div {
+			float: left;
+			margin-top: .14rem;
+			width: 158px;
+			height: 210px;
+			background: #3B8FEE;
+			box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+		}
+
+		div:nth-child(2) {
+			background: #EC804D;
+		}
+
+		div:nth-child(3) {
+			background: #1DBFB3;
+		}
+
+		div:nth-child(4) {
+			background: #FFD75C;
+		}
+
+		div:nth-child(5) {
+			background: #3BCAEE;
+		}
+
+		div:nth-child(6) {
+			background: #F05C5C;
+		}
+
+		div p {
+			text-align: center;
+			color: #fff;
+			font-size: 12px;
+			margin: 0 auto;
+		}
+
+		div p:first-child {
+			width: 80px;
+			height: 88px;
+			background: url(../../../public/images/l1.png) no-repeat;
+			background-size: 100%;
+			margin-top: 20px;
+		}
+
+		div:nth-child(2) p:first-child {
+			background: url(../../../public/images/l2.png) no-repeat;
+			background-size: 100%;
+		}
+
+		div:nth-child(3) p:first-child {
+			background: url(../../../public/images/l3.png) no-repeat;
+			background-size: 100%;
+		}
+
+		div:nth-child(4) p:first-child {
+			background: url(../../../public/images/l4.png) no-repeat;
+			background-size: 100%;
+		}
+
+		div:nth-child(5) p:first-child {
+			background: url(../../../public/images/l5.png) no-repeat;
+			background-size: 100%;
+		}
+
+		div:nth-child(6) p:first-child {
+			background: url(../../../public/images/l6.png) no-repeat;
+			background-size: 100%;
+		}
+
+		div p:last-child {
+			width: 81%;
+			letter-spacing: 0.5px;
+		}
+	}
+
+	.vb_curriculum {
+		overflow: hidden;
+		width: 71%;
+		margin: 0 auto;
+
+		>div:first-child {
+			display: flex;
+			-webkit-display: flex;
+			-moz-display: flex;
+			-o-display: flex;
+			justify-content: center;
+			-webkit-justify-content: center;
+			-moz-justify-content: center;
+			-o-justify-content: center;
+		}
+
+		>div:first-child ul li {
+			width: 430px;
+			height: 530px;
+			float: left;
+			border: 4px solid #307FD1;
+			border-radius: 20px;
+			position: relative;
+		}
+
+		>div:first-child ul li>p {
+			width: 113px;
+			height: 63px;
+			background: rgba(48, 127, 209, 1);
+			box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+			border-radius: 13px;
+			font-size: 22px;
+			text-align: center;
+			line-height: 63px;
+			color: #fff;
+			position: absolute;
+			right: 21px;
+			bottom: -30px;
+		}
+
+		>div:first-child ul li:last-child>p {
+			background: rgba(236, 128, 77, 1);
+		}
+
+		>div:first-child ul li:first-child {
+			margin-right: 66px;
+		}
+
+		>div:first-child ul li:last-child {
+			margin-left: 66px;
+			border: 4px solid #EC804D;
+		}
+
+		>div:first-child ul li h2 {
+			height: 57px;
+			line-height: 57px;
+			text-align: center;
+			color: #fff;
+			font-size: 18px;
+			background: #307FD1;
+			letter-spacing: 1px;
+		}
+
+		>div:first-child ul li:last-child h2 {
+			background: #EC804D;
+		}
+	}
+
+	.vb_curriculum_cont {
+		padding: 20px;
+		box-sizing: border-box;
+		font-size: 15px;
+		color: #333;
+
+		>p {
+			margin-top: 7px;
+		}
+
+		>div {
+			overflow: hidden;
+			margin-top: 10px;
+		}
+
+		>div>em {
+			float: left;
+			width: 16%;
+			font-style: inherit;
+		}
+
+		>div>div {
+			float: left;
+			width: 84%;
+		}
+
+		>div>div>p:last-child {
+			margin-top: 10px;
+		}
+	}
+
+	.vb_curriculum ul li:first-child .vb_curriculum_cont {
+		font-size: 16px;
+	}
+
+	.course_price {
+		overflow: hidden;
+		height: 60px;
+		line-height: 52px;
+		padding: 0 78px;
+		box-sizing: border-box;
+		background: #2BB7B3;
+		border-radius: 10px;
+		border: 4px solid #2BBFBB;
+		width: 1020px;
+		margin: 0 auto;
+		margin-top: 103px;
+		box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+
+		ul li {
+			float: left;
+			color: #fff;
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		ul li:last-child {
+			float: right;
+		}
+	}
+
+	.registration_process {
+		width: 1026px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		display: flex;
+		-webkit-display: flex;
+		-moz-display: flex;
+		-o-display: flex;
+		flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-moz-justify-content: space-between;
+		-o-justify-content: space-between;
+
+		div {
+			float: left;
+			margin-top: .14rem;
+			width: 25%;
+			p{
+				span{
+					font-size: 15px;
+					color: #555555;
+				}
+			}
+		}
+
+		div p:first-child em {
+			font-size: 36px;
+			color: #39B9CB;
+			font-style: inherit;
+			font-weight: bold;
+			margin-right: 3px;
+		}
+
+		div p {
+			text-align: center;
+		}
+
+		div p:last-child {
+			width: 218px;
+			height: 448px;
+			background: url(../../../public/images/phone1.jpg) no-repeat;
+			background-size: 100%;
+			margin: 0 auto;
+			margin-top: 30px;
+		}
+
+		div:nth-child(2) p:last-child {
+			background: url(../../../public/images/phone2.jpg) no-repeat;
+			background-size: 100%;
+		}
+
+		div:nth-child(3) p:last-child {
+			background: url(../../../public/images/phone3.jpg) no-repeat;
+			background-size: 100%;
+		}
+	}
+
+	.contact_us {
+		width: 493px;
+		height: 375px;
+		background: rgba(169, 169, 169, .2);
+		border-radius: 5px;
+		margin: 0 auto;
+		margin-bottom: 123px;
+
+		div p:first-child {
+			width: 247px;
+			height: 247px;
+			background: url(../../../public/images/moluomen.png) no-repeat;
+			background-size: 100%;
+			margin: 0 auto;
+		}
+
+		div p:last-child {
+			width: 280px;
+			height: 25px;
+			line-height: 25px;
+			color: #fff;
+			background: #2C7EC7;
+			box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			text-align: center;
+			margin-top: 29px;
+			font-size: 14px;
+		}
+	}
+
+	.training_highlights,
+	.training_highlights,
+	.registration_process,
+	.contact_us,
+	.vb_curriculum {
+		margin-top: 40px;
+	}
+	.footer_link a{padding-left: 46px;}
+	//笔记本电脑s
+	@media screen and (min-width: 700px)and(max-width: 1400px) {
+
+		.home-site-left1,
+		.home-site-right1 {
+			width: 20%;
+		}
+
+		.vb_curriculum div:first-child ul li:first-child {
+			margin-right: 40px;
+		}
+
+		.vb_curriculum div:first-child ul li:last-child {
+			margin-left: 40px;
+		}
+
+
+	}
+	.home-site-title-centre p:last-child span {
+		color: #333!important; 
+		font-weight: normal;
+		font-size: 14px!important;
+		margin-top: 0!important;
+	}
+	@media screen and (min-width: 1890px) {
+		.vb_curr_title{height: 519px;}
+	}
+	@media screen and (min-width:1400px) and (max-width:1460px){
+		.vb_curr_title{height: 425px;}
+
+	}
+	@media screen and (max-width:1366px){
+		.vb_curriculum > div:first-child ul li{
+			width: 43%;
+		}
+		.vb_curriculum ul li:first-child .vb_curriculum_cont ,.vb_curriculum_cont{
+		    font-size: 14px;
+		}
+		.vb_curriculum > div:first-child ul li > p{
+			width: 88px;
+			height: 38px;
+			line-height: 38px;
+			font-size: 19px;
+		    bottom: -22px;
+		}
+		.footer_link a{
+			font-size: 13px;
+		}
+	}
+	@media screen and (max-width: 1300px){
+		.home-site-title,.idea-course-introduce,.registration_process,.training_highlights{
+			width: 85%;
+		}
+		.course_price ul li:last-child{
+			float: left;
+			padding-left: 51px;
+		}
+		.training_highlights div{
+			width: 130px;
+		}
+	}
+	@media screen and (max-width: 1024px){
+		/*.vb_curriculum > div:first-child ul li{*/
+		/*	width: 280px;*/
+		/*	height: 344.5px;*/
+		/*}*/
+		/*.vb_curriculum ul li:first-child .vb_curriculum_cont{*/
+		/*	font-size: 12px;*/
+		/*}*/
+		/*.vb_curriculum_cont{*/
+		/*	font-size: 10px;*/
+		/*}*/
+		.registration_process div p:last-child{
+			width: 141.7px;
+			height: 291px;
+		}
+		.registration_process div p:first-child em{
+			font-size: 23.4px;
+		}
+		.registration_process div p span{
+			font-size: 9.75px;
+		}
+		.contact_us{
+			width: 284.7px;
+			height: 216.45px;
+		}
+		.contact_us div p:first-child{
+			width: 142.35px;
+			height: 142.35px;
+		}
+		.contact_us div p:last-child{
+			width: 162px;
+			margin-top: 14px;
+		}
+	}
+	// 移动端
+	@media screen and (max-width: 800px){
+		.public_banner {
+			margin-top: 0;
+		}
+		.product{
+			position: relative;
+		}
+		.public_banner{
+			width: 100%;
+			height: 103px;
+			min-width: inherit;
+		}
+		.imgwidth{
+			width: 34px!important;
+			height: 4px!important;
+		}
+		.home-site-title-centre p:last-child{
+			position: relative;
+			top: -10px;
+		}
+		.home-site-title{
+			height: auto;
+		}
+		.home-site-title, .idea-course-introduce, .registration_process, .training_highlights{
+			width: 100%;
+			padding: 0 20px;
+			box-sizing: border-box;
+			margin: 30px auto !important;
+		}
+		.idea-course-introduce{
+			text-align: justify;
+			font-size: 12px;
+			color: #444;
+			margin-top: 29px;
+		}
+		.home-site-title1 .home-site-left, .home-site-title1 .home-site-right{
+			width: 20%!important;
+		}
+		.home-site-title2 .home-site-left, .home-site-title2 .home-site-right{
+			width: 35%!important;
+		}
+		.home-site-title3 .home-site-left, .home-site-title3 .home-site-right{
+			width: 13%!important;
+		}
+		.training_highlights div{
+			width:46%;
+			margin-top: 29px;
+			height: 173px;
+		}
+		.training_highlights div:nth-child(1),
+		.training_highlights div:nth-child(2){
+			margin-top: 0;
+		}
+		.training_highlights div p:first-child{
+			width: 70px;
+			height: 70px;
+		}
+		.vb_curriculum{
+			width: 100%;
+			padding: 0 15%;
+			box-sizing: border-box;
+			padding-bottom: 75px;
+		}
+		.vb_curriculum > div:first-child ul li{
+			width: 100%;
+			height: auto;
+			border: 1px solid #307FD1;
+			border-radius: 10px;
+		}
+		.vb_curriculum > div:first-child ul li:last-child {
+		    border: 1px solid #EC804D;
+		}
+		.vb_curriculum > div:first-child ul li:last-child{
+			margin-left: 0;
+			margin-top: 42px;
+		}
+		.vb_curriculum > div:first-child ul li h2{
+			height: 34px;
+			line-height: 34px;
+			font-size: 16px;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			font-weight: normal;
+		}
+		.vb_curriculum > div:first-child ul li > p{
+			width: 76px;
+			height: 42px;
+			line-height: 42px;
+			font-size: 14px;
+			bottom: -20px;
+		}
+		.vb_curriculum_cont p{
+			font-size: 12px;
+			color: #444;
+		}
+		.vb_curriculum ul li:first-child .vb_curriculum_cont p{
+			margin-top: 10px!important;
+		}
+		.vb_curriculum ul li:first-child .vb_curriculum_cont p:first-child{
+			margin-top: 0;
+		}
+		.vb_curriculum_cont{
+			padding: 20px 19px 35px 19px;
+		}
+		.vb_curriculum_cont>div>em{
+			width: 18%;
+		}
+		.vb_curriculum_cont>div>div{
+			width: 82%;
+		}
+		.idea{
+			position: relative;
+		}
+		.home-site-title3{
+			margin-top: 63px!important;
+		}
+		.registration_process div{
+			width: 100%;
+			float: inherit;
+		}
+		.registration_process div p span{
+			font-size: 14px !important;
+			color: #444 !important;
+		}
+		.registration_process div p:last-child{
+			margin: 12px auto 52px;
+		}
+		.m-code{
+			width:88%;
+			margin: 18px auto 8px;
+			background: #EEEEEE;
+			img{
+				display: block;
+				width: 208px;
+				height: 208px;
+				margin: 0 auto;
+				padding: 21px 0;
+			}
+		}
+		.m-buy-title{
+			width: 88%;
+			text-align: center;
+			font-size: 14px;
+			color: #fff;
+			padding: 7px 0;
+			background: #2C7EC7;
+			border-radius: 6px;
+			margin: 0 auto;
+		}
+		.home-site-left, .home-site-right{
+			width: 8% !important;
+		}
+		.footer_link a{
+			font-size: 12px;
+		}
+		.footer_link img{
+			width: 24px !important;
+			height: 18px !important;
+		}
+	}
+</style>

@@ -1,0 +1,813 @@
+<template>
+	<main>
+		<Nav></Nav>
+		<div class="product" data-scroll>
+			<div class="public_banner">
+				<img src="../../../public/images/hulianwang.jpg" alt="">
+			</div>
+			<div class="home-site-title" style="margin-top: 80px;">
+				<span class="home-site-left" style="width: 40%;" :class="leftClass"></span>
+				<span class="pro_line" style="margin-top: 10px;letter-spacing: 2px;" :class="topClass">互联网产品</span>
+				<span class="home-site-right" style="width: 40%;" :class="rightClass"></span>
+			</div>
+			<div class="product-content-box">
+				<div class="product-content-left">
+					<ul>
+						<li class="product-active" data-type="1">
+							<span>恩启云课堂</span>
+							<img src="../../../public/images/yunketanggo.png" alt="">
+						</li>
+						<li data-type="2">
+							<span>VB-MAPP评估助手</span>
+							<img src="../../../public/images/yunketanggo.png" alt="">
+						</li>
+						<li data-type="3">
+							<span>恩启社区App</span>
+							<img src="../../../public/images/yunketanggo.png" alt="">
+						</li>
+						<li data-type="4">
+							<span>恩启特教平台</span>
+							<img src="../../../public/images/yunketanggo.png" alt="">
+						</li>
+						<li data-type="5">
+							<span>IDEA在家</span>
+							<img src="../../../public/images/yunketanggo.png" alt="">
+						</li>
+						<li data-type="6">
+							<span>OpenK</span>
+							<img src="../../../public/images/yunketanggo.png" alt="">
+						</li>
+					</ul>
+				</div>
+				<div class="product-content-right">
+					<div class="product-content product-content1">
+						<img src="../../../public/images/enqiyunketang.png" class="font_active_left" />
+						<div class="product-cext font_active_right" style="cursor: pointer;" @click="yunlink()">
+							<h1 class="yunlink">恩启云课堂 <img src="../../../public/images/lianjiyunketang.png" alt=""></h1>
+							<h2>E-Learning</h2>
+							<p>为特教老师及家长提供特教专业学习支持</p>
+							<p>2014年我们推出恩启云课堂，聚合特教行业专业资源，为数以万计的学员提供优质的在线教育服务。旨在改善国内教育资源分布不均的现状，让每一位学员沐浴在教育的春风里。</p>
+						</div>
+					</div>
+					<div class="product-content product-content2">
+						<img src="../../../public/images/vb.png" class="font_active_left" />
+						<div class="product-cext font_active_right" style="cursor: pointer;" @click="vblink()">
+							<h1 class="yunlink">VB-MAPP评估助手 <img src="../../../public/images/lianjievb.png" alt=""></h1>
+							<h2>Teacher Supplies</h2>
+							<p>VB-MAPP中文电子版中国独家授权单位。</p>
+							<p>入选中国残疾人康复协会孤独症康复教育设备及辅助器具目录。全国200余家康复机构正在使用。这是一款属于特教老师的评估辅助软件，使评估更专业，更高效，让身为评估师的您告别繁琐的准备工作。</p>
+						</div>
+					</div>
+					<div class="product-content product-content3">
+						<img src="../../../public/images/enqishequ1.png" class="font_active_left" />
+						<div class="product-cext font_active_right">
+							<h1>恩启社区App</h1>
+							<h2>SNS</h2>
+							<p>中国最大的孤独症行业资讯平台。</p>
+							<p>随时随地查看新鲜资讯、重温经典文章。</p>
+							<p>特教机构、老师和家长的好帮手。</p>
+						</div>
+					</div>
+					<div class="product-content product-content4">
+						<img src="../../../public/images/enqishequ.png" class="font_active_left" />
+						<div class="product-cext font_active_right">
+							<h1>恩启特教平台</h1>
+							<h2>New Media</h2>
+							<p>中国领先的孤独症儿童康复教育领域的互联网+服务平台，致力于科学的技术和方法，以内容促进行业康复教育水平整体提升，让每一个孩子都能享受到更好的康复教育服务。自2014年起，面向行业提供科普知识、特教培训、远程家庭指导、家长培训、融合教育支持，由【科普知识】、【机构、教师认证查询】、【手把手教你家庭干预】、【你问我答】【家长经验】、【深度学习营】等多个板块组成，覆盖康复专业知识、育儿、家庭等话题。恩启，让康复更有效！</p>
+						</div>
+					</div>
+					<div class="product-content product-content5">
+						<p><img src="../../../public/images/ideaz.png" /></p>
+						<p><img src="../../../public/images/zuo1.png" class="font_active_left1" /></p>
+						<p><img src="../../../public/images/you1.png" class="font_active_right1" /></p>
+						<div class="product-cext font_active_right" >
+							<h1>IDEA在家</h1>
+							<h2>IDEA</h2>
+							<p>为恩启自闭症机构学生家长设计的一款辅助教学APP，一站式解决孩子的康复问题。 功能：学情分析，线下预约，家校沟通，家校通知，作业任务，教学课程等</p>
+						</div>
+					</div>
+					<div class="product-content product-content6">
+						<p><img src="../../../public/images/open.png" /></p>
+						<p><img src="../../../public/images/zuo.png" class="font_active_left1" /></p>
+						<p><img src="../../../public/images/you.png" class="font_active_right1" /></p>
+						<div class="product-cext font_active_right">
+							<h1>OpenK</h1>
+							<h2>IDEA</h2>
+							<p>为恩启自闭症机构的在校老师和学生家长设计的一款辅助于教学的管理工具。</p>
+							<p>功能：作业任务，家校沟通，家校通知，课程表，数据记录等</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="product-APP">
+				<div class="product-APP-title">
+					<span>App下载</span>
+					<p style="padding-top: 12px;">主营业务：儿童康复教育指导平台、特殊教育培训、VB-MAPP评估助手软件及测评服务、</p>
+					<p style="padding-bottom: 51px;"> SaaS管理软件授权、自闭症儿童康复中心连锁经营</p>
+				</div>
+				<ul>
+					<li>
+						<img src="../../../public/images/1.jpg" alt="IOS恩启社区APP">
+					</li>
+					<li>
+						<img src="../../../public/images/2.jpg" alt="Androld恩启社区APP">
+					</li>
+					<li>
+						<img src="../../../public/images/3.jpg" alt="恩启特教平台公众号">
+					</li>
+				</ul>
+			</div>
+			<Footer></Footer>
+		</div>
+		<Top></Top>
+	</main>
+</template>
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+	import Top from "../index/Top.vue"
+	import {
+		shows
+	} from "../../js/scrollHtml.js"
+	export default {
+		name: 'product',
+		components: {
+			Nav,
+			Footer,
+			Top
+		},
+		data() {
+			return {
+				topClass: '',
+				topClassOne: '',
+				leftClass: '',
+				rightClass: ''
+			}
+		},
+		mounted() {
+			//互联网产品
+			this.$nextTick(()=>{
+				$('.index-nav>a:eq(4)').addClass('borderBottomActive');
+			})
+			shows();
+			this.aboutusScroll();
+			$(".index-nav>div a:eq(3)").addClass("nav_active");
+			if (window.outerHeight < 800) {
+				window.addEventListener('scroll', this.NavScrollFunction, true);
+			} else {
+				this.scrollnumber($('.home-site-title'), 'font_active_up', 50, 1);
+			}
+			$(".product-content-left ul li").click(function() {
+				$(".product-content-left ul li img").animate({
+					"right": '40px'
+				});
+				$(this).find("img").stop().animate({
+					"right": '28px'
+				});
+				$(this).addClass('product-active').siblings().removeClass('product-active');
+				$(".product-content").hide();
+				$(".product-content" + $(this).attr('data-type')).show();
+			})
+		},
+		methods: {
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title'), 'font_active_up', 50, 1);
+			},
+			scrollnumber(element, cssname, offset, type) {
+				let a, b, c, d;
+				d = $(element).offset().top;
+				a = eval(d + offset);
+				b = $(window).scrollTop();
+				c = $(window).height();
+				if (b + c > a) {
+					if (type == 1 && this.topClass == "") {
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}
+				}
+			},
+			aboutusScroll() {
+				let url = location.href;
+				let index = url.lastIndexOf("=");
+				console.log(index)
+				let subBack = url.substring(index + 1, url.length);
+				if (subBack == 1) {
+					setTimeout(() => {
+						document.documentElement.scrollTop = 1280
+					}, 500)
+				} else if (subBack == 4) {
+					setTimeout(() => {
+						document.documentElement.scrollTop = 500
+						$(".product-content-left ul li").eq(3).click();
+					}, 500)
+				} else if (subBack == 5) {
+					setTimeout(() => {
+						document.documentElement.scrollTop = 500
+						$(".product-content-left ul li").eq(4).click();
+					}, 500)
+				} else if (subBack == 6) {
+					setTimeout(() => {
+						document.documentElement.scrollTop = 500
+						$(".product-content-left ul li").eq(5).click();
+					}, 500)
+				} else if (subBack == 7) {
+					setTimeout(() => {
+						document.documentElement.scrollTop = 500
+						$(".product-content-left ul li").eq(6).click();
+					}, 500)
+				}
+			},
+			yunlink(){
+				window.open('http://www.ingclass.org/');
+			},
+			vblink(){
+				window.open('http://home.vbmapp.cn/webstage/common/login/index.do?redirectUrl=http://www.vbmapp.cn/');
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+
+	.product {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		background: #fff;
+	}
+
+	.home-site-title {
+		width: 75%;
+		display: flex;
+		align-items: center;
+	}
+
+	.pro_line {
+		margin-top: 10px;
+		letter-spacing: 2px;
+		flex: 1;
+		display: inline-block;
+		text-align: center;
+		letter-spacing: 2px;
+		font-size: 23px !important;
+		color: #1dbfba !important;
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+
+
+	.product-content-box {
+		width: 75%;
+		height: 655px;
+		display: flex;
+		margin: 25px auto 95px;
+		// border: 1px solid;
+	}
+
+	.product-content-left {
+		width: 36%;
+		height: 469px;
+		position: relative;
+		ul {
+			width: 100%;
+
+			li {
+				height: 75px;
+				font-size: 18px;
+				display: flex;
+				align-items: center;
+				border: 1px solid rgba(179, 179, 179, 0.3);
+				color: #CFCFCF;
+				background: rgba(255, 255, 255, 0.3);
+				position: relative;
+				cursor: pointer;
+
+				span {
+					padding-left: 27px;
+				}
+
+				border-top: none;
+
+				img {
+					width: 46px;
+					height: 26px;
+					position: absolute;
+					right: 40px;
+				}
+			}
+
+			li:first-child {
+				border-top: 1px solid rgba(179, 179, 179, 0.3);
+			}
+
+			.product-active:nth-child(2),
+			.product-active:nth-child(6) {
+				background: #F2802D !important;
+			}
+
+			.product-active:nth-child(3),
+			.product-active:nth-child(7) {
+				background: #2E77C9 !important;
+			}
+
+			.product-active:nth-child(4) {
+				background: #FCCE15 !important;
+			}
+
+			.product-active:nth-child(5) {
+				background: #1DBFB3 !important;
+			}
+
+			li:not(.product-active):hover:nth-child(1) {
+				color: #1DBFB3 !important;
+			}
+
+			li:not(.product-active):hover:nth-child(2),
+			li:not(.product-active):hover:nth-child(6) {
+				color: #F2802D !important;
+			}
+
+			li:not(.product-active):hover:nth-child(3),
+			li:not(.product-active):hover:nth-child(7) {
+				color: #2E77C9 !important;
+			}
+
+			li:not(.product-active):hover:nth-child(4) {
+				color: #FCCE15 !important;
+			}
+
+			li:not(.product-active):hover:nth-child(5) {
+				color: #1DBFB3 !important;
+			}
+		}
+	}
+
+	.product-content-left .ul .product-active:hover,
+	.product-active {
+		color: #fff !important;
+	}
+
+	.product-content-right {
+		width: 760px;
+		margin-left: 4%;
+		height: 655px;
+		position: relative;
+		top: -3%;
+		overflow: hidden;
+	}
+
+	.product-APP {
+		width: 100%;
+		height: auto;
+		background: #EDF5F5;
+
+		ul {
+			width: 75%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-around;
+			height: 460px;
+
+			li {
+				width: 282px;
+				height: 339px;
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	.product-APP-title {
+
+		width: 75%;
+		margin: 0 auto;
+		text-align: center;
+		color: #333333;
+
+		span {
+			display: inline-block;
+			font-size: 27px;
+			font-weight: 900;
+			padding-top: 51px;
+		}
+
+		p {
+			font-size: 14px;
+			font-family: Heiti SC;
+			color: rgba(51, 51, 51, 1);
+		}
+	}
+
+	.product-content img {
+		max-width: 100%;
+		margin-top: -34px;
+	}
+
+	.product-content {
+		position: relative;
+		// overflow: hidden;
+		display: none;
+	}
+
+	.product-content1 {
+		width: 100%;
+		height: 100%;
+		display: block;
+		.product-cext{
+			bottom:125px;
+		}
+	}
+	.product-content2  .product-cext{
+		bottom:65px;
+	}
+	.product-cext {
+		position: absolute;
+		background: #FBFDFF;
+		width: 470px;
+		box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.08);
+		border-radius: 10px;
+		bottom: 19px;
+		right: 5px;
+		padding: 35px 30px;
+		box-sizing: border-box;
+		z-index: 3;
+
+		h1 {
+			font-size: 18px;
+			color: #1DBFB3;
+		}
+
+		h2 {
+			color: #6CD4CC;
+			font-size: 18px;
+			font-weight: normal;
+			margin-top: 2px;
+		}
+
+		p {
+			font-size: 14px;
+			line-height: 22px;
+		}
+
+		p:nth-child(3) {
+			margin-top: 8px;
+			color: #555;
+		}
+		p:nth-child(4),p:nth-child(5) {
+			color: #555;
+		}
+	}
+
+	.product-content2 {
+		h1 {
+			color: #F2802D !important;
+		}
+
+		h2 {
+			color: #F7B17F !important;
+		}
+	}
+
+	.product-content3 {
+		h1 {
+			color: #2E77C9 !important;
+		}
+
+		h2 {
+			color: #6499D4 !important;
+		}
+
+		.product-cext {
+			width: 340px !important;
+			bottom:50px;
+			right: 85px;
+		}
+	}
+
+	.product-content4 {
+		h1 {
+			color: #FCCE15 !important;
+		}
+
+		h2 {
+			color: #FBDF6E !important;
+		}
+		.product-cext {
+			bottom:45px;
+		}
+	}
+
+	.product-content5,
+	.product-content6 {
+		width: 100%;
+		height: 100%;
+		.product-cext {
+			width: 372px !important;
+		}
+
+		h1 {
+			color: #1DBFB3 !important;
+		}
+
+		h2 {
+			color: #55D0C7 !important;
+		}
+
+		>p {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+		}
+
+		>p:first-child {
+			z-index: 2;
+		}
+		.product-cext {
+			bottom:100px;
+		}
+	}
+
+	.product-content6 {
+		h1 {
+			color: #F2802D !important;
+		}
+
+		h2 {
+			color: #F2A166 !important;
+		}
+	}
+
+	.product-content7 {
+		h1 {
+			color: #2E77C9 !important;
+		}
+
+		h2 {
+			color: #7AB0ED !important;
+		}
+	}
+
+	.product-content7 p {
+		width: 200px;
+	}
+
+	.product-content7 .product-cext::before {
+		content: "";
+		display: inline-block;
+		width: 142px;
+		height: 142px;
+		background: url(../../../public/images/shangchengQR.png) no-repeat;
+		background-size: 100%;
+		position: absolute;
+		right: 45px;
+		top: 40px;
+	}
+
+	.font_active_right1 {
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-name: font_right1;
+		animation-name: font_right1;
+		transform: translateX(100%);
+		animation-fill-mode: forwards;
+	}
+
+	.product-content4 .product-cext p {
+		line-height: 22px;
+		
+	}
+	.yunlink{
+		position: relative;
+		display: flex;
+		align-items: center;
+		img{
+			display: block;
+			width: 22px;
+			height: 22px;
+			margin: 0px 0 0 10px;
+		}
+	}
+	
+	@keyframes font_right1 {
+		0% {
+			transform: translateX(0);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(150px);
+			opacity: 1
+		}
+	}
+
+	@-moz-keyframes font_right1
+
+	/* Firefox */
+		{
+		0% {
+			transform: translateX(0);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(150px);
+			opacity: 1
+		}
+	}
+
+	@-webkit-keyframes font_right1
+
+	/* Safari 和 Chrome */
+		{
+		0% {
+			transform: translateX(0);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(150px);
+			opacity: 1
+		}
+	}
+
+	@-o-keyframes font_right1
+
+	/* Opera */
+		{
+		0% {
+			transform: translateX(0);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(150px);
+			opacity: 1
+		}
+	}
+
+	.font_active_left1 {
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-name: font_left1;
+		animation-name: font_left1;
+		transform: translateX(100%);
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes font_left1 {
+		0% {
+			transform: translateX(0);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(-150px);
+			opacity: 1
+		}
+	}
+
+	@-moz-keyframes font_left1
+
+	/* Firefox */
+		{
+		0% {
+			transform: translateX(0);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(-150px);
+			opacity: 1
+		}
+	}
+
+	@-webkit-keyframes font_left1
+
+	/* Safari 和 Chrome */
+		{
+		0% {
+			transform: translateX(0);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(-150px);
+			opacity: 1
+		}
+	}
+
+	@-o-keyframes font_left1
+
+	/* Opera */
+		{
+		0% {
+			transform: translateX(0);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(-150px);
+			opacity: 1
+		}
+	}
+
+	.home-site-title-centre p span {
+		color: #333 !important;
+	}
+
+	@media screen and (min-width:1800px) and (max-width:1950px) {
+		.product-content-box {
+			margin: 25px 330px 90px !important;
+		}
+	}
+	@media screen and (min-width:1600px) and (max-width:2100px) {
+		
+		.product-content1 {
+			.product-cext{
+				bottom:85px;
+			}
+		}
+		.product-content5 .product-cext, .product-content6 .product-cext {
+		    bottom: 70px;
+		}
+	}
+	@media screen and (min-width:1230px) and (max-width:1800px){
+		.product-APP ul li{
+			width: 212px;
+			height: 241px;
+		}
+		.product-APP ul{height: 361px;}
+	}
+	@media screen and (max-width:1230px){
+		.product-content-left ul li{
+			font-size: 14px;
+		}
+		.product-content-left ul li img{
+			width: 24px;
+			height: 16px;
+			right: 9px !important;
+		}
+		.product-APP ul li {
+		    width: 27%;
+		    height: 51%;
+		}
+	}
+	@media screen and (max-width: 1300px){
+		.home-site-title,.product-content-box{
+			width: 85%	;
+		}
+	}
+	@media screen and (max-width: 1024px){
+		.product-content-left{
+			width: 25%;
+			height: 328px;
+		}
+		.product-content-left ul li{
+			height: 52.5px;
+			font-size: 12px;
+		}
+		.product-content-right{
+			width: 532px;
+			height: 458.5px;
+			margin-left: 2.8%;
+			margin-top: -30px;
+		}
+		.product-content img{
+			margin-top: -3px;
+		}
+		.product-cext{
+			width: 329px;
+			padding: 24.5px 21px;
+		}
+		.product-cext h1,.product-cext h2{
+			font-size: 13px;
+		}
+		.product-cext p{
+			font-size: 10px;
+		}
+		.product-content1 .product-cext {
+			bottom: 65px;
+		}
+		.product-content-box{
+			margin: 25px auto -211px;
+		}
+	}
+</style>

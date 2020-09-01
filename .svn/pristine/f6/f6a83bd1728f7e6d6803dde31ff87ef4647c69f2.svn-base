@@ -1,0 +1,71 @@
+body,html,a,p,b,span,ul,ol,li,h1,h2,h3,dl,dt,dd,div{list-style: none;text-decoration: none;margin: 0;padding: 0;box-sizing: border-box;}
+.active{color: #1DBFB3 !important;font-weight: 700 !important;border-right: 5px solid #1DBFB3 !important;}
+.activeTop{padding-top: 3%;}
+.aboutusTop{padding-top: 20px;}
+.activeLeft{margin-left: 38px;}
+.active-p{font-size: 14px;color: #333333;display: inline-block;width: 526px;}
+.partner-banner{width: 100%;height: 382px;margin-top: 87px;}
+.partner-banner img{display: block;width: 100%;height: 100%;}
+.product-active{background:#1DBFB3 !important;color: #fff !important;}
+.ideaTop{margin-top: 20px !important;}
+.ideaP{width: 100%;font-size: 12px;line-height: 21px;margin-top: 3px;}
+.imageBorder{border: 2px solid #1DBFB3;}
+.cut-title-active{background: #1DBFB3 !important;color: #fff !important;}
+.map {width: 100%;height: 483px;}
+.idea-course-introduce{width: 1005px;margin: 57px auto 0;font-size:14px;font-family:Microsoft YaHei;font-weight:400;color:rgba(51,51,51,1);line-height:29px;}
+/* @font-face {
+    font-family:"Microsoft YaHei UI";
+    src:url('../font/MSYH.ttc');
+} */
+.flex{
+	display: flex;
+	-webkit-display: flex;
+	-moz-display: flex;
+	-o-display: flex;
+	align-items: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	justify-content: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-o-justify-content: center;
+}
+.font_active_up{
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-name: font_up;
+  animation-name: font_up;
+  transform: translateY(0px);
+  animation-fill-mode: forwards;
+}
+@keyframes font_up
+{
+ 0%   {transform: translateY(80px);opacity: 1;}
+ 100% {transform: translateY(0px);opacity: 1}
+}
+
+@-moz-keyframes font_up /* Firefox */
+{
+ 0%   {transform: translateY(80px);opacity: 1;}
+ 100% {transform: translateY(0px);opacity: 1}
+}
+
+@-webkit-keyframes font_up /* Safari 和 Chrome */
+{
+ 0%   {transform: translateY(80px);opacity: 1;}
+ 100% {transform: translateY(0px);opacity: 1}
+}
+
+@-o-keyframes font_up /* Opera */
+{
+ 0%   {transform: translateY(80px);opacity: 1;}
+ 100% {transform: translateY(0px);opacity: 1}
+}
+@media screen and (max-width:2000px) and (min-width:1801px){
+	.commonality-footer-right-skip{margin: 22px 0 0 137px !important;}
+	.commonality-footer-right-service{margin-left: 8% !important;}
+	.partner-banner{height: 452px;}
+	.iphone{width: 177px !important;}
+}
+.hidden{display: none !important;}

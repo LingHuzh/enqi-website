@@ -1,0 +1,237 @@
+<template>
+	<nav class="index-nav">
+		<img src="../../../public/images/logo3.png" alt="恩启" style="margin-left: 25px;">
+			<a href="/" class="show_up">首页</a>
+			<a href="/Site" class="show_cont">
+				直营连锁
+				<ul>
+					<li><a href="/Site?status=1">北京</a></li>
+					<li><a href="/Site?status=2">上海</a></li>
+					<li><a href="/Site?status=3">深圳</a></li>
+					<li><a href="/Site?status=4">杭州</a></li>
+				</ul>
+			</a>
+			<a href="/Ingclass" class="show_cont">
+				恩启学院
+				<ul>
+					<li><a href="/IdeaTheory">教师成长</a></li>
+					<li><a href="/Patriarch">家长成长</a></li>
+					<li><a href="/Idea">专项培训</a></li>
+				</ul>
+			</a>
+			<a href="/Teacher" class="show_up">科研教研</a>
+			<a href="/Product" class="show_up">互联网产品</a>
+			<a href="/Partner" class="show_up">加入我们</a>
+			<a href="/AboutUs" class="show_cont">
+				关于我们
+				<ul>
+					<li><a href="/AboutUs?status=1">关于恩启</a></li>
+					<li><a href="/AboutUs?status=2">IDEA理念</a></li>
+					<li><a href="/AboutUs?status=4">发展历程</a></li>
+					<li><a href="/AboutUs?status=5">公司事件</a></li>
+					<li><a href="/AboutUs?status=6">责任与公益</a></li>
+					<li><a href="/AboutUs?status=0">合作伙伴</a></li>
+					<li><a href="/AboutUs?status=3">企业荣誉</a></li>
+					<li><a href="/Contact?name=sunhe">联系我们</a></li>
+				</ul>
+			</a>
+			<a href="/Contact?name=sunhe" class="call">
+				400-606-2105
+			</a>
+			<button type="button" class="home-banner-btn2 button_hover" style="margin-right: 25px;">立即预约</button>
+	</nav>
+</template>
+
+<script>
+	export default {
+		name: "",
+		components: {},
+		mounted() {
+			var ScreenW = $(window).width();
+			if( ScreenW <= 1024 ){
+				$('.index-nav a ul').hide();
+			}
+			$(".home-banner-btn2").click(function() {
+				$(".appointment").fadeIn();
+				_czc.push(﻿["_trackEvent","首页","立即预约（未提交）","","",]);
+			})
+			//实时监听窗口大小的改变
+			window.onresize = function(){
+				const ScreenW = $(window).width();
+				if (ScreenW <960 ){
+					$('.index-nav').css({'width':'960px','overflow-x':'visible'});
+				}else if (ScreenW > 960 ){
+					$('.index-nav').css('width','100%');
+				}
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.show_up:hover {
+		/*border-bottom: none !important;*/
+		transform: translateY(-8px);
+		transition-duration: .5s;
+		-moz-transition-duration: .5s;
+		/* Firefox 4 */
+		-webkit-transition-duration: .5s;
+		/* Safari 和 Chrome */
+		-o-transition-duration: .5s;
+		/* Opera */
+	}
+
+	.index-nav {
+		width: 100%;
+		height: 87px;
+		font-size: 14px;
+		line-height: 87px;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		box-shadow: 0px 4px 32px 0px rgba(36, 40, 40, 0.09);
+		img {
+			display: block;
+			width: 140px;
+			height: 36px;
+		}
+		a {
+			width: auto;
+			color: #20A9A0;
+			font-family:"PingFang SC","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft Yahei","微软雅黑",SimHei,"黑体",sans-serif;
+			display: inline-block;
+			height: 87px;
+			text-align: center;
+			ul {
+				background: #fff;
+				border-radius: 3px;
+				margin: -10px auto 0;
+				width: 90px;
+				display: none;
+
+				li {
+					height: 60px;
+					line-height: 60px;
+					color: #20A9A0;
+				}
+			}
+		}
+		span {
+			color: #20A9A0;
+			font-size: 20px;
+			font-weight: bold;
+			a {
+				color: #20A9A0;
+			}
+		}
+	}
+
+	.home-banner-nav span>a {
+		color: #20A89E;
+	}
+
+	.show_cont-two-nav {
+		position: relative;
+		ul {
+			position: absolute;
+			width: 150px;
+			display: inline-block;
+			border-radius: 3px;
+			background: #fff;
+			top: 60px;
+			left: -20px;
+			display: none;
+
+			li {
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				a {
+					color: #333;
+				}
+			}
+		}
+	}
+
+	.show_cont {
+		position: relative;
+	}
+
+	.show_cont ul {
+		position: absolute;
+		width: 100px;
+		display: inline-block;
+		border-radius: 3px;
+		background: #fff;
+		top: 60px;
+		left: -21px;
+		display: none;
+	}
+
+	.show_cont ul li {
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+
+		a {
+			color: #333;
+			font-size: 14px;
+		}
+	}
+
+	.show_cont::after {
+		content: "";
+		display: inline-block;
+		width: 7px;
+		height: 12px;
+		/*background: url(../../../public/images/jiantou_bottom.png) no-repeat;*/
+		background-size: 100%;
+		visibility: hidden;
+		margin-left: 4px;
+	}
+
+	.show_cont:hover {
+		/*border-bottom: none !important;*/
+		transform: translateY(-6px);
+		transition-duration: .5s;
+		-moz-transition-duration: .5s;
+		/* Firefox 4 */
+		-webkit-transition-duration: .5s;
+		/* Safari 和 Chrome */
+		-o-transition-duration: .5s;
+
+		/* Opera */
+		>ul {
+			display: block;
+		}
+	}
+	.call{
+		font-weight: Bold;font-size: 20px;cursor: auto;
+	}
+	@media screen and (max-width: 1024px){
+		.index-nav{
+			height: 60px;
+			line-height: 60px;
+			font-size: 12px;
+		}
+		.index-nav a{
+			height: 60px;
+			-webkit-tap-highlight-color:rgba(0,0,0,0);
+		}
+		.public_banner{
+			margin-top: 60px;
+		}
+		.index-nav img{
+			width: 98px;
+			height: 25px;
+		}
+		.call{
+			font-size: 16px;
+		}
+	}
+</style>

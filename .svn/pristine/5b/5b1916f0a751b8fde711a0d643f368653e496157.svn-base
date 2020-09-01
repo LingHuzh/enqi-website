@@ -1,0 +1,131 @@
+<template>
+    <div class="CentreSite">
+    <div class="CentreSite_title">其他中心</div>
+        <div class="centre_city">
+            <ul>
+                <li>
+                    <span style="background:#1DBFB3"></span>
+                    <p>中国·北京</p>
+                </li>
+                <li class="sunhe"><a href="/cityDetail?name=sunhe">恩启IDEA·教研中心</a></li>
+                <li class="chaoyang"><a href="/cityDetail?name=chaoyang">恩启IDEA·北京朝阳中心</a></li>
+                <li class="haidian"><a href="/cityDetail?name=haidian">恩启IDEA·北京海淀中心</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <span style="background:#EC804D "></span>
+                    <p>中国·上海</p>
+                </li>
+                <li class="jingan"><a href="/cityDetail?name=jingan">恩启IDEA·上海静安中心</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <span style="background:#3B8FEE "></span>
+                    <p>中国·深圳</p>
+                </li>
+                <li class="shenzhen"><a href="/cityDetail?name=shenzhen">恩启IDEA·深圳华侨城中心</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <span style="background:#EEB53B "></span>
+                    <p>中国·杭州</p>
+                </li>
+                <li class="hangzhou"><a href="/cityDetail?name=hangzhou">恩启IDEA·杭州西湖中心</a></li> <!-- hangzhou -->
+            </ul>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "CentreSite",
+        mounted() {
+            const url = location.href;
+            const index = url.lastIndexOf("=");
+            const subBack = url.substring(index + 1, url.length);
+            if( subBack == 'chaoyang' ){
+                $('.chaoyang a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if( subBack== 'haidian' ){
+                $('.haidian a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if( subBack == 'sunhe'){
+                $('.sunhe a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if( subBack == 'jingan' ){
+                $('.jingan a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if ( subBack == 'shenzhen' ){
+                $('.shenzhen a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if ( subBack == 'hangzhou' ){
+                $('.hangzhou a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }
+        },
+        methods:{
+            open(){
+                $('.light_hint').fadeIn(1000);
+                setTimeout(()=>{
+                    $('.light_hint').fadeOut(1000);
+                },2000)
+            }
+        }
+    }
+</script>
+
+<style lang="scss">
+.CentreSite{
+    width: 73%;
+    height:200px ;
+    margin: -76px auto 61px;
+    background: #FFFFFF;
+    box-shadow:0px 3px 8px 1px rgba(5,0,1,0.04);
+    border-radius:4px;
+}
+.CentreSite_title{
+    width: 100%;
+    font-size: 18px;
+    color: #1DBFB3;
+    padding: 20px;
+}
+.centre_city{
+    width: 100%;
+    display: flex;
+    ul{
+        width: 25%;
+        li{
+            padding-left: 20px;
+            padding-bottom: 6px;
+            color: #555555;
+            a{
+                color: #555555;
+            }
+        }
+    }
+}
+.centre_city ul li a:hover{
+    color:#1DBFB3 !important;
+}
+.centre_city ul li:nth-child(1){
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    p{
+        padding-left: 8px;
+    }
+    span{
+        display: inline-block;
+        width: 2.8px;
+        height: 13px;
+    }
+}
+.centre_city ul li:nth-child(2),.centre_city ul li:nth-child(3),.centre_city ul li:nth-child(4){
+    font-size: 14px;
+    cursor: pointer;
+}
+@media screen and (max-width: 1500px){
+    /*.CentreSite{*/
+    /*    width: 1040px !important;*/
+    /*}*/
+}
+@media screen and (max-width: 2100px) and (min-width: 1800px){
+    .CentreSite{
+        width: 67%;
+    }
+}
+</style>

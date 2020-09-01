@@ -1,0 +1,634 @@
+<template>
+	<main>
+		<Nav v-if="windowWidth > 800"></Nav>
+		<div class="partner" data-scroll>
+			<div class="public_banner" v-if="windowWidth > 800">
+				<img src="../../../public/images/joinus.jpg" alt="">
+			</div>
+			<div class="m-public_banner" v-if="windowWidth < 800">
+				<img src="../../../public/images/joinus.jpg" alt="">
+			</div>
+			<div class="partner-introduce-box-welfare">
+				<div class="home-site-title" style="margin-top: 80px;" v-if="windowWidth > 800">
+					<span class="home-site-left" :class="leftClass"></span>
+					<div class="home-site-title-centre">
+						<p><span style="margin-top: 10px;font-weight: normal;letter-spacing: 2px;" :class="topClass">加入我们</span></p>
+					</div>
+					<span class="home-site-right" :class="rightClass"></span>
+				</div>
+				<div class="m-page-title" v-if="windowWidth < 800">
+					<p></p>
+					<span>加入我们</span>
+					<p></p>
+				</div>
+				<div class="partner-introduce-box partner-introduce-box-flex">
+					<div class="partner-introduce-box-right">
+						<span>招聘职位</span>
+						<div class="invite_btn">
+							<div @click="specialBtn()">特教老师</div>
+							<div @click="speechBtn()">言语老师</div>
+							<div @click="directorBtn()">教务主任</div>
+							<div @click="assistantBtn()">教务助理</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="partner-introduce-box-study" style="height: 357px;background: url(../../../public/images/bg_body_large.png) rgba(223,240,236,0.4);">
+				<div class="partner-introduce-box">
+					<div class="partner-introduce-box-right study-right">
+						<span>薪酬福利</span>
+						<p sde tyle="padding-top: 10px;">基本薪酬：提供在市场上有竞争力的基本薪酬</p>
+						<p>社会保险及住房公积金：依法缴纳养老保险、医疗保险、失业保险、工伤保险、生育保险和住房公积金</p>
+						<p>补助及年终奖金：根据工作岗位、工作量、工作质量、客户满意度等确定 </p>
+						<p>带薪年假：在法定假期的基础上每年享有5天带薪年假 </p>
+						<p>年度体检：专业的教师团队提供每年一次的免费高端防癌筛查健康体检 </p>
+						<p>员工活动：丰富多彩的员工关爱活动,免费工作自助午餐、生日会、节日慰问、团队活动等</p>
+					</div>
+				</div>
+			</section>
+			<section class="partner-introduce-box-study" style="height: 465px;">
+				<div class="partner-introduce-box">
+					<div class="partner-introduce-box-right study-right">
+						<span>学习成长</span>
+						<p style="padding-top: 10px;">入职即可获得 </p>
+						<div class="study-txt" style="margin-top: 8px;width: 86%;">1.岗前培训：3年多的系统打磨，近20期的新教师岗前培训，在不断实证的同时，恩启积累了大量的经验与素材，诞生了本套《IDEA特教基础理论课程》。
+							打破常规培训的重技能、知识独立性强的特点，《IDEA特教基础理论课程》从基础理论出发，注重技能之间的联系，阶梯型课程帮助康复教
+							师获得系统性、整体性成长。本套课程分为5大篇，15个章节，57个小节，课时长达19小时。理论、案例与实操视频相结合、针对1名老师需 要教授多个不同孩子的特点与需求，为老师提供适应性更强的教学技巧。 </div>
+						<div class="study-txt" style="width: 86%;">2.专业培训：持续中高级别专业培训，精尖队伍。</div>
+						<div class="study-txt" style="width: 86%;">3.管理层培训：新晋管理人员管理技巧培训，与不同类型性格人员如何更好沟通和管理等。</div>
+					</div>
+				</div>
+			</section>
+			<div class="modalbox_lid">
+			 <div class="hidden_box">
+				 <img src="../../../public/images/close.png" @click="close()">
+				 <div class="modalbox" v-html="lidContent"></div>
+			 </div>
+				<div style="width: 100px;height: 200px;" v-if="windowWidth < 800"></div>
+			</div>
+			<Top></Top>
+			<Footer v-if="windowWidth > 800"></Footer>
+			<Appfooter v-if="windowWidth < 800"></Appfooter>
+			<div v-if="windowWidth < 800" class="page-height"></div>
+		</div>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+	import Top from "../index/Top.vue"
+	import Appfooter from "../mIndex/Appfooter";
+	import {
+		shows
+	} from "../../js/scrollHtml.js"
+	export default {
+		name: 'Partner',
+		components: {
+			Nav,
+			Footer,
+			Top,
+			Appfooter
+		},
+		data() {
+			return {
+				widthnum: '100%',
+				topClass: '',
+				topClassOne: '',
+				leftClass: '',
+				rightClass: '',
+				showTop: false,
+				showBottom: true,
+				showLid:false,
+				lidContent:'',
+				windowWidth:window.innerWidth
+			}
+		},
+		mounted() {
+			this.$nextTick(()=>{
+				$('.index-nav>a:eq(5)').addClass('borderBottomActive');
+			})
+			this.windowWidth > 800 ? shows() : '';
+			this.aboutusScroll();
+			$(".partner-introduce-box-left span").click(function() {
+				$(this).addClass('active').siblings().removeClass('active');
+			})
+			if (window.outerHeight > 800) {
+				this.scrollnumber($('.home-site-title'), 'font_active_up', 50, 1);
+			}
+			 window.addEventListener('scroll', this.NavScrollFunction, true);
+			$(".modalbox b").click(function(){
+				$(".modalbox_lid").fadeOut(500);
+				document.documentElement.scrollTop = 200;
+			})
+		},
+		methods: {
+			specialBtn(){
+				const dh = $(document).scrollTop() + 142;
+				if (this.windowWidth > 800){
+					$('.hidden_box').css("margin-top",dh);
+				}else {
+					$('.hidden_box').css("margin-top",'100px');
+				}
+
+				$(".modalbox_lid").fadeIn(500);
+				var c = "<p>特教老师</p><i>岗位职责</i><span>1.<em>够执行主管老师要求的收集个案行为数据的工作；</em></span><span>2.<em>记录教学过程中教学数据；</em></span><span>3.<em>将数据归纳总结，绘制表格进行呈现；</em></span><span>4.<em>准确进行教学活动；</em></span><span>5.<em>与家长进行课后总结及简单沟通。</em></span><i style='margin-top: 15px;'>任职资格</i><span>1.<em>1年以上的孤独症康复教育工作经验优先；</em></span><span>2.<em>特殊教育、社工、心理、普通教育、体育或其他相关专业背景（可接受以上专业小白级别老师）；</em></span><span>3.<em>喜爱儿童，对特殊儿童有正确的认识且无偏见；</em></span><span>4.<em>有良好的学习钻研能力；</em></span><span>5.<em>有良好的团队合作精神；</em></span><span>6.<em>持有中康协颁发的《孤独症康复教育上岗培训合格证》、教师资格证者优先。</em></span><p>如有意向，请联系我们！</p><span>部门：恩启教育人力资源部</span><span>电话：010-80698395 15901322351</span><span style='display: inline-block;padding-bottom: 26px;'>邮箱：HR@ing4s.com</span>"
+				this.lidContent = c;
+			},
+			speechBtn(){
+				const dh = $(document).scrollTop() + 142;
+				if (this.windowWidth > 800){
+					$('.hidden_box').css("margin-top",dh);
+				}else {
+					$('.hidden_box').css("margin-top",'100px');
+				}
+				$(".modalbox_lid").fadeIn(500);
+				var a = `
+				    <p>言语老师</p>
+					<i>岗位职责</i>
+					<span>1.<em>能够使用多个言语语言评估工具对儿童的言语语言能力评估、分析、撰写评估报告、并制定相应的康复计划；</em></span>
+					<span>2.<em>完善康复流程，并能根据孩子的变化及时调整并更新康复计划；</em></span>
+					<span>3.<em>具备言语方向教师培训和指导能力；</em></span>
+					<span>4.<em>具备一定的沟通能力，能做到与同事、家长及时且有效地沟通；</em></span>
+					<span>5.<em>具备一定的研究能力，能辅助完成言语类教研产品设计。</em></span>
+					<i style='margin-top: 15px;'>任职资格</i>
+					<span>1.<em>有爱心，有耐心，喜欢孩子、愿意投身于特殊儿童康复领域；</em></span>
+					<span>2.<em>本科及以上学历，康复治疗专业或者言语治疗专业；</em></span>
+					<span>3.<em>海外SLP或有两年以上儿童言语语言治疗师优先。</em></span>
+					<p>如有意向，请联系我们！</p>
+					<span>部门：恩启教育人力资源部</span>
+					<span>电话：010-80698395 15901322351</span>
+					<span style="display: inline-block;padding-bottom: 30px;">邮箱：HR@ing4s.com</span>`
+				this.lidContent = a;
+			},
+			directorBtn(){
+				const dh = $(document).scrollTop() + 142;
+				if (this.windowWidth > 800){
+					$('.hidden_box').css("margin-top",dh);
+				}else {
+					$('.hidden_box').css("margin-top",'100px');
+				}
+				$(".modalbox_lid").fadeIn(500);
+				var b= `
+					<p>教务主任</p>
+					<i>岗位职责</i>
+					<span>每位教务管理者所服务的家庭数量不超过60个学位。</span>
+					<span style='padding-top:10px'>（一）运营管理类工作 </span>
+					<span>1.<em>处理校区日常各项经营工作，包括客户管理及维护；</em></span>
+					<span>2.<em>协调顾客、校区及教师的关系；</em></span>
+					<span>3.<em>定期召开线上家长会，展示教育成果，宣传教育方法，听取家长意见；</em></span>
+					<span>4.<em>协调与完成教学、教务相关事宜，确保成教学稳定性和质量保证；</em></span>
+					<span>5.<em>协助上级完成公司拟定的校区营收指标；</em></span>
+					<span>6.<em>校区环境管理及设备维修的跟踪处理；</em></span>
+					<span>7.<em>根据市场变化，配合上级开展有效的市场活动，根据经验提出市场策略；</em></span>
+					<span>8.<em>完成公司临时安排的其他工作。</em></span>
+					<span style='padding-top:10px'>（二）团队建设及人事管理工作</span>
+					<span>1.<em>讲解各项规章制度，定期召班会，深入第一线检查各项工作实施情况，保证校区的正常有序运行；</em></span>
+					<span>2.<em>负责对教师工作进行晋级考评，并进行正面的指引，帮助下属改善工作效率。</em></span>
+					<i style='margin-top: 15px;'>任职资格</i>
+					<span>1.<em>本科及以上学历，学前教育专业、市场营销管理专业优先；</em></span>
+					<span>2.<em>两年以上的管理经验，有早教中心或幼儿园教育机构管理经验者优先；</em></span>
+					<span>3.<em>有较强的组织、计划、控制、协调能力、人际交往能力及较高的谈判技巧，能够带领一个团队进行高效工作；</em></span>
+					<span>4.<em>态度乐观、积极向上，具备良好的抗压能力及高度的敬业精神；</em></span>
+					<span>5.<em>希望你是热情、细心、又有雄心做事业的店长。</em></span>
+					<p>如有意向，请联系我们！</p>
+					<span>部门：恩启教育人力资源部</span>
+					<span>电话：010-80698395 15901322351</span>
+					<span style="display: inline-block;padding-bottom: 30px;">邮箱：HR@ing4s.com</span>`;
+				this.lidContent = b;
+			},
+			assistantBtn(){
+				const dh = $(document).scrollTop() + 142;
+				if (this.windowWidth > 800){
+					$('.hidden_box').css("margin-top",dh);
+				}else {
+					$('.hidden_box').css("margin-top",'100px');
+				}
+				$(".modalbox_lid").fadeIn(500);
+				var o = `
+				    <p>教务助理</p>
+					<i>岗位职责</i>
+					<span>1.<em>负责经营区域客户的来电、微信咨询、查询解答工作；</em></span>
+					<span>2.<em>负责课程介绍及接待；</em></span>
+					<span>3.<em>负责定期电话及微信回访、跟进及处理客户投诉；</em></span>
+					<span>4.<em>前台接待、登记、引导工作；</em></span>
+					<span>5.<em>物品管理（教具、玩具的领用及登记，前台物品、水吧物料、家长储物柜的管理）；</em></span>
+					<span>6.<em>每日配合教研人员进行儿童上、下学安全监察；</em></span>
+					<span>7.<em>记录儿童上课及请假情况；</em></span>
+					<span>8.<em>上级安排的其他任务。</em></span>
+					<i style='margin-top: 15px;'>任职资格</i>
+					<span>1.<em>本科及以上学历，学前教育专业、市场营销管理专业优先；</em></span>
+					<span>2.<em>有早教中心或幼儿园教育机构经验者优先；</em></span>
+					<span>3.<em>形象好气质佳、有较强亲和力、人际交往能力；</em></span>
+					<span>4.<em>态度乐观、积极向上，具备良好的抗压能力及高度的敬业精神。</em></span>
+					<p>如有意向，请联系我们！</p>
+					<span>部门：恩启教育人力资源部</span>
+					<span>电话：010-80698395 15901322351</span>
+					<span style="display: inline-block;padding-bottom: 30px;">邮箱：HR@ing4s.com</span>`; 
+					this.lidContent = o;
+			},
+			close(){
+				$(".modalbox_lid").fadeOut(500);
+				// document.documentElement.scrollTop = 200;
+			},
+			Welfare() {
+				let scroll = setInterval(() => {
+					document.documentElement.scrollTop = 820;
+					clearInterval(scroll);
+				}, 0)
+
+			},
+			Study() {
+				let scroll = setInterval(() => {
+					document.documentElement.scrollTop = 1180;
+					clearInterval(scroll);
+				}, 0)
+			},
+			Recruitment() {
+				let scroll = setInterval(() => {
+					document.documentElement.scrollTop = 300;
+					clearInterval(scroll);
+				}, 0)
+
+			},
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title'), 'font_active_up', 50, 1);
+			},
+			scrollnumber(element, cssname, offset, type) {
+				let a, b, c, d;
+				d = $(element).offset().top;
+				a = eval(d + offset);
+				b = $(window).scrollTop();
+				c = $(window).height();
+				if (b + c > a) {
+					if (type == 1 && this.topClass == "") {
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}
+				}
+			},
+			aboutusScroll() {
+				let url = location.href;
+				let index = url.lastIndexOf("=");
+				let subBack = url.substring(index + 1, url.length);
+				if (subBack == 1) {
+					setTimeout(() => {
+						document.documentElement.scrollTop = 820
+					}, 300)
+				} else if (subBack == 2) {
+					setTimeout(() => {
+						document.documentElement.scrollTop = 1180
+					}, 300)
+				} else if (subBack == 3) {
+					setTimeout(() => {
+						document.documentElement.scrollTop = 300
+					}, 300)
+				}
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	em{
+		font-style: inherit;
+	}
+	// 弹出层
+	.modalbox_lid{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		display: none;
+		overflow: hidden;
+		-webkit-overflow-scrolling: touch;
+		outline: 0;
+		z-index: 1050;
+		background:rgba(0,0,0,0.6);
+		overflow-x: hidden;
+		overflow-y: auto;
+		img{
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			right: 445px;
+			top: 172px;
+			display: block;
+			cursor: pointer;
+			z-index: 2;
+		}
+	}
+	.hidden_box{
+		width: 750px;
+		background: #fff;
+		border-radius: 6px;
+		position: relative;
+		margin: 0 auto 0;
+		img{
+			position: absolute;
+			right: -3px;
+			top: 30px;
+			z-index: 2;
+		}
+	}
+	.modalbox {
+		width: 788px;
+		background: #fff;
+		border-radius: 6px;
+		position: relative;
+		p {
+			color: #343434;
+			padding: 30px 0 15px 42px;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		i{
+			font-size: 15px;
+			color: #565656;
+			padding: 0 0 4px 42px;
+			display: inline-block;
+			width: 100%;
+			font-style: inherit;
+		}
+		span{
+			color: #565656;
+			font-size: 14px;
+			line-height:23px;
+			display: inline-block;
+			width: 100%;
+			padding-left: 42px;
+		}
+		b{	
+			position: absolute;
+			display: block;
+			width: 24px;
+			height: 24px;
+			right: 30px;
+			top: 30px;
+			cursor: pointer;
+		}
+	}
+
+	.home-site-title {
+		width: 75%;
+		display: flex;
+		align-items: center;
+	}
+
+	.partner {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		background: url(../../../public/images/tile.png);
+	}
+	
+	.speediness-nav {
+		width: 200px;
+		height: 234px;
+		position: fixed;
+		top: 6%;
+		left: 11.5%;
+		border-right: 1px solid #D8D8D8;
+		background: #fff;
+
+		span {
+			display: inline-block;
+			width: 100%;
+			height: 42px;
+			line-height: 32px;
+			color: #333333;
+			font-weight: 400;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	}
+
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 40%;
+		height: 2px;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		span {
+			font-size: 25px;
+			color: #333333;
+			font-weight: bold;
+			display: inline-block;
+			margin-top: 23px;
+		}
+	}
+
+	.partner-introduce-box-welfare {
+		width: 100%;
+		height: 419px;
+	}
+
+	.partner-introduce-box {
+		width: 75%;
+		// height: 300px;
+		margin: 0 auto;
+
+		/*::after {*/
+		/*	content: "";*/
+		/*	display: table;*/
+		/*	clear: both;*/
+		/*}*/
+
+		>div:first-child {
+			float: left;
+		}
+
+		>div:last-child {
+			float: right;
+		}
+	}
+
+	.partner-introduce-box-left {
+		width: 15%;
+		height: 178px;
+		border-right: 1px solid #D8D8D8;
+
+		span {
+			display: inline-block;
+			width: 100%;
+			height: 62px;
+			line-height: 66px;
+			color: #333333;
+			font-weight: 400;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	}
+
+	.partner-introduce-box-right {
+		// width: 85%;
+		width: 100%;
+		height: 234px;
+
+		span {
+			font-size: 15px;
+			line-height: 32px;
+			color: #343434;
+			padding-left: 5%;
+			font-weight: 700;
+		}
+
+		p {
+			padding-left: 5%;
+			font-size: 14px;
+			color: #666;
+			line-height: 22px;
+		}
+	}
+	.partner-introduce-box-study {
+		width: 100%;
+		height: 590px;
+	}
+
+	.study-left {
+		border: none;
+	}
+
+	.study-right span {
+		padding-top: 55px;
+		display: inline-block;
+	}
+
+	.study-txt {
+		margin: 0 0 0.5% 5%;
+		line-height: 22px;
+		color: #666;
+		font-size: 14px;
+	}
+
+	.partner-introduce-box-recruitment {
+		width: 100%;
+		background: url(../../../public/images/bg_body_large.png);
+		height: 1795px;
+	}
+
+	.invite_btn {
+		width: 89%;
+		height: 56px;
+		margin: 50px 0 0 5%;
+		display: flex;
+		justify-content: space-between;
+		div {
+			width: 152px;
+			height: 56px;
+			background: rgba(248, 248, 248, 1);
+			border: 1px solid rgba(204, 204, 204, 1);
+			line-height: 56px;
+			text-align: center;
+			color: #444444;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	}
+	@media screen and (min-width: 1780px)and(max-width: 2100px) {
+		.partner-introduce-box-right{width: 93%;}
+	}
+	/*移动端*/
+	@media screen and (max-width: 800px){
+		.partner-introduce-box{
+			width: 90%;
+		}
+		.partner-introduce-box-right span{
+			padding-left: 0;
+			font-weight: inherit;
+			font-size: 14px;
+			color: #444444;
+		}
+		.partner-introduce-box-right{
+			height: 0;
+			margin-top: 28px;
+		}
+		.invite_btn{
+			width: 99%;
+			margin: 0;
+			flex-wrap: wrap;
+			div{
+				width: 146px;
+				height: 40px;
+				font-size: 14px;
+				line-height: 40px;
+				margin-bottom: 22px;
+			}
+		}
+		.hidden_box{
+			width: 91%;
+		}
+		.modalbox{
+			width: 95%;
+		}
+		.modalbox{
+			p{
+				padding: 14px 0 6px 16px;
+				font-size: 14px;
+				color: #333333;
+			}
+			i{
+				padding: 0 0 0 16px;
+				font-size: 12px;
+				margin-top: 0 !important;
+			}
+			span{
+				padding-left: 16px;
+				font-size: 12px;
+				color:#444444;
+				line-height: inherit;
+				display: flex;
+				margin-top: 2px;
+				em{
+					margin-top: -2px;
+				}
+		
+			}
+		}
+		.modalbox_lid img{
+			width: 14px;
+			height: 14px;
+		}
+		.hidden_box img{
+			right: 18px;
+			top: 18px;
+		}
+		.partner-introduce-box-welfare{
+			height: 200px;
+		}
+		.study-right span{
+			padding-top: 0;
+		}
+		.partner-introduce-box-right p{
+			padding-left: 0;
+			line-height: 17px;
+		}
+		.study-txt{
+			margin: 0 0 0.5% 0;
+			margin-top: 0 !important;
+			width: 100% !important;
+			line-height: 17px;
+		}
+		.hidden_box{
+			background: #fff;
+			border-radius: 0.375rem;
+			position: absolute;
+			left: 50%;
+			margin-left: -45.5%;
+		}
+	}
+</style>

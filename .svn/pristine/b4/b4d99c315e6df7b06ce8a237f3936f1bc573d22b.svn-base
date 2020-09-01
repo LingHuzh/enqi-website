@@ -1,0 +1,203 @@
+<template>
+	<div class="product">
+		<Nav></Nav>
+		<div class="partner-banner">
+			<img src="../../../public/images/hulianwang.jpg" alt="">
+		</div>
+		<div class="home-site-title" style="margin-top: 0;">
+			<span class="home-site-left"></span>
+			<div class="home-site-title-centre">
+				<span style="margin-top: 0;">互联网产品</span>
+			</div>
+			<span class="home-site-right"></span>
+		</div>
+		<div class="product-content-box">
+			<div class="product-content-left">
+				<ul>
+					<li class="product-active">
+						<span>恩启云课堂</span>
+						<img src="../../../public/images/yunketanggo.png" alt="">
+					</li>
+					<li>
+						<span>VB-MAPP评估助手</span>
+						<img src="../../../public/images/yunketanggo.png" alt="">
+					</li>
+					<li>
+						<span>恩启社区App</span>
+						<img src="../../../public/images/yunketanggo.png" alt="">
+					</li>
+					<li>
+						<span>恩启特教平台</span>
+						<img src="../../../public/images/yunketanggo.png" alt="">
+					</li>
+					<li>
+						<span>IDEA在家</span>
+						<img src="../../../public/images/yunketanggo.png" alt="">
+					</li>
+					<li>
+						<span>OpenK</span>
+						<img src="../../../public/images/yunketanggo.png" alt="">
+					</li>
+					<li>
+						<span>恩启商城</span>
+						<img src="../../../public/images/yunketanggo.png" alt="">
+					</li>
+				</ul>
+			</div>
+			<div class="product-content-right">
+				
+			</div>
+		</div>
+		<div class="product-APP">
+			<div class="product-APP-title">
+				<span>App下载</span>
+				<p style="padding-top: 12px;">主营业务：儿童康复教育指导平台、特殊教育培训、VB-MAPP评估助手软件及测评服务、</p>
+				<p style="padding-bottom: 51px;"> SaaS管理软件授权、自闭症儿童康复中心连锁经营</p>
+			</div>
+			<ul>
+				<li>
+					<img src="../../../public/images/1.png" alt="IOS恩启社区APP">
+				</li>
+				<li>
+					<img src="../../../public/images/2.png" alt="Androld恩启社区APP">
+				</li>
+				<li>
+					<img src="../../../public/images/3.png" alt="恩启特教平台公众号">
+				</li>
+			</ul>
+		</div>
+		<Footer></Footer>
+	</div>
+</template>
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+	export default{
+		name:'product',
+		components:{
+			Nav,
+			Footer
+		},
+		mounted(){
+			//互联网产品
+			$(".product-content-left ul li").click(function(){
+				$(this).addClass('product-active').siblings().removeClass('product-active');
+			})
+		}
+	}
+</script>
+
+<style lang="scss">
+.product{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	background: #fff;
+}
+.home-site-title {
+	width: 75%;
+	display: flex;
+	align-items: center;
+}
+.home-site-left,
+.home-site-right {
+	display: inline-block;
+	width: 40%;
+	height: 2px;
+}
+
+.home-site-left {
+	background: linear-gradient(to right, rgba(237,245,245,0.5), rgba(66,170,165,0.5));
+}
+
+.home-site-right {
+	background: linear-gradient(to left, rgba(237,245,245,0.5), rgba(66,170,165,0.5));
+}
+.home-site-title-centre {
+	flex: 1;
+	text-align: center;
+	span {
+		font-size: 25px;
+		color: #333333;
+		font-family: MicrosoftYaHei-Bold;
+		font-weight: bold;
+		display: inline-block;
+		margin-top: 23px;
+	}
+}
+.product-content-box{
+	width: 75%;
+	height: 655px;
+	display: flex;
+	margin: 0 auto;
+	// border: 1px solid;
+}
+.product-content-left{
+	width:36%;
+	height:469px ;
+	ul{
+		width: 100%;
+		li{
+			height: 67px;
+			font-size: 21px;
+			display: flex;
+			align-items: center;
+			border: 1px solid rgba(179,179,179,0.3);
+			color: #CFCFCF;
+			background: rgba(255,255,255,0.3);
+			position: relative;
+			cursor: pointer;
+			span{padding-left: 27px;}
+			img{
+				width: 46px;
+				height: 26px;
+				position: absolute;
+				right: 28px;
+			}
+		}
+	}
+}
+.product-content-right{
+	width: 60%;
+	margin-left: 4%;
+	height:655px ;
+	border: 1px solid;
+}
+.product-APP{
+	width: 100%;
+	height: auto;
+	background: #EDF5F5;
+	ul{
+		width: 75%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		height: 460px;
+		li{
+			width: 332px;
+			height: 389px;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+.product-APP-title{
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+	color: #333333;
+	span{
+		display: inline-block;
+		font-size: 27px;
+		font-weight: 900;
+		padding-top: 51px;
+	}
+	p{
+		font-size: 14px;
+		font-family:Heiti SC;
+		color:rgba(51,51,51,1);
+	}
+}
+</style>

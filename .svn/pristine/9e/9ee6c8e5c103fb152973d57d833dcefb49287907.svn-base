@@ -1,0 +1,473 @@
+<template>
+	<div id="app">
+		<div class="appointment">
+
+			<div class="appointment-view">
+				<!-- <form id="appointment" rules="rules" :model="ruleForm"> -->
+				<div class="close"><img src="../public/images/guanbi.png" alt=""></div>
+				<div class="physical">立即预约</div>
+				<div class="message">郑重承诺：您的信息我们严格保密，请您放心填写</div>
+				<el-form :model="ruleForm" id="appointment" :rules="rules" ref="ruleForm" class="demo-ruleForm">
+					<!-- 姓名、性别 -->
+					<div class="ipts">
+						<el-form-item prop="name">
+							<el-input v-model="ruleForm.name" placeholder="孩子姓名*" name="chName"></el-input>
+						</el-form-item>
+						<el-form-item prop="value">
+							<el-select v-model="ruleForm.value" placeholder="孩子性别*" name="chGender">
+								<el-option label="男" value="男"></el-option>
+								<el-option label="女" value="女"></el-option>
+							</el-select>
+						</el-form-item>
+					</div>
+					<!-- 出生日期 -->
+					<div class="ipt">
+						<el-form-item prop="value1">
+							<el-date-picker class="applyDate" v-model="ruleForm.value1" type="date" placeholder="出生日期*" name="chBirthday">
+							</el-date-picker>
+						</el-form-item>
+					</div>
+					<!-- 省市 -->
+					<div class="ipt" style="margin-top: 27px;">
+						<el-form-item prop="provinceAndCity">
+							<el-cascader v-model="ruleForm.provinceAndCity" :options="options" :props="{ label: 'label', value:'label' }"
+							 placeholder="选择地区*"></el-cascader>
+							<input type="hidden" v-model="ruleForm.provinceAndCity" name="address" :label="options">
+						</el-form-item>
+					</div>
+					<!-- 选择中心 -->
+					<div class="ipt">
+						<el-form-item prop="ideaValue">
+							<el-select v-model="ruleForm.ideaValue" placeholder="选择中心*" name="targetOrg" class="applyHome">
+								<el-option v-for="item in idea" :key="item.value" :label="item.label" :value="item.value">
+								</el-option>
+							</el-select>
+						</el-form-item>
+					</div>
+					<!-- 联系方式 -->
+					<div class="ipt">
+						<el-form-item prop="iphone">
+							<el-input v-model="ruleForm.iphone" placeholder="联系电话*" name="mmPhone" type="age"></el-input>
+						</el-form-item>
+					</div>
+					<div class="hint"></div>
+
+					<el-form-item>
+						<div class="present" @click="submitForm('ruleForm')">
+							<el-button type="primary">提交</el-button>
+						</div>
+					</el-form-item>
+				</el-form>
+			</div>
+			<div class="submit-true">
+				<div class="true-close"><img src="../public/images/guanbi.png" alt=""></div>
+				<div class="true-right"><img src="../public/images/chenggong.png" alt=""></div>
+				<div class="true-txt1">恭喜您，预约成功！</div>
+				<div class="true-txt2">请保持电话畅通，我们会及时联系您。</div>
+				<div class="true-code"></div>
+				<div class="true-txt3">微信扫码关注「恩启特教平台」获取更多科学干预指南</div>
+			</div>
+		</div>
+
+		<router-view />
+	</div>
+</template>
+<script>
+	import "./js/jquery-1.7.2.min.js";
+	import './js/jquery.mousewheel.js';
+	import './js/hScrollPane.js';
+	import './js/jquery.sudySlider.m.js';
+	import './js/imagesloaded.pkgd.min.js';
+	import AddArr from "./assets/citys.json"
+	export default {
+		name: "",
+		components: {},
+		data() {
+			return {
+				formView: true,
+				succeed: false,
+				ruleForm: {
+					name: '',
+					provinceAndCity: '',
+					value1: '',
+					ideaValue: '',
+					iphone: '',
+					sheng: '',
+					city: '',
+				},
+				errorVal: '',
+				options: '',
+				idea: [{
+						value: '恩启IDEA·教研中心',
+						label: '恩启IDEA·教研中心'
+					},
+					{
+						value: '恩启IDEA·北京朝阳中心',
+						label: '恩启IDEA·北京朝阳中心'
+					},
+					{
+						value: '恩启IDEA·北京海淀中心',
+						label: '恩启IDEA·北京海淀中心'
+					},
+					{
+						value: '恩启IDEA·上海静安中心',
+						label: '恩启IDEA·上海静安中心'
+					},
+					{
+						value: '恩启IDEA·深圳华侨城中心',
+						label: '恩启IDEA·深圳华侨城中心'
+					},
+				],
+				rules: {
+					name: [{
+							required: true,
+							message: '请输入活动名称',
+							trigger: 'blur'
+						},
+						{
+							min: 2,
+							max: 10,
+							message: '长度在 2 到 10 个字符',
+							trigger: 'blur'
+						}
+					],
+					value: [{
+						required: true,
+						message: '请选择性别',
+						trigger: 'change'
+					}],
+					provinceAndCity: [{
+						required: true,
+						message: '请选择地址',
+						trigger: 'change'
+					}],
+					value1: [{
+						type: 'date',
+						required: true,
+						message: '请选择出生日期',
+						trigger: 'blur'
+					}],
+
+					iphone: [{
+							required: true,
+							message: '请输入联系电话',
+							trigger: 'blur'
+						},
+						{
+							min: 11,
+							max: 11,
+							message: '请输入11位正确联系电话',
+							trigger: 'blur'
+						}
+					],
+					ideaValue: [{
+						required: true,
+						message: '请选择中心',
+						trigger: 'change'
+					}]
+				},
+				pickerOptions1: {
+					disabledDate(time) {
+						return time.getTime() > Date.now();
+					}
+				}
+			}
+		},
+		mounted() {
+			$(".close").click(function() {
+				$(".appointment").fadeOut();
+			})
+			this.options = AddArr;
+			$(".true-close img").click(function() {
+				$(".appointment").fadeOut();
+				$('.submit-true').hide();
+				$('.appointment-view').show();
+			})
+		},
+		methods: {
+			submitForm(formName) {
+				this.$refs[formName].validate((valid) => {
+					if (valid) {
+						$.ajax({
+							type: "post",
+							dataType: 'json',
+							url: "http://app.ingcare.com/wap/common/research/children/submitFweb.do",
+							data: $("#appointment").serialize(),
+							success: function(data) {
+								if (data.extension == 1) {
+									$('.appointment-view').hide();
+									$('.submit-true').show();
+								} else if (data.extension == 2 || data.extension == '2') {
+									$(".hint").html(data.message == '' ? '' : data.message);
+								}
+							},
+							error: function(e) {
+								console.log(e);
+							}
+						})
+					} else {
+						console.log('error submit!!');
+						return false;
+					}
+				});
+			},
+			resetForm(formName) {
+				this.$refs[formName].resetFields();
+			}
+		}
+	}
+</script>
+<style lang="scss">
+	@import './style/base.css';
+	.el-form-item__error{
+		color: #cc4454 !important;
+	}
+	.el-form-item__content {
+		margin-left: 0 !important
+	}
+		.submit-true {
+			width: 376px;
+			height: 431px;
+			background: rgba(240, 247, 247, 1);
+			border-radius: 5px;
+			position: absolute;
+			display: none;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	.true-code {
+		width: 160px;
+		height: 160px;
+		margin: 15px auto 0;
+		background: url(../public/images/true.png)no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.true-right {
+		width: 100%;
+		height: 78px;
+
+		img {
+			display: block;
+			width: 78px;
+			height: 100%;
+			margin: 34px auto 0;
+			padding-top: 25px;
+		}
+	}
+
+	.true-txt1,
+	.true-txt2 {
+		width: 100%;
+		text-align: center;
+		color: #1DBFB3;
+	}
+
+	.true-txt1 {
+		margin: 35px auto 13px;
+		font-size: 20px;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+	}
+
+	.true-txt2 {
+		font-size: 15px;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+	}
+
+	.true-txt3 {
+		width: 100%;
+		text-align: center;
+		font-size: 12px;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+		color: rgba(51, 51, 51, 1);
+		margin-top: 20px;
+	}
+
+	.hint {
+		width: 100%;
+		height: 12px;
+		font-size: 12px;
+		font-weight: 400;
+		color: rgba(255, 255, 255, 1);
+		line-height: 32px;
+		text-align: center;
+		margin-top: 12px;
+		color: #cc4454;
+	}
+
+	.appointment {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		background: rgba(18, 25, 25, 0.7);
+		display: none;
+	}
+
+	.appointment-view {
+		width: 425px;
+		height: 564px;
+		background: rgba(59, 178, 177, 1);
+		border-radius: 5px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+
+	.close {
+		width: 84px;
+		height: 56px;
+		position: absolute;
+		cursor: pointer;
+		right: -42px;
+		top: -28px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.true-close {
+		width: 84px;
+		height: 56px;
+		position: absolute;
+		cursor: pointer;
+		right: -42px;
+		top: -28px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.physical {
+		width: 100%;
+		text-align: center;
+		font-size: 21px;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+		color: rgba(255, 255, 255, 1);
+		line-height: 32px;
+		padding-top: 27px;
+	}
+
+	.message {
+		width: 100%;
+		text-align: center;
+		height: 15px;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+		color: rgba(255, 212, 119, 1);
+		line-height: 32px;
+		padding-top: 10px;
+	}
+
+	.el-cascader {
+		width: 100%;
+	}
+
+	.ipts {
+		width: 84%;
+		height: 40px;
+		display: flex;
+		margin: 45px auto 0;
+		justify-content: space-between;
+
+		input {
+			width: 160px;
+			background: rgba(226, 243, 243, 1);
+			border-radius: 18px;
+			font-size: 14px;
+			font-family: Microsoft YaHei;
+			font-weight: 400;
+			color: #158584;
+		}
+	}
+
+	.ipt {
+		width: 84%;
+		height: 40px;
+		display: flex;
+		margin: 27px auto 0;
+
+		input {
+			width: 354px;
+			background: rgba(226, 243, 243, 1);
+			border-radius: 18px;
+			font-size: 14px;
+			font-family: Microsoft YaHei;
+			font-weight: 400;
+			color: #158584;
+		}
+	}
+
+	.present {
+		width: 84%;
+		height: 40px;
+		margin: 30px auto 0;
+	}
+
+	.el-button--primary {
+		width: 100% !important;
+		border-radius: 20px !important;
+		background: #F8B33A !important;
+		border: none !important;
+		letter-spacing: 3px;
+	}
+	@media screen and (max-width:1366px){
+		.site-shop-chaoyang-left-image{
+			width: 560px !important;
+		    height: 267px !important;
+		}
+		.leftBtn, .rightBtn{
+			top: 13% !important;
+		}
+		.rightBtn{
+			right: 27px !important;
+		}
+		.site-shop-chaoyang-left-scroll{
+			width: 560px !important;
+		}
+		.cut-title{
+		    width: 560px !important;	
+		}
+		.cut-title ul li{
+		   font-size: 14px !important;
+		}
+	} 
+	@media screen and (max-width:1024px){
+		.site-shop-chaoyang-iphone-content{
+			height: 328px !important;
+		}
+		.site-shop-chaoyang-iphone-content span{
+			font-size: 12px !important;
+		}
+		.site-shop-chaoyang-iphone-content img{
+			width: 170px !important;
+			height: 170px !important;
+			margin: 10px auto !important;
+		}
+		.site-shop-chaoyang-iphone-content p{
+			font-size: 14px !important;
+		}
+		.font_add{
+			font-size: 15px !important;
+		}
+	}
+</style>

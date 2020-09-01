@@ -1,0 +1,2004 @@
+<template>
+	<main>
+		<div class="flow-box">
+		<img src="../../public/images/enqibaidu.jpg" alt="恩启" style="display:none">
+		<nav class="home-nav-top" v-if="windowWidth>800">
+			<img src="../../public/images/logo3.png" alt="恩启" style="margin-left: 25px;">	
+				<a href="/" class="show_up">首页</a>
+				<a href="/Site" class="show_cont">
+					直营连锁
+					<ul>
+						<li><a href="/Site?status=1">北京</a></li>
+						<li><a href="/Site?status=2">上海</a></li>
+						<li><a href="/Site?status=3">深圳</a></li>
+						<li><a href="/Site?status=4">杭州</a></li>
+					</ul>
+				</a>
+				<a href="/Ingclass" class="show_cont">
+					恩启学院
+					<ul>
+						<li><a href="/IdeaTheory">教师成长</a></li>
+						<li><a href="/Patriarch">家长成长</a></li>
+						<li><a href="/Idea">专项培训</a></li>
+					</ul>
+				</a>
+				<a href="/Teacher" class="show_up">科研教研</a>
+				<a href="/Product" class="show_up" style="width: 70px;">互联网产品</a>
+				<a href="/Partner" class="show_up">加入我们</a>
+				<a href="/AboutUs" class="show_cont">
+					关于我们
+					<ul>
+						<li><a href="/AboutUs?status=1">关于恩启</a></li>
+						<li><a href="/AboutUs?status=2">IDEA理念</a></li>
+						<li><a href="/AboutUs?status=4">发展历程</a></li>
+						<li><a href="/AboutUs?status=5">公司事件</a></li>
+						<li><a href="/AboutUs?status=6">责任与公益</a></li>
+						<li><a href="/AboutUs?status=0">合作伙伴</a></li>
+						<li><a href="/AboutUs?status=3">企业荣誉</a></li>
+						<li><a href="/Contact?name=sunhe">联系我们</a></li>
+					</ul>
+				</a>
+				<a href="/Contact" class="call_1">
+					400-606-2105
+				</a>
+				<button type="button" class="home-banner-btn2 button_hover" style="margin-right: 25px;">立即预约</button>
+		</nav>
+		<div class="home" data-scroll>
+			<div class="home_banner"  v-if="windowWidth>800">
+				<div class="banner_log"><img src="../../public/images/logo1.png" alt=""></div>
+				<el-carousel trigger="click" :style="height" @change="carouselChang">
+					<el-carousel-item :style="height">
+						<div class="banner_1" :style="height"></div>
+					</el-carousel-item>
+					<el-carousel-item :style="height">
+						<div class="banner_2" :style="height"></div>
+					</el-carousel-item>
+					<el-carousel-item :style="height">
+						<div class="banner_3" :style="height" @click="world" style="cursor: pointer"></div>
+					</el-carousel-item>
+					<el-carousel-item :style="height">
+						<div class="banner_4" :style="height" @click="toLink" style="cursor: pointer"></div>
+					</el-carousel-item>
+					<nav class="home-banner-nav" :class="activeClass">
+						<a href="/" class="show_up" style="padding-left: 25px;">首页</a>
+						<a href="/Site" :class="downClass">
+							直营连锁
+							<ul>
+								<li><a href="/Site?status=1">北京</a></li>
+								<li><a href="/Site?status=2">上海</a></li>
+								<li><a href="/Site?status=3">深圳</a></li>
+								<li><a href="/Site?status=4">杭州</a></li>
+							</ul>
+						</a>
+						<a href="/Ingclass" :class="downClass">
+							恩启学院
+							<ul>
+								<li><a href="/IdeaTheory">教师成长</a></li>
+								<li><a href="/Patriarch">家长成长</a></li>
+								<li><a href="/Idea">专项培训</a></li>
+							</ul>
+						</a>
+						<a href="/Teacher" class="show_up">科研教研</a>
+						<a href="/Product" class="show_up" style="width: 70px;">互联网产品</a>
+						<a href="/Partner" class="show_up">加入我们</a>
+						<a href="/AboutUs" :class="downClass">
+							关于我们
+							<ul>
+								<li><a href="/AboutUs?status=1">关于恩启</a></li>
+								<li><a href="/AboutUs?status=2">IDEA理念</a></li>
+								<li><a href="/AboutUs?status=4">发展历程</a></li>
+								<li><a href="/AboutUs?status=5">公司事件</a></li>
+								<li><a href="/AboutUs?status=6">责任与公益</a></li>
+								<li><a href="/AboutUs?status=0">合作伙伴</a></li>
+								<li><a href="/AboutUs?status=3">企业荣誉</a></li>
+								<li><a href="/Contact?name=sunhe">联系我们</a></li>
+							</ul>
+						</a>
+						<a href="/Contact?name=sunhe" class="call_1">
+							400-606-2105
+						</a>
+						<button type="button" class="home-banner-btn2 button_hover" style="margin-right: 25px;">立即预约</button>
+					</nav>
+				</el-carousel>
+				<div class="home-theme">
+					<ul class="home-theme-up">
+						<li style="background: rgba(19, 163, 155,0.9);" @click="recovery()">
+							<div>
+								<span>儿童康复</span>
+								<p>Rehabilitation of Children</p>
+								<img src="../../public/images/jiantou.png" alt="">
+							</div>
+							<div>
+								<img src="../../public/images/theme_1.jpg" alt="让每一个孩子，都能享受到更好的康复教育服务。">
+								<span style="background: rgba(49, 164, 156,0.86);">给你的，正如你想给孩子的。</span>
+							</div>
+						</li>
+						<li style="background: rgba(236, 115, 59,0.9);" @click="train()">
+							<div>
+								<span>教师培训</span>
+								<p>Teacher Training</p>
+								<img src="../../public/images/jiantou.png" alt="">
+							</div>
+							<div>
+								<img src="../../public/images/theme_2.jpg" alt="用科学的技术和方法，促进孤独症行业康复教育水平提升。">
+								<span style="background: rgba(236, 115, 59,0.86);">清晰教师职业发展路径，助力行业专业化发展。</span>
+							</div>
+						</li>
+						<li style="background: rgba(44, 126, 199,0.9);" @click="product">
+							<div>
+								<span>线上服务</span>
+								<p>Online Service</p>
+								<img src="../../public/images/jiantou.png" alt="">
+							</div>
+							<div>
+								<img src="../../public/images/theme_3.jpg" alt="让互联网为特殊群体创造幸福。">
+								<span style="background: rgba(44, 126, 199,0.86);">让每一个孩子都能享受到更好的康复教育服务。</span>
+							</div>
+						</li>
+						<li style="background: rgba(231, 184, 49,0.9);" @click="teacher()">
+							<div>
+								<span>科研教研</span>
+								<p>Teaching and Research</p>
+								<img src="../../public/images/jiantou.png" alt="">
+							</div>
+							<div>
+								<img src="../../public/images/theme_4.jpg" alt="恩启与国内外科学家合作，开展关于自闭症的科学研究。">
+								<span style="background: rgba(231, 188, 61,0.86);">正在做的，是一件与未来有关的事。</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 移动端s -->
+			<div class="m-swiper-container" v-if="windowWidth<800">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide banner_1"></div>
+			        <div class="swiper-slide banner_2"></div>
+			        <div class="swiper-slide banner_3" @click="world"></div>
+			        <div class="swiper-slide banner_4" @click="toLink"></div>
+			    </div>
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+			</div>
+			<div class="m-home-theme" v-if="windowWidth<800">
+				<ul>
+					<li @click="recovery()">
+						<img src="../../public/images/theme_1.jpg" alt="让每一个孩子，都能享受到更好的康复教育服务。">
+						<div class="m-home-theme-cont flex">
+							<div>
+								<p>儿童康复</p>
+								<p>给你的，正如你想给孩子的</p>
+							</div>
+						</div>
+					</li>
+					<li @click="train()">	
+						<img src="../../public/images/theme_2.jpg" alt="用科学的技术和方法，促进孤独症行业康复教育水平提升。">
+						<div class="m-home-theme-cont flex">
+							<div>
+								<p>教师培训</p>
+								<p>清晰教师职业发展路径，助力行业专业话发展。</p>
+							</div>
+						</div>
+					</li>
+					<li @click="product">
+						<img src="../../public/images/theme_3.jpg" alt="让互联网为特殊群体创造幸福。">
+						<div class="m-home-theme-cont flex">
+							<div>
+								<p>线上服务</p>
+								<p>让每一个孩子都能享受到更好的康复教育服务</p>
+							</div>
+						</div>
+					</li>
+					<li @click="teacher()">	
+						<img src="../../public/images/theme_4.jpg" alt="恩启与国内外科学家合作，开展关于自闭症的科学研究。">
+						<div class="m-home-theme-cont flex">
+							<div>
+								<p>科研教研</p>
+								<p>正在做的，是一件与未来有关的事。</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 移动端e -->
+			<div class="home-site-title home-site-title1 home-site-title-big">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<p><span :class="topClass">A Better You， A Bigger World</span></p>
+					<p><span :class="topClass">恩启，让康复更有效！</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="home-site">
+				<div class="swiper-wrapper swiper-container" id="case4">
+					<ul class="home-site-scroll swiper-wrapper">
+						<li class="enqi1 swiper-slide" @click="sunhe()">
+							<img src="../../public/images/enqidian1.png" alt="恩启IDEA·教研中心">
+							<span v-if="windowWidth > 800"></span>
+							<div>
+								<p>恩启教研中心</p>
+								<p>北京市朝阳区京密路弘园五号A5</p>
+							</div>
+						</li>
+						<li class="enqi2 swiper-slide" @click="goChangYang()">
+							<img src="../../public/images/enqidian2.jpg" alt="恩启IDEA·北京朝阳中心">
+							<span v-if="windowWidth > 800"></span>
+							<div>
+								<p>北京朝阳中心 </p>
+								<p>北京市朝阳区常营非中心11号楼</p>
+							</div>
+						</li>
+						<li class="enqi3 swiper-slide" @click="haidian()">
+							<img src="../../public/images/enqidian3.jpg" alt="恩启IDEA·北京海淀中心">
+							<span v-if="windowWidth > 800"></span>
+							<div>
+								<p>北京海淀中心</p>
+								<p>北京市海淀区西四环北路69号</p>
+							</div>
+						</li>
+						<li class="enqi4 swiper-slide" @click="jingan()">
+							<img src="../../public/images/enqidian4.jpg" alt="恩启IDEA·上海静安中心">
+							<span v-if="windowWidth > 800"></span>
+							<div>
+								<p>上海静安中心</p>
+								<p>上海市静安区大宁中心广场二期B9</p>
+							</div>
+						</li>
+						<li class="enqi5 swiper-slide" @click="huaqiaocheng()">
+							<img src="../../public/images/enqidian5.jpg" alt="恩启IDEA·深圳华侨城中心">
+							<span v-if="windowWidth > 800"></span>
+							<div>
+								<p>深圳华侨城中心</p>
+								<p>深圳市南山区侨城坊3栋3层</p>
+							</div>
+						</li>
+						<li class="enqi6 swiper-slide" @click="hangzhouxihu"><!-- @click="hangzhouxihu()" -->
+							<img src="../../public/images/hangzhouz.jpg" alt="杭州中心">
+							<span v-if="windowWidth > 800"></span>
+							<div>
+								<p>杭州，我们来了！</p>
+								<p> 浙江省 杭州市 </p>
+							</div>
+						</li>
+						<li class="enqi6 swiper-slide flex">	
+							<p>
+								<img src="../../public/images/jianshe.png" alt="">
+								<em>下一站，敬请期待！</em>
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="home-joinus" v-if="windowWidth>800">
+				<img src="../../public/images/logo_left.png" alt="恩启/特教平台">
+				<span>视野、审美、追求决定职业高度，恩启需要足够优秀的你！</span>
+				<a href="/Partner" class="button_hover" @click="joinUs()">加入恩启</a>
+			</div>
+			<!-- 移动端s -->
+			<div class="m-home-joinus" v-if="windowWidth<800">
+				<p>视野、审美、追求决定职业高度，恩启需要足够优秀的你！</p>
+				<a href="/Partner" class="button_hover" @click="joinUs()">加入恩启</a>
+			</div>
+			<!-- 移动端e -->
+			<div class="video_out_box">
+				<div class="home-site-title home-site-title2 home-site-title-ACT" style="height: 180px;">
+					<span class="home-site-left s1" :class="leftClassOne"></span>
+					<div class="home-site-title-centre">
+						<p><span :class="topClassOne">ACT for Autism</span></p>
+						<p><span :class="topClassOne">接纳 关怀 教育</span></p>
+					</div>
+					<span class="home-site-right s1" :class="rightClassOne"></span>
+				</div>
+				<div class="enqi_video flex">
+					<video v-if="windowWidth>800" autoplay='autoplay' loop="loop"  muted>
+						<source src="../video/enqi_video1.mp4"></source>
+					</video>
+					<video v-if="windowWidth<800" loop="loop" poster="../../public/mImages/fengmian.jpg"  muted id="m-video">
+						<source src="../video/enqi_video.mp4"></source>
+					</video>
+					<p class="play_btn" @click="showVideoBox()"></p>
+					<p class="video_logo"></p>
+				</div>
+			</div>
+			<!-- 底部 -->
+			<Footer v-if="windowWidth>800"></Footer>
+			<Appfooter v-if="windowWidth<800"></Appfooter>
+		</div>
+		<div class="mask_video" v-show="isShow" v-if="windowWidth>800">
+			<div>
+				<video id='video'  controls="controls"  controlsList="nodownload">
+					<source src="../video/enqi_video.mp4"></source>
+				</video>
+				<div class="close_video"><p @click="showVideoBox()"></p></div>
+			</div>
+		</div>
+		<Top></Top>
+		</div>
+	</main>
+</template>
+<script>
+	import Footer from "../components/index/Footer.vue";
+	import Top from "../components/index/Top.vue";
+	import Appfooter from "../components/mIndex/Appfooter.vue";
+	import {shows} from "../js/scrollHtml.js"
+	import Swiper from 'swiper';
+	export default {
+		name: 'Home',
+		components: {
+			Footer,
+			Top,
+			Appfooter
+		},
+		data() {
+			return {
+				height: {
+					height: window.innerHeight + 'px',
+				},
+				windowWidth:window.innerWidth,
+				topClass: '',
+				topClassOne: '',
+				leftClass: '',
+				leftClassOne: '',
+				rightClass: '',
+				rightClassOne: '',
+				isShow:false,
+				activeClass:'',
+				downClass:'show_cont',
+			}
+		},
+		mounted() {
+			if(window.innerWidth > 800){
+				var n = 0;
+				let height =$(window).height();
+				let w = $(window).width();
+				if( w <= 1024){
+					$('.show_cont_bule ul').hide();
+					$('.show_cont ul').hide();
+				}
+				let h = $(window).height()-125;
+				let ipadHeight = $(window).height()-93;
+				$(".home-nav-top").hide();
+				if ( w <= 1024){
+					$(".home-theme").css("top",ipadHeight);
+				}else {
+					$(".home-theme").css("top",h);
+				}
+				
+				
+				
+				var swiper = new Swiper('#case4', {
+					slidesPerView: 'auto',
+					speed:5500,   //5500
+					freeMode : true,
+					grabCursor: true, //鼠标样式根据浏览器不同而定 
+					autoplay: {
+						delay: 0,
+						stopOnLastSlide: false,
+						disableOnInteraction: false,
+					},
+					on:{
+						touchEnd: function(event){
+							swiper.autoplay.stop();
+							swiper.autoplay.start();
+						},
+					},
+					loop : true,
+				
+				});
+				shows();
+				$(".home-banner-nav a:last,.home-nav-top>div a:last").addClass("nav_active");
+				window.addEventListener('scroll', this.NavScrollFunction, true);
+				$(".home-banner-btn").click(function() {
+					$(".appointment").fadeIn();
+				});
+				$(".home-banner-btn2").click(function() {
+					$(".appointment").fadeIn();
+					_czc.push(﻿["_trackEvent","首页","立即预约（未提交）","","",]);
+				});
+				//儿童服务、教师培训、线上服务、科研教研
+				$(".home-theme-up li").mouseenter(function(event) {
+					const screenWidth = $(window).width();
+					if ( screenWidth > 1024){
+						$(this).find("div:first img").stop().animate({
+							"opacity": 1,
+							"right": "-6px"
+						}).show();
+						$(this).find("div:first p").stop().animate({
+							"left": "0"
+						});
+						$(this).find("div:first span").stop().animate({
+							"left": "0"
+						});
+						$(this).find("div:last span").stop().animate({
+							"left": "0"
+						}).show();
+						event.stopPropagation();
+					}else {
+						return
+					}
+				}).mouseleave(function(event) {
+					$(this).find("div:first img").stop().animate({
+						"opacity": 0,
+						"right": "0"
+					}, function() {
+						$(this).hide();
+					});
+					$(this).find("div:last span").stop().animate({
+						"left": "-100%"
+					}).show();
+					$(this).find("div:first p").stop().animate({
+						"left": "10px"
+					});
+					$(this).find("div:first span").stop().animate({
+						"left": "10px"
+					});
+					event.stopPropagation();
+				});
+				
+				$(".home-site ul li").mouseenter(function(event) {
+					if($(this).hasClass("enqi6")){
+						$(this).find("div>p:first").text("杭州西湖中心");
+					}
+					$(this).find("span").stop().animate({
+						"opacity": 0,
+					},30);
+					$(this).find(">img").stop().animate({
+						"left": 0,
+					});
+					$(this).find("div>p:first").stop().animate({
+						"top": '152px',
+					},30);
+					$(this).find("div>p:last").stop().animate({
+						"top": '180px',
+						"opacity": 1
+					},30);
+					event.stopPropagation();
+				}).mouseleave(function(event) {
+					if($(this).hasClass("enqi6")){
+						$(this).find("div>p:first").text("杭州，我们来了！");
+					}
+					$(this).find("span").stop().animate({
+						"opacity": 0.3
+					},30);
+					$(this).find(">img").stop().animate({
+						"left": '-30px',
+					});
+					$(this).find("div>p:first").stop().animate({
+						"top": '167px',
+					},30);
+					$(this).find("div>p:last").stop().animate({
+						"top": '205px',
+						"opacity": 0
+					},30);
+					event.stopPropagation();
+				});
+				//实时监听窗口大小的改变
+				window.onresize = function(){
+					const ScreenW = $(window).width();
+					if (ScreenW <960 ){
+						$('.flow-box').css({"max-width":"100%","min-width":"960px","overflow-x":"auto"});
+						$('.home-nav-top').css({'width':'960px','overflow-x':'visible'});
+					}else if (ScreenW > 960 ){
+						$('.home-nav-top').css('width','100%');
+					}
+				}
+			}else{
+				var mySwiper = new Swiper ('.m-swiper-container', {
+				    direction: 'horizontal', // 垂直切换选项
+				    loop: true, // 循环模式选项
+				    
+				    // 如果需要分页器
+				    pagination: {
+				      el: '.swiper-pagination',
+				    },
+					autoplay: {
+						delay: 3000,
+						stopOnLastSlide: false,
+						disableOnInteraction: false
+					}
+				 })  
+			}
+			
+		},
+		methods: {
+			NavScrollFunction() {
+				if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+					$(".home-banner-nav").hide();
+					$(".home-nav-top").fadeIn(200);
+				} else {
+					$(".home-nav-top").hide();
+					$(".home-banner-nav").fadeIn(200);
+				}
+				this.scrollnumber($('.home-site-title1'), 'font_active_up', 50, 1);
+				this.scrollnumber($('.home-site-title2'), 'font_active_up', 50, 2);
+			},
+			scrollnumber(element, cssname, offset, type) {
+				let a, b, c, d;
+				d = $(element).offset().top;
+				a = eval(d + offset);
+				b = $(window).scrollTop();
+				c = $(window).height();
+				if (b + c > a) {
+					if (type == 1 && this.topClass == "") {
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					} else if (type == 2 && this.topClassOne == "") {
+						this.topClassOne = 'font_active_up';
+						this.leftClassOne = 'font_active_left';
+						this.rightClassOne = 'font_active_right';
+					}
+				}
+			},
+			train() {
+				let train = this.$router.resolve({
+					path: '/train'
+				});
+				window.location.href = train.href;
+				_czc.push(﻿["_trackEvent","首页","点击教师培训","","",]);
+			},
+			product() {
+				let product = this.$router.resolve({
+					path: '/product'
+				});
+				window.location.href = product.href;
+				_czc.push(﻿["_trackEvent","首页","点击线上服务","","",]);
+			},
+			teacher() {
+				let teacher = this.$router.resolve({
+					path: '/teacher'
+				});
+				window.location.href = teacher.href;
+				_czc.push(﻿["_trackEvent","首页","点击科研教研","","",]);
+			},
+			sunhe() {
+				let sunhe = this.$router.resolve({
+					path: '/cityDetail?name=sunhe'
+				});
+				window.location.href = sunhe.href;
+				_czc.push(﻿["_trackEvent","首页","点击门店（教研中心）","","",]);
+			},
+			haidian() {
+				let haidian = this.$router.resolve({
+					path: '/cityDetail?name=haidian'
+				});
+				window.location.href = haidian.href;
+				_czc.push(﻿["_trackEvent","首页","点击门店（海淀中心）","","",]);
+			},
+			recovery() {
+				let childrenRecovery = this.$router.resolve({
+					path: '/childrenrecovery'
+				});
+				window.location.href = childrenRecovery.href;
+				_czc.push(﻿["_trackEvent","首页","点击儿童康复","","",]);
+			},
+			jingan() {
+				let jingan = this.$router.resolve({
+					path: '/cityDetail?name=jingan'
+				});
+				window.location.href = jingan.href;
+				_czc.push(﻿["_trackEvent","首页","点击门店（上海静安中心）","","",]);
+			},
+			huaqiaocheng() {
+				let shenzhen = this.$router.resolve({
+					path: '/cityDetail?name=shenzhen'
+				});
+				window.location.href = shenzhen.href;
+				_czc.push(﻿["_trackEvent","首页","点击门店（深圳华侨城中心）","","",]);
+			},
+			hangzhouxihu(){
+				let hangzhou = this.$router.resolve({
+					path: '/cityDetail?name=hangzhou'
+				});
+				window.location.href = hangzhou.href;
+				_czc.push(﻿["_trackEvent","首页","点击门店（杭州中心）","","",]);
+			},
+			goChangYang() {
+				let chaoyang = this.$router.resolve({
+					path: '/cityDetail?name=chaoyang'
+				});
+				window.location.href = chaoyang.href;
+				_czc.push(﻿["_trackEvent","首页","点击门店（朝阳中心）","","",]);
+			},
+			showVideoBox(){
+				if(window.innerWidth>800){
+					this.isShow=!this.isShow;
+					let video=document.getElementById("video");
+					if(this.isShow){
+						video.play();
+					}else{
+						video.pause();
+					}
+				}else{
+					let video=document.getElementById("m-video");
+						video.play();
+				}
+				_czc.push(﻿["_trackEvent","首页","播放视频","","",]);
+			},
+			world(){
+				window.open('https://mp.weixin.qq.com/s/Wcnld7Nz_rpkiHOF9vJ-1Q');
+				_czc.push(﻿["_trackEvent","首页","点击banner3（抗疫）","","",]);
+			},
+			toLink(){
+				window.open('https://mp.weixin.qq.com/s?__biz=MzA5ODQyNTcyNQ==&mid=2650647241&idx=1&sn=e7783e763f594fe1ec577313779f57a5&chksm=8898c4dbbfef4dcd85e8b666817510797b1d8bc8d55d5e31ef87f8aa93591716b630c27d1ceb&xtrack=1&scene=0&subscene=10000&clicktime=1594980402&enterid=1594980402&ascene=7&devicetype=android-29&version=2700103c&nettype=WIFI&abtest_cookie=AAACAA%3D%3D&lang=zh_CN&exportkey=AZiN%2B%2Bs9vBkZ3MsGb7G3sk8%3D&pass_ticket=nYi88Wk4UGdytX%2FYskKl5MdJFGgOj81Jqk6h%2F2AMK%2Fpa56eAFSW7B%2F0m8wR2Tv2b&wx_header=1');
+				_czc.push(﻿["_trackEvent","首页","点击banner3（开课）","","",]);
+			},
+			carouselChang(key){
+				if(key == 1){
+					this.activeClass='banner-nav-active2';
+					this.downClass='show_cont_bule';
+				}else if(key == 2){
+					this.activeClass='banner-nav-active';
+				}else if (key == 3){
+					this.activeClass='banner-nav-active3';
+				} else{
+					this.activeClass='';
+					this.downClass='show_cont';
+				}
+			},
+			joinUs(){
+				_czc.push(﻿["_trackEvent","首页","点击加入我们","","",]);
+			}
+				
+		}
+	}
+</script>
+<style lang="scss">
+	@import '../style/base.css';
+	.hemo {
+		background: #EDF5F5 !important;
+	}
+	html {
+		overflow-x: hidden;
+	}
+	.el-carousel__arrow{
+		width: 65px!important;
+		height: 91px!important;
+		background: url(../../public/images/left.png) no-repeat;
+		background-size: 100% 100%;
+		border-radius: 0!important;
+		opacity: .8;
+		i{
+			width: 0!important;
+			height: 0!important;
+			display: none!important;
+			display: inline-block;
+			::after{
+				width: 0!important;
+				height: 0!important;
+				display: none;
+			}
+		}
+	}
+	.el-carousel__indicators{
+		display: none !important;
+	}
+	.el-carousel__arrow--left{
+		left: 0!important;
+	}
+	.el-carousel__arrow--right{
+		background: url(../../public/images/rignt.png) no-repeat!important;
+		background-size: 100% 100%!important;
+		right: 0!important;
+	}
+	.banner_1{
+		width: 100%;
+		background: url(../../public/images/enqikangfu.jpg) no-repeat;
+		background-size: 100%;
+		background-position: center;
+	}
+	.banner_2{
+	    width: 100%;
+		background: url(../../public/images/vbpingguzhushou.jpg) no-repeat;
+		background-size: 100%;
+		background-position: center;
+	}
+	.banner_3{
+		width: 100%;
+		background: url(../../public/images/kangyi.jpg) no-repeat;
+		background-size: 100%;
+		background-position: center;
+	}
+	.banner_4{
+		width: 100%;
+		background: url(../../public/images/class.png) no-repeat;
+		background-size: 100%;
+		background-position: center;
+	}
+	.el-carousel__button{
+		width: 19px !important;
+		height: 19px !important;
+		border-radius: 50%;
+	}
+	.el-carousel__indicators--horizontal{
+		left: 84.3% !important;
+		bottom: 160px !important;
+	}
+	.el-carousel__indicator--horizontal{padding: 12px 10px !important;}
+	.banner_log{
+		width: 160px;
+		height: 39.75px;
+		position: absolute;
+		z-index: 3;
+		top: 48px;
+		left: 63px;
+		img{
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	body {
+		background: #EDF5F5;
+	}
+	.mask_video{
+		width: 100%;
+		height: 100%;
+		background: rgba(255,255,255,0.9);
+		position: fixed;
+		z-index: 100;
+		left: 0;
+		top: 0;
+		>div{
+			width: 960px;
+			height: 540px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	}
+	.video_logo{
+		width: 142px;
+		height: 37px;
+		background: url(../../public/images/Bitmap_logo.png) no-repeat;
+		background-size: 100%;
+		position: absolute;
+		z-index: 2;
+		left: 55px;
+		top: 55px;
+	}
+	.close_video{
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: -70px;
+		p{
+			width: 45px;
+			height: 45px;
+			background: url(../../public/images/close_btn.png) no-repeat;
+			background-size: 100%;
+			cursor: pointer;
+			margin: 0 auto;
+		}
+	}
+	.swiper-wrapper {
+		transition-timing-function: linear !important;
+	}
+
+	.swiper-scrollbar {
+		background: #2BB7B3;
+		width: 70% !important;
+		left: 15% !important;
+		display: block !important;
+		opacity: 1 !important;
+		height: 13px !important;
+		padding: 4px 0;
+		bottom: -40px !important;
+		overflow: hidden;
+	}
+
+	.swiper-container {
+		-webkit-transition-timing-function: linear;    /*之前是ease-out*/
+		  -moz-transition-timing-function: linear;
+		  -ms-transition-timing-function: linear;
+		  -o-transition-timing-function: linear;
+		  transition-timing-function: linear;
+		  margin: 0 auto;
+	}
+
+	.swiper-scrollbar-drag {
+		background: #fff;
+		height: 5px;
+	}
+
+	.el-carousel__container {
+		height: 100% !important;
+	}
+
+	.home_banner {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.home-banner-nav {
+		width: 81%;
+		height: 87px;
+		font-size: 14px;
+		cursor: pointer;
+		line-height: 87px;
+		background: rgba(255, 255, 255, .9);
+		position: absolute;
+		right: 0;
+		top: 23px;
+		z-index: 2;
+		display: flex !important;
+		align-items: center;
+		justify-content: space-around;
+		>a {
+			width: auto;
+			color: #20A9A0;
+			display: inline-block;
+			height: 87px;
+		}
+		span {
+			color: #20A9A0;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	}
+	.banner-nav-active a{
+		color: #006BDD!important;
+	}
+	.banner-nav-active2 a{
+		color: #009ddf!important;
+	}
+	.banner-nav-active3 a{
+		color: #ff9800!important;
+	}
+	.home-banner-nav span>a {
+		color: #20A89E;
+	}
+
+	.show_cont {
+		position: relative;
+	}
+	.show_cont_bule{
+		position: relative;
+	}
+	.enqi_video{
+		width: 1078px;
+		height: 557px;
+		margin: 50px auto 0;
+		margin-bottom: 103px;
+		overflow: hidden;
+		border-radius: 10px;
+		position: relative;
+		border: 2px solid #fff;
+		box-shadow: 0px 2px 6px 1px rgba(5, 0, 1, 0.1) !important;
+		video{
+			width: 100%;
+		}
+	}
+	.play_btn{
+		width: 105px;
+		height: 106px;
+		background: url(../../public/images/play333.png) no-repeat;
+		background-size: 100%;
+		position: absolute;
+		z-index: 2;
+		cursor: pointer;
+	}
+	.show_cont ul {
+		position: absolute;
+		width: 100px !important;
+		display: inline-block;
+		border-radius: 3px;
+		background: #fff;
+		top: 65px;
+		left: -21px;
+		display: none;
+		margin: 0 !important;
+	}
+	.show_cont_bule ul{
+		position: absolute;
+		width: 100px !important;
+		display: inline-block;
+		border-radius: 3px;
+		background: #fff;
+		top: 65px;
+		left: -21px;
+		display: none;
+		margin: 0 !important;
+	}
+	.show_cont ul li {
+		height: 45px !important;
+		line-height: 45px !important;
+		text-align: center;
+		a {
+			color: #555555 !important;
+		}
+	}
+	.show_cont_bule ul li{
+		height: 45px !important;
+		line-height: 45px !important;
+		text-align: center;
+		a {
+			color: #555555 !important;
+		}
+	}
+	.call_1{
+		font-weight: Bold;font-size: 20px !important;cursor: auto;
+	}
+	.show_cont::after {
+		content: "";
+		display: inline-block;
+		width: 7px;
+		height: 12px;
+		/*background: url(../../public/images/jiantou_bottom.png) no-repeat;*/
+		background-size: 100%;
+		visibility: hidden;
+		position: absolute;
+		left: 113%;
+		top: 44%;
+	}
+	.show_cont_bule::after{
+		content: "";
+		display: inline-block;
+		width: 7px;
+		height: 12px;
+		/*background: url(../../public/images/jiantoublue.png) no-repeat;*/
+		background-size: 100%;
+		visibility: hidden;
+		position: absolute;
+		left: 113%;
+		top: 44%;
+	}
+	.show_up:hover {
+		border-bottom: none !important;
+		transform: translateY(-8px);
+		transition-duration: .5s;
+		-moz-transition-duration: .5s;
+		/* Firefox 4 */
+		-webkit-transition-duration: .5s;
+		/* Safari 和 Chrome */
+		-o-transition-duration: .5s;
+		/* Opera */
+	}
+
+	.show_cont:hover {
+		border-bottom: none !important;
+		transform: translateY(-8px);
+		transition-duration: .5s;
+		-moz-transition-duration: .5s;
+		/* Firefox 4 */
+		-webkit-transition-duration: .5s;
+		/* Safari 和 Chrome */
+		-o-transition-duration: .5s;
+
+		/* Opera */
+		>ul {
+			display: block;
+		}
+	}
+	.show_cont_bule:hover{
+		border-bottom: none !important;
+		transform: translateY(-8px);
+		transition-duration: .5s;
+		-moz-transition-duration: .5s;
+		/* Firefox 4 */
+		-webkit-transition-duration: .5s;
+		/* Safari 和 Chrome */
+		-o-transition-duration: .5s;
+		
+		/* Opera */
+		>ul {
+			display: block;
+		}
+	}
+	.show_cont:hover::after {
+		visibility: visible;
+	}
+	.show_cont_bule:hover::after {
+		visibility: visible;
+	}
+	.home-nav-top {
+		width: 100%;
+		/*overflow: visible;*/
+		height: 87px;
+		font-size: 14px;
+		line-height: 87px;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		box-shadow: 0px 4px 32px 0px rgba(36, 40, 40, 0.09);
+		img {
+			display: block;
+			width: 140px;
+			height: 36px;
+		}
+		a {
+			color: #20A9A0;
+			display: inline-block;
+			height: 87px;
+			text-align: center;
+			width: auto;
+			// overflow: hidden;
+			ul {
+				background: #fff;
+				border-radius: 3px;
+				margin: -10px auto 0;
+				width: 90px;
+				display: none;
+
+				li {
+					height: 60px;
+					line-height: 60px;
+					color: #20A9A0;
+				}
+			}
+		}
+		span {
+			color: #20A9A0;
+			font-size: 20px;
+			font-weight: bold;
+			a {
+				color: #20A9A0;
+			}
+		}
+	}
+
+	.home-banner-btn,
+	.home-banner-btn2 {
+		width: 118px;
+		height: 42px;
+		line-height: 42px;
+		background: rgba(236, 128, 77, 1);
+		border-radius: 4px;
+		border: none;
+		font-size: 15px;
+		color: #fff;
+		font-weight: 400;
+		cursor: pointer;
+		outline: none;
+	}
+
+	.home-theme {
+		width: 100%;
+		position: absolute;
+		z-index: 5;
+		left: 0;
+	}
+
+	.home-theme-up li p,
+	.home-theme-up li span {
+		position: relative;
+		left: 10px;
+	}
+	.home-theme-up li div:first-child {
+		height: 125px;
+	}
+
+	.home-theme-up {
+		width: 93%;
+		margin: 0 auto;
+		display: flex;
+		color: #FFFFFF;
+		li {
+			width: 25%;
+			span {
+				padding: 40px 0 0 27px;
+				font-size: 20px;
+				display: inline-block;
+			}
+			p {
+				padding: 2px 0 0 27px;
+			}
+		}
+	}
+
+	.home-theme-up li div:first-child img {
+		display: block;
+		width: 46px;
+		height: 26px;
+		float: right;
+		margin: -24px 35px 0 0;
+		display: none;
+		position: relative;
+		right: 0;
+	}
+
+	.home-theme-up {
+		cursor: pointer;
+	}
+
+	.home-theme-up {
+		width: 93%;
+		display: flex;
+		margin: 0 auto;
+
+		li div:last-child {
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+
+			span {
+				position: absolute;
+				top: 0;
+				left: -100%;
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				color: #FFFFFF;
+				font-size: 14px;
+				padding: 59px 26px 0;
+				font-weight: 300px;
+				letter-spacing: 1px;
+			}
+		}
+
+		li:hover>div:last-child img {
+			transform: scale(1.05);
+			transition-duration: 1s;
+			transition-timing-function: linear;
+		}
+
+		li div:last-child img {
+			transition-duration: .8s;
+		}
+	}
+
+	.home-site-title {
+		width: 90%;
+		display: flex;
+		height: 200px;
+		margin: 356px auto 0;
+		align-items: center;
+		overflow: hidden;
+
+		img {
+			display: inline-block;
+			width: 31px;
+			height: 47px;
+		}
+	}
+	.home-site-title2{
+		margin-top: 140px;
+		padding-top: 100px;
+	}
+
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 33%;
+		height: 2px;
+	}
+	.home-site-title2 .home-site-left,
+	.home-site-title2 .home-site-right {
+		width: 40%;
+	}
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		p:first-child {
+			height: 58px !important;
+			overflow: hidden;
+		}
+
+		p:last-child {
+			height: 30px;
+			overflow: hidden;
+		}
+
+		p:first-child span {
+			font-size: 23px !important;
+			color: #1DBFBA;
+			font-weight: 600;
+			display: inline-block;
+			margin-top: 23px;
+			opacity: 0;
+			letter-spacing: 2px;
+		}
+
+		p:last-child span {
+			color: #1BB8B3;
+			font-size: 18px;
+			font-weight: 350;
+			display: inline-block;
+			opacity: 0;
+		}
+	}
+
+	.home-site {
+		width: 100%;
+		position: relative;
+		margin-top: 22px;
+		ul li{
+			width: 384px!important;
+			height: 262px;
+			border: 2px solid #fff;
+			box-shadow:0px 2px 6px 1px rgba(5,0,1,0.1);
+			border-radius: 10px;
+			overflow: hidden;
+			float: left;
+			position: relative;
+			cursor: pointer;
+			margin-right: 24px;
+			>img{
+				position: relative;
+				left: -30px;
+				border-radius: 10px;
+				max-width: 108%;
+			}
+			span{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				z-index: 1;
+				opacity:0.3;
+				transition-property:all;
+				transition-duration:.3s;
+				border-radius: 10px;
+			}
+			div{
+				color: #fff;
+				p{
+					position: absolute;
+					z-index: 2;
+					left: 31px;
+					transition-property:all;
+					transition-duration:.3s;
+					letter-spacing:2px;
+					font-size: 17px;
+				}
+				p:first-child{
+					top: 167px;
+					font-size:17px;
+					color:rgba(255,255,255,1);
+					text-shadow:0px 3px 2px rgba(5,0,1,0.3);
+					font-weight: 600;
+				}
+				p:last-child{
+					width: 263px;
+					color:rgba(255,255,255,1);
+					text-shadow:0px 1px 2px rgba(5,0,1,0.69);
+					font-weight: 400;
+					top: 205px;
+					opacity: 0;
+					font-size: 15px;
+				}
+			}
+		}
+	}
+	.enqi6{
+		cursor: inherit!important;
+		background: #7DD5D2;
+		p{
+			text-align: center;
+			img{
+				width: 155px!important;
+				height: 116px;
+				margin: 0 auto;
+				transform: translate3d(0, 0, 0)!important;
+			}
+			em{
+				font-size:18px;
+				font-weight:600;
+				color:rgba(255,255,255,1);
+				text-shadow:0px 3px 2px rgba(5,0,1,0.3);
+				margin-top: 15px;
+				display: block;
+				font-style:inherit;
+			}
+		}
+	}
+	.enqi1 span{
+		background:rgba(29,191,186,1);
+	}
+	.enqi2 span,
+	.enqi6 span{
+		background:rgba(236,128,77,1);
+	}
+	.enqi3 span{
+		background:rgba(29,75,191,1);
+	}
+	.enqi4 span{
+		background:rgba(212,181,74,1);
+	}
+	.enqi5 span{
+		background:rgba(30,169,165,1);
+	}
+	.enqi6 p{
+		text-align: left;
+	}
+	.home-site::-webkit-scrollbar {
+		display: none;
+	}
+	.home-joinus {
+		width: 90%;
+		height: 110px;
+		margin: 87px auto 0;
+		background-image: url(../../public/images/bggg.png);
+		background-size: cover;
+		color: #FFFFFF;
+		box-sizing: border-box;
+		line-height: 120px;
+		display: flex;
+		position: relative;
+		img {
+			height: 40px;
+			display: block;
+			margin: 37px 40px 0 65px;
+		}
+		span {
+			font-size: 20px;
+		}
+		a {
+			display: inline-block;
+			font-size: 18px;
+			background: #EC804D;
+			border: 1px solid #EC804D;
+			color: #FFFFFF;
+			border-radius: 4px;
+			width: 185px;
+			height: 53px;
+			text-align: center;
+			line-height: 53px;
+			margin: 31px 0 0 235px;
+		}
+	}
+
+	.home-partner {
+		width: 100%;
+		height: 611px;
+		background: #FFFFFF;
+		margin-top: 105px;
+	}
+
+	.home-partner-image {
+		width: 82%;
+		margin: 0 auto;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	.up_top {
+		-webkit-animation-duration: .5s;
+		animation-duration: .5s;
+		-webkit-animation-name: up_top_fun;
+		animation-name: up_top_fun;
+		animation-fill-mode: forwards;
+	}
+	.video_out_box{
+		width: 100%;
+		height: 1000px;
+		background:#fff;
+	}
+	@keyframes up_top_fun {
+		0% {
+			transform: translateY(0);
+		}
+
+		100% {
+			transform: translateY(-15px);
+		}
+	}
+
+	@-moz-keyframes up_top_fun
+
+	/* Firefox */
+		{
+		0% {
+			transform: translateY(0);
+		}
+
+		100% {
+			transform: translateY(-15px);
+		}
+	}
+
+	@-webkit-keyframes up_top_fun
+
+	/* Safari 和 Chrome */
+		{
+		0% {
+			transform: translateY(0);
+		}
+
+		100% {
+			transform: translateY(-15px);
+		}
+	}
+
+	@-o-keyframes up_top_fun
+		{
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-15px);
+		}
+	}
+	.stop_top {
+		-webkit-animation-duration: .5s;
+		animation-duration: .5s;
+		-webkit-animation-name: up_top_fun1;
+		animation-name: up_top_fun1;
+		animation-fill-mode: forwards;
+	}
+	@keyframes up_top_fun1 {
+		0% {
+			transform: translateY(-15px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+	@-moz-keyframes up_top_fun1
+		{
+		0% {
+			transform: translateY(-15px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+	@-webkit-keyframes up_top_fun1
+		{
+		0% {
+			transform: translateY(-15px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+	@-o-keyframes up_top_fun1
+		{
+		0% {
+			transform: translateY(-15px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+	@media screen and (min-width: 1500px)and(max-width: 2500px) {
+		.home-theme-up li div:last-child {
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		.home-nav-top span {
+			font-size: 18px;
+		}
+	}
+	@media screen and (min-width: 1200px)and(max-width: 1400px) {
+		.banner_1{
+			width: 100%;
+			background: url(../../public/images/enqikangfu1.jpg) no-repeat;
+			background-size: 100%;
+			background-position: center;
+		}
+		.banner_2{
+			width: 100%;
+			background: url(../../public/images/vbpingguzhushou1.jpg) no-repeat;
+			background-size: 100%;
+			background-position: center;
+		}
+		.banner_3{
+			width: 100%;
+			background: url(../../public/images/kangyi1.jpg) no-repeat;
+			background-size: 100%;
+			background-position: center;
+		}
+		.banner_4{
+			width: 100%;
+			background: url(../../public/images/class1.png) no-repeat;
+			background-size: 100%;
+			background-position: center;
+		}
+	}
+	//笔记本电脑
+	@media screen and (min-width: 800px)and(max-width: 1400px) {
+	
+		.mask_video > div {
+		    width: 836px;
+		    height: 470px;
+		}
+		.mask_video>div video{
+			width: 100%;
+		}
+		.close_video {
+		    bottom: -50px;
+		}
+		.play_btn{
+			width: 95px;
+			height: 95px;
+		}
+
+		.banner_log{
+			top: 43px;
+			left: 47px;
+		}
+	}
+	@media screen and (min-width: 999px)and(max-width: 1200px) {
+		.home-site-left,
+		.home-site-right {
+			width: 30%;
+		}
+		.home-site-title {
+			margin-top: 300px;
+		}
+	}
+	// 960-1023
+	@media screen and (min-width: 960px)and(max-width: 1023px){
+		.home-banner-btn, .home-banner-btn2{
+			width: 85px;
+		    height: 33px;
+			font-size: 12px;
+		}
+		.call_1{
+			font-size: 17px !important;
+		}
+		.home-joinus img{
+			width: 103px;
+			height: 24px;
+			margin:0 40px;
+		}
+		.home-joinus a{
+			font-size: 16px;
+			width: 105px;
+			height: 40px;
+			line-height: 40px;
+			margin: 46px 0 0 0;
+		}
+		.home-banner-nav > a,.home-nav-top a{
+			margin-top: 5px;
+		}
+		.banner_log{
+			width: 112px;
+			height: 28px;
+		}
+		.video_out_box{
+			height:698px ;
+		}
+	}
+
+	// 1024-1279
+	@media screen and (min-width: 1024px)and(max-width: 1279px){
+		
+		.home-banner-btn{
+			width: 90px;
+			height: 32px;
+			margin: 27px 35px 0 0 !important;
+		}
+		.call_1{
+			font-size: 18px !important;
+		}
+		.home-joinus{
+			padding: 0;
+		}
+		.home-joinus img{
+			width: 15%;
+			margin: 38px 43px;
+		}
+		.home-joinus span{
+			width: 538px;
+			font-size: 20px;
+		}
+		.home-joinus a{
+			font-size: 16px;
+			width: 105px;
+			height: 40px;
+			line-height: 40px;
+			margin: 40px 0 0 0;
+		}
+	
+	}
+	// 1281-1366
+	@media screen and (min-width: 1280px)and(max-width: 1366px){
+		.home-joinus span{
+			width: 538px;
+		}
+		.home-joinus a{
+			margin: 31px 0 0 155px;
+		}
+	}
+
+	@media screen and (min-width: 1780px)and(max-width: 2100px) {
+		.home-joinus{
+			height:120px ;
+			position: relative;
+			a{
+				position: absolute;
+				top: 50%;
+				right: 128px;
+				margin-top: -26.5px;
+			}
+		}
+		.home-joinus span {
+		    letter-spacing: 2px;
+		}
+		.home-joinus img{
+			margin: 37px 40px 0 118px;
+		}
+		.enqi_video{
+			width:1260px ;
+			height: 642px;
+		}
+		.home-theme-up li div:last-child span{
+			padding-top: 100px;
+			font-size: 16px;
+		}
+		.home-site-title-big{
+			margin: 465px auto 0 !important;
+		}
+		.home-joinus{
+			margin: 87px auto 190px;
+		}
+		.act_fill{
+			height: 100px;
+			background: #fff;
+			width: 100%;
+		}
+	}
+	@media screen and (min-width:1900px) {
+		.home-partner-image {
+			width: 72%;
+			height: 363px;
+		}
+		.Height {
+			width: 100%;
+			height: 100px;
+		}
+	}
+	@media screen  and(max-width:1500px){
+		.el-carousel__arrow{
+			width: 50px!important;
+			height: 76px!important;
+		}
+		.enqi_video{
+			margin-bottom: 0!important;
+		}
+	}
+	@media screen and(max-width: 1024px){
+		.home-banner-nav{
+			font-size: 12px;
+			width: 730px;
+			height: 60px;
+		}
+		.home-joinus{
+			height: 75px;
+			margin: 87px auto -68px;
+			align-items: center;
+		}
+		.home-joinus span{
+			font-size: 16px;
+		}
+		.home-joinus a{
+			position: absolute;
+			margin:  0;
+			right: 35px;
+			top: 50%;
+			margin-top: -20px;
+		}
+		.home-theme-up li div:first-child{
+			height: 93px;
+		}
+		.home-theme-up li span{
+			font-size: 18px;
+		}
+		.home-theme-up li span{
+			padding: 24px 0 0 11px;
+		}
+		.home-theme-up li p{
+			padding: 5px 0 0 11px;
+			font-size: 14px;
+		}
+		.home-site ul li{
+			width: 249.6px !important;
+			height: 170.3px;
+		}
+		.home-site ul li > img{
+			width: 249.6px !important;
+			height: 170.3px;
+			left:0 !important;
+		}
+		.home-site ul li div p:first-child{
+			top: 96px;
+		}
+		.home-site ul li div p:first-child{
+			font-size: 15px;
+		}
+		.s1{
+			width: 36% !important;
+		}
+		.home-site-title{
+			width: 88% !important;
+			margin: 158px auto 0;
+			height: 155px;
+		}
+		.home-site-left, .home-site-right{
+			width: 27%;
+		}
+		.home-site-title2{
+			padding-top: 40px;
+		}
+		.erweima {
+			width: 99px !important;
+			height: 99px !important;
+		}
+		.enqi_video{
+			width: 707.7px;
+			height: 362.05px;
+		}
+	}
+	//移动端
+	@media screen and(max-width: 800px){
+		.home-site ul li div p{
+			letter-spacing: 0;
+		}
+		main{
+			margin-top: 59px;
+			padding-bottom: 65px;
+		}
+		.home-site-title{
+			margin: 0!important;
+		}
+		.m-swiper-container{
+			width: 100%;
+			height: 206px;
+			position: relative;
+			overflow: hidden;
+
+		}
+		.m-swiper-container .swiper-slide {
+			background-size: 110%;
+		}
+		.swiper-pagination{
+			z-index: 2!important;
+		}
+		.swiper-pagination-bullet{
+			background: rgba(0,0,0,.28)!important;
+			width: 5px!important;
+			height: 5px!important;
+		}
+		.swiper-pagination-bullet-active{
+			background: #fff!important;
+		}
+		.home-site .swiper-wrapper{
+			display: inline-block!important;
+		}
+		.home-site{
+			padding: 0 20px;
+			box-sizing: border-box;
+			ul>li{
+				width: 100%!important;
+				height: 200px!important;
+				margin-bottom: 19px;
+				border: none;
+				border-radius: 6px;
+				img{
+					width: 100%!important;
+					height: inherit!important;
+					border-radius: 6px;
+				}
+			}
+		}
+		.home-site ul li div p:last-child{
+			opacity: 1;
+			top: inherit;
+			bottom:37px ;
+			font-size: 12px;
+			left: 22px;
+		}
+		.home-site ul li div p:first-child{
+			top: inherit;
+			bottom:56px ;
+			font-size: 14px;
+			left: 22px;
+		}
+		.home-site ul>li:last-child img{
+			width: 135px!important;
+			height: 100px!important;
+			margin: 0 auto;
+		}
+		.enqi6 p{
+			text-align: center;
+		}
+		.enqi6 p em{
+			font-size: 14px;
+			text-shadow:inherit;
+			margin-top: 10px;
+		}
+		.m-home-joinus{
+			padding: 0 20px;
+			box-sizing: border-box;
+			text-align: center;
+			p{
+				font-size: 12px;
+				width: 100%;
+				height: 50px;
+				background: url(../../public/images/bggg.png) no-repeat;
+				background-size: 100% 100%;
+				text-align: center;
+				line-height: 50px;
+				color: #fff;
+				border-radius: 6px;
+			}
+			a{
+				display: inline-block;
+				width: 130px;
+				height: 42px;
+				background:#EC804D;
+				border-radius:4px;
+				font-size: 14px;
+				color: #fff;
+				text-align: center;
+				line-height: 42px;
+				margin: 0 auto;
+				margin-top: 18px;
+				margin-bottom: 37px;
+			}
+		}
+		.video_out_box{
+			width: 100%;
+			height: auto;
+			padding: 0 20px;
+			box-sizing: border-box;
+			padding-bottom: 36px!important;
+		}
+		.enqi_video{
+			width: 100%;
+			height: 190px;
+			margin-top: 20px;
+		}
+		.play_btn{
+			width: 59px;
+			height: 59px;
+		}
+		.video_logo{
+			width: 52px;
+			height: 14px;
+			top: 22px;
+			left: 22px;
+		}
+		.m-home-theme{
+			padding: 0 20px;
+			padding-top: 20px;
+			overflow: hidden;
+			ul>li{
+				width: 47%;
+				height: 108px;
+				float: left;
+				position: relative;
+				border-radius: 6px;
+				overflow: hidden;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			ul>li:nth-child(2),
+			ul>li:nth-child(4){
+				float: right;
+			}
+			ul>li:nth-child(2)~li{
+				margin-top: 10px;
+			}
+			
+		}
+		.m-home-theme-cont{
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+			height: 100%;
+			width:100%;
+			div{
+				padding: 0 15px;
+				box-sizing: border-box;
+			}
+			div p:first-child{
+				font-size: 14px;
+				color: #fff;
+				text-align: center;
+				margin-top: 4px;
+				font-weight: bold;
+			}
+			div p:last-child{
+				font-size: 10px;
+				color: #fff;
+				width: 100%;
+				margin: 0 auto;
+				text-align:justify;
+				margin-top: 5px;
+			}
+		}
+		.home-site-left, .home-site-right{
+			height: 1px;
+		}
+		.m-home-theme ul li:first-child .m-home-theme-cont{
+			background:rgba(48,181,177,.85);
+		}
+		.m-home-theme ul li:nth-child(2) .m-home-theme-cont{
+			background:rgba(218,120,69,.85);
+		}
+		.m-home-theme ul li:nth-child(3) .m-home-theme-cont{
+			background:rgba(44,126,199,.85);
+		}
+		.m-home-theme ul li:nth-child(4) .m-home-theme-cont{
+			background:rgba(245,200,71,.85);
+		}
+		.home-site-title-centre p:first-child span,
+		.home-site-title-centre p:last-child span{
+			opacity: 1;
+		}
+		.home-site-title-centre p:first-child span{
+			font-size: 16px!important;
+			letter-spacing:0;
+		}
+		.home-site-title-centre p:first-child{
+			height: auto!important;
+			margin-top: 6px;
+		}
+		.home-site-title-centre p:last-child span{
+			font-size: 12px!important;
+		}
+		.home-site-title{
+			width: 100%!important;
+			height: auto;
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+		.home-site-title1{
+			margin:20px 0!important;
+		}
+		.home-site-title1 .home-site-left,
+		.home-site-title1 .home-site-right{
+			width: 10%!important;
+		}
+		.home-site-title2{
+			padding: 0;
+			height: auto!important;
+			padding-top: 20px!important;
+		}
+		.home-site-title2 .home-site-left,
+		.home-site-title2 .home-site-right{
+			width: 25%!important;
+		}
+		.mask_video > div{
+			width: 100%;
+			height: 200px;
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+		.mask_video > div video{
+			max-width: 100%;
+		}
+		.home-site ul li div p:last-child{
+			text-align: left;
+		}
+		.flow-box{
+			overflow: hidden;
+		}
+		.home-site ul li div p:first-child,
+		.home-site ul li div p:last-child{
+			text-shadow:0px 0 3px rgba(0,0,0,.7)!important;
+		}
+	}
+</style>

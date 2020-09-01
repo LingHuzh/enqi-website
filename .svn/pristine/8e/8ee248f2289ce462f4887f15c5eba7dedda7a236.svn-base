@@ -1,0 +1,291 @@
+<template>
+	<div class="index-nav">
+		<img src="../../../public/images/logo3.png" alt="恩启">
+		<div>
+			<button type="button" class="home-banner-btn2 button_hover">预约体验</button>
+			<a href="/" class="show_up">首页</a>
+			<a href="/Site" class="show_cont">
+				直营连锁
+				<ul>
+					<li><a href="/Site?status=1">北京</a></li>
+					<li><a href="/Site?status=2">上海</a></li>
+					<li><a href="/Site?status=3">深圳</a></li>
+				</ul>
+			</a>
+			<a href="/Ingclass" class="show_cont">
+				恩启学院
+				<ul>
+					<li><a href="/IdeaTheory">教师成长</a></li>
+					<li><a href="/Patriarch">家长成长</a></li>
+					<li><a href="/Idea">专项培训</a></li>
+				</ul>
+			</a>
+			<a href="/Teacher" class="show_up">科研教研</a>
+			<a href="/Product" class="show_up">互联网产品</a>
+			<a href="/Partner" class="show_cont">
+				加入我们
+				<ul>
+					<li><a href="/Partner?status=1">薪资福利</a></li>
+					<li><a href="/Partner?status=2">学习成长</a></li>
+					<li><a href="/Partner?status=3">招聘职位</a></li>
+				</ul>
+			</a>
+			<a href="/AboutUs" class="show_cont">
+				关于我们
+				<ul>
+					<li><a href="/AboutUs?status=1">关于恩启</a></li>
+					<li><a href="/AboutUs?status=2">IDEA理念</a></li>
+					<li><a href="/AboutUs?status=4">发展历程</a></li>
+					<li><a href="/AboutUs?status=5">公司事件</a></li>
+					<li><a href="/AboutUs?status=6">责任与公益</a></li>
+					<li><a href="/AboutUs?status=0">合作伙伴</a></li>
+					<li><a href="/AboutUs?status=3">企业荣誉</a></li>
+					<li><a href="/Contact">联系我们</a></li>
+				</ul>
+			</a>
+			<a href="/Contact" class="call">
+				400-606-2105
+			</a>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		name: "",
+		components: {},
+		mounted() {
+			$(".home-banner-btn2").click(function() {
+				$(".appointment").fadeIn();
+			})
+		}
+	}
+</script>
+
+<style lang="scss">
+	.show_up:hover {
+		border-bottom: none !important;
+		transform: translateY(-8px);
+		transition-duration: .5s;
+		-moz-transition-duration: .5s;
+		/* Firefox 4 */
+		-webkit-transition-duration: .5s;
+		/* Safari 和 Chrome */
+		-o-transition-duration: .5s;
+		/* Opera */
+	}
+
+	.index-nav {
+		width: 100%;
+		height: 87px;
+		font-size: 14px;
+		line-height: 87px;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		box-shadow: 0px 4px 32px 0px rgba(36, 40, 40, 0.09);
+
+		>div {
+			width: 83%;
+			float: right;
+		}
+
+		img {
+			display: block;
+			width: 160px;
+			height: 40px;
+			float: left;
+			margin: 22px 0 0 62px;
+		}
+
+		div>a {
+			float: left;
+			color: #20A9A0;
+			font-family:"PingFang SC","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft Yahei","微软雅黑",SimHei,"黑体",sans-serif;
+			display: inline-block;
+			height: 87px;
+			text-align: center;
+			margin-left: 4%;
+
+			ul {
+				background: #fff;
+				border-radius: 3px;
+				margin: -10px auto 0;
+				width: 90px;
+				display: none;
+
+				li {
+					height: 60px;
+					line-height: 60px;
+					color: #20A9A0;
+				}
+			}
+		}
+
+		div button {
+			float: right;
+			margin-top: 22px;
+			margin-right: 66px;
+		}
+
+		div span {
+			color: #20A9A0;
+			font-size: 20px;
+			font-weight: bold;
+			margin-left: 3%;
+			margin-right: 3%;
+			float: right;
+
+			a {
+				color: #20A9A0;
+			}
+		}
+	}
+
+	.home-banner-btn2 {
+		width: 118px;
+		height: 42px;
+		background: rgba(236, 128, 77, 1);
+		border-radius: 4px;
+		border: none;
+		font-size: 16px;
+		color: #fff;
+		margin-left: 2%;
+		font-weight: 400;
+		cursor: pointer;
+		outline: none;
+	}
+
+	.home-banner-nav span>a {
+		color: #20A89E;
+	}
+
+	.show_cont-two-nav {
+		position: relative;
+		ul {
+			position: absolute;
+			width: 150px;
+			display: inline-block;
+			border-radius: 3px;
+			background: #fff;
+			top: 60px;
+			left: -20px;
+			display: none;
+
+			li {
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				a {
+					color: #333;
+				}
+			}
+		}
+	}
+
+	.show_cont {
+		position: relative;
+	}
+
+	.show_cont ul {
+		position: absolute;
+		width: 100px;
+		display: inline-block;
+		border-radius: 3px;
+		background: #fff;
+		top: 60px;
+		left: -20px;
+		display: none;
+	}
+
+	.show_cont ul li {
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+
+		a {
+			color: #333;
+			font-size: 14px;
+		}
+	}
+
+	.show_cont::after {
+		content: "";
+		display: inline-block;
+		width: 7px;
+		height: 12px;
+		background: url(../../../public/images/jiantou_bottom.png) no-repeat;
+		background-size: 100%;
+		visibility: hidden;
+		margin-left: 4px;
+	}
+
+	.show_cont:hover {
+		border-bottom: none !important;
+		transform: translateY(-6px);
+		transition-duration: .5s;
+		-moz-transition-duration: .5s;
+		/* Firefox 4 */
+		-webkit-transition-duration: .5s;
+		/* Safari 和 Chrome */
+		-o-transition-duration: .5s;
+
+		/* Opera */
+		>ul {
+			display: block;
+		}
+	}
+	.call{
+		font-weight: Bold;font-size: 20px;cursor: auto;
+	}
+	.show_cont:hover::after {
+		visibility: visible;
+	}
+
+	//笔记本电脑s
+	@media screen  and(max-width:1366px){
+		.index-nav img{
+			width: 135px;
+			height: 35px;
+			margin: 22px 0 0 26px;
+		}
+		.call{font-size: 14px;}
+		.index-nav > div {
+			width: 82%;
+		}
+	}
+	@media screen and (min-width: 700px)and(max-width: 1400px) {
+		.index-nav div button {
+			margin-right: 30px;
+			width: 100px;
+		    height: 35px;
+		}
+		.index-nav div span {
+			margin-left: 3%;
+			margin-right: 3%;
+		}
+	}
+	@media screen and (min-width: 1500px)and(max-width: 1680px){
+		.index-nav div > a{
+			margin-left: 64px !important;
+		}
+	}
+	@media screen and (min-width: 1780px)and(max-width: 2100px){
+		.index-nav div > a {margin-left: 6%;}
+	}
+	@media screen and (min-width: 900px)and(max-width: 1000px){
+		.index-nav div>a {
+			margin-left: 11px;
+			font-size: 13px;
+		}
+	}
+
+	@media screen and (min-width: 1000px)and(max-width: 1225px){
+		.index-nav div > a{
+			font-size: 15px;
+			margin-left: 19px;
+		}
+	}
+</style>

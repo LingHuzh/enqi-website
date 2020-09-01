@@ -1,0 +1,876 @@
+<template>
+	<main>
+		<Nav v-if="windowWidth > 800"></Nav>
+		<div class="children-recovery" data-scroll>
+			<div class="public_banner" v-if="windowWidth > 800">
+				<img src="../../../public/images/ertongkangfu.jpg" alt="">
+			</div>
+			<div class="m-public_banner" v-if="windowWidth < 800">
+				<img src="../../../public/images/ertongkangfu.jpg" alt="">
+			</div>
+			<div class="home-site-title" style="margin-top: 80px;" v-if="windowWidth >800">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 23px;font-weight: normal;" :class="topClass">七大服务类目</span></p>
+					<p class="active-p" style="width: 230px;"><span style="margin-top: -8px !important" :class="topClass">满足不同家庭孩子的康复需求</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+<!--			移动端-->
+			<div class="m-page-title" v-if="windowWidth < 800">
+				<p style="width: 105px"></p>
+				<span>七大服务类目</span>
+				<p style="width: 105px"></p>
+			</div>
+			<div class="m-small-title" v-if="windowWidth < 800">满足不同家庭孩子的康复需求</div>
+			<div class="recovery_cont" v-if="windowWidth > 800">
+				<div class="recovery_active">
+					<ul>
+						<li v-for="(item,index) in tabs" :class="{recovery_ac:index == num}" @click="tab(index)">{{item}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="show_box" v-for='(itemCon,index) in tabContents' v-show=" index == num" v-html="itemCon" v-if="windowWidth > 800"></div>
+<!--			移动端-->
+			<div class="m-children" v-if="windowWidth < 800">
+				<div class="m-children-centre b1">
+					<p>VB-MAPP评估</p>
+					<span class="m-children-span1">适用人群:0-4岁（发展年龄）   </span>
+					<span class="m-children-span1">授课方式:1位评估师、1-2位数据记录师</span>
+					<em>VB-MAPP是一套针对特殊儿童语言和行为的评估系统，能够科学系统的反应孩子的语言行为能力，可以对学龄前儿童、个体的语言技能尚未达到4岁普通儿童的水平、患有孤独症及其他发展障碍的所有语言落后的儿童均可使用VB-MAPP从五大方面、170个维度细致观察、评估孩子的能力，全面分析孩子的能力水平。</em>
+				</div>
+				<div class="m-children-bg bg1"></div>
+				<div class="m-children-btn m-btn1" @click="chiildrenBtn">立即预约</div>
+			</div>
+
+			<div class="m-children" v-if="windowWidth < 800">
+				<div class="m-children-centre b2">
+					<p>言语评估</p>
+					<span class="m-children-span2">适用人群:0-4岁（发展年龄）   </span>
+					<span class="m-children-span2">授课方式:1位评估师、1-2位数据记录师</span>
+					<em>依据孩子的实际情况，对孩子进行相关的言语评估，如：口部肌肉运动评估（呼吸、下颌、唇、舌）（美国Sara版）、汉语构音障碍评定法、儿童语言发育迟缓评估、语言清晰度测试等评估孩子的言语能力，并出具一份完整的言语评估报告，可为言语训练目标提供建议。</em>
+				</div>
+				<div class="m-children-bg bg2"></div>
+				<div class="m-children-btn m-btn2"  @click="chiildrenBtn">立即预约</div>
+			</div>
+
+			<div class="m-children" v-if="windowWidth < 800">
+				<div class="m-children-centre b3">
+					<p>早期密集课程</p>
+					<span class="m-children-span3">适用人群：0-3岁（发展年龄）   </span>
+					<span class="m-children-span3">授课方式：1对1为主</span>
+					<em>针对孩子的基础学习技能开展康复训练，主要包括说者技能、听者技能、模仿能力、视觉分析技能等。</em>
+				</div>
+				<div class="m-children-bg bg3"></div>
+				<div class="m-children-btn m-btn3" @click="chiildrenBtn">立即预约</div>
+			</div>
+
+			<div class="m-children" v-if="windowWidth < 800">
+				<div class="m-children-centre b4">
+					<p>融合预备课程</p>
+					<span class="m-children-span4">适用人群：3-6岁（发展年龄）  </span>
+					<span class="m-children-span4">授课方式： 私教老师支持下的小组教学  1:1为辅</span>
+					<em>主要面向即将进入幼儿园的儿童，或在幼儿园融入困难的儿童。本课程针对孩子进入集体环境应具备的前备技能开展康复训练，主要包括集体中安坐、接收集体指令、举手、观察学习、平行游戏、要求帮忙、轮流、活动间的转换、合作游戏等。</em>
+				</div>
+				<div class="m-children-bg bg4"></div>
+				<div class="m-children-btn m-btn4" @click="chiildrenBtn">立即预约</div>
+			</div>
+
+			<div class="m-children" v-if="windowWidth < 800">
+				<div class="m-children-centre b5">
+					<p>学前融合课程</p>
+					<span class="m-children-span5">适用人群：4-6岁（发展年龄）  </span>
+					<span class="m-children-span5">授课方式：私教老师支持下的集体教学</span>
+					<em>主要针对孩子进入普通幼儿园，提供私教老师进入集体教学，通过不同技能间的触类旁通、友谊的建立和维持、合作游戏、独立进食和清理等课程，提升孩子自我学习能力生活自理、社交技能等，帮助孩子顺利进入融合环境。</em>
+				</div>
+				<div class="m-children-bg bg5"></div>
+				<div class="m-children-btn m-btn5" @click="chiildrenBtn">立即预约</div>
+			</div>
+
+			<div class="m-children" v-if="windowWidth < 800">
+				<div class="m-children-centre b6">
+					<p>言语课程</p>
+					<span class="m-children-span6">适用人群:3-6岁（发展年龄）</span>
+					<span class="m-children-span6">授课方式： 言语治疗师1:1为主</span>
+					<em>针对孩子的语言、言语、吞咽喂养等方面的能力进行评估与康复干预，主要提高孩子的语言理解及表达能力，改善孩子的言语清晰度，加强孩子的吞咽喂养能力，如语前技能、语言理解、语言表达、口齿（吐词）不清、经常流口水、不能进食正常食物等。</em>
+				</div>
+				<div class="m-children-bg bg6"></div>
+				<div class="m-children-btn m-btn6" @click="chiildrenBtn">立即预约</div>
+			</div>
+
+			<div class="m-children" v-if="windowWidth < 800">
+				<div class="m-children-centre b7">
+					<p>体能课程</p>
+					<span class="m-children-span7">适用人群：3-6岁（发展年龄）   </span>
+					<span class="m-children-span7">授课方式：体能老师1:1或小组教学</span>
+					<em>课程通过训练孩子的自身力量、速度、耐力、灵敏、柔韧、协调等素质提高孩子运动能力。强健肌肉、保护骨骼，增强心肺功能，促进孩子神经系统的发育。</em>
+				</div>
+				<div class="m-children-bg bg7"></div>
+				<div class="m-children-btn m-btn7" @click="chiildrenBtn">立即预约</div>
+			</div>
+			<ChildrenSite v-if="windowWidth > 800"></ChildrenSite>
+			<div class="m-centreSite_title">直营中心</div>
+			<AppChildrenSite v-if="windowWidth < 800"></AppChildrenSite>
+			<Appfooter v-if="windowWidth < 800"></Appfooter>
+			<Footer v-if="windowWidth > 800"></Footer>
+			<div class="page-height" v-if="windowWidth < 800"></div>
+		</div>
+
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+	import Appfooter from "../mIndex/Appfooter";
+	import ChildrenSite from "../index/ChildrenSite"
+	import AppChildrenSite from "../mIndex/AppChildrenSite"
+	import {
+		shows
+	} from "../../js/scrollHtml.js"
+	export default {
+		name: "idea",
+		components: {
+			Nav,
+			Footer,
+			Appfooter,
+			ChildrenSite,
+			AppChildrenSite
+		},
+
+		data() {
+			return {
+				tabs: ["VB-MAPP评估", "言语评估", "早期密集课程", "融合预备课程", "学前融合课程", "言语课程", "体能课程"],
+				tabContents: [
+					"<div class='show_box_bg show_box_bg1'><div class='show_box_text flex'><div><p class='screen_1024'>适用人群：0-4岁（发展年龄）</p><p>授课方式：1位评估师、1-2位数据记录师</p><p class='show_content_p'>VB-MAPP评估</p><p class='show_p'>VB-MAPP是一套针对特殊儿童语言和行为的评估系统，能够科学系统的反应孩子的语言行为能力，可以对学龄前儿童、个体的语言技能尚未达到4岁普通儿童的水平、患有孤独症及其他发展障碍的所有语言落后的儿童均可使用VB-MAPP从五大方面、170个维度细致观察、评估孩子的能力，全面分析孩子的能力水平。</p><input type='button' value='立即预约' class='home-banner-btn2 box_btn'></div></div></div>",
+					"<div class='show_box_bg show_box_bg2'><div class='show_box_text flex'><div><div><p class='screen_1024'>适用人群：0-6岁（发展年龄）</p><p>授课方式：一位评估师，一位记录师</p><p class='show_content_p'>言语评估</p><p class='show_p'>依据孩子的实际情况，对孩子进行相关的言语评估，如：口部肌肉运动评估（呼吸、下颌、唇、舌）（美国Sara版）、汉语构音障碍评定法、儿童语言发育迟缓评估、语言清晰度测试等评估孩子的言语能力，并出具一份完整的言语评估报告，可为言语训练目标提供建议。</p><input type='button' value='立即预约' class='home-banner-btn2 box_btn s_1'></div></div></div>",
+					"<div class='show_box_bg show_box_bg3'><div class='show_box_text flex'><div><p>适用年龄：0-3岁（发展年龄）</p><p>授课方式：1对1为主</p><p class='show_content_p'>早期密集课程</p><p>针对孩子的基础学习技能开展康复训练，主要包括说者技能、听者技能、模仿能力、视觉分析技能等。</p><input type='button' value='立即预约' class='home-banner-btn2 box_btn show_btn_3 s_2'></div></div></div>",
+					"<div class='show_box_bg show_box_bg4'><div class='show_box_text flex'><div><p class='screen_1024'>适用年龄：3-6岁（发展年龄）</p><p>授课方式：私教老师支持下的小组教学 1:1为辅</p><p class='show_content_p'>融合预备课程</p><p class='show_p'>主要面向即将进入幼儿园的儿童，或在幼儿园融入困难的儿童。本课程针对孩子进入集体环境应具备的前备技能开展康复训练，主要包括集体中安坐、接收集体指令、举手、观察学习、平行游戏、要求帮忙、轮流、活动间的转换、合作游戏等。</p><input type='button' value='立即预约' class='home-banner-btn2 box_btn s_3'></div></div></div>",
+					"<div class='show_box_bg show_box_bg5'><div class='show_box_text flex'><div><p class='screen_1024'>适用年龄：4-6岁（发展年龄）</p><p>授课方式：私教老师支持下的集体教学</p><p class='show_content_p'>学前融合课程</p><p class='show_p'>主要针对孩子进入普通幼儿园，提供私教老师进入集体教学，通过不同技能间的触类旁通、友谊的建立和维持、合作游戏、独立进食和清理等课程，提升孩子自我学习能力生活自理、社交技能等，帮助孩子顺利进入融合环境。</p><input type='button' value='立即预约' class='home-banner-btn2 box_btn s_4'></div></div></div>",
+					"<div class='show_box_bg show_box_bg6'><div class='show_box_text flex'><div><p class='screen_1024'>适用年龄：3-6岁（发展年龄）</p><p>授课方式：言语治疗师1:1为主</p><p class='show_content_p'>言语课程</p><p class='show_p'>针对孩子的语言、言语、吞咽喂养等方面的能力进行评估与康复干预，主要提高孩子的语言理解及表达能力，改善孩子的言语清晰度，加强孩子的吞咽喂养能力，如语前技能、语言理解、语言表达、口齿（吐词）不清、经常流口水、不能进食正常食物等。</p><input type='button' value='立即预约' class='home-banner-btn2 box_btn s_5'></div></div></div>",
+					"<div class='show_box_bg show_box_bg7'><div class='show_box_text flex'><div><p class='screen_1024'>适用年龄：3-6岁（发展年龄）</p><p>授课方式：体能老师1:1或小组教学</p><p class='show_content_p'>体能课程</p><p class='show_p'>课程通过训练孩子的自身力量、速度、耐力、灵敏、柔韧、协调等素质提高孩子运动能力。强健肌肉、保护骨骼，增强心肺功能，促进孩子神经系统的发育。</p><input type='button' value='立即预约' class='home-banner-btn2 box_btn s_6'></div></div>"
+				],
+				num: 0,
+				topClass: '',
+				leftClass: '',
+				rightClass: '',
+				windowWidth:window.innerWidth
+			}
+		},
+		mounted() {
+			this.windowWidth > 800 ? shows() : '';
+			window.outerHeight < 800 ? window.addEventListener('scroll', this.NavScrollFunction, true) : this.scrollnumber($('.home-site-title'), 'font_active_up', 50, 1);
+		},
+		methods: {
+			tab(index) {
+				this.num = index;
+			},
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title'), 'font_active_up', 50, 1);
+			},
+			scrollnumber(element, cssname, offset, type) {
+				let a, b, c, d;
+				d = $(element).offset().top;
+				a = eval(d + offset);
+				b = $(window).scrollTop();
+				c = $(window).height();
+				if (b + c > a) {
+					if (type == 1 && this.topClass == "") {
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}
+				}
+			},
+			chiildrenBtn(){
+				$(".appointment").fadeIn();
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.children-recovery {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		background: #fff !important;
+		color: #333;
+	}
+
+	.show_p {
+		font-size: 14px !important;
+		line-height: 23px !important;
+	}
+	.show_box_text p:nth-child(4){
+		color: #555;
+	}
+	.show_content_p {
+		font-size: 20px !important;
+	}
+
+	.home-site-title {
+		width: 71%;
+		height: 200px;
+		margin: 500px auto 0;
+		display: flex;
+		-webkit-display: flex;
+		-moz-display: flex;
+		-o-display: flex;
+		align-items: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+		-o-align-items: center;
+	}
+
+	.home-site-title-centre span {
+		font-size: 25px !important;
+		color: #333333;
+		font-family: MicrosoftYaHei;
+		font-weight: bold;
+		display: block;
+		margin-top: 23px;
+	}
+
+	.active-p {
+		margin-top: 16px;
+		color: #757575;
+	}
+
+	.recovery_cont {
+		overflow: hidden;
+		width: 71%;
+		margin: 25px auto 0;
+	}
+
+	.recovery_cont ul li {
+		float: left;
+		width: 14.28%;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.recovery_cont ul li {
+		color: #777777;
+		font-size: 18px;
+		line-height: 34px;
+	}
+
+	.recovery_ac {
+		display: inline-block;
+		height: 34px;
+		padding: 0 14px;
+		box-sizing: border-box;
+		background: #1DBFB3;
+		border-radius: 20px;
+		color: #fff !important;
+	}
+
+	.show_box {
+		width: 71%;
+		height: 620px;
+		margin: 0 auto;
+		margin-top: 50px;
+		position: relative;
+		overflow: hidden;
+
+	}
+
+	.show_box_bg {
+		width: 100%;
+		height: 100%;
+	}
+
+	.show_box_bg:before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		background: url(../../../public/images/Ing1.jpg) no-repeat;
+		background-size: 100%;
+
+		transform: translateX(-101%);
+		-webkit-animation-duration: .8s;
+		animation-duration: .8s;
+		-webkit-animation-name: left_show;
+		animation-name: left_show;
+		animation-fill-mode: forwards;
+	}
+
+	.show_box_bg2:before {
+		background: url(../../../public/images/Ing2.jpg) no-repeat !important;
+		background-size: 100% !important;
+	}
+
+	.show_box_bg3:before {
+		background: url(../../../public/images/Ing3.jpg) no-repeat !important;
+		background-size: 100% !important;
+	}
+
+	.show_box_bg4:before {
+		background: url(../../../public/images/Ing4.jpg) no-repeat !important;
+		background-size: 100% !important;
+	}
+
+	.show_box_bg5:before {
+		background: url(../../../public/images/Ing5.jpg) no-repeat !important;
+		background-size: 100% !important;
+	}
+
+	.show_box_bg6:before {
+		background: url(../../../public/images/Ing6.jpg) no-repeat !important;
+		background-size: 100% !important;
+	}
+
+	.show_box_bg7:before {
+		background: url(../../../public/images/Ing7.jpg) no-repeat !important;
+		background-size: 100% !important;
+	}
+
+	.show_box_bg2 input,
+	.show_box_bg4 input,
+	.show_box_bg6 input {
+		background: #3490E3 !important;
+	}
+
+	.show_box_bg3 input {
+		background: #2BB7B3 !important;
+	}
+
+	.show_box_bg5 input,
+	.show_box_bg7 input {
+		background: #EC804D !important;
+	}
+
+	.show_box_bg2 .show_box_text p:nth-child(1),
+	.show_box_bg2 .show_box_text p:nth-child(2),
+	.show_box_bg4 .show_box_text p:nth-child(1),
+	.show_box_bg4 .show_box_text p:nth-child(2),
+	.show_box_bg6 .show_box_text p:nth-child(1),
+	.show_box_bg6 .show_box_text p:nth-child(2),
+	.show_box_bg7 .show_box_text p:nth-child(1),
+	.show_box_bg7 .show_box_text p:nth-child(2) {
+		color: #F9AC18 !important;
+	}
+
+	.show_box_bg3 .show_box_text p:nth-child(1),
+	.show_box_bg3 .show_box_text p:nth-child(2) {
+		color: #3490E3 !important;
+	}
+	.show_box_bg2 .show_box_text,
+	.show_box_bg4 .show_box_text,
+	.show_box_bg6 .show_box_text,
+	.show_box_bg7 .show_box_text{
+		border: 7px solid #1DBFB3;
+	}
+	.show_box_bg3 .show_box_text{
+		border: 7px solid #F7C848;
+	}
+	.show_box_text {
+		width: 584px;
+		height: 484px;
+		border: 7px solid #3490E3;
+		position: absolute;
+		right: 0;
+		top: 60px;
+		padding: 0 60px;
+		box-sizing: border-box;
+		transform: translateX(100%);
+		-webkit-animation-duration: .8s;
+		animation-duration: .8s;
+		-webkit-animation-name: right_show;
+		animation-name: right_show;
+		animation-fill-mode: forwards;
+		z-index: 2;
+
+		input {
+			margin-left: 0;
+			margin-top: 30px;
+		}
+
+		p {
+			margin-top: 10px;
+			font-size: 16px;
+		}
+
+		p:nth-child(1),
+		p:nth-child(2) {
+			color: #2BB7B3;
+		}
+		p:nth-child(2) {
+			margin-top: 0;
+		}
+		p:nth-child(3){
+			font-size: 26px;
+			margin-top: 15px;
+		}
+
+		p:nth-child(4){
+			line-height: 25px;
+		}
+	}
+
+	.recovery_active ul .recovery_ac:nth-child(2) {
+		background: #F8D61A !important;
+	}
+
+	.recovery_active ul .recovery_ac:nth-child(3) {
+		background: #3490E3 !important;
+	}
+
+	.recovery_active ul .recovery_ac:nth-child(4) {
+		background: #EC804D !important;
+	}
+
+	.recovery_active ul .recovery_ac:nth-child(5) {
+		background: #1DBFB3 !important;
+	}
+
+	.recovery_active ul .recovery_ac:nth-child(6) {
+		background: #3490E3 !important;
+	}
+
+	.recovery_active ul .recovery_ac:nth-child(6) {
+		background: #EC804D !important;
+	}
+
+	.show_box_text:after {
+		content: "";
+		display: inline-block;
+		width: 86px;
+		height: 76px;
+		background: url(../../../public/images/v.png) no-repeat;
+		background-size: 100%;
+		position: absolute;
+		right: 30px;
+		bottom: 28px;
+	}
+
+	@keyframes right_show {
+		0% {
+			transform: translateX(100%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1
+		}
+	}
+
+	@-moz-keyframes right_show
+
+	/* Firefox */
+		{
+		0% {
+			transform: translateX(100%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1
+		}
+	}
+
+	@-webkit-keyframes right_show
+
+	/* Safari 和 Chrome */
+		{
+		0% {
+			transform: translateX(100%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1
+		}
+	}
+
+	@-o-keyframes right_show
+
+	/* Opera */
+		{
+		0% {
+			transform: translateX(100%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1
+		}
+	}
+
+
+	@keyframes left_show {
+		0% {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1
+		}
+	}
+
+	@-moz-keyframes left_show
+
+	/* Firefox */
+		{
+		0% {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1
+		}
+	}
+
+	@-webkit-keyframes left_show
+
+	/* Safari 和 Chrome */
+		{
+		0% {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1
+		}
+	}
+
+	@-o-keyframes left_show
+
+	/* Opera */
+		{
+		0% {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1
+		}
+	}
+
+	.home-site-title-centre p:last-child span {
+		color: #1dbfba !important;
+		font-weight: normal;
+		font-size: 14px !important;
+		margin-top: 0 !important;
+	}
+
+
+
+
+	//笔记本电脑s
+	@media screen and (min-width: 700px)and(max-width: 1400px) {
+		
+
+		.show_box {
+			height: 520px;
+		}
+
+		.recovery_cont ul li {
+			color: #777777;
+			font-size: 16px;
+			line-height: 34px;
+		}
+
+		.show_box_text p:nth-child(3) {
+			font-size: 20px;
+		}
+		.show_box_text{
+			padding: 0 50px;
+		}
+		.show_box_text .home-banner-btn2{
+			margin-top: 20px;
+		}
+	}
+
+	.home-site-left,
+	.home-site-right {
+		width: 40%;
+	}
+
+	@media screen and (min-width: 1400px)and(max-width: 1600px) {
+		.show_box_text {
+			width: 500px;
+			height: 440px;
+			top: 60px;
+			padding: 0 58px;
+		}
+
+		
+	}
+
+
+	@media screen and (min-width: 1700px) {
+		.show_box_bg:before {
+			background-size: 100% 100% !important;
+		}
+	}
+
+	@media screen and (min-width: 1400px)and(max-width: 1500px) {
+		.recovery_cont ul li {
+			font-size: 16px !important;
+		}
+	}
+
+	@media screen and (min-width: 1700px)and(max-width: 2100px) {
+		.show_box,.recovery_cont{
+			width: 65%;
+		}
+
+		.show_btn_3 {
+			margin-top: 76px !important;
+		}
+	}
+	// 980-1180
+	@media screen and (min-width: 980px)and(max-width: 1180px){
+		.show_box_text {
+			width: 50%;
+			height: 330px;
+			top: 25px;
+		}
+		.screen_1024{
+			margin-top: -29px !important;
+		}
+		.show_box_text p {
+		    margin-top: 7px;
+		    font-size: 12px;
+		}
+		.show_content_p {
+		    font-size: 16px !important;
+		}
+		.show_p {
+		    font-size: 12px !important;
+		    line-height: 19px !important;
+			margin-top: 3px !important;
+		}
+		.show_box_text:after{
+			width: 15%;
+			bottom: -21px;
+		}
+		.box_btn{
+			width: 90px;
+			height: 35px;
+			font-size: 12px;
+		}
+		.recovery_cont ul li{
+			font-size: 13px !important;
+		}
+	}
+	// 1181-1280
+	@media screen and (min-width: 1181px)and(max-width: 1280px) {
+		.show_box_text {
+			width: 50%;
+			height: 393px ;
+			top: 25px;
+		}
+		.show_box_text p {
+		    font-size: 14px !important;
+		}
+		.show_content_p {
+		    font-size: 19px !important;
+		}
+		.show_p {
+		    font-size: 14px !important;
+		    line-height: 22px !important;
+		}
+		.show_box_text p{
+			margin-top: 5px !important;
+		}
+		.home-banner-btn2{
+			width: 37%;
+			height: 14%;
+		}
+		.show_box_text:after{
+			width: 16%;
+			bottom: 7px;
+		}
+		
+	}
+	// 1281-1366
+	@media screen and (min-width: 1281px)and(max-width: 1399px){
+		.show_box_text{
+			width: 50%;
+			height: 433px;
+			top: 26px;
+		}
+		.show_box_text p {
+		    margin-top: 7px;
+		    font-size: 15px;
+		}
+		.show_content_p {
+		    font-size: 19px !important;
+		}
+		.show_p {
+		    font-size: 14px !important;
+		    line-height: 24px !important;
+		}
+		.show_box_text:after{
+			width: 17%;
+			bottom: 16px;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		.show_box,.recovery_cont{
+			width: 85%;
+		}
+		.show_box_text{
+			width: 448px;
+			height: 395px;
+			top: 18px;
+		}
+	}
+	@media screen and (max-width: 800px){
+		.m-centreSite_title{
+			font-size: 14px;
+			color: #1DBFB3;
+			padding-left: 18px;
+			margin-top: 65px;
+		}
+		.m-children{
+			width: 100%;
+			position: relative;
+		}
+		.m-children-centre{
+			width: 339px;
+			border-radius: 4px;
+			margin: 42px auto 0;
+			position: relative;
+			z-index: 2;
+			p{
+				padding:30px 0 4px 24px;
+				font-size: 16px;
+				color:#444444;
+			}
+			span{
+				display: block;
+				font-size: 12px;
+				padding: 2px 0 0 24px;
+			}
+			em{
+				display: block;
+				margin: 6px 0 30px 0;
+				font-size: 12px;
+				color: #444444;
+				line-height:17px;
+				font-style: inherit;
+				padding: 0 24px;
+			}
+		}
+		.m-children-btn{
+			width:130px;
+			height:42px;
+			border-radius:4px;
+			font-size: 14px;
+			line-height: 42px;
+			margin: 12px auto 0;
+			text-align: center;
+			color: #fff;
+		}
+		.m-children-span1{
+			color: #2BB7B3;
+		}
+		.m-children-span2{
+			color: #F9AC18;
+		}
+		.m-children-span3{
+			color: #3490E3;
+		}
+		.m-children-span4{
+			color: #F9AC18;
+		}
+		.m-children-span5{
+			color: #2BB7B3;
+		}
+		.m-children-span6{
+			color: #F9AC18;
+		}
+		.m-children-span7{
+			color: #3490E3;
+		}
+		.b1{
+			border: 3px solid #3490E3;
+		}
+		.b2{
+			border: 3px solid #2BB7B3;
+		}
+		.b3{
+			border: 3px solid #F7C848;
+		}
+		.b4{
+			border: 3px solid #1DBFB3;
+		}
+		.b5{
+			border: 3px solid #3490E3;
+		}
+		.b6{
+			border: 3px solid #1DBFB3;
+		}
+		.b7{
+			border: 3px solid #F7C848;
+		}
+		.m-children-bg{
+			width: 317px;
+			height: 282px;
+			background-size: 100% 100% !important;
+			margin: -12px auto 0;
+			position: relative;
+			z-index: 1;
+		}
+		.bg1{
+			background: url(../../../public/mImages/chi1.png);
+		}
+		.bg2{
+			background: url(../../../public/mImages/chi2.png);
+		}
+		.bg3{
+			background: url(../../../public/mImages/chi3.png);
+		}
+		.bg4{
+			background: url(../../../public/mImages/chi4.png);
+		}
+		.bg5{
+			background: url(../../../public/mImages/chi5.png);
+		}
+		.bg6{
+			background: url(../../../public/mImages/chi6.png);
+		}
+		.bg7{
+			background: url(../../../public/mImages/chi7.png);
+		}
+		.m-btn1{
+			background:#EC804D;
+		}
+		.m-btn2{
+			background:#3490E3;
+		}
+		.m-btn3{
+			background:#2BB7B3;
+		}
+		.m-btn4{
+			background:#3490E3;
+		}
+		.m-btn5{
+			background:#EC804D;
+		}
+		.m-btn6{
+			background:#3490E3;
+		}
+		.m-btn7{
+			background:#EC804D;
+			margin-bottom: 37px;
+		}
+	}
+</style>

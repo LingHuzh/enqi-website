@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="恩启云课堂、恩启、自闭症、孤独症、正在关怀、自闭症儿童、高功能自闭症、孤独症儿童、特教、特殊教育、特教老师、特殊教育学校、自闭症孩子的特征、自闭症的表现、孤独症的表现、孤独症症状、孤独症考证、孤独症学习、孤独症教师培训、孤独症成因、自闭症成因、自闭症干预、特教老师培训、自闭症课程、自闭症免费课程、特教老师上岗证书、孤独症上岗证、自闭症上岗证、孤独症从业资格证、自闭症从业资格证、残疾人康复协会、中残联、机构认证、教师认证、贾美香、郭延庆">
+    <meta name="description" content="中国权威的自闭症康复在线教育平台，为自闭症儿童的家长和孤独症康复教师提供科学、系统的在线课程、咨询服务。恩启IDEA教研中心为2-6岁自闭症儿童提供全面的康复训练服务。">
+    <link rel="icon" href="http://www.ingclass.org/image/header/title.png">
+    <title></title>
+</head>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<body>
+
+<div id="app"></div>
+<script type="text/javascript">
+    // !function(n){
+    //     var  e=n.document,
+    //         t=e.documentElement,
+    //         i=375,
+    //         d=i/100,
+    //         o="orientationchange"in n?"orientationchange":"resize",
+    //         a=function(){
+    //             var n=t.clientWidth||375;n>375&&(n=375);
+    //             t.style.fontSize=n/d+"px"
+    //         };
+    //     e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))
+    // }(window);
+</script>
+
+</body>
+</html>

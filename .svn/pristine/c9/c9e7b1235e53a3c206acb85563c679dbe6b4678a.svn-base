@@ -1,0 +1,91 @@
+<template>
+    <div class="m-centre-site">
+        <ul>
+            <li>
+                <span style="background:#1DBFB3"></span>
+                <p>中国·北京</p>
+            </li>
+            <li class="sunhe"><a href="/cityDetail?name=sunhe">恩启IDEA·教研中心</a></li>
+            <li class="chaoyang"><a href="/cityDetail?name=chaoyang">恩启IDEA·北京朝阳中心</a></li>
+            <li class="haidian"><a href="/cityDetail?name=haidian">恩启IDEA·北京海淀中心</a></li>
+            <li>
+                <span style="background:#EEB53B "></span>
+                <p>中国·杭州</p>
+            </li>
+            <li class="hangzhou"><a href="/cityDetail?name=hangzhou">恩启IDEA·杭州西湖中心</a></li>
+        </ul>
+        <ul>
+            <li>
+                <span style="background:#EC804D "></span>
+                <p>中国·上海</p>
+            </li>
+            <li class="jingan"><a href="/cityDetail?name=jingan">恩启IDEA·上海静安中心</a></li>
+            <li>
+                <span style="background:#F8F8F8 "></span>
+                <p style="color:#F8F8F8">占位</p>
+            </li>
+            <li class="shenzhen"><a href="javascript:;" style="color:#F8F8F8">恩启IDEA·深圳华侨城中心</a></li>
+             <li>
+                <span style="background:#3B8FEE "></span>
+                <p>中国·深圳</p>
+            </li>
+            <li class="shenzhen"><a href="/cityDetail?name=shenzhen">恩启IDEA·深圳华侨城中心</a></li>
+        </ul>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "AppCentreSite",
+        mounted() {
+            const url = location.href;
+            const index = url.lastIndexOf("=");
+            const subBack = url.substring(index + 1, url.length);
+            console.log("*****"+subBack);
+            if( subBack == 'chaoyang' ){
+                $('.chaoyang a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if( subBack== 'haidian' ){
+                $('.haidian a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if( subBack == 'sunhe'){
+                $('.sunhe a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if( subBack == 'jingan' ){
+                $('.jingan a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if ( subBack == 'shenzhen' ){
+                $('.shenzhen a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }else if ( subBack == 'hangzhou' ){
+                $('.hangzhou a').css({'color':'#C7C7C7','pointer-events':'none'});
+            }
+        },
+    }
+</script>
+
+<style lang="scss">
+.m-centre-site{
+    width: 100%;
+    margin: 0 auto 37px;
+    display: flex;
+    
+    ul{
+        width: 50%;
+        li{
+            display: flex;
+            align-items: center;
+            color: #444444;
+            font-size: 12px;
+            margin-top: 20px;
+            span{
+                display: inline-block;
+                width: 2.8px;
+                height: 13px;
+            }
+            p{
+                padding-left: 8px;
+            }
+            a{
+                color: #444444;
+                font-size: 12px;
+            }
+        }
+    }
+}
+</style>

@@ -1,0 +1,106 @@
+
+
+var currentProvince = $('#consigneeProvinceCode').attr('defaultValue');
+var currentCity = $('#consigneeCityCode').attr('defaultValue');
+var currentTownship = $('#consigneeTownshipCode').attr('defaultValue');
+$(document).ready(function () {
+	$('select').change(function(){textColorSelectbox()}).change();
+	loadArea(currentProvince, currentCity, currentTownship);
+
+});
+/**
+ * 加载区域
+ * @param currentProvince
+ * @param currentCity
+ * @param currentTownship
+ */
+function loadArea(currentProvince, currentCity, currentTownship){
+	 //获取省份的数据
+    var proinces = dict.subItemList;
+    var n =proinces.length;
+    //placeholderIE();
+    for(var i = 0; i < n; i++){
+        var selected = '';
+        if (currentProvince == proinces[i].dictItemCode || currentProvince == proinces[i].dictItemName) {
+            selected = "selected= 'selected'";
+        }
+        $("#consigneeProvinceCode").append("<option value="+proinces[i].dictItemCode+" "+ selected+">"+proinces[i].dictItemName+"</option>");
+    }
+    //编辑状态下的数据动态加载
+    if (currentProvince && currentCity) {
+        //获取市的选中状态
+        getCity(currentProvince, currentCity);
+        //获取区县的选中状态
+        if (currentTownship) {
+            getTownship(currentCity, currentTownship);
+        }
+    }
+    //改变省份获取市的数据
+    $("#consigneeProvinceCode").change(function(){
+        var parentVal = this.value;
+        $("#consigneeCityCode option").remove();
+        $("#consigneeTownshipCode option").remove();
+        $("#consigneeCityCode").append("<option value  textGray selected='selected'>请选择市</option>");
+        $("#consigneeTownshipCode").append("<option value  textGray selected='selected'>请选择区县</option>");
+        getCity(parentVal);
+        textColorSelectbox();
+    }),
+    //改变市获取区县的数据
+    $("#consigneeCityCode").change(function(){
+        var cityVal = this.value;
+        $("#consigneeTownshipCode option").remove();
+        $("#consigneeTownshipCode").append("<option value selected='selected' textGray>请选择区县</option>");
+        getTownship(cityVal);
+        textColorSelectbox();
+    });
+}
+/**
+ * js  市的动态加载
+ *
+ * parentVal  指他父节点的value值
+ * currentVal 指当前的节点的value值
+ */
+function getCity(parentVal, currentVal) {
+    var proinces = dict.subItemList;
+    var n =proinces.length;
+    for (var i=0; i<n; i++) {
+        if (proinces[i].dictItemCode == parentVal || proinces[i].dictItemName == parentVal) { 
+            var cities = proinces[i].subItemList;
+            for (var j in cities) {
+                var citySelected = '';
+                if (currentVal && (currentVal == cities[j].dictItemCode || currentVal == cities[j].dictItemName)) {
+                    citySelected = "selected= 'selected'";
+                }
+                $("#consigneeCityCode").append("<option value="+cities[j].dictItemCode+" "+ citySelected+">"+cities[j].dictItemName+"</option>");
+            }
+        }
+    }
+}
+/**
+ * js  区县的动态加载
+ *
+ * parentValue  指他父节点的value值
+ * currentValue 指当前的节点的value值
+ */
+function getTownship(parentValue, currentValue) {
+    var proinces = dict.subItemList;
+    var n =proinces.length;
+    for (var i=0; i<n; i++) {
+        var cities = proinces[i].subItemList;
+        for (var j in cities) {
+            if (cities[j].dictItemCode == parentValue || cities[j].dictItemName == parentValue) {
+                var township = cities[j].subItemList;
+                for (var m in township) {
+                    var townshipSelected = '';
+                    if (currentValue && (currentValue == township[m].dictItemCode || currentValue == township[m].dictItemName)) {
+                        townshipSelected = "selected= 'selected'";
+                    }
+                    $("#consigneeTownshipCode").append("<option value="+township[m].dictItemCode+" "+ townshipSelected+">"+township[m].dictItemName+"</option>");
+                }
+            }
+        }
+    }
+}
+function textColorSelectbox(){
+	
+}

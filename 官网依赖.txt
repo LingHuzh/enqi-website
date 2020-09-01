@@ -1,0 +1,8 @@
+cnpm  install sass-loader --save-dev
+cnpm install node-sass --sava-dev
+npm i element-ui -S
+cnpm install video.js  
+cnpm install swiper
+cnpm i image-webpack-loader --save-dev
+cnpm install postcss-pxtorem -D
+cnpm install prerender-spa-plugin --save   //Ô¤äÖÈ¾

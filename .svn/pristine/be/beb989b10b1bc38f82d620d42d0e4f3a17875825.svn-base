@@ -1,0 +1,76 @@
+<template>
+  <div class="top" v-show="Top" @click="top" id="top">
+    <img src="../../../public/images/top.png" alt="恩启/置顶/回到顶部" />
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      Top: false
+    };
+  },
+  mounted() {
+      window.addEventListener('scroll', this.scrollFunction, true);
+  },
+  methods: {
+      scrollFunction(){
+          if(document.body.scrollTop >window.outerHeight || document.documentElement.scrollTop >window.outerHeight){
+              this.Top = true;
+          }else{
+              this.Top = false;
+          }
+      },
+      top(){
+           var timer = setInterval(function(){
+			   let osTop = document.documentElement.scrollTop || document.body.scrollTop;
+			   let ispeed = Math.floor(-osTop / 5); 
+			   document.documentElement.scrollTop = document.body.scrollTop = osTop + ispeed;
+				   if(osTop === 0){
+					 clearInterval(timer);
+				   }
+			 },30)
+      }
+  },
+  destroyed(){
+      window.addEventListener('scroll', this.scrollFunction, false);
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.top {width: 80px;height: 128px;position: fixed;right: 2%;bottom: 30px;z-index: 5;cursor: pointer;
+  img {display: block;width: 100%;height: 100%;}
+}
+.top:hover{
+	animation:mytop 1.5s infinite;-webkit-animation:mytop 1.5s infinite;
+}
+	
+@keyframes mytop{
+	0% {transform: translate(0px, 0px);}
+    50% {transform: translate(0px, -30px);}
+	100% {transform: translate(0px, 0px);}
+	
+}
+
+@-webkit-keyframes mytop
+{
+	0% {transform: translate(0px, 0px);}
+    50% {transform: translate(0px, -15px);}
+	100% {transform: translate(0px, 0px);}
+}
+@media screen and (min-width: 800px)and(max-width: 1100px){
+	.top{
+      width: 47px;
+      height: 77px;
+	}
+}
+@media screen and (max-width: 800px){
+  .top{
+    width: 55px;
+    height: 87px;
+    bottom: 130px;
+    right: 20px;
+  }
+}
+</style>

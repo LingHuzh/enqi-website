@@ -1,0 +1,811 @@
+<template>
+	<main>
+		<Nav></Nav>
+		<div class="AboutUs" data-scroll>
+			<div class="public_banner">
+				<img src="../../../public/images/guanyuwomen.jpg" alt="">
+			</div>
+			<!-- 关于恩启 -->
+			<div class="home-site-title home-site-title1" style="margin-top: 80px;" id="enqi">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<span :class="topClass">关于恩启</span>
+					<p class="active-p" style="width: 170px;"><span :class="topClass">About INGcare</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<!-- 关于恩启内容 -->
+			<div class="enqi-content">
+				<div class="enqi-content-txt" style="margin-top:15px;width:568px">
+					<span>恩启，让康复更有效！</span>
+					<div class="txt idea-status-2" style="margin-top: 15px;">
+						恩启诞生于2014年，是清华x-lab孵化出的社会创新项目，致力于为自闭症儿童及其家长提供康复训练与家庭康复辅导，业务主要包括儿童康复教育线上平台、特殊教育培训、自闭症儿童评测软件及SaaS管理软件授权、自闭症儿童康复中心连锁经营。
+					</div>
+					<div class="txt idea-status-2" style="margin-top:8px">
+						恩启是一家教育科技公司，以科技和内容创新为核心竞争力，围绕国内自闭症儿童家庭的康复训练需求，自2014年起，已先后创建了特殊教育培训平台、自闭症儿童康复效果评估工具、自闭症儿童康复教育在线社区。
+					</div>
+					<div class="txt idea-status-2" style="margin-top:8px">2017年初，恩启成立IDEA教研中心，开始探索线下连锁服务业务，研发并实施适合国内孤独症儿童的康复体系。</div>
+					<a href="/Contact" class="button_hover">联系我们</a>
+				</div>
+				<div class="enqi-content-image" style="width: 513px">
+					<img src="../../../public/images/gaunyuenqi.jpg" alt="">
+				</div>
+			</div>
+			<!-- IDEA理念 -->
+			<div class="home-site-title home-site-title2" style="margin-top: 80px;" id="enqi">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<span  :class="topClass">IDEA理念</span>
+					<p class="active-p" style="width: 170px;"><span :class="topClass">The idea of IDEA</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="enqi-content enqi-content-1">
+				<div class="enqi-content-txt idea-status" style="width: 546px">
+					<span style="color:#FB9130 ;">IDEA是什么？</span>
+					<div class="txt ideaTop idea-status-3">
+						IDEA由六个英文单词首字母组成， 是特殊群体康复教育的关键词，是制定和落实康复教育计划的指导思想。
+					</div>
+					<p class="txt idea-status-5" style="margin-top: 6px;">
+						IDEA的核心理念包括：
+						
+							<p class="ideaP">o Inclusive （融合）& Individualized（个别化）：融合教育需要个别化支持，个别化支持必须以实现融合教育为目标。没有个别化支持的融合无法实现，没有融合为目标的个别化干预没有意义。</p>
+							<p class="ideaP" style="margin-top: 6px !important;">o Data-based（基于数据）: 康复教育必须要有数据支持。 </p>
+							<p class="ideaP">o Evidence-based （可循证的）& Ecological（生态环境）:
+								选择有科学循证的教学理论和方法，同时要充分考虑现实环境的实际情况。结合现实教学环境选择有科学循证的康复教育方法，才是最落地的康复教育。</p>
+							<p class="ideaP" style="margin-top: 6px !important;">o Applied（实用的）: 在康复教育过程中，要注重康复教育目标技能的实用性，重点培养孩子现在或未来用的上的技能。</p>
+				</div>
+				<div class="enqi-content-image 	idea">
+					<img src="../../../public/images/idea.png" alt="">
+				</div>
+			</div>
+			<div class="enqi-content" style="justify-content: end">
+				<div class="enqi-content-txt" style="margin-top: 68px;">
+					<span style="color:#4896DF;">这是谁的IDEA？</span>
+					<div class="txt idea-status-1" style="margin-top: 14px;">作为老师和家长必须知道的康复教育关键词，IDEA理念融会贯通在三大体系中：</div>
+					<div class="txt idea-status-1">o 针对于孩子的“个别化教育计划”（IEP）： 我们的IEP团队用行之有效的教育方法来提高孩子学以致用的技能，立足当前，着眼未来，促进全纳融合。 </div>
+					<div class="txt idea-status-1">o 针对于家长的“个别化家庭支持计划”（IFSP）： 我们的 IFSP团队为家庭提供个性化定制的康复教育解决方案，包括家庭环境评估、家长课程、心理督导等。 </div>
+					<div class="txt idea-status-1">o 针对于老师的“职业培养计划”（PD）： 我们的PD团队联合国内外一线专家，致力于培养爱心和专业兼备，全力践行IDEA理念的教师英才。</div>
+				</div>
+				<div class="enqi-content-image 	idea_2" style="margin-top: 46px;">
+					<img src="../../../public/images/ut.png" alt="">
+				</div>
+			</div>
+			<!-- 课程特色 -->
+			<div class="home-site-title home-site-title3" style="margin-top: 80px;" id="enqi">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<span  :class="topClass">课程特色</span>
+					<p class="active-p" style="width: 170px;"><span :class="topClass">Course Features</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="enqi-content" style="margin:53px auto 135px;justify-content:space-around; width: 1168px;"><!--justify-content: end; -->
+				<div class="enqi-content-txt AboutUs-rules-2">
+					<div class="course-title" style="width: 580px">在IDEA理念指导下，恩启设计出了针对黄金干预期的“EIS三阶段康复课程体系”，对不同年龄段、不同能力水平的孩子提供有针对性的安置计划，循序渐进地促进孩子的能力提升，减少教学环境的限制性，逐步从E到I再到S，让“黄金干预期”的孩子都有回到幼儿园的机会。</div>
+					<div class="course-headline" style="background: #F05C5C;margin-top: 15px;">
+						<img src="../../../public/images/paint-palette-and-brush.png" alt="">
+						<span>早期密集阶段（Early Intervention Program）</span>
+					</div>
+					<div class="course-content" style="width: 580px">主要提升孩子的基本学习技能（learning-to-learn），包括基础的说者技能和听者技能、模仿能力、视觉分析技能等；</div>
+					<div class="course-headline" style="background: #1DBFB3;margin-top: 15px;width: 580px">
+						<img src="../../../public/images/atom.png" alt="">
+						<span>融合预备阶段（Inregration Program）</span>
+					</div>
+					<div class="course-content" style="width: 580px">主要训练孩子进入集体环境应该具有的前备技能（basic to advance skills needed in a
+						classroom），比如集体中安坐、接收集体指令、举手、观察学习、平行游戏、要求帮忙、轮流、活动间转换、表达需求等；</div>
+					<div class="course-headline" style="background: #FAAB1D;margin-top: 15px;">
+						<img src="../../../public/images/ruler.png" alt="">
+						<span>学前融合阶段（School Placement Program）</span>
+					</div>
+					<div class="course-content" style="width: 580px">主要提升孩子在集体环境中的自我学习能力、自发和自理能力，同伴间的社交技能，（academic independence, spontaneity, and general
+						self-help，and social interactions with peers），主要包括适应环境变化、不同技能间的触类旁通、合作游戏、友谊的建立和维持、生活自理和环境维护等等。</div>
+				</div>
+				<div class="enqi-content-image tyimage 	course">
+				</div>
+			</div>
+			<!-- 发展历程 -->
+			<div class="home-site-title home-site-title5" style="margin-top: 80px;" id="enqi">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<span :class="topClass">发展历程</span>
+					<p class="active-p" style="width: 170px;"><span :class="topClass">Development Process</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="mscroll">
+				<ul>
+					<li v-for="(item,index) in mscrollInfo"><img :src="item.imgurl" alt=""></li>
+				</ul>
+			</div>
+			<!-- 公司事件 -->
+			<div class="home-site-title home-site-title6" style="margin-top: 80px;" id="enqi">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<span :class="topClass">公司事件</span>
+					<p class="active-p" style="width: 170px;"><span :class="topClass">Company Events</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="aboutus-event-content">2017年10月24日，孤独症康复平台恩启获得数千万元Pre-A轮融资，该轮融资由清控银杏领投，晨创力合跟投。恩启具体融资金额和该轮之前的融资暂不公布。
+				该轮融资将被用于教研、科研、康复模式探索、人才引进和人才培养上。恩启希望能够吸引更多孤独症专业教师加盟，未来或许将会尝试康复科学研究和针对孤独症教师的教育培训，培养和输送人才，帮助全国机构不断提升教学质量。</div>
+			<div class="aboutus-event-content aboutusTop">2019年7月23日,专注于孤独症儿童康复领域的领先企业恩启完成了3000万元的A轮融资,本轮融资由禹闳资本领投，博行资本参投。本轮融资资金将被用于两个方面。 </div>
+			<div class="aboutus-event-content">第一，全面发展“互联网、教师培训、直营连锁”三大业务板块,构建科技康复生态服务平台；</div>
+			<div class="aboutus-event-content">第二，以专业授权输出等方式，支持中小机构的专业提升和发展，引进更多国内外优秀人才。</div>
+			<!-- 社会责任和公益 -->
+			<div class="home-site-title home-site-title7" style="margin-top: 80px;" id="enqi">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<span :class="topClass">社会责任和公益</span>
+					<p class="active-p" style="width: 318px;"><span :class="topClass">Social Responsibility and Public Welfare</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="about-Us-duty">
+				<img src="../../../public/images/le.png" alt="" style="margin-left: 160px;" class="duty-image">
+				<i>恩启积极履行企业社会责任，积极推行教育公益，促进优质教育的均衡发展。</i>
+				<img src="../../../public/images/ri.png" alt="" style="margin-right: 160px;" class="duty-image">
+			</div>
+			<div class="content_title flex_2">
+				<span style="border:2px solid rgba(245,171,53,1);"></span>
+				<p style="color: #F5AB35;">教育赞助（教师培训）</p>
+			</div>
+			<div class="content_txt" v-for="(item,index) in educationInfo" >{{item}}</div>
+			<div class="content_title flex_2 marginTop">
+				<span style="border:2px solid #2BB7B3;"></span>
+				<p style="color: #2BB7B3;">慈善活动</p>
+			</div>
+			<div class="content_txt" v-for="(item,index) in charityInfo">{{item}}</div>
+			<div class="content_title flex_2 marginTop">
+				<span style="border:2px solid #1E7ED8;"></span>
+				<p style="color: #1E7ED8;">抗“疫”公益</p>
+			</div>
+			<div class="content_txt" v-for="(item,index) in publicInfo" >{{item}}</div>
+			<div class="content_title flex_2 marginTop">
+				<span style="border:2px solid #F1BB18;"></span>
+				<p style="color: #F1BB18;">学术理论</p>
+			</div>
+			<div class="content_txt" v-for="(item,index) in academicInfo" >{{item}}</div>
+			<!-- 合作伙伴 -->
+			<div class="home-site-title home-site-title6" style="margin-top: 80px;" id="enqi">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<span :class="topClass">合作伙伴</span>
+					<p class="active-p" style="width: 170px;"><span :class="topClass">Cooperative Partners</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="partner_bg"></div>
+			<!-- 企业荣誉 -->
+			<div class="aboutus-bg" style="background: #FAFAFA;">
+				<div class="home-site-title home-site-title4" style="margin-top: 80px;" id="enqi">
+					<span class="home-site-left" :class="leftClass"></span>
+					<div class="home-site-title-centre">
+						<span :class="topClass">企业荣誉</span>
+						<p class="active-p" style="width: 170px;"><span :class="topClass">Enterprise Honor</span></p>
+					</div>
+					<span class="home-site-right" :class="rightClass"></span>
+				</div>
+				<div>
+				</div>
+				<el-carousel type="card" height="200px">
+					<el-carousel-item v-for="(item,index) in carouselList" >
+						<img :src="item.imgurl" :alt="item.txt">
+					</el-carousel-item>
+				</el-carousel>
+			</div>
+			<div style="width: 100%;height: 100px;background:rgb(250, 250, 250);"></div>
+			<Footer></Footer>
+
+		</div>
+		<Top></Top>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue";
+	import Footer from "../index/Footer.vue";
+	import Top from "../index/Top.vue";
+	import {shows} from "../../js/scrollHtml.js"
+	export default {
+		name: 'AboutUs',
+		components: {
+			Nav,
+			Footer,
+			Top
+		},
+		data() {
+			return {
+				mscrollInfo:[
+					{imgurl:require('../../../public/images/2010-2013.png')},
+					{imgurl:require('../../../public/images/2014.png')},
+					{imgurl:require('../../../public/images/2015.png')},	
+					{imgurl:require('../../../public/images/2016.png')},
+					{imgurl:require('../../../public/images/2017.png')},
+					{imgurl:require('../../../public/images/2018.png')},
+					{imgurl:require('../../../public/images/2019.png')},
+					{imgurl:require('../../../public/images/2020.png')}						
+				],
+				educationInfo:[
+					"1.目前为行业内超过40000名一线康复教师提供过各类专业培训课程服务，按照全行业56000多名教师的整体规模，覆盖超过71.4%的一线教师。如按每个康复教师每年有机会帮助7个孩子计算，总计有可能间接帮助到约392000个孩子每年。",
+					"2.【恩启云课堂】利用互联网培训教师，节约了大量的培训时间和经费，若按每人节省培训成本1500元，总计为全社会节约培训成本约为60000万元。为14000名家长免费提供了价值16000万元的线上公益培训课程。",
+					"3.【恩启云课堂】利用互联网培训教师，节约了大量的培训时间和经费，若按每人节省培训成本1500元，总计为全社会节约培训成本约为60000万元。为14000名家长免费提供了价值16000万元的线上公益培训课程。",
+					"4.【VB-MAPP评估培训】目前恩启已经在国内30个城市开展过“VB-MAPP软件评估师”培。VB-MAPP评估助手覆盖了全国除香港，澳门，青海外的31个 省级行政区，500多家机构和医院正在使用VB-MAPP评估助手，为行业培养了2000余名 评估师，并取得了良好的口碑和行业满意度。"
+				],
+				charityInfo:[
+					"1.恩启筹拍了中国第一部大龄孤独症就业题材微电影《咖啡店的天真者》，6个月全网观看220万次。",
+					"2.恩启公益众筹的第二部讲述孤独症题材的微电影《第十七次抛弃》，集结陶虹、辛柏青公益出演，全网浏览量1900万次。",
+					"3.恩启定期组织公益活动，与新浪公益、微博·微公益、中国狮子联会、今日头条、北京电视台先后达成合作协议，定期开展公益活动。",
+					"4.恩启直接向孤独症领域捐款人民币145000元，用于教师培养和学术活动支持。恩启向北京市的小学、幼儿园捐赠价值18万元的绘本，用于呼吁社会包容。",
+					"5.恩启以“与歌同行，关爱天真者”为主题，联合北京电视台多位著名主持人田歌、董浩、高燕、陈竞、龚宁等、北京电视台《光荣绽放》，以《这就是我，天真者的故事》绘本为蓝本，为30多个小朋友声情并茂地讲解。",
+					"6.恩启出版发行了中国第一本孤独症科普绘本《天真者的故事，这就是我》，倡导“包容要从娃娃抓起”的理念，呼吁全社会关爱孤独症儿童，目前，此绘本已是孤独症领域第一畅销书籍。在微博发起“我想和你做朋友”活动，号召1394万次参与。",
+					"7.恩启向山东省残疾人福利基金会捐赠价值57万元VB-MAPP语言行为评估系统。",
+					"8.恩启以“让天下每一位孤独症孩子都能得到关怀！”为使命，向全社会传播正确知识，呼吁社会包容。恩启推出的在线公益课程，为超过120000个账户提供服务。",
+					"9.恩启联合中国社会福利基金会、中国社会福利基金会青少年成长基金、中国狮子联会北京代表处等机构共同发起的“光照星未来”公益项目，集结了演艺界、公益界、投资界和爱心人士，从资助康复训练、组织融合活动、开展喘息服务和自闭症儿童一技之长的培养等方面开展工作。"
+				],
+				carouselList:[
+					{imgurl:require('../../../public/images/b10.png'),txt:'恩启2015年荣誉'},
+					{imgurl:require('../../../public/images/b6.png'),txt:'恩启2015年荣誉'},
+					{imgurl:require('../../../public/images/b1.png'),txt:'恩启2010年荣誉'},
+					{imgurl:require('../../../public/images/b2.png'),txt:'恩启2013年荣誉'},
+					{imgurl:require('../../../public/images/b3.png'),txt:'恩启2014年荣誉'},
+					{imgurl:require('../../../public/images/b4.png'),txt:'恩启2015年荣誉'},
+					{imgurl:require('../../../public/images/b5.png'),txt:'恩启2015年荣誉'},		
+					{imgurl:require('../../../public/images/b7.png'),txt:'恩启2015年荣誉'},
+					{imgurl:require('../../../public/images/b8.png'),txt:'恩启2015年荣誉'},
+					{imgurl:require('../../../public/images/b9.png'),txt:'恩启2015年荣誉'},
+				],
+				publicInfo:[
+					"1.截止2020年4月，恩启已为34312名特教教师免费提供了课程，覆盖全国2127家特教机构。",
+					"2.恩启已向《IDEA特教理论基础课程》学员提供课程以外的辅导1万余次，学习打卡总数已经超过25万次。",
+					"3.恩启以在线直播的方式开展了两次答疑课程，超过20000人在线学习，课程直播间同时在线人数突破6000人。",
+					"4.恩启为在全国的317 家培训合作机构以及479 家使用VB-MAPP评估助手的机构提供5000+ 免费学习名额免费送出价值500万元《IDEA特教基础理论课程》的课程。",
+					"5.免费送出价值2000万的《IDEA孤独症教育家长通识课》课程。",
+					"6.恩启为来自湖北地区的家长、一线抗疫医护、公安人员、幼师和儿科医生、低保和有残疾证的家庭、恩启学员以及来自全国各地的家长互助组织提供价值1000万的免费课程。",
+					"7.恩启为132个机构的8000余名家长和老师提供了价值1600万元的公益课程，首期《IDEA孤独症教育家长通识课》开课以来，除了家庭干预主力军“妈妈”以外，9.8%的其他家庭成员也参与到了学习中。",
+					"8.世界孤独症关注日，恩启联合中国社会福利基金会青少年成长基金发起人、著名演员陶虹女士、中国狮子联合会爱行服务队向武汉地区的康复机构捐赠《IDEA孤独症教育家长通识课》"
+				],
+				academicInfo:[
+					"1.恩启微信公众号】发布了1400篇国内外孤独症领域的专业知识，浏览量总计1255万次。",
+					"2.恩启社区】全年下载量突破300,000+，共计发布帖子16000+。为千位家长提供有价值的资讯，为千位教师、机构传播品牌，为百家机构组织找到合适的老师， 总浏览量达2263万次。",
+					"3.媒体矩阵，实现内容、短视频赋能行业教师成长、家庭康复指导。微信公众号、今日头条、抖音、微博、快手、网易、搜狐等全网覆盖。累计阅读量达19,410000次。",
+					"4.恩启短视频库，在抖音、快手的【恩启教育】【恩启亲子游戏】【恩启妙妙爱手工】【恩启贝贝手指谣】【恩启绘本故事馆】【恩启儿童体能课】【恩启自闭症教育】矩阵，突破230万累计观看量，为30000多位家长和老师在线解答。",
+					"5.2019中国社会企业与影响力投资奖，恩启荣获“向光奖· 最具投资价值社企奖”",
+					"6.北京学前教育协会高峰论坛，荣获“年度教育创新贡献奖”",
+					"7.应邀出席美国宾夕法尼亚州学院举办的国家孤独症会议，发布VB-MAPP评估电子中文版在国内应用数据。",
+					"8.恩启参编制定了，中国第一个学前融合教育的标准《学前融合教育教师能力培训指南》，从学前容和教师的教学行为、教师培训、能力评估等作出规定，以帮助特需儿童更有品质的接受融合教育。",
+				],
+				topClass: '',
+				topClassTwo: '',
+				topClassThree: '',
+				topClassFour: '',
+				topClassFive: '',
+				topClassSix: '',
+				topClassSeven: '',
+				leftClass: '',
+				leftClassTwo: '',
+				leftClassThree: '',
+				leftClassFour: '',
+				leftClassFive: '',
+				leftClassSix: '',
+				leftClassSeven: '',
+				rightClass: '',
+				rightClassTwo: '',
+				rightClassThree: '',
+				rightClassFour: '',
+				rightClassFive: '',
+				rightClassSix: '',
+				rightClassSeven: '',
+				rulesClass:["ss1","ss2","ss3","ss4","ss5","ss6","ss7","ss8","ss9","ss10","ss11","ss12",]
+			}
+		},
+		mounted() {
+			let w = $(window).width();
+			console.log("浏览器宽度："+w);
+			this.aboutusScroll();
+			shows();
+			this.$nextTick(()=>{
+				$('.index-nav>a:eq(6)').addClass('borderBottomActive');
+			})
+			$(".index-nav>div a:eq(1)").addClass("nav_active");
+			if (window.outerHeight > 800) {
+				this.scrollnumber($('.home-site-title1'), 'font_active_up', 50, 1);
+			}
+			window.addEventListener('scroll', this.NavScrollFunction, true);
+			autoscroll();
+			var v = 4;
+			function autoscroll() {	
+				let auto = setInterval(function() {
+					let l = parseInt($(".mscroll ul").css("margin-left"));
+					$(".mscroll ul").animate({
+						marginLeft: l - v + "px"
+					}, 10, function() {
+						$(this).stop();
+						if (l < -900) {
+							$(".mscroll ul").css({
+								marginLeft: "0px"
+							})
+						}
+					});
+				}, 100)
+			}
+			$(".mscroll ul li").mouseover(function(){
+				v = 0;
+				$(this).css("transform","scale(1.08)");
+				$(this).css("box-shadow","0px 0px 13px 0px rgba(0, 0, 0, 0.2)")
+			})
+			$(".mscroll ul li").mouseout(function(){
+				v = 4;
+				$(this).css("transform","scale(1)");
+			})
+		},
+		methods: {
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title1'), 'font_active_up', 50, 1);
+				this.scrollnumber($('.home-site-title2'), 'font_active_up', 50, 2);
+				this.scrollnumber($('.home-site-title3'), 'font_active_up', 50, 3);
+				this.scrollnumber($('.home-site-title4'), 'font_active_up', 50, 4);
+				this.scrollnumber($('.home-site-title5'), 'font_active_up', 50, 5);
+				this.scrollnumber($('.home-site-title6'), 'font_active_up', 50, 6);
+				this.scrollnumber($('.home-site-title7'), 'font_active_up', 50, 7);
+			},
+			scrollnumber(element, cssname, offset, type) {
+				let a, b, c, d;
+				d = $(element).offset().top;
+				a = eval(d + offset);
+				b = $(window).scrollTop();
+				c = $(window).height();
+				if (b + c > a) {
+					if (type == 1 && this.topClass == "") {
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					} else if (type == 2 && this.topClassTwo == "") {
+						this.topClassTwo = 'font_active_up';
+						this.leftClassTwo = 'font_active_left';
+						this.rightClassTwo = 'font_active_right';
+					} else if (type == 3 && this.topClassThree == "") {
+						this.topClassThree = 'font_active_up';
+						this.leftClassThree = 'font_active_left';
+						this.rightClassThree = 'font_active_right';
+					} else if (type == 4 && this.topClassFour == "") {
+						this.topClassFour = 'font_active_up';
+						this.leftClassFour = 'font_active_left';
+						this.rightClassFour = 'font_active_right';
+					} else if (type == 5 && this.topClassFive == "") {
+						this.topClassFive = 'font_active_up';
+						this.leftClassFive = 'font_active_left';
+						this.rightClassFive = 'font_active_right';
+					} else if (type == 6 && this.topClassSix == "") {
+						this.topClassSix = 'font_active_up';
+						this.leftClassSix = 'font_active_left';
+						this.rightClassSix = 'font_active_right';
+					} else if (type == 7 && this.topClassSeven == "") {
+						this.topClassSeven = 'font_active_up';
+						this.leftClassSeven = 'font_active_left';
+						this.rightClassSeven = 'font_active_right';
+					}
+				}
+			},
+			aboutusScroll(){
+				let url = location.href;
+				let index = url.lastIndexOf("=");
+				let subBack = url.substring(index + 1, url.length);
+				console.log(subBack);
+				if (subBack == 1) {
+					setTimeout(()=>{
+						document.documentElement.scrollTop = 500
+					},500)
+				}else if(subBack == 2){
+					setTimeout(()=>{
+						document.documentElement.scrollTop = 1200
+					},500)
+				}else if(subBack == 3){
+					setTimeout(()=>{
+						document.documentElement.scrollTop = 6200
+					},500)
+				}else if(subBack == 4){
+					setTimeout(()=>{
+						document.documentElement.scrollTop = 3000
+					},500)
+				}else if(subBack == 5){
+					setTimeout(()=>{
+						document.documentElement.scrollTop = 3600
+					},500)
+				}else if(subBack == 6){
+					setTimeout(()=>{
+						document.documentElement.scrollTop = 4100
+					},500)
+				}else if(subBack == 0){
+					setTimeout(()=>{
+						document.documentElement.scrollTop = 5700
+					},500)
+				}
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.ss2,.ss3,.ss4,.ss5,.ss6,.ss7,.ss8,.ss9,.ss10,.ss11,.ss12{width: 16px !important;height: 16px !important;}
+	.ss2{border: 2px solid #2BB7B3 !important;}
+	.ss3{border: 2px solid #4896DF !important;}
+	.ss4{border: 2px solid #F27B43 !important;}
+	.ss5{border: 2px solid #F5AB35 !important;}
+	.ss6{border: 2px solid #2BB7B3 !important;}
+	.ss7{border: 2px solid #4896DF !important;}
+	.ss8{border: 2px solid #F27B43 !important;}
+	.ss9{border: 2px solid #F27B43 !important;}
+	.ss10{border: 2px solid #2BB7B3 !important;}
+	.ss11{border: 2px solid #2BB7B3 !important;}
+	.ss12{border: 2px solid #F27B43 !important;}
+	.el-carousel {
+		height: 225px;
+		width: 1026px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.tyimage{
+		background: url(../../../public/images/ty.jpg) no-repeat;
+		background-size: 100% 100%;
+		background-position: center;
+	}
+	.el-carousel__item--card {
+		width: 50%;
+		height: 272px !important;
+		background: none !important;
+
+		img {
+			display: block;
+			width: 257px;
+			height: 100%;
+			margin: 0 auto;
+
+		}
+	}
+
+	.mscroll {
+		width: 1200px;
+		height: 370px;
+		overflow: hidden;
+		margin: 0 auto;
+		ul {
+			width: 2000px;
+			display: flex;
+			margin-top: 30px;
+			li {
+				width: 192px;
+				// height: 304px;
+				margin-left: 50px;
+				transition: all 0.3s;
+				img {
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+	i {
+		margin: 0;
+		padding: 0;
+	}
+	.AboutUs {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		background: #fff;
+	}
+
+	.home-site-title {
+		width: 1134px;
+		display: flex;
+		align-items: center;
+	}
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 40%;
+		height: 2px;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+		span {
+			font-size: 23px !important;
+			color: #1dbfba;
+			display: inline-block;
+			margin-top: 23px;
+			letter-spacing: 2px;
+		}
+
+		p {
+			font-size: 14px;
+			color: #1dbfba;
+		}
+	}
+	.content_title{
+		width: 65%;
+		margin: 0 auto;
+		align-items: center;
+		span{
+			width:14px;
+			height:14px;			
+			border-radius:50%;
+			display: block;
+			margin: 1px 12px 0 0;
+		}
+		p{
+			font-weight:400;
+			line-height:20px;
+			font-size: 15px;
+		}
+	}
+	.content_txt{
+		width: 62%;
+		margin: 6px auto 0;
+		font-size:13.5px;
+		font-weight:400;
+		line-height:22px;
+		color: #555555;
+	}
+	.partner_bg{
+		width: 63%;
+		height: 190px;
+		background: url(../../../public/images/zhichihuoban.png) no-repeat;
+		background-size: 100% 100%;
+		margin: 0 auto;
+	}
+	@media screen and (min-width:1800px) and (max-width:2100px)  {
+	.partner_bg{height: 236px;}
+	}
+	.enqi-content {
+		width: 1134px;
+		margin: 25px auto 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	.enqi-content-txt {
+		width: 534px;
+		span {
+			font-size: 18px;
+			font-weight: 400;
+			color: #444444;
+			letter-spacing: 1px;
+		}
+		a {
+			width: 124px;
+			height: 36px;
+			background: rgba(236, 128, 77, 1);
+			border-radius: 4px;
+			display: inline-block;
+			font-size: 14px;
+			color: #fff;
+			text-align: center;
+			line-height: 36px;
+			margin-top: 20px;
+		}
+	}
+
+	.enqi-content-image {
+		width: 484px;
+		height: 270px;
+		border-radius: 5px;
+		margin-left: 47px;
+
+		img {
+			width: 100%;
+			height: 108%;
+			border-radius: 15px;
+		}
+	}
+
+	.idea {
+		width: 514px;
+		height: 270px;
+		margin-top: 12px;
+	}
+
+	.idea_2 {
+		width: 334px;
+		height: 290px;
+		margin: -32px 0 0 95px;
+		img{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.course {
+		width: 468px;
+		height: 481px;
+	}
+
+	.txt {
+		width: 100%;
+		font-size: 13.5px;
+		line-height: 22px;
+		color: #555555;
+		letter-spacing: 0.5px;
+	}
+
+	.course-title {
+		width: 536px;
+		font-size: 13.5px;
+		line-height: 20px;
+		// padding: 10px;
+		color: #555555;
+	}
+
+	.course-headline {
+		width: 580px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+
+		span {
+			font-size: 14px;
+			color: #fff;
+		}
+
+		img {
+			display: block;
+			width: 31px;
+			height: 28px;
+			margin: 0 10px 0px 24px;
+		}
+	}
+
+	.course-content {
+		width: 536px;
+		padding: 13px 26px;
+		background: #F7F7F7;
+		font-size: 13.5px;
+		color: #555555;
+		line-height: 21px;
+	}
+
+	.aboutus-bg {
+		width: 100%;
+		height: auto;
+		background: #FAFAFA;
+	}
+
+	.aboutus-honor {
+		width: 66%;
+		margin: 0 auto;
+		padding-bottom: 83px;
+
+		ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+
+			li {
+				width: 187px;
+				// height: 225px;
+				background: #fff;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+
+				img {
+					display: block;
+					width: 100%;
+					// height: 100%;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+				}
+			}
+		}
+	}
+
+	.aboutus-honor ul li:nth-child(3) {
+		width: 255px;
+		height: 242px;
+
+	}
+
+	.aboutus-honor ul li:nth-child(1),
+	.aboutus-honor ul li:nth-child(2),
+	.aboutus-honor ul li:nth-child(4),
+	.aboutus-honor ul li:nth-child(5) {
+		margin-top: 66px;
+	}
+
+	.aboutus-event-content {
+		width: 64%;
+		margin: 0 18% 0;
+		font-size: 14px;
+		line-height: 22px;
+		color: #555555;
+	}
+
+	.about-Us-duty {
+		width: 65%;
+		height: 65px;
+		margin: 0 auto 45px;
+		background: #2BB7B3;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: space-around;
+
+		i {
+			font-size: 14px;
+			color: #fff;
+		}
+
+		img {
+			display: block;
+			width: 35px;
+			height: 25px;
+		}
+	}
+	.home-site-title-centre p:last-child span {
+		color: #1dbfba !important;
+		font-weight: normal;
+		font-size: 14px !important;
+		margin-top: -10px !important;
+		letter-spacing: 1px
+	}
+	.ideaP{
+		color: #555555;
+	}
+	@media screen and (min-width:1400px) and (max-width:1460px){
+		.tyimage{background-size: 100% 100%;}
+		// .enqi-content-txt{width: 458px;}
+	}
+	@media screen and (min-width:1800px) and (max-width:2100px){
+		.course-title,.course-headline,.course-content{width: 590px !important;}
+		.content_txt,.aboutus-event-content,.course-title,.txt{letter-spacing: 1px;}
+		.content_title p{font-size: 14.5px;}
+		.course-title,.course-content,.aboutus-event-content,.content_txt{font-size: 13.5px;}
+		.enqi-content{width:67% !important;}
+		.enqi-content-txt{width: 654px !important;margin-left: 65px;}
+		.txt{font-size: 13.5px;}
+		.enqi-content-image{width: 511px;height: 278px;}
+		.idea-status{margin-top: 60px;}
+		// .idea-status-1{line-height: 21px !important;}
+		.idea_2{width: 361px !important;height: 310px !important;}
+		.course{width: 506px !important;height: 521px !important;}
+		.ideaP{font-size: 14px;}
+		.idea{width: 519px !important;height: 261px !important;margin-top: 62px;}
+		.course{margin-left: 30px;}
+		.AboutUs-rules-2{margin-left: 112px;}
+		.enqi-content-1{margin-top: -20px;}
+		.idea_2 img{height: 100%;}
+	}
+	/*@media screen and (max-width:1441px) and (min-width:1300px){*/
+	/*	.idea_2 img{height:108% !important}*/
+	/*}*/
+	@media screen and (max-width:1441px) and (min-width:1439px){
+		.idea_2 img{height:100% !important}
+		.partner_bg{height: 178px;}
+	}
+	@media screen and (max-width:1366px){
+		.home-site-title,.enqi-content,.about-Us-duty,.AboutUs-rules{
+			width: 85%;
+		}
+		.aboutus-event-content{
+			width: 85%;
+			margin: 0 auto;
+		}
+		.about-Us-duty i{
+			font-size: 13px;
+		}
+		.enqi-content-txt,.course-title,.course-headline,.course-content{
+			width: 410px;
+
+		}
+	}
+</style>

@@ -1,0 +1,216 @@
+<template>
+	<div class="m-menu" :class="opemMenu == true?'m-menu-active':''"  @click="colseMenu">
+		<div  @click.stop="eventClick">
+			<p class="flex" @click="colseMenu">收起菜单栏</p>
+			<ul>
+				<li>
+					<a href="/">首页</a>
+				</li>
+				<li class="m-open-two-mune">
+					<a href="/Site">直营连锁</a>
+					<ul v-show="zy">
+						<li>
+							<a href="/Site?status=1">北京</a>
+						</li>
+						<li>
+							<a href="/Site?status=2">上海</a>
+						</li>
+						<li>
+							<a href="/Site?status=3">深圳</a>
+						</li>
+						<li>
+							<a href="/Site?status=4">杭州</a>
+						</li>
+					</ul>
+					<p :class="zy==true?'m-open_active':''" @click="showMenu($event)" data-type="1"></p>
+				</li>
+				<li class="m-open-two-mune">
+					<a href="/Ingclass">恩启学院</a>
+					<ul v-show="xy">
+						<li><a href="/IdeaTheory">教师成长</a></li>
+						<li><a href="/Patriarch">家长成长</a></li>
+						<li><a href="/Idea">专项培训</a></li>
+					</ul>
+					<p  :class="xy==true?'m-open_active':''" @click="showMenu($event)" data-type="2"></p>
+				</li>
+				<li>
+					<a href="/Teacher">科研教研</a>
+				</li>
+				<li>
+					<a href="/Product">互联网产品</a>
+				</li>
+				<li>
+					<a href="/Partner">加入我们</a>
+				</li>
+				<li class="m-open-two-mune">
+					<a href="/AboutUs" >关于我们</a>
+					<ul v-show="gy">
+						<li><a href="/AboutUs?status=1">关于恩启</a></li>
+						<li><a href="/AboutUs?status=2">IDEA理念</a></li>
+						<li><a href="/AboutUs?status=4">发展历程</a></li>
+						<li><a href="/AboutUs?status=5">公司事件</a></li>
+						<li><a href="/AboutUs?status=6">责任与公益</a></li>
+						<li><a href="/AboutUs?status=0">合作伙伴</a></li>
+						<li><a href="/AboutUs?status=3">企业荣誉</a></li>
+						<li><a href="/Contact?name=sunhe">联系我们</a></li>
+					</ul>
+					<p :class="gy==true?'m-open_active':''" @click="showMenu($event)" data-type="3"></p>
+				</li>
+			</ul>
+			<a  href="/Contact?name=sunhe">400-606-2105</a>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default{
+		data(){
+			return{
+				zy:false,
+				xy:false,
+				gy:false,
+				opemMenu:false
+			}
+		},
+		mounted(){
+			this.$root.eventVue.$on("showMenu",(msg)=>{   
+				 this.opemMenu=msg;  
+			})
+		},
+		methods:{
+			showMenu(event){
+				let el=event.currentTarget;
+				if(el.getAttribute("data-type") == "1"){
+					this.zy=!this.zy;
+				}else if(el.getAttribute("data-type") == "2"){
+					this.xy=!this.xy;
+				}else{
+					this.gy=!this.gy;
+				}
+			},
+			colseMenu(){
+				this.opemMenu = false;
+			},
+			eventClick(){
+				
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.m-menu{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+		top: 0;
+		-webkit-transform: translateX(-100%);
+		-ms-transform:  translateX(-100%);
+		-o-transform:  translateX(-100%);
+		transform: translateX(-100%);
+		transition-duration:.5s;
+	}
+	.m-menu-active{
+		-webkit-transform: translateX(0%);
+		-ms-transform:  translateX(0%);
+		-o-transform:  translateX(0%);
+		transform: translateX(0%);
+		transition-duration:.5s;
+	}
+	.m-menu>div{
+			background: #313640;
+			width: 270px;
+			height: 100%;
+			padding-bottom:80px;
+			box-sizing: border-box;
+			overflow: hidden;
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+	}
+	.m-menu>div>p::before{
+				content: "";
+				display: inline-block;
+				width: 13px;
+				height: 14px;
+				background: url(../../../public/mImages/close.png) no-repeat;
+				background-size: 100%;
+				margin-right: 4px;
+			}
+	.m-menu>div>p{
+		padding: 20px 0;
+		text-align: center;
+		color: #fff;
+		font-size: 14px;
+	}
+	.m-menu>div>a{
+		color: #fff;
+		display: inline-block;
+		font-size: 18px;
+		margin: 26px 13px;
+		box-sizing: border-box;
+		font-weight: normal;
+	}
+	.m-menu>div>ul li{
+		position: relative;
+	}
+	.m-menu>div>ul li a{
+		display: inline-block;
+		width: 100%;
+		padding: 20px 13px;
+		box-sizing: border-box;
+		color: #fff;
+		font-size: 14px;
+		border-top: .5px solid #fff;
+	}
+	.m-menu>div>ul>li a::before{
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.m-menu>div>ul>li:last-child>a{
+		border-bottom: .5px solid #fff;
+	}
+	.m-menu>div>ul>li:last-child ul li:first-child a{
+		border-top: none;
+	}
+	.m-menu>div>ul>li:last-child ul li:last-child a{
+		border-bottom: .5px solid #fff;
+	}
+	.m-open-two-mune p{
+		width: 40px;
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.m-open-two-mune p::after{
+		content: "";
+		display: inline-block;
+		width: 14px;
+		height: 8px;
+		background: url(../../../public/mImages/down.png) no-repeat;
+		background-size: 100%;
+		float: right;
+		margin-top: 6px;
+		transition-duration:.5s;
+		margin: 27px 13px 0 0;
+	}
+	.m-open_active::after{
+		transform:rotate(180deg);
+		-ms-transform:rotate(180deg); 	/* IE 9 */
+		-moz-transform:rotate(180deg); 	/* Firefox */
+		-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+		-o-transform:rotate(180deg); 	/* Opera */
+		transition-duration:.5s;
+		position: relative;
+		bottom: 1px;
+	}
+	.m-open-two-mune ul li a{
+		background: #616368!important;
+		padding-left: 23px!important;
+	}
+	.m-open-two-mune ul{
+		//display: none;
+	}
+</style>

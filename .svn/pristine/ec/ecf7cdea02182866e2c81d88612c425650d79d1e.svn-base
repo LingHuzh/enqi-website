@@ -1,0 +1,950 @@
+<template>
+	<main>
+		<Nav></Nav>
+		<!-- 北京朝阳中心 -->
+		<div class="site-chaoyang" data-scroll>
+			<div class="public_banner">
+				<img src="../../../public/images/beijinghaidianzhongxin.jpg" alt="">
+			</div>
+			<div class="home-site-title" style="margin-top: 80px;">
+				<span class="home-site-left" :class="leftClass"></span>
+				<div class="home-site-title-centre">
+					<p><span style="margin-top: 10px;letter-spacing: 2px;" :class="topClass">恩启IDEA·北京海淀中心</span></p>
+				</div>
+				<span class="home-site-right" :class="rightClass"></span>
+			</div>
+			<div class="shop-image">门店全景照片</div>
+			<div class="site-shop-chaoyang">
+				<div class="site-shop-chaoyang-left">
+					<div>
+						<div class="swiper-container gallery-top">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="../../../public/images/haidianbig1.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../public/images/haidianbig2.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../public/images/haidianbig3.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../public/images/haidianbig4.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../public/images/haidianbig5.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../public/images/haidianbig6.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../public/images/haidianbig7.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../../../public/images/haidianbig8.png" alt="">
+								</div>
+							</div>
+							<!-- Add Arrows -->
+							<div class="swiper-button-next swiper-button-next1 swiper-button-white"></div>
+							<div class="swiper-button-prev swiper-button-prev1 swiper-button-white"></div>
+						</div>
+						<div style="position: relative;">
+							<div class="swiper-container gallery-thumbs">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="../../../public/images/haidianbig1.png" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="../../../public/images/haidianbig2.png" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="../../../public/images/haidianbig3.png" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="../../../public/images/haidianbig4.png" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="../../../public/images/haidianbig5.png" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="../../../public/images/haidianbig6.png" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="../../../public/images/haidianbig7.png" alt="">
+									</div>
+									<div class="swiper-slide">
+										<img src="../../../public/images/haidianbig8.png" alt="">
+									</div>
+								</div>
+								<!-- Add Arrows -->
+							</div>
+							<div class="swiper-button-next swiper-button-next2 swiper-button-white"></div>
+							<div class="swiper-button-prev swiper-button-prev2 swiper-button-white"></div>
+						</div>
+					</div>
+
+					<div class="cut-title">
+						<ul>
+							<li class="cut-title-active">中心概况</li>
+							<li>恩启优势</li>
+							<li>个别化服务支持</li>
+							<li>康复课程</li>
+							<li>环境优势</li>
+						</ul>
+					</div>
+					<div class="cut-content">
+						<ul>
+							<!-- 1 -->
+							<li class="">
+								<p style="padding-top: 72px;">恩启IDEA海淀中心于2019年10月14日正式投入运营</p>
+								<p>2018-2019近两年时间中，全体恩启人殚精竭虑，上下求索，深入研究课程体系、教师培养体系、数据化管理体系、服务标准和空间设计等诸多方面，在教研中心、朝阳中心两个中心的基础上，倾力打造了第三家线下机构——恩启IDEA海淀中心。</p>
+								<p style="padding: 20px 0 93px 0;">恩启IDEA海淀中心隶属于北京恩启教育科技有限公司，位于北京西四环四季青附近，交通便利，地段繁华，良好的地理位置让家长带娃、生活两不误！海淀中心营业面积约为1200平方米</p>
+							</li>
+							<!-- 2 -->
+							<li class="hidden">
+								<span>在IDEA朝阳中心，我们依旧有：</span>
+								<div class="idea-merit">
+									<img src="../../../public/images/duu3.png" alt="">
+									<p>1.国际化的督导团队</p>
+								</div>
+								<div class="idea-merit">
+									<img src="../../../public/images/duu3.png" alt="">
+									<p>2.严格筛选、悉心培养的教师队伍</p>
+								</div>
+								<div class="idea-merit">
+									<img src="../../../public/images/duu3.png" alt="">
+									<p>3.先进的康复教育理念</p>
+								</div>
+								<div class="idea-merit">
+									<img src="../../../public/images/duu3.png" alt="">
+									<p>4.目标清晰的康复课程体系</p>
+								</div>
+								<div class="idea-merit">
+									<img src="../../../public/images/duu3.png" alt="">
+									<p>5.全程数据支持</p>
+								</div>
+								<div class="idea-merit">
+									<img src="../../../public/images/duu3.png" alt="">
+									<p>6.体贴的专业服务</p>
+								</div>
+								<div class="idea-merit" style="padding-bottom: 60px;">
+									<img src="../../../public/images/duu3.png" alt="">
+									<p>7.一流的教学环境</p>
+								</div>
+							</li>
+							<!-- 3 -->
+							<li class="hidden">
+								<div class="three-content" style="margin-top: 45px;">
+									<img src="../../../public/images/duu3.png" alt="">
+									<div>1.IDEA教育理念全程保驾护航，通过IEP（个别化教育计划）呈现给孩子，通过EIS课程体系传递给家长。</div>
+								</div>
+								<div class="three-content">
+									<img src="../../../public/images/duu3.png" alt="">
+									<div>2.完备的EIS三阶段课程体系为不同程度的孩子提供服务，每个阶段考虑到孩子的实际需求和能力，合理安排教学资源，寻找合适的安置计划。</div>
+								</div>
+								<div class="three-content">
+									<img src="../../../public/images/duu3.png" alt="">
+									<div>3.顶尖师资团队给孩子最好的支持，选派优秀骨干老师，资深老师一线教学，个案组长随堂督学，寻求对孩子最有效的教学方案。</div>
+								</div>
+								<div class="three-content" style="padding-bottom: 60px;">
+									<img src="../../../public/images/duu3.png" alt="">
+									<div>4.服务支持个性化，满足不同家庭的需要，教学过程中将全程数据记录，定期检核，让课程更专业更有保障。</div>
+								</div>
+							</li>
+							<!-- 4 -->
+							<li class="hidden">
+								<div class="four">
+									<div class="idea-merit">
+										<img src="../../../public/images/duu3.png" alt="">
+										<p>早期密集</p>
+									</div>
+									<div class="idea-merit" style="margin-left: 40px;">
+										<img src="../../../public/images/duu3.png" alt="">
+										<p>言语治疗</p>
+									</div>
+								</div>
+								<div class="four">
+									<div class="idea-merit">
+										<img src="../../../public/images/duu3.png" alt="">
+										<p>融合预备</p>
+									</div>
+									<div class="idea-merit" style="margin-left: 40px;">
+										<img src="../../../public/images/duu3.png" alt="">
+										<p>学前融合</p>
+									</div>
+								</div>
+								<div class="four">
+
+								</div>
+							</li>
+							<!-- 5 -->
+							<li class="hidden">
+								<p style="padding-top: 72px;">恩启一直奉行将最好的位置留给教室，让孩子能在自然阳光下、新鲜空气中健康舒适的学习。给孩子最适合的成长空间： </p>
+								<p style="padding-top: 20px;">1、室内、室外双活动空间，让孩子充分释放爱玩、爱自由的天性 </p>
+								<p>2、每间教室都留有窗户，可以自然采光、自然通风 </p>
+								<p style="padding-bottom: 60px;">3、宽敞、舒适的家长休息区，为家长提供最舒适的“充电时间”。</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="site-shop-chaoyang-right">
+					<div class="site-shop-chaoyang-iphone">
+						<div class="site-shop-chaoyang-iphone-header">联系方式</div>
+						<div class="site-shop-chaoyang-iphone-content">
+							<span style="padding-top: 54px;">郭老师：18513342186（微信同号）</span>
+							<img src="../../../public/images/sunhe.jpg" alt="">
+							<span>如有问题可以扫描上方二维码添加</span>
+							<p>教务老师微信进行预约咨询哦~</p>
+						</div>
+					</div>
+
+					<div class="site-shop-chaoyang-iphone" style="margin-top: 58px;">
+						<div class="site-shop-chaoyang-iphone-header" style="background: #EC804D;">中心地址</div>
+						<div class="font_add" style="text-align: left;color: #555555;padding: 30px 35px;font-size: 16px;background: #fff;line-height: 22px;">
+							<!-- site-shop-chaoyang-iphone-content -->
+							北京市海淀区西四环北路69号（四季青桥附近） 恩启IDEA海淀中心
+						</div>
+					</div>
+					<div class="site-shop-chaoyang-iphone" style="margin-top: 34px;">
+						<div class="site-shop-chaoyang-iphone-header" style="background: #3B8FEE;">乘车路线</div>
+						<div class="font_add" style="text-align: left;color: #555555;padding: 30px 35px;font-size: 15px;background: #fff;line-height: 22px;">
+							北京地铁6号线【海淀五路居】站A口出，在【五路桥】公交站乘坐【644路/982路/121路/983路/613路】，到【东冉村】下车。向正南直行183米，右转进入四季青路，直行123米后左转，向右前方直行165米即可到达恩启海淀中心。
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="map" id="dituContent" style="margin-bottom: 88px;">
+
+			</div>
+
+			<Footer></Footer>
+		</div>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	import Footer from "../index/Footer.vue"
+	import Swiper from 'swiper';
+	import {
+		shows
+	} from "../../js/scrollHtml.js"
+	export default {
+		name: 'site-chaoyang',
+		components: {
+			Nav,
+			Footer
+		},
+		data() {
+			return {
+				topClass: '',
+				leftClass: '',
+				rightClass: ''
+			}
+		},
+		mounted() {
+			var n = 0;
+			shows();
+			var galleryThumbs = new Swiper('.gallery-thumbs', {
+			      spaceBetween: 8,
+			      slidesPerView: window.innerWidth>1366?6:4,
+			      loop: false,
+			      freeMode: true,
+			      loopedSlides: 5, //looped slides should be the same
+				  watchSlidesVisibility: true,
+			      watchSlidesProgress: true,
+				  navigation: {
+				    nextEl: '.swiper-button-next2',
+				    prevEl: '.swiper-button-prev2',
+				  }
+			    });
+			var galleryTop = new Swiper('.gallery-top', {
+				  spaceBetween: 10,
+				  loop:true,
+				  loopedSlides: 5, //looped slides should be the same
+				  navigation: {
+					nextEl: '.swiper-button-next1',
+					prevEl: '.swiper-button-prev1',
+				  },
+				  thumbs: {
+					swiper: galleryThumbs,
+				  },
+			});
+			//鼠标覆盖停止自动切换与隐藏前进后退按钮
+			 galleryTop.el.onmouseover = function(){
+			    galleryTop.navigation.$nextEl.removeClass('hide');
+			    galleryTop.navigation.$prevEl.removeClass('hide');
+			}
+				  //鼠标覆盖停止自动切换与隐藏前进后退按钮
+			galleryTop.el.onmouseout = function(){
+				galleryTop.navigation.$nextEl.addClass('hide');
+				galleryTop.navigation.$prevEl.addClass('hide');
+			}
+			if (window.outerHeight < 800) {
+				window.addEventListener('scroll', this.NavScrollFunction, true);
+			} else {
+				this.scrollnumber($('.home-site-title'), 'font_active_up', 50, 1);
+			}
+			$(".site-shop-chaoyang-left-scroll-right-btn img:first").click(function() {
+				$(this).addClass('hidden');
+				$(".site-shop-chaoyang-left-scroll-right-btn img:last").removeClass('hidden')
+				$(".site-shop-chaoyang-left-scroll-content ul").animate({
+					marginLeft: "-105px"
+				}, 500);
+				$(".site-shop-chaoyang-left-scroll-left-btn img:first").removeClass('hidden');
+				$(".site-shop-chaoyang-left-scroll-left-btn img:last").addClass('hidden');
+			})
+			$(".site-shop-chaoyang-left-scroll-left-btn img:first").click(function() {
+				$(this).addClass('hidden');
+				$(".site-shop-chaoyang-left-scroll-left-btn img:last").removeClass('hidden');
+				$(".site-shop-chaoyang-left-scroll-right-btn img:first").removeClass('hidden');
+				$(".site-shop-chaoyang-left-scroll-right-btn img:last").addClass('hidden');
+				$(".site-shop-chaoyang-left-scroll-content ul").animate({
+					marginLeft: "0px"
+				}, 500);
+			})
+			$(".site-shop-chaoyang-left-scroll-content ul li").click(function() {
+				let i = $(this).index();
+				n = i
+				$(".site-shop-chaoyang-left-image img").eq(i).removeClass('hidden').siblings().addClass('hidden');
+				$(this).addClass('imageBorder').siblings().removeClass('imageBorder');
+			})
+			$(".cut-title ul li").click(function() {
+				let i = $(this).index();
+				$(this).addClass('cut-title-active').siblings().removeClass('cut-title-active');
+				$(".cut-content ul li").eq(i).removeClass('hidden').siblings().addClass('hidden');
+			})
+			$(".rightBtn").click(function() {
+				if (n < 7) {
+					n = n + 1;
+				}
+				console.log(n);
+				$(".site-shop-chaoyang-left-image img").eq(n).removeClass('hidden').siblings().addClass('hidden');
+				$(".site-shop-chaoyang-left-scroll-content ul li").eq(n).addClass('imageBorder').siblings().removeClass(
+					'imageBorder');
+				if (n == 6) {
+					$(".site-shop-chaoyang-left-scroll-content ul").animate({
+						marginLeft: "-425px"
+					}, 500);
+					$(".site-shop-chaoyang-left-scroll-left-btn img:first").removeClass('hidden');
+					$(".site-shop-chaoyang-left-scroll-left-btn img:last").addClass('hidden');
+					$(".site-shop-chaoyang-left-scroll-right-btn img:first").addClass('hidden');
+					$(".site-shop-chaoyang-left-scroll-right-btn img:last").removeClass('hidden');
+				}
+				// else if( n == 9 ){
+				// 	alert('已到最后一张图片');
+				// }
+			})
+			$(".leftBtn").click(function() {
+				n = n - 1;
+				console.log("左键值：" + n)
+				if (n >= 0) {
+					$(".site-shop-chaoyang-left-image img").eq(n).removeClass('hidden').siblings().addClass('hidden');
+					$(".site-shop-chaoyang-left-scroll-content ul li").eq(n).addClass('imageBorder').siblings().removeClass(
+						'imageBorder');
+				}
+				if (n == 5) {
+					$(".site-shop-chaoyang-left-scroll-content ul").animate({
+						marginLeft: "0px"
+					}, 500);
+					$(".site-shop-chaoyang-left-scroll-left-btn img:first").addClass('hidden');
+					$(".site-shop-chaoyang-left-scroll-left-btn img:last").removeClass('hidden');
+					$(".site-shop-chaoyang-left-scroll-right-btn img:first").removeClass('hidden');
+					$(".site-shop-chaoyang-left-scroll-right-btn img:last").addClass('hidden');
+				}
+			})
+			//创建和初始化地图函数：
+			function initMap() {
+				createMap(); //创建地图
+				setMapEvent(); //设置地图事件
+				addMapControl(); //向地图添加控件
+				addMarker(); //向地图中添加marker
+			}
+
+			//创建地图函数：
+			function createMap() {
+				var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
+				var point = new BMap.Point(116.280595, 39.957972); //定义一个中心点坐标
+				map.centerAndZoom(point, 18); //设定地图的中心点和坐标并将地图显示在地图容器中
+				window.map = map; //将map变量存储在全局
+			}
+
+			//地图事件设置函数：
+			function setMapEvent() {
+				map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+				map.enableScrollWheelZoom(); //启用地图滚轮放大缩小
+				map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+				map.enableKeyboard(); //启用键盘上下左右键移动地图
+			}
+
+			//地图控件添加函数：
+			function addMapControl() {
+				//向地图中添加缩放控件
+				var ctrl_nav = new BMap.NavigationControl({
+					anchor: BMAP_ANCHOR_TOP_LEFT,
+					type: BMAP_NAVIGATION_CONTROL_LARGE
+				});
+				map.addControl(ctrl_nav);
+				//向地图中添加缩略图控件
+				var ctrl_ove = new BMap.OverviewMapControl({
+					anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+					isOpen: 1
+				});
+				map.addControl(ctrl_ove);
+				//向地图中添加比例尺控件
+				var ctrl_sca = new BMap.ScaleControl({
+					anchor: BMAP_ANCHOR_BOTTOM_LEFT
+				});
+				map.addControl(ctrl_sca);
+			}
+
+			//标注点数组
+			var markerArr = [{
+				title: "恩启IDEA·教研中心",
+				content: "北京市朝阳区孙河地铁站对面弘园五号创意生活园A5<br/>联系方式：13021253543",
+				point: "116.542567|40.051895",
+				isOpen: 0,
+				icon: {
+					w: 23,
+					h: 25,
+					l: 46,
+					t: 21,
+					x: 9,
+					lb: 12
+				}
+			}, {
+				title: "恩启IDEA·海淀中心",
+				content: "北京市海淀区西四环北路69号（四季青桥附近）<br/>联系方式：18513342186",
+				point: "116.280285|39.958041",
+				isOpen: 0,
+				icon: {
+					w: 23,
+					h: 25,
+					l: 46,
+					t: 21,
+					x: 9,
+					lb: 12
+				}
+			}];
+			//创建marker
+			function addMarker() {
+				for (var i = 0; i < markerArr.length; i++) {
+					var json = markerArr[i];
+					var p0 = json.point.split("|")[0];
+					var p1 = json.point.split("|")[1];
+					var point = new BMap.Point(p0, p1);
+					var iconImg = createIcon(json.icon);
+					var marker = new BMap.Marker(point, {
+						icon: iconImg
+					});
+					var iw = createInfoWindow(i);
+					var label = new BMap.Label(json.title, {
+						"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)
+					});
+					marker.setLabel(label);
+					map.addOverlay(marker);
+					label.setStyle({
+						borderColor: "#808080",
+						color: "#333",
+						cursor: "pointer"
+					});
+
+					(function() {
+						var index = i;
+						var _iw = createInfoWindow(i);
+						var _marker = marker;
+						_marker.addEventListener("click", function() {
+							this.openInfoWindow(_iw);
+						});
+						_iw.addEventListener("open", function() {
+							_marker.getLabel().hide();
+						})
+						_iw.addEventListener("close", function() {
+							_marker.getLabel().show();
+						})
+						label.addEventListener("click", function() {
+							_marker.openInfoWindow(_iw);
+						})
+						if (!!json.isOpen) {
+							label.hide();
+							_marker.openInfoWindow(_iw);
+						}
+					})()
+				}
+			}
+			//创建InfoWindow
+			function createInfoWindow(i) {
+				var json = markerArr[i];
+				var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title +
+					"</b><div class='iw_poi_content'>" + json.content + "</div>");
+				return iw;
+			}
+			//创建一个Icon
+			function createIcon(json) {
+				var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+					imageOffset: new BMap.Size(-json.l, -json.t),
+					infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+					offset: new BMap.Size(json.x, json.h)
+				})
+				return icon;
+			}
+
+			function createIcon(json) {
+				var icon = new BMap.Icon("http://map.baidu.com/image/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+					imageOffset: new BMap.Size(-json.l, -json.t),
+					infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+					offset: new BMap.Size(json.x, json.h)
+				})
+				return icon;
+			}
+			initMap(); //创建和初始化地图
+		},
+		methods: {
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title'), 'font_active_up', 50, 1);
+			},
+			scrollnumber(element, cssname, offset, type) {
+				let a, b, c, d;
+				d = $(element).offset().top;
+				a = eval(d + offset);
+				b = $(window).scrollTop();
+				c = $(window).height();
+				if (b + c > a) {
+					if (type == 1 && this.topClass == "") {
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}
+				}
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.leftBtn,
+	.rightBtn {
+		position: absolute;
+		width: 32px !important;
+		height: 32px !important;
+		top: 21%;
+		margin-top: -16px;
+		cursor: pointer;
+	}
+	
+	.leftBtn {
+		left: 30px;
+	}
+	
+	.rightBtn {
+		right: 30px;
+	}
+	
+	.hidden {
+		display: none !important;
+	}
+	
+	.site-chaoyang {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		background: #F8F8F8;
+	}
+	
+	html,
+	body {
+		position: relative;
+		height: 100%;
+	}
+	
+	body {
+		background: #000;
+		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		color: #000;
+		margin: 0;
+		padding: 0;
+	}
+	
+	
+	.gallery-thumbs .swiper-slide {
+		cursor: pointer;
+	}
+	
+	.site-shop-chaoyang-left>div {
+		width: 850px;
+	}
+	
+	.swiper-slide img {
+		max-width: 100%;
+		height: 100%;
+	}
+	
+	.swiper-container {
+		width: 100%;
+		height: 470px !important;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden !important;
+	}
+	
+	.swiper-button-next {
+		right: 30px;
+	}
+	
+	.swiper-button-prev {
+		left: 30px;
+	}
+	
+	.swiper-button-next2 {
+		right: 15px;
+	}
+	
+	.swiper-button-prev2 {
+		left: 15px;
+	}
+	
+	.swiper-button-next2:after,
+	.swiper-button-prev2:after {
+		content: "";
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		background: url(../../../public/images/11.png) no-repeat;
+		background-size: 100%;
+	}
+	
+	.swiper-button-prev2:after {
+		background: url(../../../public/images/22.png) no-repeat;
+		background-size: 100%;
+	}
+	
+	.swiper-slide {
+		background-size: cover;
+		background-position: center;
+	}
+	
+	.gallery-thumbs {
+		width: 85%;
+		height: 63px !important;
+		box-sizing: border-box;
+	}
+	
+	.gallery-thumbs .swiper-slide {
+		height: 100%;
+	}
+	
+	.gallery-thumbs .swiper-slide-thumb-active {
+		opacity: 1;
+	}
+	
+	.swiper-slide-thumb-active {
+		border: 2px solid #1DBFB3;
+	}
+	
+	.hide {
+		transition-property: all;
+		transition-duration: 1s;
+		display: none;
+	}
+	
+	
+	.site {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		background: #fff;
+	}
+	
+	
+	.home-site-title {
+		width: 75%;
+		display: flex;
+		align-items: center;
+	}
+	
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 34%;
+		height: 2px;
+	}
+	
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+		// opacity: 50%;
+	}
+	
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+		// opacity: 50%;
+	}
+	
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+	
+		span {
+			font-size: 23px;
+			color: #333333;
+			display: inline-block;
+			margin-top: 23px;
+		}
+	}
+	
+	.shop-image {
+		width: 74%;
+		height: 22px;
+		margin: 20px auto 0;
+		font-size: 18px;
+		color: rgba(51, 51, 51, 1);
+		line-height: 36px;
+	}
+	
+	.site-shop-chaoyang {
+		width: 75%;
+		display: flex;
+		margin: 20px auto 103px;
+	}
+	
+	.site-shop-chaoyang-left {
+		position: relative;
+	}
+	
+	.site-shop-chaoyang-right {
+		width: 370px;
+		margin-left: 20px;
+		margin-top: 14px;
+	}
+	
+	.site-shop-chaoyang-left-image {
+		width: 770px;
+		height: 418px;
+		margin-top: -10px;
+	
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	
+	.site-shop-chaoyang-left-scroll {
+		width: 770px;
+		display: flex;
+	}
+	
+	.site-shop-chaoyang-left-scroll-left-btn,
+	.site-shop-chaoyang-left-scroll-right-btn {
+		width: 77px;
+		height: 60px;
+	
+		img {
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: 12px auto 0;
+			cursor: pointer;
+		}
+	}
+	
+	.site-shop-chaoyang-left-scroll-content {
+		flex: 1;
+		height: 63px;
+		overflow-x: hidden;
+	
+		ul {
+			display: flex;
+			width: 1080px;
+	
+			li {
+				width: 95px;
+				height: 63px;
+				margin-left: 10px;
+	
+				img {
+					display: block;
+					width: 100%;
+					height: 100%;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	
+	.site-shop-chaoyang-iphone {
+		width: 100%;
+	}
+	
+	.site-shop-chaoyang-iphone-header {
+		width: 100%;
+		height: 45px;
+		background: rgba(29, 191, 179, 1);
+		border-radius: 4px 4px 0px 0px;
+		text-align: center;
+		line-height: 45px;
+		font-size: 16px;
+		font-weight: bold;
+		color: rgba(255, 255, 255, 1);
+	}
+	
+	.site-shop-chaoyang-iphone-content {
+		text-align: center;
+		height: 420px;
+		background: #fff;
+	
+		span {
+			font-size: 16px;
+			color: rgba(68, 68, 68, 1);
+			display: inline-block;
+		}
+	
+		p {
+			font-size: 16px;
+			color: rgba(68, 68, 68, 1);
+			display: inline-block;
+		}
+	
+		img {
+			display: block;
+			width: 227px;
+			height: 227px;
+			margin: 23px auto;
+		}
+	}
+	
+	.cut-title {
+		width: 770px;
+		margin-top: 46px;
+	
+		ul {
+			width: 100%;
+			display: flex;
+	
+			li {
+				width: 25%;
+				text-align: center;
+				height: 45px;
+				padding: 0px 32px;
+				background: #FFFFFF;
+				line-height: 45px;
+				margin-left: 3px;
+				font-size: 16px;
+				font-family: Heiti SC;
+				font-weight: 300;
+				color: rgba(85, 85, 85, 1);
+				box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.06);
+				border-radius: 4px 4px 0px 0px;
+				cursor: pointer;
+			}
+		}
+	}
+	.cut-content,.cut-title{
+		width: 833px!important;
+	}
+	.cut-content ul {
+		position: relative;
+	
+		li {
+			width: 100%;
+			background: #fff;
+			padding: 0 58px 0 43px;
+			font-size: 16px;
+			font-weight: 400;
+			color: #666666;
+			line-height: 22px;
+			position: absolute;
+			top: 2px;
+			span {
+				display: inline-block;
+				width: 100%;
+				padding: 46px 0 0 31px;
+				font-size: 16px;
+				font-weight: bold;
+				color: rgba(107, 107, 107, 1);
+			}
+		}
+	}
+	
+	.idea-merit {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		margin-left: 36px;
+		margin-top: 10px;
+	
+		img {
+			display: block;
+			width: 16px;
+			height: 13px;
+			margin-right: 10px;
+	
+		}
+	
+		p {
+			color: #6B6B6B;
+		}
+	}
+	
+	.three-content {
+		margin: 10px auto 0;
+		display: flex;
+	
+		img {
+			display: block;
+			width: 16px;
+			height: 13px;
+			margin-right: 10px;
+			margin-top: 8px;
+		}
+	}
+	
+	.four {
+		margin: 59px 0 0 -20px;
+		display: flex;
+	}
+	
+	.home-site-title-centre p:last-child span {
+		margin-top: 14px !important;
+	}
+	
+	@media screen and (min-width:1800px) and (max-width:2100px) {
+		.shop-image {
+			width: 65%;
+			margin: 16px auto 0;
+		}
+		.site-shop-chaoyang{
+			width: 67% !important;
+		}
+		.site-shop-chaoyang-right{
+			width: 410px;
+		}
+	}
+	
+	@media screen and (max-width:1500px) {
+		.site-shop-chaoyang-left > div {
+		    width: 560px;
+		}
+		.gallery-top{
+			height: 300px !important;
+		}
+		.gallery-thumbs{
+			width: 80%;
+		}
+		.shop-image{
+			width: 942px;
+		}
+		.site-shop-chaoyang-right{
+			margin-top: 8px;
+		}
+		.cut-content{
+			width: 550px!important;
+		}
+		.cut-title{
+		    width: 560px!important;
+		}
+		.site-shop-chaoyang{
+			width: 960px;
+		}
+	}
+</style>

@@ -1,0 +1,378 @@
+<template>
+	<main>
+	<Nav v-if="windowWidth>800"></Nav>
+	<div class="ingclass"  data-scroll>
+		<div class="public_banner">
+			<img src="../../../public/images/enqixueyuan.jpg" alt="">
+		</div>
+		<div class="home-site-title" style="margin-top: 80px;">
+			<span class="home-site-left" :class="leftClass"></span>
+			<div class="home-site-title-centre">
+				<p><span style="margin-top: 10px;letter-spacing: 2px;" :class="topClass">恩启学院</span></p>
+			</div>
+			<span class="home-site-right" :class="rightClass"></span>
+		</div>
+		<div class="ingclass-curriculum">
+			<ul>
+				<li>
+					<div class="ingclass-curriculum-title" style="background: #2BB7B3;">IDEA基础理论课程</div>
+					<img src="../../../public/images/jichulilun.jpg" alt="">
+					<div class="ingclass-curriculum-content" style="padding-top: 37px;">恩启特教平台通过三年多的时间积累， 近二十期的新教师岗前培训的经验和素材； 由恩启讲师团队精心整理与讲授</div>
+					<div class="ingclass-curriculum-link">
+						<a href="/IdeaTheory" style="color: #2BB7B3;">更多详情</a>
+						<!-- <img src="../../../public/images/lianjie2.png" alt=""> -->
+					</div>
+					<div class="ingclass-curriculum-price" style="background: rgb(43, 183, 179);" @click="theory()">
+							<span>￥198</span>
+							<i style="text-decoration:underline">去购买</i>
+					</div>
+				</li>
+				<li>
+					<div class="ingclass-curriculum-title" style="background: #307FD1;">IDEA家长通识课程</div>
+					<img src="../../../public/images/jiazhangtonshi.jpg" alt="">
+					<div class="ingclass-curriculum-content">课程从学习规划、ABA原理、基础实操理论、家庭干预重要实操理论、评估解析五个角度，帮助家长搭建家庭干预理论体系，共102节。 课程在3月23日-4月30日内全部更新。</div>
+					<div class="ingclass-curriculum-link">
+						<a href="/Patriarch" style="color: #307FD1;">更多详情</a>
+						<!-- <img src="../../../public/images/lianjie3.png" alt=""> -->
+					</div>
+					<div class="ingclass-curriculum-price" style="background: #307FD1;" @click="general()">
+							<span>￥199</span>
+							<i style="text-decoration:underline">去购买</i>
+					</div>
+				</li>
+				<li>
+					<div class="ingclass-curriculum-title" style="background: #EA7D43;">VB-MAPP软件评估师课程</div>
+					<img src="../../../public/images/ruanjian.jpg" alt="">
+					<div class="ingclass-curriculum-content">VB-MAPP软件评估师课程，采用“浸入式”学习的方法，带领大家边看课程边操作。最大程度还原工作中的实际场景，共同领略VB-MAPP评估给我们带来的教学新启发。</div>
+					<div class="ingclass-curriculum-link">
+						<a href="/Idea" style="color: #EA7D43;">更多详情</a>
+						<!-- <img src="../../../public/images/lianjie4.png" alt=""> -->
+					</div>
+					<div class="ingclass-curriculum-price" style="background: #EA7D43;" @click="assess()">
+							<span>￥5380</span>
+							<i style="text-decoration:underline">去购买</i>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<Footer v-if="windowWidth>800"></Footer>
+		<Appfooter v-if="windowWidth<800"></Appfooter>
+	</div>
+	</main>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue";
+	import Footer from "../index/Footer.vue";
+	import Appfooter from "../mIndex/Appfooter.vue";
+    import {shows} from "../../js/scrollHtml.js"
+	export default{
+		name:'ingclass',
+		components:{
+			Nav,
+			Footer,
+			Appfooter
+		},
+		data() {
+			return {
+				topClass: '',
+				topClassOne: '',
+				leftClass: '',
+				rightClass: '',
+				windowWidth:window.innerWidth
+			}
+		},
+		mounted() {
+			if(window.innerWidth>500){
+				this.$nextTick(()=>{
+					$('.index-nav>a:eq(2)').addClass('borderBottomActive');
+				})
+				shows();
+				$(".index-nav>div a:eq(5)").addClass("nav_active");
+				if(window.outerHeight<800){
+					window.addEventListener('scroll', this.NavScrollFunction, true);
+				}else{
+					this.scrollnumber($('.home-site-title'),'font_active_up',50,1);
+				}
+			}
+		},
+		methods:{
+			theory(){
+				window.open('http://www.ingclass.org/webstage/train/course_find_58.html');
+			},
+			general(){
+				window.open('http://www.ingclass.org/webstage/train/course_find_59.html');
+			},
+			assess(){
+				window.open('http://www.ingclass.org/webstage/train/course_find_60.html');
+			},
+			NavScrollFunction() {
+				this.scrollnumber($('.home-site-title'),'font_active_up',50,1);
+			},
+			scrollnumber(element, cssname, offset,type) {
+			    let a, b, c, d;
+			    d = $(element).offset().top;
+			    a = eval(d + offset);
+			    b = $(window).scrollTop();
+			    c = $(window).height();
+			    if (b + c > a) {
+			        if(type == 1 && this.topClass == ""){
+						this.topClass = 'font_active_up';
+						this.leftClass = 'font_active_left';
+						this.rightClass = 'font_active_right';
+					}
+			    }
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+.ingclass{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	background: #fff;
+}
+.home-site-title {
+	width: 1028px;
+	display: flex;
+	align-items: center;
+}
+.home-site-left,
+.home-site-right {
+	display: inline-block;
+	width: 40%;
+	height: 2px;
+}
+
+.home-site-left {
+	background: linear-gradient(to right, rgba(237,245,245,0.5), rgba(66,170,165,0.5));
+}
+
+.home-site-right {
+	background: linear-gradient(to left, rgba(237,245,245,0.5), rgba(66,170,165,0.5));
+}
+.home-site-title-centre {
+	flex: 1;
+	text-align: center;
+	span {
+		font-size: 25px;
+		color: #333333;
+		display: inline-block;
+		margin-top: 23px;
+	}
+}
+.ingclass-curriculum{
+	width: 1028px;
+	margin: 0 auto 105px;
+	ul{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		li{
+			width: 318px;
+			height: 433px;
+			box-shadow:0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+			border-radius:20px 20px 20px 20px;
+			position: relative;
+			overflow: hidden;
+			img{
+				display: block;
+				width: 318px;
+				height:186px ;
+				transition-duration: .8s;
+			}
+		}
+		li:hover img{
+			transform: scale(1.05);
+			transition-duration: .8s;
+		}
+	}
+}
+.ingclass-curriculum-title{
+	width: 100%;
+	height:47px;
+	text-align: center;
+	color: #fff;
+	font-size:15px ;
+	line-height: 47px;
+	border-radius:20px 20px 0px 0px;
+	letter-spacing: 1.5px;
+}
+.ingclass-curriculum-content{
+	    width: 289px;
+	    height: 144px;
+	    margin: 8px auto 0;
+	    padding: 25px 23px;
+	    font-size: 13px;
+	    font-weight: 400;
+	    color: #555555;
+	    line-height: 20px;
+	    border-bottom: 1px solid #EEEEEE;
+		letter-spacing: 1px;
+}
+.ingclass-curriculum-link{
+	width: 100%;
+	height: 46px;
+	text-align: center;
+	line-height: 46px;
+	position: relative;
+	font-size: 16px;
+	a{
+      text-decoration: underline;
+	}
+	img{
+		display: block;
+		width: 18px !important;
+		height: 18px !important;
+		position: absolute;
+		right: 33%;
+		top: 50%;
+		margin-top: -6px;
+	}
+}
+.ingclass-curriculum-price{
+	position: absolute;
+	top: 48.5%;
+	right: 3%;
+	width:129px;
+	height:46px;
+	background:rgba(48,127,209,1);
+	box-shadow:0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+	border-radius:13px;
+	color:rgba(255,255,255,1);
+	line-height: 46px;	
+	text-align: center;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-around;
+	span{
+		font-size:16px;
+		margin-left: 15px;
+		font-style: italic;
+	}
+	i{
+		font-size: 14px;
+		font-weight:400;
+		margin-right: 15px;
+	}
+}
+
+	.home-site-title-centre p:last-child span{
+		color:#1DBFBA !important;
+	}
+	@media screen and (max-width: 1024px){
+		.home-site-title{
+			width: 92%;
+		}
+		.ingclass-curriculum{
+			width: 93%;
+		}
+		.ingclass-curriculum ul{
+			margin: 0 auto;
+		}
+		.ingclass-curriculum ul li{
+			width: 254.4px;
+			height: 346.4px;
+		}
+		.ingclass-curriculum ul li img{
+			width: 254.4px;
+			height: 150px;
+		}
+		.ingclass-curriculum-content{
+			width: 231px;
+			font-size: 9px;
+			padding: 31px 3px;
+			margin: -5px auto 0;
+			line-height: 18px;
+			height: 112px;
+		}
+		.ingclass-curriculum-link{
+			font-size: 14px;
+		}
+	}
+	// 移动端
+	@media screen and (max-width: 800px){
+		.public_banner {
+			margin-top: 0;
+		}
+		.product{
+			position: relative;
+		}
+		.public_banner{
+			width: 100%;
+			height: 103px;
+			min-width: inherit;
+		}
+		.home-site-title-centre p:last-child span{
+			font-size: 16px!important;
+		}
+		.home-site-left, .home-site-right{
+			width: 35%;
+		}
+		.home-site-title-centre p:last-child span,
+		.home-site-title-centre p:first-child{
+			margin-top: 0!important;
+		}
+		.ingclass{
+			position: relative;
+		}
+		.ingclass-curriculum ul{
+			display: inline-block;
+		}
+		.ingclass-curriculum ul li{
+			margin: 0 auto;
+			margin-top: 42px;
+			width: 75%;
+		}
+		.ingclass-curriculum{
+			margin-bottom: 50px;
+		}
+		.home-site-title{
+			margin-top: 43px!important;
+		}
+		.ingclass-curriculum ul li{
+			height: auto;
+		}
+		.ingclass-curriculum ul li img{
+			width: 100%;
+		}
+		.ingclass-curriculum-content{
+			font-size: 12px;
+			width: 90%;
+			margin: 0 auto;
+			height: auto;
+			padding: 55px 0 20px 0;
+			box-sizing: border-box;
+		}
+		.ingclass-curriculum-link{
+			height: 54px;
+			line-height: 54px;
+		}
+		.ingclass-curriculum-link a{
+			font-size: 16px;
+		}
+		.ingclass-curriculum-price span,
+		.ingclass-curriculum-price i{
+			font-size: 14px;
+			font-style: normal;
+			text-decoration: none!important;
+		}
+		.ingclass-curriculum-title{
+			font-size: 16px;
+		}
+		.ingclass-curriculum ul li .ingclass-curriculum-price{
+			width: 111px;
+			height: 42px;
+		}
+		.ingclass-curriculum ul li:nth-child(2) .ingclass-curriculum-price,
+		.ingclass-curriculum ul li:nth-child(3) .ingclass-curriculum-price{
+			top:44%;
+		}
+		.ingclass-curriculum ul li:nth-child(2) .ingclass-curriculum-content,
+		.ingclass-curriculum ul li:nth-child(3) .ingclass-curriculum-content{
+			padding-top: 40px!important;
+		}
+	}
+</style>

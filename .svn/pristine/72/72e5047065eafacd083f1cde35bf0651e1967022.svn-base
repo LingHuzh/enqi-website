@@ -1,0 +1,428 @@
+<template>
+	<div class="patriarch">
+		<Nav></Nav>
+		<div class="partner-banner">
+			<img src="../../../public/images/ideattt.png" alt="">
+		</div>
+		<!-- 课堂介绍 -->
+		<div class="home-site-title" style="margin-top: 0;">
+			<span class="home-site-left" style="width: 40%;"></span>
+			<div class="home-site-title-centre">
+				<span style="margin-top: 23px;">课程介绍</span>
+				<p class="active-p" style="width: 130px;height: 18px;"><img src="../../../public/images/a1.png" alt=""></p>
+			</div>
+			<span class="home-site-right" style="width: 40%;"></span>
+		</div>
+		<div class="idea-course-introduce" style="margin-top: 30px;">
+			《IDEA孤独症教育通识课》是恩启沉淀5年，集结BCBA-D、BCBA、BCaBA、言语治疗师、融合教育老师等，共同研发的家庭干预基础课程。从基
+			础理论出发，配合大量的实操视频与干预案例，内容覆盖家庭干预规划、家庭干预误区、自然情景教学、问题行为、桌面教学、游戏、泛化、生活自 理、社交、评估，以及家长、老师沟通指南等多个板块。融入生活情境，帮你轻松读懂老师，教明白孩子。
+		</div>
+		<!-- 视频 -->
+		<div class="video-class">
+			<video id="myVideo" class="video-js">
+				<source src="../../video/通识课视频.mp4" type="video/mp4">
+			</video>
+		</div>
+		<!-- 为什么要学习这门课程 -->
+		<div class="home-site-title" style="margin-top: 0;">
+			<span class="home-site-left" style="width: 34%;"></span>
+			<div class="home-site-title-centre">
+				<span style="margin-top: 23px;">为什么要学习这门课程</span>
+				<p class="active-p" style="width: 130px;height: 18px;"><img src="../../../public/images/a2.png" alt=""></p>
+			</div>
+			<span class="home-site-right" style="width: 34%;"></span>
+		</div>
+		<div class="about-Us-duty">
+			<img src="../../../public/images/le.png" alt="" style="margin-left: 50px;">
+			<i>经过调研，我们发现大多数家长在给自闭症孩子做干预的时候，都会遇到这样几个难题：</i>
+			<img src="../../../public/images/ri.png" alt="" style="margin-right: 50px;">
+		</div>
+		<div class="statistics">
+			<ul>
+				<li>
+					<i style="color: #3680EE;">1.没指导</i>
+					<p>84%的家庭表示急需家庭 干预课程</p>
+					<img src="../../../public/images/meizhidao.png" alt="">
+				</li>
+				<li>
+					<i style="color: #EE8D36;">2.不系统</i>
+					<p>63%的家庭表示缺乏系统指导 学到的知识用不起来</p>
+					<img src="../../../public/images/buxitong.png" alt="">
+				</li>
+				<li>
+					<i style="color: #14B3AE;">3.供需不平衡</i>
+					<p>79%的家庭表示，机构课程难满足 家庭干预需要，希望机构能提供 额外的家长培训</p>
+					<img src="../../../public/images/gongxu.png" alt="">
+				</li>
+				<li>
+					<i style="color: #F5CC0F;">4.难沟通</i>
+					<p>家长和机构难沟通，没办法 给孩子最全面的支持</p>
+					<img src="../../../public/images/nan.png" alt="">
+				</li>
+			</ul>
+		</div>
+		<div class="about-Us-duty" style="background: #62A1EE;margin-top: 58px;">
+			<img src="../../../public/images/le.png" alt="" style="margin-left: 50px;">
+			<span>因此，我们希望做一门人人都看得懂、学得会的系统家庭干预课程 ，帮助家长、老师、机构达成一致，解决家庭干预的难题</span>
+			<img src="../../../public/images/ri.png" alt="" style="margin-right: 50px;">
+		</div>
+		<div class="circulation">
+			<span>机构</span>
+			<span>老师</span>
+		</div>
+		<!-- 你能得到什么 -->
+		<div class="home-site-title" style="margin-top: 0;">
+			<span class="home-site-left" style="width: 38%;"></span>
+			<div class="home-site-title-centre">
+				<span style="margin-top: 23px;">你能得到什么</span>
+				<p class="active-p" style="width: 130px;height: 18px;"><img src="../../../public/images/a2.png" alt=""></p>
+			</div>
+			<span class="home-site-right" style="width: 38%;"></span>
+		</div>
+		<div class="get-images">
+			<div><img src="../../../public/images/ooo1.png" alt=""></div>
+			<div><img src="../../../public/images/ooo2.png" alt=""></div>
+			<div><img src="../../../public/images/ooo3.png" alt=""></div>
+			<div><img src="../../../public/images/ooo4.png" alt=""></div>
+		</div>
+		<div class="get-title">
+			<div>
+				<span style="color:#4F8EDC ;">102节视频课程，即学即用</span>
+				<p style="padding-top: 10px;">1.3年细致打磨的恩启内部家培课程，帮你赢得在 干预起跑线</p>
+				<p>2.从基础理论出发，配合视频讲解，迈出家庭干 预第一步</p>
+				<p>3.掌握家庭干预的正确方法，学得会用得上</p>
+			</div>
+			<div>
+				<span style="color: #42AAA5;">50+个实操视频，真人示范</span>
+				<p style="padding-top: 10px;">1.实操篇真人演示，将干预难题放入生活情境 中，帮你把家庭干预真正做起来</p>
+				<p>2.分步指导教学，零基础也能做好家庭干预</p>
+			</div>
+			<div>
+				<span style="color:#FB9336 ;">每日课程福利，学习更轻松</span>
+				<p style="padding-top: 10px;">1.加入专属课程学习群，和志同道合的家长共同进步</p>
+				<p>2.独家课程作业，参与每日课程打卡巩固新知</p>
+				<p>3.授课教师不定期直播、群内答疑，解决个性化家庭 干预难题</p>
+				<p>4.学员笔记共享，互相学习学习更轻松</p>
+			</div>
+			<div>
+				<span style="color:#F8B83D ;">102节视频课程，即学即用</span>
+				<p style="padding-top: 10px;">1.阶段证书检验每一模块学习成果 </p>
+				<p>2.结课证书见证每个人努力与付出</p>
+			</div>
+		</div>
+		<div class="erweim">
+			<img src="../../../public/images/erweim.png" alt="">
+			<span>扫码购买课程,加入专属答疑群</span>
+		</div>
+		<!-- 这些人在学什么 -->
+		<div class="home-site-title" style="margin-top: 0;">
+			<span class="home-site-left" style="width: 36%;"></span>
+			<div class="home-site-title-centre">
+				<span style="margin-top: 23px;">这些人在学什么</span>
+				<p class="active-p" style="width: 130px;height: 18px;"><img src="../../../public/images/a2.png" alt=""></p>
+			</div>
+			<span class="home-site-right" style="width: 36%;"></span>
+		</div>
+		<div class="study">
+			<div class="study-left"></div>
+			<div class="study-right"></div>
+		</div>
+	</div>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	export default {
+		name: 'patriarch',
+		components: {
+			Nav
+		},
+		data() {
+			return {
+
+			}
+		},
+		mounted() {
+			this.initVideo();
+		},
+		methods: {
+			initVideo() {
+				let myPlayer = this.$video(myVideo, {
+					controls: true,
+					autoplay: false,
+					preload: "auto",
+					width: "700px",
+					height: "500px"
+				});
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.patriarch{
+		width: 100%;
+		height: auto;
+		position: absolute;
+		background: #fff;
+	}
+	.home-site-title {
+		width: 1026px;
+		display: flex;
+		align-items: center;
+	}
+
+	.home-site-left,
+	.home-site-right {
+		display: inline-block;
+		width: 31%;
+		height: 2px;
+	}
+
+	.home-site-left {
+		background: linear-gradient(to right, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-right {
+		background: linear-gradient(to left, rgba(237, 245, 245, 0.5), rgba(66, 170, 165, 0.5));
+	}
+
+	.home-site-title-centre {
+		flex: 1;
+		text-align: center;
+
+		span {
+			font-size: 27px;
+			color: #333333;
+			font-family: MicrosoftYaHei-Bold;
+			font-weight: bold;
+			display: inline-block;
+			margin-top: 23px;
+		}
+
+		p {
+			height: 16px;
+			margin-top: 10px;
+
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.video-class {
+		width: 869px;
+		height: 501px;
+		margin: 80px auto 0;
+		// border: 1px solid;
+		background: url(../../../public/images/video.png) no-repeat;
+		background-size: 100% 100%;
+
+	}
+
+	.video-js {
+		margin: 0 auto !important;
+		background: rgba(0, 0, 0, 0) !important;
+
+	}
+
+	.myVideo-dimensions {
+		width: 653px !important;
+	}
+
+	.video-js .vjs-tech {
+		top: 13px;
+		left: -1px;
+		height: 415px !important;
+	}
+
+	.video-js .vjs-control-bar {
+		bottom: 53px !important;
+	}
+
+	.video-js .vjs-big-play-button {
+		top: 50%;
+		margin-left: -42px;
+		left: 50%;
+		margin-top: -50px;
+	}
+
+	.about-Us-duty {
+		width: 1026px;
+		height: 70px;
+		margin: 0 auto;
+		background: #2BB7B3;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: space-around;
+
+		i {
+			font-size: 16px;
+			color: #fff;
+		}
+
+		span {
+			font-size: 14px;
+			color: #fff;
+		}
+
+		img {
+			display: block;
+			width: 35px;
+			height: 25px;
+		}
+	}
+
+	.statistics {
+		width: 1026px;
+		margin: 65px auto 0;
+
+		ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+
+			li {
+				width: 150px;
+				text-align: center;
+
+				img {
+					display: block;
+					width: 125px;
+					height: 123px;
+					margin: 28px auto 0;
+				}
+
+				i {
+					font-size: 16px;
+					font-family: Microsoft YaHei;
+					font-weight: bold;
+					font-style: italic;
+					color: rgba(54, 128, 238, 1);
+				}
+
+				p {
+					width: 100%;
+					font-size: 12px;
+					font-family: Microsoft YaHei;
+					font-weight: 300;
+					color: rgba(51, 51, 51, 1);
+					padding-top: 15px;
+				}
+			}
+		}
+	}
+
+	.circulation {
+		width: 705px;
+		height: 407px;
+		background: url(../../../public/images/tutut.png) no-repeat;
+		background-size: 100% 100%;
+		margin: 55px auto 0;
+		font-size: 23px;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+		color: rgba(255, 255, 255, 1);
+		position: relative;
+	}
+
+	.circulation span:first-child {
+		position: absolute;
+		bottom: 15.8%;
+		left: 3.6%;
+	}
+
+	.circulation span:last-child {
+		position: absolute;
+		right: 4.1%;
+		bottom: 15.8%;
+	}
+	.get-images{
+		width: 1026px;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		div{
+			width: 265px;
+			height: 177px;
+			img{
+				display:block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.get-title{
+		width: 1026px;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		div{
+			width: 265px;
+			height: 177px;
+			span{
+				font-size:12px;
+				font-family:Microsoft YaHei;
+				font-weight:400;
+				line-height:20px;
+				display: inline-block;
+				padding: 23px 0 0 18px;
+			}
+			p{
+				font-size:11px;
+				font-family:Myriad Pro;
+				font-weight:400;
+				color:rgba(51,51,51,1);
+				line-height:20px;
+				padding-left: 18px;
+				width: 93%;
+			}
+		}
+	}
+	.erweim{
+		width: 1026px;
+		height:333px ;
+		background:rgba(169,169,169,0.2);
+		border-radius:4px;
+		margin: 40px auto 0;
+		img{
+			display: block;
+			width: 217px;
+			height: 217px;
+			margin:46px auto 20px;
+			padding-top: 46px;
+		}
+		span{
+			display:block;
+			width: 249px;
+			height: 22;
+			background:rgba(30,192,255,1);
+			box-shadow:0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+			border-radius:4px;
+			font-size:12px;
+			font-family:Heiti SC;
+			font-weight:500;
+			color:rgba(255,255,255,1);
+			line-height:21px;
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+	.study{
+		width: 1026px;
+		display: flex;
+		margin: 0 auto;
+	}
+	.study-left{
+		width: 560px;
+		height: 274px;
+		border: 1px solid;
+	}
+	.study-right{
+		width: 275px;
+		height: 274px;
+		border: 1px solid;
+	}
+</style>

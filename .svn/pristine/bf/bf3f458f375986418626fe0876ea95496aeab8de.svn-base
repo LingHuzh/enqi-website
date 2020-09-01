@@ -1,0 +1,122 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+
+Vue.use(VueRouter)
+
+  const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/footer',
+    name: 'Footer',
+    component: () => import('../components/index/Footer.vue')
+  },
+  {
+	  path: 'top',
+	  name: 'Top',
+	  component:()=> import('../components/index/Top.vue')
+  },
+  {
+	  path: 'nav',
+	  name: 'Nav',
+	  component:()=> import('../components/index/Nav.vue')
+  },
+  {
+  	  path: '/partner',
+  	  name: 'Partner',
+  	  component:()=> import('../components/page/Partner.vue')
+  },
+  {
+  	  path: '/teacher',
+  	  name: 'Teacher',
+  	  component:()=> import('../components/page/Teacher.vue')
+  },
+  {
+  	  path: '/contact',
+  	  name: 'Contact',
+  	  component:()=> import('../components/page/Contact.vue')
+  },
+  {
+  	  path: '/map',
+  	  name: 'Map',
+  	  component:()=> import('../components/index/Map.vue')
+  },
+  {
+  	  path: '/site',
+  	  name: 'Site',
+  	  component:()=> import('../components/page/Site.vue')
+  },
+  {
+  	  path: '/product',
+  	  name: 'Product',
+  	  component:()=> import('../components/page/Product.vue')
+  },
+  {
+  	  path: '/aboutus',
+  	  name: 'AboutUs',
+  	  component:()=> import('../components/page/AboutUs.vue')
+  },
+  {
+  	  path: '/ingclass',
+  	  name: 'Ingclass',
+  	  component:()=> import('../components/page/Ingclass.vue')
+  },
+  {
+  	  path: '/ideaTheory',
+  	  name: 'IdeaTheory',
+  	  component:()=> import('../components/page/IdeaTheory.vue')
+  },
+  {
+  	  path: '/chaoyang',
+  	  name: 'ChaoYang',
+  	  component:()=> import('../components/page/ChaoYang.vue')
+  },
+  {
+  	  path: '/idea',
+  	  name: 'Idea',
+  	  component:()=> import('../components/page/Idea.vue')
+  },
+  {
+  	  path: '/train',
+  	  name: 'Train',
+  	  component:()=> import('../components/page/Train.vue')
+  },
+  {
+  	  path: '/sunhe',
+  	  name: 'Sunhe',
+  	  component:()=> import('../components/page/SunHe.vue')
+  },
+  {
+  	  path: '/haidian',
+  	  name: 'haidian',
+  	  component:()=> import('../components/page/HaiDian.vue')
+  },
+   {
+  	  path: '/childrenrecovery',
+  	  name: 'ChildrenRecovery',
+  	  component:()=> import('../components/page/ChildrenRecovery.vue')
+  },
+  {
+	path: '/jingan',
+	name: 'JingAn',
+	component:()=> import('../components/page/JingAn.vue')
+},
+{
+	path: '/shenzhen',
+	name: 'ShenZhen',
+	component:()=> import('../components/page/ShenZhen.vue')
+}
+
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+export default router

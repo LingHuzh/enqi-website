@@ -1,0 +1,18 @@
+<template>
+	<div class="patriarch">
+		<Nav></Nav>
+	</div>
+</template>
+
+<script>
+	import Nav from "../index/Nav.vue"
+	export default{
+		name:'patriarch',
+		components:{
+			Nav
+		}
+	}
+</script>
+
+<style>
+</style>

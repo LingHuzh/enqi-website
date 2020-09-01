@@ -1,0 +1,198 @@
+<template>
+	<div class="map" id="dituContent">
+
+	</div>
+</template>
+
+<script>
+
+	export default {
+		name: 'map',
+		components: {
+
+		},
+		mounted() {
+			var url = location.href;
+			var index = url.lastIndexOf("=");
+			var subBack = url.substring(index + 1, url.length);
+
+			//创建和初始化地图函数：
+			function initMap(){
+				createMap();//创建地图
+				setMapEvent();//设置地图事件
+				addMapControl();//向地图添加控件
+				addMarker();//向地图中添加marker
+			}
+
+			//创建地图函数：
+			function createMap(){
+				var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+				if (subBack == 'sunhe'){
+					var point = new BMap.Point(116.541715,40.051586);//定义一个中心点坐标
+				}else if (subBack == 'chaoyang'){
+					var point = new BMap.Point(116.62099,39.936944);//定义一个中心点坐标
+				}else if (subBack == 'haidian'){
+					var point = new BMap.Point(116.280434,39.958032);//定义一个中心点坐标
+				}else if (subBack == 'jingan'){
+					var point = new BMap.Point(121.447334,31.288493);//定义一个中心点坐标
+				}else if (subBack == 'shenzhen'){
+					var point = new BMap.Point(113.986287,22.558704);//定义一个中心点坐标
+				}else if (subBack == 'hangzhou'){
+					var point = new BMap.Point(120.187052,30.262565);//定义一个中心点坐标
+				}else if (subBack == '1' || subBack == 1){
+					var point = new BMap.Point(116.541715,40.051586);//定义一个中心点坐标
+				}
+				map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+				window.map = map;//将map变量存储在全局
+			}
+
+			//地图事件设置函数：
+			function setMapEvent(){
+				map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+				map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+				map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+				map.enableKeyboard();//启用键盘上下左右键移动地图
+			}
+
+			//地图控件添加函数：
+			function addMapControl(){
+				//向地图中添加缩放控件
+				var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+				map.addControl(ctrl_nav);
+				//向地图中添加缩略图控件
+				var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+				map.addControl(ctrl_ove);
+				//向地图中添加比例尺控件
+				var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+				map.addControl(ctrl_sca);
+			}
+
+			//标注点数组
+			if (subBack == 'sunhe'){
+				var markerArr = [{title:"恩启IDEA·教研中心",content:"地址:北京市朝阳区京密路弘园五号A5<br/>联系电话:13021253543",point:"116.542783|40.051989",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·朝阳中心",content:"地址:北京市朝阳区常营非中心11号楼<br/>联系电话:13621231783",point:"116.620876|39.936606",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·海淀中心",content:"地址:北京市海淀区西四环北路69号<br/>联系电话:18513342186",point:"116.280285|39.958034",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·上海静安中心",content:"地址:上海市静安区大宁中心广场二期B9<br/>联系电话:16628575989",point:"121.447356|31.288224",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·深圳华侨城中心",content:"地址:深圳市南山区侨城坊3栋3层<br/>联系电话:13682420696",point:"113.986102|22.558084",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+				];
+			}else if (subBack == 'chaoyang'){
+				var markerArr = [{title:"恩启IDEA·教研中心",content:"地址:北京市朝阳区京密路弘园五号A5<br/>联系电话:13021253543",point:"116.542783|40.051989",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·朝阳中心",content:"地址:北京市朝阳区常营非中心11号楼<br/>联系电话:13621231783",point:"116.620876|39.936606",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·海淀中心",content:"地址:北京市海淀区西四环北路69号<br/>联系电话:18513342186",point:"116.280285|39.958034",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·上海静安中心",content:"地址:上海市静安区大宁中心广场二期B9<br/>联系电话:16628575989",point:"121.447356|31.288224",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·深圳华侨城中心",content:"地址:深圳市南山区侨城坊3栋3层<br/>联系电话:13682420696",point:"113.986102|22.558084",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+				];
+			}else if (subBack == 'haidian'){
+				var markerArr = [{title:"恩启IDEA·教研中心",content:"地址:北京市朝阳区京密路弘园五号A5<br/>联系电话:13021253543",point:"116.542783|40.051989",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·朝阳中心",content:"地址:北京市朝阳区常营非中心11号楼<br/>联系电话:13621231783",point:"116.620876|39.936606",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·海淀中心",content:"地址:北京市海淀区西四环北路69号<br/>联系电话:18513342186",point:"116.280285|39.958034",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·上海静安中心",content:"地址:上海市静安区大宁中心广场二期B9<br/>联系电话:16628575989",point:"121.447356|31.288224",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·深圳华侨城中心",content:"地址:深圳市南山区侨城坊3栋3层<br/>联系电话:13682420696",point:"113.986102|22.558084",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+				];
+			}else if (subBack == 'jingan'){
+				var markerArr = [{title:"恩启IDEA·教研中心",content:"地址:北京市朝阳区京密路弘园五号A5<br/>联系电话:13021253543",point:"116.542783|40.051989",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·朝阳中心",content:"地址:北京市朝阳区常营非中心11号楼<br/>联系电话:13621231783",point:"116.620876|39.936606",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·海淀中心",content:"地址:北京市海淀区西四环北路69号<br/>联系电话:18513342186",point:"116.280285|39.958034",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·上海静安中心",content:"地址:上海市静安区大宁中心广场二期B9<br/>联系电话:16628575989",point:"121.447356|31.288224",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·深圳华侨城中心",content:"地址:深圳市南山区侨城坊3栋3层<br/>联系电话:13682420696",point:"113.986102|22.558084",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+				];
+			}else if (subBack == 'shenzhen'){
+				var markerArr = [{title:"恩启IDEA·教研中心",content:"地址:北京市朝阳区京密路弘园五号A5<br/>联系电话:13021253543",point:"116.542783|40.051989",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·朝阳中心",content:"地址:北京市朝阳区常营非中心11号楼<br/>联系电话:13621231783",point:"116.620876|39.936606",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·海淀中心",content:"地址:北京市海淀区西四环北路69号<br/>联系电话:18513342186",point:"116.280285|39.958034",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·上海静安中心",content:"地址:上海市静安区大宁中心广场二期B9<br/>联系电话:16628575989",point:"121.447356|31.288224",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·深圳华侨城中心",content:"地址:深圳市南山区侨城坊3栋3层<br/>联系电话:13682420696",point:"113.986102|22.558084",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+				];
+			}else if (subBack == 'hangzhou'){
+				var markerArr = [{title:"恩启IDEA·教研中心",content:"地址:北京市朝阳区京密路弘园五号A5<br/>联系电话:13021253543",point:"116.542783|40.051989",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·朝阳中心",content:"地址:北京市朝阳区常营非中心11号楼<br/>联系电话:13621231783",point:"116.620876|39.936606",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·海淀中心",content:"地址:北京市海淀区西四环北路69号<br/>联系电话:18513342186",point:"116.280285|39.958034",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·上海静安中心",content:"地址:上海市静安区大宁中心广场二期B9<br/>联系电话:16628575989",point:"121.447356|31.288224",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·深圳华侨城中心",content:"地址:深圳市南山区侨城坊3栋3层<br/>联系电话:13682420696",point:"113.986102|22.558084",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·杭州西湖中心",content:"地址:浙江省杭州市西湖区蒋村地铁站附近<br/>联系电话:16628575989",point:"120.075384|30.300773",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+				];
+			}else if ( subBack == '1' || subBack == 1){
+				var markerArr = [{title:"恩启IDEA·教研中心",content:"地址:北京市朝阳区京密路弘园五号A5<br/>联系电话:13021253543",point:"116.542783|40.051989",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·朝阳中心",content:"地址:北京市朝阳区常营非中心11号楼<br/>联系电话:13621231783",point:"116.620876|39.936606",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·海淀中心",content:"地址:北京市海淀区西四环北路69号<br/>联系电话:18513342186",point:"116.280285|39.958034",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·上海静安中心",content:"地址:上海市静安区大宁中心广场二期B9<br/>联系电话:16628575989",point:"121.447356|31.288224",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+					,{title:"恩启IDEA·深圳华侨城中心",content:"地址:深圳市南山区侨城坊3栋3层<br/>联系电话:13682420696",point:"113.986102|22.558084",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+				];
+			}
+
+			//创建marker
+			function addMarker(){
+				for(var i=0;i<markerArr.length;i++){
+					var json = markerArr[i];
+					var p0 = json.point.split("|")[0];
+					var p1 = json.point.split("|")[1];
+					var point = new BMap.Point(p0,p1);
+					var iconImg = createIcon(json.icon);
+					var marker = new BMap.Marker(point,{icon:iconImg});
+					var iw = createInfoWindow(i);
+					var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+					marker.setLabel(label);
+					map.addOverlay(marker);
+					label.setStyle({
+						borderColor:"#808080",
+						color:"#333",
+						cursor:"pointer"
+					});
+
+					(function(){
+						var index = i;
+						var _iw = createInfoWindow(i);
+						var _marker = marker;
+						_marker.addEventListener("click",function(){
+							this.openInfoWindow(_iw);
+						});
+						_iw.addEventListener("open",function(){
+							_marker.getLabel().hide();
+						})
+						_iw.addEventListener("close",function(){
+							_marker.getLabel().show();
+						})
+						label.addEventListener("click",function(){
+							_marker.openInfoWindow(_iw);
+						})
+						if(!!json.isOpen){
+							label.hide();
+							_marker.openInfoWindow(_iw);
+						}
+					})()
+				}
+			}
+			//创建InfoWindow
+			function createInfoWindow(i){
+				var json = markerArr[i];
+				var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+				return iw;
+			}
+			//创建一个Icon
+			function createIcon(json){
+				var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+				return icon;
+			}
+			function createIcon(json) {
+				var icon = new BMap.Icon("http://map.baidu.com/image/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+					imageOffset: new BMap.Size(-json.l, -json.t),
+					infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+					offset: new BMap.Size(json.x, json.h)
+				})
+				return icon;
+			}
+			initMap();//创建和初始化地图
+		}
+	}
+</script>
+
+<style>
+	.map{
+		margin-bottom: 96px;
+	}
+	@media screen and (max-width: 800px){
+		.map{
+			height: 195px;
+		}
+	}
+</style>
